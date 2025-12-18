@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@variant dark (&:where(.dark, .dark *));
 
 @theme {
   --color-midnight: #0B0F19;
@@ -16,9 +17,7 @@
   /* Charcoal */
 }
 
-/* Dark mode overrides manually applied via class strategy or system diff if we want system reliance, 
-   but user asked for manual toggle with default dark. Tailwind v4 'darkMode' strategy usually needs configuration
-   if strictly manual. For now, we will rely on .dark class handling being standard. */
+/* Dark mode variables */
 .dark {
   --background: #0B0F19;
   /* Midnight */
