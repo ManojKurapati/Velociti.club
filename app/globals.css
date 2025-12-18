@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+@theme {
+  --color-midnight: #0B0F19;
+  --color-neon-blue: #00f3ff;
+  --color-neon-purple: #bd00ff;
+  --font-sans: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+:root {
+  --background: #F4F6F8;
+  /* Technical White */
+  --foreground: #111827;
+  /* Charcoal */
+}
+
+/* Dark mode overrides manually applied via class strategy or system diff if we want system reliance, 
+   but user asked for manual toggle with default dark. Tailwind v4 'darkMode' strategy usually needs configuration
+   if strictly manual. For now, we will rely on .dark class handling being standard. */
+.dark {
+  --background: #0B0F19;
+  /* Midnight */
+  --foreground: #ffffff;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+.grid-bg {
+  background-size: 50px 50px;
+  background-image: linear-gradient(to right, rgba(0, 243, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 243, 255, 0.05) 1px, transparent 1px);
+}
