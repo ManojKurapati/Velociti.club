@@ -121,7 +121,7 @@ export const AgenticDiagram = () => {
                     </motion.div>
 
                     {/* Orbital Nodes */}
-                    {nodes.map((node, index) => {
+                    {nodes.map((node) => {
                         const Icon = node.icon;
                         const isHovered = hoveredNode === node.label;
 

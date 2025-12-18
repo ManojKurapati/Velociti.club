@@ -9,20 +9,16 @@ export const ThemeToggle = () => {
 
     useEffect(() => {
         // Check local storage or existing class
-        if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
-            setIsDark(true);
+        const isDarkMode = localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches);
+
+        if (isDarkMode) {
             document.documentElement.classList.add("dark");
         } else {
-            // Default to dark if nothing set, per user request "ensure... default to Dark Mode"
-            const stored = localStorage.getItem("theme");
-            if (stored === "light") {
-                setIsDark(false);
-                document.documentElement.classList.remove("dark");
-            } else {
-                setIsDark(true);
-                document.documentElement.classList.add("dark");
-            }
+            document.documentElement.classList.remove("dark");
         }
+
+        // eslint-disable-next-line react-hooks/set-state-in-effect
+        setIsDark(isDarkMode);
     }, []);
 
     const toggleTheme = () => {

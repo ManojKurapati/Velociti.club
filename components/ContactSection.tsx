@@ -4,23 +4,33 @@ import { motion } from "framer-motion";
 import { ArrowRight, Linkedin } from "lucide-react";
 
 export const ContactSection = () => {
+    const [lines, setLines] = React.useState<Array<{ duration: number; delay: number; top: number }>>([]);
+
+    React.useEffect(() => {
+        setLines([...Array(5)].map(() => ({
+            duration: 2 + Math.random() * 2,
+            delay: Math.random() * 2,
+            top: 20 + Math.random() * 60
+        })));
+    }, []);
+
     return (
         <section className="w-full py-32 px-4 flex flex-col items-center justify-center relative overflow-hidden">
             {/* Dynamic Speed Lines Background */}
             <div className="absolute inset-0 pointer-events-none">
-                {[...Array(5)].map((_, i) => (
+                {lines.map((line, i) => (
                     <motion.div
                         key={i}
                         initial={{ x: "-100%", opacity: 0 }}
                         animate={{ x: "200%", opacity: [0, 1, 0] }}
                         transition={{
-                            duration: 2 + Math.random() * 2,
+                            duration: line.duration,
                             repeat: Infinity,
                             ease: "linear",
-                            delay: Math.random() * 2
+                            delay: line.delay
                         }}
                         className="absolute h-[1px] bg-gradient-to-r from-transparent via-neon-blue to-transparent w-full"
-                        style={{ top: `${20 + Math.random() * 60}%` }}
+                        style={{ top: `${line.top}%` }}
                     />
                 ))}
             </div>
