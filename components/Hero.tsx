@@ -30,7 +30,10 @@ export const Hero = () => {
                         <span className="relative z-10">Deploy Strategy</span>
                         <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity" />
                     </button>
-                    <button className="px-8 py-4 rounded-full border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-neon-purple hover:text-neon-purple transition-colors font-medium backdrop-blur-sm bg-white/50 dark:bg-midnight/50">
+                    <button
+                        onClick={() => document.getElementById("capability-map")?.scrollIntoView({ behavior: "smooth" })}
+                        className="px-8 py-4 rounded-full border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-neon-purple hover:text-neon-purple transition-colors font-medium backdrop-blur-sm bg-white/50 dark:bg-midnight/50 cursor-pointer"
+                    >
                         View Capability Map
                     </button>
                 </div>

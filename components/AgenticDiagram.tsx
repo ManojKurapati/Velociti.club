@@ -56,7 +56,7 @@ export const AgenticDiagram = () => {
     const [hoveredNode, setHoveredNode] = useState<string | null>(null);
 
     return (
-        <section className="w-full py-32 flex flex-col items-center justify-center relative overflow-hidden min-h-[800px]">
+        <section id="capability-map" className="w-full py-32 flex flex-col items-center justify-center relative overflow-hidden min-h-[800px]">
             {/* Background Grid */}
             <div className="absolute inset-0 grid-bg opacity-30 pointer-events-none" />
             <div className="absolute inset-0 bg-gradient-to-b from-white via-transparent to-white dark:from-midnight dark:via-transparent dark:to-midnight pointer-events-none" />
