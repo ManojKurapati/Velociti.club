@@ -13,6 +13,9 @@ export const Navbar = () => {
             </Link>
 
             <div className="flex items-center gap-6">
+                <Link href="/knowledge" className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors">
+                    Knowledge
+                </Link>
                 <Link href="/curious" className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors">
                     Curious ?
                 </Link>
