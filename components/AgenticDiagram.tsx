@@ -11,6 +11,7 @@ interface NodeProps {
     position: string;
     delay: number;
     color: string;
+    glowColor: string;
 }
 
 const nodes: NodeProps[] = [
@@ -22,6 +23,7 @@ const nodes: NodeProps[] = [
         position: "top-0 left-1/2 -translate-x-1/2 -translate-y-24",
         delay: 0,
         color: "text-neon-blue",
+        glowColor: "rgba(0, 243, 255, 0.3)",
     },
     {
         icon: HardDrive,
@@ -31,6 +33,7 @@ const nodes: NodeProps[] = [
         position: "bottom-0 left-1/2 -translate-x-1/2 translate-y-24",
         delay: 0.2,
         color: "text-neon-purple",
+        glowColor: "rgba(189, 0, 255, 0.3)",
     },
     {
         icon: Cpu,
@@ -39,7 +42,8 @@ const nodes: NodeProps[] = [
         tooltip: "Blockchain transaction & API execution",
         position: "left-0 top-1/2 -translate-x-24 -translate-y-1/2",
         delay: 0.4,
-        color: "text-white",
+        color: "text-gray-300",
+        glowColor: "rgba(255, 255, 255, 0.2)",
     },
     {
         icon: Zap,
@@ -49,6 +53,7 @@ const nodes: NodeProps[] = [
         position: "right-0 top-1/2 translate-x-24 -translate-y-1/2",
         delay: 0.6,
         color: "text-neon-blue",
+        glowColor: "rgba(0, 243, 255, 0.3)",
     },
 ];
 
@@ -56,33 +61,52 @@ export const AgenticDiagram = () => {
     const [hoveredNode, setHoveredNode] = useState<string | null>(null);
 
     return (
-        <section id="capability-map" className="w-full py-32 flex flex-col items-center justify-center relative overflow-hidden min-h-[800px]">
-            {/* Background Grid */}
-            <div className="absolute inset-0 grid-bg opacity-30 pointer-events-none" />
-            <div className="absolute inset-0 bg-gradient-to-b from-white via-transparent to-white dark:from-midnight dark:via-transparent dark:to-midnight pointer-events-none" />
+        <section id="capability-map" className="w-full py-20 sm:py-32 flex flex-col items-center justify-center relative overflow-hidden min-h-[600px] md:min-h-screen">
+            {/* Background */}
+            <div className="absolute inset-0 grid-bg opacity-20 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-radial from-transparent via-midnight/50 to-midnight pointer-events-none" />
 
-            <div className="text-center mb-16 relative z-10">
-                <h2 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">Autonomous Reasoning Loop</h2>
-                <p className="text-gray-600 dark:text-gray-400 max-w-lg mx-auto">Interconnected systems working in perfect velocity.</p>
-            </div>
+            {/* Section Header */}
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="text-center mb-20 relative z-10 px-4"
+            >
+                <h2 className="text-4xl md:text-6xl font-bold text-white mb-4 tracking-tight">
+                    Autonomous <span className="text-neon-purple">Reasoning</span> Loop
+                </h2>
+                <p className="text-gray-400 max-w-lg mx-auto text-lg">
+                    Interconnected systems working in perfect velocity.
+                </p>
+            </motion.div>
 
-            <div className="w-full flex justify-center overflow-hidden">
-                <div className="relative w-[500px] h-[500px] flex items-center justify-center scale-[0.6] sm:scale-75 md:scale-100 origin-center">
+            {/* Diagram Container */}
+            <div className="w-full flex justify-center overflow-visible px-4">
+                <div className="relative w-[500px] h-[500px] flex items-center justify-center scale-[0.55] sm:scale-75 md:scale-90 lg:scale-100 origin-center">
                     {/* Connection Lines (SVGs) */}
-                    <svg className="absolute inset-0 w-full h-full pointer-events-none z-0 opacity-50">
+                    <svg className="absolute inset-0 w-full h-full pointer-events-none z-0">
                         <defs>
-                            <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
-                                <polygon points="0 0, 10 3.5, 0 7" fill="#00f3ff" opacity="0.5" />
-                            </marker>
+                            <linearGradient id="lineGradientBlue" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stopColor="#00f3ff" stopOpacity="0" />
+                                <stop offset="50%" stopColor="#00f3ff" stopOpacity="0.6" />
+                                <stop offset="100%" stopColor="#00f3ff" stopOpacity="0" />
+                            </linearGradient>
+                            <linearGradient id="lineGradientPurple" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stopColor="#bd00ff" stopOpacity="0" />
+                                <stop offset="50%" stopColor="#bd00ff" stopOpacity="0.6" />
+                                <stop offset="100%" stopColor="#bd00ff" stopOpacity="0" />
+                            </linearGradient>
                         </defs>
                         {/* Lines to Center */}
-                        <line x1="50%" y1="10%" x2="50%" y2="40%" stroke="#00f3ff" strokeWidth="1" strokeDasharray="5,5" markerEnd="url(#arrowhead)" />
-                        <line x1="50%" y1="90%" x2="50%" y2="60%" stroke="#bd00ff" strokeWidth="1" strokeDasharray="5,5" markerEnd="url(#arrowhead)" />
-                        <line x1="10%" y1="50%" x2="40%" y2="50%" stroke="white" strokeWidth="1" strokeDasharray="5,5" markerEnd="url(#arrowhead)" />
-                        <line x1="90%" y1="50%" x2="60%" y2="50%" stroke="#00f3ff" strokeWidth="1" strokeDasharray="5,5" markerEnd="url(#arrowhead)" />
+                        <line x1="50%" y1="10%" x2="50%" y2="40%" stroke="url(#lineGradientBlue)" strokeWidth="2" />
+                        <line x1="50%" y1="90%" x2="50%" y2="60%" stroke="url(#lineGradientPurple)" strokeWidth="2" />
+                        <line x1="10%" y1="50%" x2="40%" y2="50%" stroke="url(#lineGradientBlue)" strokeWidth="2" />
+                        <line x1="90%" y1="50%" x2="60%" y2="50%" stroke="url(#lineGradientBlue)" strokeWidth="2" />
 
                         {/* Orbit Circle */}
-                        <circle cx="50%" cy="50%" r="35%" fill="none" stroke="#333" strokeOpacity="0.3" strokeDasharray="10, 5" />
+                        <circle cx="50%" cy="50%" r="35%" fill="none" stroke="#1a1f2e" strokeWidth="1" />
                     </svg>
 
                     {/* Central Reasoning Engine */}
@@ -90,19 +114,19 @@ export const AgenticDiagram = () => {
                         initial={{ scale: 0.8, opacity: 0 }}
                         whileInView={{ scale: 1, opacity: 1 }}
                         viewport={{ once: true }}
-                        className="relative z-20 flex flex-col items-center group"
+                        className="relative z-20 flex flex-col items-center group cursor-pointer"
                         onMouseEnter={() => setHoveredNode("reasoning")}
                         onMouseLeave={() => setHoveredNode(null)}
                     >
                         <div className="relative">
-                            <div className="absolute inset-0 bg-neon-purple/30 blur-2xl rounded-full animate-pulse-slow" />
-                            <div className="w-40 h-40 rounded-full bg-midnight border-2 border-neon-purple flex items-center justify-center shadow-[0_0_50px_rgba(189,0,255,0.3)] relative z-10 transition-transform duration-500 group-hover:scale-110">
-                                <Brain className="w-16 h-16 text-neon-purple" />
+                            <div className="absolute inset-0 bg-neon-purple/40 blur-3xl rounded-full animate-pulse-slow scale-150" />
+                            <div className="w-36 h-36 rounded-full glass-panel border-2 border-neon-purple/50 flex items-center justify-center shadow-[0_0_60px_rgba(189,0,255,0.4)] relative z-10 transition-all duration-500 group-hover:scale-110 group-hover:border-neon-purple">
+                                <Brain className="w-14 h-14 text-neon-purple" />
                             </div>
                         </div>
                         <div className="mt-4 text-center">
-                            <h3 className="text-white font-mono text-xl font-bold">Reasoning Engine</h3>
-                            <p className="text-neon-purple text-xs uppercase tracking-wider">LLM Orchestration</p>
+                            <h3 className="text-white font-semibold text-lg">Reasoning Engine</h3>
+                            <p className="text-neon-purple/80 text-xs uppercase tracking-wider">LLM Orchestration</p>
                         </div>
 
                         {/* Center Tooltip */}
@@ -112,7 +136,7 @@ export const AgenticDiagram = () => {
                                     initial={{ opacity: 0, y: -10 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, y: -10 }}
-                                    className="absolute -top-16 left-1/2 -translate-x-1/2 w-48 bg-midnight/90 border border-neon-purple p-3 rounded-lg backdrop-blur-md z-50 pointer-events-none"
+                                    className="absolute -top-20 left-1/2 -translate-x-1/2 w-52 glass-panel p-4 rounded-xl z-50 pointer-events-none"
                                 >
                                     <p className="text-xs text-center text-gray-300">The central brain coordinating task decomposition and strategy.</p>
                                 </motion.div>
@@ -131,17 +155,20 @@ export const AgenticDiagram = () => {
                                 initial={{ opacity: 0, scale: 0 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: node.delay }}
+                                transition={{ delay: node.delay, type: "spring", stiffness: 200 }}
                                 className={`absolute ${node.position} z-20 flex flex-col items-center group cursor-pointer`}
                                 onMouseEnter={() => setHoveredNode(node.label)}
                                 onMouseLeave={() => setHoveredNode(null)}
                             >
-                                <div className={`w-20 h-20 rounded-2xl bg-[#0F1423] border border-gray-700 flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110 hover:border-current ${node.color} hover:shadow-[0_0_20px_rgba(255,255,255,0.1)]`}>
+                                <div
+                                    className={`w-20 h-20 rounded-2xl glass-panel flex items-center justify-center shadow-lg transition-all duration-300 group-hover:scale-110 ${node.color}`}
+                                    style={{ boxShadow: isHovered ? `0 0 30px ${node.glowColor}` : undefined }}
+                                >
                                     <Icon className={`w-8 h-8 ${node.color}`} />
                                 </div>
-                                <div className="mt-2 text-center bg-midnight/80 px-2 py-1 rounded backdrop-blur-sm border border-gray-800">
-                                    <h4 className="text-white font-bold text-sm">{node.label}</h4>
-                                    <p className="text-[10px] text-gray-500 uppercase">{node.subLabel}</p>
+                                <div className="mt-3 text-center">
+                                    <h4 className="text-white font-semibold text-sm">{node.label}</h4>
+                                    <p className="text-[10px] text-gray-500 uppercase tracking-wider">{node.subLabel}</p>
                                 </div>
 
                                 {/* Node Tooltip */}
@@ -151,10 +178,9 @@ export const AgenticDiagram = () => {
                                             initial={{ opacity: 0, scale: 0.9 }}
                                             animate={{ opacity: 1, scale: 1 }}
                                             exit={{ opacity: 0, scale: 0.9 }}
-                                            className="absolute top-full mt-2 w-40 bg-midnight/90 border border-gray-700 p-2 rounded-lg backdrop-blur-md z-50 pointer-events-none text-center"
+                                            className="absolute top-full mt-3 w-44 glass-panel p-3 rounded-xl z-50 pointer-events-none text-center"
                                         >
                                             <p className="text-xs text-gray-300">{node.tooltip}</p>
-                                            <div className={`absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 rotate-45 bg-midnight border-l border-t border-gray-700`} />
                                         </motion.div>
                                     )}
                                 </AnimatePresence>

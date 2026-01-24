@@ -56,7 +56,7 @@ export default function CuriousPage() {
                             <div className="text-center md:text-left space-y-4">
                                 <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Startups</h2>
                                 <p className="text-lg text-gray-600 dark:text-gray-300">
-                                    We build investor-ready Minimum Viable Products (MVPs) at speed.
+                                    We build investor ready Minimum Viable Products (MVPs) at speed.
                                 </p>
                             </div>
                         </div>
@@ -91,7 +91,7 @@ export default function CuriousPage() {
                                 The Core Differentiator
                             </h2>
                             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl leading-relaxed">
-                                We don&apos;t just build the tech and walk away. We operate as a &quot;club&quot;—an exclusive ecosystem that helps our clients take the product to market, assists in securing investment, and advises on marketing and sales strategies.
+                                We don&apos;t just build the tech and walk away. We operate as a &quot;club&quot;an exclusive ecosystem that helps our clients take the product to market, assists in securing investment, and advises on marketing and sales strategies.
                             </p>
                             <p className="text-xl font-medium text-gray-900 dark:text-white pt-4 border-t border-gray-100 dark:border-white/10 w-full max-w-lg">
                                 We turn ideas into fundable, sellable realities.

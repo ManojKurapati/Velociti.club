@@ -34,3 +34,63 @@ body {
   background-image: linear-gradient(to right, rgba(0, 243, 255, 0.05) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(0, 243, 255, 0.05) 1px, transparent 1px);
 }
+
+/* Glass Panel Utility */
+.glass-panel {
+  background: rgba(11, 15, 25, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Aurora Glow Effect */
+@keyframes aurora {
+
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: translateX(-20%) rotate(-5deg);
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: translateX(20%) rotate(5deg);
+  }
+}
+
+.aurora-glow {
+  animation: aurora 8s ease-in-out infinite;
+}
+
+/* Subtle Floating Animation */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Glow Text Effect */
+.text-glow-blue {
+  text-shadow: 0 0 20px rgba(0, 243, 255, 0.5), 0 0 40px rgba(0, 243, 255, 0.3);
+}
+
+.text-glow-purple {
+  text-shadow: 0 0 20px rgba(189, 0, 255, 0.5), 0 0 40px rgba(189, 0, 255, 0.3);
+}
