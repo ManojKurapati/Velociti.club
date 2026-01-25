@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Brain, Database, Zap, Cpu, HardDrive } from "lucide-react";
+import { Brain, Bot, Cog, Zap } from "lucide-react";
 
 interface NodeProps {
     icon: React.ElementType;
@@ -16,42 +16,32 @@ interface NodeProps {
 
 const nodes: NodeProps[] = [
     {
-        icon: Database,
-        label: "Sensors",
-        subLabel: "Data Input",
-        tooltip: "Real-time unstructured data ingestion",
+        icon: Brain,
+        label: "LLM's",
+        subLabel: "Intelligence",
+        tooltip: "Large Language Models powering reasoning and understanding",
         position: "top-0 left-1/2 -translate-x-1/2 -translate-y-24",
         delay: 0,
         color: "text-neon-blue",
         glowColor: "rgba(0, 243, 255, 0.3)",
     },
     {
-        icon: HardDrive,
-        label: "Memory",
-        subLabel: "Vector DB",
-        tooltip: "Real-time context retrieval via RAG",
-        position: "bottom-0 left-1/2 -translate-x-1/2 translate-y-24",
+        icon: Bot,
+        label: "Agents",
+        subLabel: "Autonomy",
+        tooltip: "Intelligent agents executing complex multi-step tasks",
+        position: "left-0 top-1/2 -translate-x-24 -translate-y-1/2",
         delay: 0.2,
         color: "text-neon-purple",
         glowColor: "rgba(189, 0, 255, 0.3)",
     },
     {
-        icon: Cpu,
-        label: "Tools",
-        subLabel: "APIs & Chain",
-        tooltip: "Blockchain transaction & API execution",
-        position: "left-0 top-1/2 -translate-x-24 -translate-y-1/2",
-        delay: 0.4,
-        color: "text-gray-300",
-        glowColor: "rgba(255, 255, 255, 0.2)",
-    },
-    {
-        icon: Zap,
-        label: "Actuators",
-        subLabel: "Action",
-        tooltip: "Autonomous decision execution",
+        icon: Cog,
+        label: "Automation",
+        subLabel: "Execution",
+        tooltip: "Seamless workflow automation and process optimization",
         position: "right-0 top-1/2 translate-x-24 -translate-y-1/2",
-        delay: 0.6,
+        delay: 0.4,
         color: "text-neon-blue",
         glowColor: "rgba(0, 243, 255, 0.3)",
     },
@@ -75,10 +65,10 @@ export const AgenticDiagram = () => {
                 className="text-center mb-20 relative z-10 px-4"
             >
                 <h2 className="text-4xl md:text-6xl font-bold text-white mb-4 tracking-tight">
-                    Autonomous <span className="text-neon-purple">Reasoning</span> Loop
+                    The <span className="text-neon-purple">Autonomous</span> Loop
                 </h2>
                 <p className="text-gray-400 max-w-lg mx-auto text-lg">
-                    Interconnected systems working in perfect velocity.
+                    LLM's, Agents, and Automation working in perfect harmony.
                 </p>
             </motion.div>
 
@@ -101,8 +91,7 @@ export const AgenticDiagram = () => {
                         </defs>
                         {/* Lines to Center */}
                         <line x1="50%" y1="10%" x2="50%" y2="40%" stroke="url(#lineGradientBlue)" strokeWidth="2" />
-                        <line x1="50%" y1="90%" x2="50%" y2="60%" stroke="url(#lineGradientPurple)" strokeWidth="2" />
-                        <line x1="10%" y1="50%" x2="40%" y2="50%" stroke="url(#lineGradientBlue)" strokeWidth="2" />
+                        <line x1="10%" y1="50%" x2="40%" y2="50%" stroke="url(#lineGradientPurple)" strokeWidth="2" />
                         <line x1="90%" y1="50%" x2="60%" y2="50%" stroke="url(#lineGradientBlue)" strokeWidth="2" />
 
                         {/* Orbit Circle */}
@@ -121,12 +110,12 @@ export const AgenticDiagram = () => {
                         <div className="relative">
                             <div className="absolute inset-0 bg-neon-purple/40 blur-3xl rounded-full animate-pulse-slow scale-150" />
                             <div className="w-36 h-36 rounded-full glass-panel border-2 border-neon-purple/50 flex items-center justify-center shadow-[0_0_60px_rgba(189,0,255,0.4)] relative z-10 transition-all duration-500 group-hover:scale-110 group-hover:border-neon-purple">
-                                <Brain className="w-14 h-14 text-neon-purple" />
+                                <Zap className="w-14 h-14 text-neon-purple" />
                             </div>
                         </div>
                         <div className="mt-4 text-center">
-                            <h3 className="text-white font-semibold text-lg">Reasoning Engine</h3>
-                            <p className="text-neon-purple/80 text-xs uppercase tracking-wider">LLM Orchestration</p>
+                            <h3 className="text-white font-semibold text-lg">Velociti Core</h3>
+                            <p className="text-neon-purple/80 text-xs uppercase tracking-wider">Orchestration Hub</p>
                         </div>
 
                         {/* Center Tooltip */}
