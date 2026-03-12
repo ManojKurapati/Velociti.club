@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Linkedin, Mail } from "lucide-react";
+import { ArrowRight, Linkedin, Mail, MessageCircle } from "lucide-react";
 
 export const ContactSection = () => {
     const [lines, setLines] = React.useState<Array<{ duration: number; delay: number; top: number }>>([]);
@@ -55,7 +55,7 @@ export const ContactSection = () => {
                     </p>
 
                     {/* CTA Buttons */}
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <div className="flex flex-wrap gap-4 justify-center">
                         <motion.a
                             href="https://www.linkedin.com/in/fatimaabdulla93/"
                             target="_blank"
@@ -65,8 +65,33 @@ export const ContactSection = () => {
                             className="group inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#0077b5] text-white rounded-full font-bold overflow-hidden transition-all shadow-lg hover:shadow-[0_0_30px_rgba(0,119,181,0.4)]"
                         >
                             <Linkedin className="w-5 h-5" />
-                            <span>Connect on LinkedIn</span>
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                            <span>LinkedIn</span>
+                        </motion.a>
+
+                        <motion.a
+                            href="https://wa.me/971585469969"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            whileHover={{ scale: 1.03 }}
+                            whileTap={{ scale: 0.97 }}
+                            className="group inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#25D366] text-white rounded-full font-bold overflow-hidden transition-all shadow-lg hover:shadow-[0_0_30px_rgba(37,211,102,0.4)]"
+                        >
+                            <MessageCircle className="w-5 h-5" />
+                            <span>WhatsApp</span>
+                        </motion.a>
+
+                        <motion.a
+                            href="https://x.com/ManojChowdaryKL"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            whileHover={{ scale: 1.03 }}
+                            whileTap={{ scale: 0.97 }}
+                            className="group inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-black rounded-full font-bold overflow-hidden transition-all shadow-lg hover:shadow-[0_0_30px_rgba(255,255,255,0.2)]"
+                        >
+                            <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            </svg>
+                            <span>Follow on X</span>
                         </motion.a>
 
                         <motion.a
