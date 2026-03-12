@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ThemeToggle } from "./ThemeToggle";
-import { Menu, X, BookOpen, Sparkles } from "lucide-react";
+import { Menu, X, BookOpen, Sparkles, Bot } from "lucide-react";
 
 export const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -23,13 +23,24 @@ export const Navbar = () => {
                 <div className="hidden md:flex items-center gap-3">
                     <Link
                         href="/knowledge"
-                        className="group relative flex items-center gap-2 px-4 py-2 rounded-full border border-gray-200 dark:border-gray-700 hover:border-neon-blue dark:hover:border-neon-blue transition-all duration-300 bg-white/50 dark:bg-midnight/50"
+                        className="group relative flex items-center gap-2 px-4 py-2 rounded-full border border-gray-200 dark:border-gray-700 hover:border-neon-blue dark:hover:border-neon-blue transition-all duration-300 bg-white/50 dark:bg-Midnight/50"
                     >
                         <BookOpen className="w-4 h-4 text-neon-blue" />
                         <span className="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-neon-blue transition-colors">
                             Knowledge
                         </span>
                         <div className="absolute inset-0 rounded-full bg-neon-blue/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </Link>
+
+                    <Link
+                        href="/ai-fy"
+                        className="group relative flex items-center gap-2 px-4 py-2 rounded-full border border-gray-200 dark:border-gray-700 hover:border-neon-purple dark:hover:border-neon-purple transition-all duration-300 bg-white/50 dark:bg-midnight/50"
+                    >
+                        <Bot className="w-4 h-4 text-neon-purple" />
+                        <span className="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-neon-purple transition-colors">
+                            AI-fy Enterprise
+                        </span>
+                        <div className="absolute inset-0 rounded-full bg-neon-purple/5 opacity-0 group-hover:opacity-100 transition-opacity" />
                     </Link>
 
                     <Link
@@ -82,6 +93,15 @@ export const Navbar = () => {
                             >
                                 <BookOpen className="w-5 h-5 text-neon-blue" />
                                 <span className="font-medium text-gray-700 dark:text-gray-300">Knowledge</span>
+                            </Link>
+
+                            <Link
+                                href="/ai-fy"
+                                onClick={() => setIsOpen(false)}
+                                className="flex items-center gap-3 px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-neon-purple dark:hover:border-neon-purple transition-all bg-white/50 dark:bg-midnight/50"
+                            >
+                                <Bot className="w-5 h-5 text-neon-purple" />
+                                <span className="font-medium text-gray-700 dark:text-gray-300">AI-fy Enterprise</span>
                             </Link>
 
                             <Link
