@@ -1,121 +1,101 @@
 "use client";
-import React, { useState } from "react";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
-import { ThemeToggle } from "./ThemeToggle";
-import { Menu, X, BookOpen, Sparkles, Bot } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
+import { Logo } from "./Logo";
+import { MegaMenu } from "./MegaMenu";
+import { usePathname } from "next/navigation";
 
-export const Navbar = () => {
-    const [isOpen, setIsOpen] = useState(false);
+export function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
-    return (
-        <nav className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 py-3 bg-white/80 dark:bg-midnight/80 backdrop-blur-xl border-b border-gray-200/50 dark:border-gray-800/50 transition-colors duration-300">
-            <div className="max-w-7xl mx-auto flex items-center justify-between">
-                {/* Logo */}
-                <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-                    <div className="w-8 h-8 bg-gradient-to-br from-neon-blue to-neon-purple rounded-lg flex items-center justify-center shadow-lg shadow-neon-blue/20">
-                        <span className="text-white font-bold text-lg">V</span>
-                    </div>
-                    <span className="text-xl font-bold text-gray-900 dark:text-white tracking-wide">Velociti</span>
-                </Link>
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-                {/* Desktop Navigation */}
-                <div className="hidden md:flex items-center gap-3">
-                    <Link
-                        href="/knowledge"
-                        className="group relative flex items-center gap-2 px-4 py-2 rounded-full border border-gray-200 dark:border-gray-700 hover:border-neon-blue dark:hover:border-neon-blue transition-all duration-300 bg-white/50 dark:bg-Midnight/50"
-                    >
-                        <BookOpen className="w-4 h-4 text-neon-blue" />
-                        <span className="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-neon-blue transition-colors">
-                            Knowledge
-                        </span>
-                        <div className="absolute inset-0 rounded-full bg-neon-blue/5 opacity-0 group-hover:opacity-100 transition-opacity" />
-                    </Link>
+  const navLinks = [
+    { label: "Home", href: "/" },
+    { label: "AI-fy Enterprise", href: "/enterprise", hasMegaMenu: true },
+    { label: "Knowledge", href: "/knowledge" },
+    { label: "The Club", href: "/curious" },
+    { label: "Startups", href: "/curious#startups" },
+  ];
 
-                    <Link
-                        href="/ai-fy"
-                        className="group relative flex items-center gap-2 px-4 py-2 rounded-full border border-gray-200 dark:border-gray-700 hover:border-neon-purple dark:hover:border-neon-purple transition-all duration-300 bg-white/50 dark:bg-midnight/50"
-                    >
-                        <Bot className="w-4 h-4 text-neon-purple" />
-                        <span className="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-neon-purple transition-colors">
-                            AI-fy Enterprise
-                        </span>
-                        <div className="absolute inset-0 rounded-full bg-neon-purple/5 opacity-0 group-hover:opacity-100 transition-opacity" />
-                    </Link>
-
-                    <Link
-                        href="/curious"
-                        className="group relative flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-neon-purple/10 to-neon-blue/10 border border-neon-purple/30 hover:border-neon-purple transition-all duration-300"
-                    >
-                        <Sparkles className="w-4 h-4 text-neon-purple" />
-                        <span className="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-neon-purple transition-colors">
-                            Curious?
-                        </span>
-                        <div className="absolute inset-0 rounded-full bg-neon-purple/5 opacity-0 group-hover:opacity-100 transition-opacity" />
-                    </Link>
-
-                    <div className="w-px h-6 bg-gray-200 dark:bg-gray-700 mx-1" />
-                    <ThemeToggle />
-                </div>
-
-                {/* Mobile Menu Button */}
-                <div className="flex md:hidden items-center gap-3">
-                    <ThemeToggle />
-                    <button
-                        onClick={() => setIsOpen(!isOpen)}
-                        className="p-2 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-neon-blue dark:hover:border-neon-blue transition-colors"
-                        aria-label="Toggle menu"
-                    >
-                        {isOpen ? (
-                            <X className="w-5 h-5 text-gray-700 dark:text-gray-300" />
-                        ) : (
-                            <Menu className="w-5 h-5 text-gray-700 dark:text-gray-300" />
-                        )}
-                    </button>
-                </div>
+  return (
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 px-4 sm:px-6 lg:px-8 ${scrolled ? "py-3" : "py-6"}`}>
+      <div className={`max-w-7xl mx-auto rounded-2xl px-6 py-3 flex justify-between items-center transition-all border border-white/5 ${scrolled ? 'glass bg-obsidian/80 shadow-lg shadow-black/50' : 'bg-transparent'}`}>
+        <Link href="/" className="z-10 block interactive group">
+          <Logo className="scale-90" />
+        </Link>
+        
+        <div className="hidden lg:flex space-x-1 items-center absolute left-1/2 transform -translate-x-1/2">
+          {navLinks.map((link) => (
+            <div key={link.label} className="relative group px-1">
+              <Link 
+                href={link.href} 
+                className={`flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium transition-colors interactive ${
+                  pathname === link.href ? 'text-white bg-white/10' : 'text-cool-gray-300 hover:text-white hover:bg-white/5'
+                }`}
+              >
+                {link.label}
+                {link.hasMegaMenu && <ChevronDown className="w-3 h-3 opacity-50 group-hover:opacity-100 transition-opacity" />}
+              </Link>
+              {link.hasMegaMenu && <MegaMenu />}
             </div>
+          ))}
+        </div>
+        
+        <div className="z-10 flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-4 mr-2">
+            <Link href="/curious" className="text-sm font-medium text-cool-gray-300 hover:text-white transition-colors interactive">
+              Curious?
+            </Link>
+          </div>
+          <Link href="https://calendly.com/manojkurapati96/30min" target="_blank" rel="noopener noreferrer" className="btn-glow bg-white text-black hover:text-white px-5 py-2.5 rounded-full font-semibold text-sm hidden md:inline-block interactive shadow-[0_0_15px_rgba(255,255,255,0.2)] hover:shadow-none hover:bg-transparent">
+            Contact Us
+          </Link>
+          <button 
+            className="lg:hidden text-white interactive p-2 bg-white/5 rounded-lg border border-white/10"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
+      </div>
 
-            {/* Mobile Menu */}
-            <AnimatePresence>
-                {isOpen && (
-                    <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.2 }}
-                        className="md:hidden overflow-hidden"
-                    >
-                        <div className="pt-4 pb-2 space-y-2">
-                            <Link
-                                href="/knowledge"
-                                onClick={() => setIsOpen(false)}
-                                className="flex items-center gap-3 px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-neon-blue dark:hover:border-neon-blue transition-all bg-white/50 dark:bg-midnight/50"
-                            >
-                                <BookOpen className="w-5 h-5 text-neon-blue" />
-                                <span className="font-medium text-gray-700 dark:text-gray-300">Knowledge</span>
-                            </Link>
-
-                            <Link
-                                href="/ai-fy"
-                                onClick={() => setIsOpen(false)}
-                                className="flex items-center gap-3 px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-neon-purple dark:hover:border-neon-purple transition-all bg-white/50 dark:bg-midnight/50"
-                            >
-                                <Bot className="w-5 h-5 text-neon-purple" />
-                                <span className="font-medium text-gray-700 dark:text-gray-300">AI-fy Enterprise</span>
-                            </Link>
-
-                            <Link
-                                href="/curious"
-                                onClick={() => setIsOpen(false)}
-                                className="flex items-center gap-3 px-4 py-3 rounded-xl bg-gradient-to-r from-neon-purple/10 to-neon-blue/10 border border-neon-purple/30 hover:border-neon-purple transition-all"
-                            >
-                                <Sparkles className="w-5 h-5 text-neon-purple" />
-                                <span className="font-medium text-gray-700 dark:text-gray-300">Curious?</span>
-                            </Link>
-                        </div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
-        </nav>
-    );
-};
+      {/* Mobile Menu */}
+      {mobileMenuOpen && (
+        <div className="absolute top-[90px] left-4 right-4 glass rounded-2xl p-6 lg:hidden flex flex-col gap-2 animate-in fade-in slide-in-from-top-4 border border-white/10 shadow-2xl">
+          {navLinks.map((link) => (
+            <Link 
+              key={link.label}
+              href={link.href} 
+              onClick={() => setMobileMenuOpen(false)} 
+              className={`text-base font-medium p-3 rounded-xl transition-colors ${
+                pathname === link.href ? 'bg-white/10 text-white' : 'text-cool-gray-300 hover:text-white hover:bg-white/5'
+              }`}
+            >
+              {link.label}
+            </Link>
+          ))}
+          <div className="h-px bg-white/10 w-full my-2" />
+          <Link 
+            href="https://calendly.com/manojkurapati96/30min" 
+            target="_blank" rel="noopener noreferrer"
+            onClick={() => setMobileMenuOpen(false)} 
+            className="bg-neon-cyan/10 border border-neon-cyan text-neon-cyan px-6 py-3 rounded-xl text-center font-semibold mt-2"
+          >
+            Contact Us
+          </Link>
+        </div>
+      )}
+    </nav>
+  );
+}
