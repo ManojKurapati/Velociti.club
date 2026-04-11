@@ -1,32 +1,33 @@
 import { EnterprisePillars } from "@/components/EnterprisePillars";
 import { RoiCalculator } from "@/components/RoiCalculator";
+import { TestimonialQuote } from "@/components/TestimonialQuote";
 import { ArrowRight } from "lucide-react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Enterprise AI Solutions | Velociti",
+  title: "Enterprise AI Solutions | Voice Agents, RAG & Autonomous Workflows | Velociti",
   description: "Deploy autonomous systems in weeks, not years. Explore Voice Agents, RAG, and Workflow Automation tailored for Healthcare, Finance, and Logistics.",
 };
 
 export default function EnterprisePage() {
   return (
-    <main className="min-h-screen pt-32 pb-20 bg-obsidian">
+    <main className="min-h-screen pt-40 pb-32 bg-obsidian">
       {/* Enterprise Hero */}
-      <section className="max-w-7xl mx-auto px-6 mb-24 text-center">
-        <h1 className="text-5xl md:text-7xl font-display font-medium text-white tracking-tight mb-6 mt-12">
+      <section className="max-w-7xl mx-auto px-6 mb-32 text-center">
+        <h1 className="text-6xl md:text-8xl font-display font-medium text-white tracking-tight mb-8 mt-12">
           AI-fy Your Enterprise <br className="hidden md:block" />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-violet">
             Deploy in weeks, not years.
           </span>
         </h1>
-        <p className="text-xl text-cool-gray-400 max-w-2xl mx-auto mb-10">
+        <p className="text-2xl text-cool-gray-400 max-w-3xl mx-auto mb-12 font-light">
           Transform legacy workflows into intelligent, autonomous systems. Stop playing with ChatGPT wrappers and start building structural moats.
         </p>
-        <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <a href="#roi" className="btn-glow inline-flex border border-white/20 bg-white/5 items-center justify-center gap-2 px-8 py-4 rounded-xl font-medium text-white hover:bg-white/10 transition-colors">
+        <div className="flex flex-col sm:flex-row justify-center gap-6">
+          <a href="#roi" className="btn-glow inline-flex border border-white/20 bg-white/5 items-center justify-center gap-2 px-10 py-5 rounded-2xl font-medium text-white hover:bg-white/10 transition-colors text-lg">
             Calculate ROI
           </a>
-          <a href="https://calendly.com/manojkurapati96/30min" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-medium text-black bg-white hover:bg-neon-cyan transition-colors">
+          <a href="https://calendly.com/manojkurapati96/30min" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-10 py-5 rounded-2xl font-medium text-black bg-white hover:bg-neon-cyan transition-colors text-lg shadow-[0_0_20px_rgba(255,255,255,0.2)]">
             Book Executive Briefing <ArrowRight className="w-5 h-5" />
           </a>
         </div>
@@ -35,15 +36,15 @@ export default function EnterprisePage() {
       <EnterprisePillars />
       
       {/* Proven Deployments Section (Case Studies) */}
-      <section className="py-24 bg-black border-t border-white/5">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-display font-medium text-white mb-4">Proven Deployments</h2>
-            <p className="text-cool-gray-400">Real integration metrics across highly regulated industries.</p>
+      <section className="py-32 bg-black border-y border-white/5 relative z-10 box-shadow-[0_-50px_100px_rgba(0,0,0,0.5)]">
+        <div className="max-w-7xl mx-auto px-6 relative z-20">
+          <div className="text-center mb-20 fade-in-section">
+            <h2 className="text-4xl md:text-5xl font-display font-medium text-white mb-6">Proven Deployments</h2>
+            <p className="text-xl font-light text-cool-gray-400">Real integration metrics across highly regulated industries.</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white/5 border border-white/10 p-8 rounded-3xl backdrop-blur-sm">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div className="glass-card card-hover p-10 rounded-[2rem] backdrop-blur-md">
               <div className="text-neon-cyan text-sm font-bold tracking-widest uppercase mb-4">Fintech • Series C</div>
               <h3 className="text-2xl font-medium text-white mb-4">Autonomous Loan Underwriting</h3>
               <div className="grid grid-cols-2 gap-6 mb-6 pt-6 border-t border-white/10">
@@ -59,7 +60,7 @@ export default function EnterprisePage() {
               <p className="text-cool-gray-400 text-sm">Agents successfully reason over W-2s, paystubs, and bank logic to autonomously pre-approve 80% of applicants.</p>
             </div>
             
-            <div className="bg-white/5 border border-white/10 p-8 rounded-3xl backdrop-blur-sm">
+            <div className="glass-card card-hover p-10 rounded-[2rem] backdrop-blur-md">
               <div className="text-neon-violet text-sm font-bold tracking-widest uppercase mb-4">Logistics • Enterprise</div>
               <h3 className="text-2xl font-medium text-white mb-4">Voice-Native Routing Control</h3>
               <div className="grid grid-cols-2 gap-6 mb-6 pt-6 border-t border-white/10">
@@ -78,6 +79,13 @@ export default function EnterprisePage() {
         </div>
       </section>
 
+      <TestimonialQuote 
+        quote="The Voice-Native Routing Control deployed by Velociti fundamentally changed our cost structure. We're scaling 5x without adding headcount."
+        author="David Chen"
+        role="VP Operations, Nexus Global"
+        metric="5x"
+        metricLabel="Scalability Matrix"
+      />
       <RoiCalculator />
       
     </main>

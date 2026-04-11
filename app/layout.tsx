@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Outfit, Inter } from "next/font/google";
+import { Inter } from "next/font/google";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { CustomCursor } from "@/components/CustomCursor";
 import { Navbar } from "@/components/Navbar";
@@ -12,12 +12,6 @@ import { ExitIntentPopup } from "@/components/ExitIntentPopup";
 import { AskVelocitiWidget } from "@/components/AskVelocitiWidget";
 import Script from "next/script";
 import "./globals.css";
-
-const outfit = Outfit({
-  subsets: ["latin"],
-  variable: "--font-outfit",
-  display: "swap"
-});
 
 const inter = Inter({
   subsets: ["latin"],
@@ -78,13 +72,14 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400,300&display=swap" rel="stylesheet" />
         <Script
           id="organization-jsonld"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${outfit.variable} ${inter.variable} font-sans antialiased bg-background text-foreground tracking-tight selection:bg-neon-cyan selection:text-black overflow-x-hidden`}>
+      <body className={`${inter.variable} font-sans antialiased bg-background text-foreground tracking-tight selection:bg-neon-cyan selection:text-black overflow-x-hidden`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <GlobalCtaBar />
           <AnimatedBackground />

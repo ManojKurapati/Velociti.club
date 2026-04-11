@@ -74,7 +74,7 @@ export function JourneySection() {
                 </div>
                 <div className="w-1/2">
                   <div className="glass-card p-10 rounded-3xl h-80 flex flex-col justify-between border-neon-cyan/20">
-                    <div className="text-3xl font-display font-light text-white/50">&quot;Where do we start?&quot;</div>
+                    <div className="text-3xl font-display font-light text-white/50">"Where do we start?"</div>
                     <div className="space-y-4">
                       <div className="h-2 w-full bg-white/10 rounded-full overflow-hidden">
                         <div className="h-full w-1/4 bg-neon-cyan shadow-[0_0_10px_#00f0ff]"></div>

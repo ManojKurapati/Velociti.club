@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { Link2, Shield, ShieldCheck } from "lucide-react";
+import { Link2, Cpu, ShieldCheck } from "lucide-react";
 
 export function PlatformSection() {
   const container = useRef<HTMLDivElement>(null);
@@ -54,19 +54,19 @@ export function PlatformSection() {
             <div className="w-14 h-14 rounded-full bg-neon-cyan/10 border border-neon-cyan/30 flex items-center justify-center mb-6 text-neon-cyan hover:shadow-[0_0_20px_rgba(0,240,255,0.5)] transition-shadow">
               <Link2 size={24} />
             </div>
-            <h3 className="text-2xl font-bold text-white mb-4">Complete Autonomy</h3>
-            <p className="text-gray-400 leading-relaxed">
-              Move beyond simple chatbots. Our intelligent agents handle multi-step workflows, make logical decisions, and execute tasks across your tech stack securely without requiring hand-holding.
+            <h3 className="text-xl font-bold font-display mb-3">Rapid Integration</h3>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              Securely connect AI agents to your existing ERP, CRM, and custom databases in days, not quarters. No ripping and replacing required.
             </p>
           </div>
           
-          <div className="glass-card p-10 rounded-3xl border-neon-pink/20 hover:-translate-y-2 transition-transform duration-500 platform-card opacity-0">
-            <div className="w-14 h-14 rounded-full bg-neon-pink/10 border border-neon-pink/30 flex items-center justify-center mb-6 text-neon-pink">
-              <Shield size={24} />
+          <div className="glass-card p-8 rounded-3xl card-hover interactive floating-delayed platform-card">
+            <div className="w-14 h-14 rounded-full bg-neon-pink/10 border border-neon-pink/30 flex items-center justify-center mb-6 text-neon-pink hover:shadow-[0_0_20px_rgba(255,0,170,0.5)] transition-shadow">
+              <Cpu size={24} />
             </div>
-            <h3 className="text-2xl font-bold text-white mb-4">Enterprise Grade</h3>
-            <p className="text-gray-400 leading-relaxed">
-              Security isn&apos;t an afterthought. Velociti orchestration relies on decoupled, containerized agents interacting through strict granular permission thresholds.
+            <h3 className="text-xl font-bold font-display mb-3">Autonomous Execution</h3>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              Deploy specialized AI agents that execute complex, multi-step processes autonomously. They reason, take action, and report back.
             </p>
           </div>
 

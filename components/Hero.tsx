@@ -7,14 +7,20 @@ import { ArrowRight, Play } from "lucide-react";
 export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-32 pb-20 overflow-hidden">
-      <div className="absolute inset-0 z-0">
-        {/* Abstract neural loop render representation via CSS */}
-        <div className="absolute top-[30%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-white/5 rounded-full blur-[2px] opacity-30 animate-[spin_40s_linear_infinite]" />
-        <div className="absolute top-[40%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-neon-cyan/20 rounded-full blur-[1px] opacity-40 animate-[spin_30s_linear_infinite_reverse]" />
-        <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] border border-neon-violet/30 rounded-full blur-[4px] opacity-50 animate-[spin_20s_linear_infinite]" />
-        
-        {/* Core glowing orb */}
-        <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-white rounded-full blur-[80px] opacity-20" />
+      {/* Background Video */}
+      <div className="absolute inset-0 z-0 bg-black">
+        <video 
+          className="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-screen"
+          autoPlay 
+          loop 
+          muted 
+          playsInline 
+          src="/showreel.mp4" 
+        />
+        {/* Core glowing orb fallback/overlay */}
+        <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-neon-cyan/20 rounded-full blur-[120px] mix-blend-screen pointer-events-none" />
+        {/* Velocity Grid Overlay */}
+        <div className="absolute inset-0 grid-bg opacity-30 animate-scroll pointer-events-none" />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10 text-center flex flex-col items-center">
@@ -33,9 +39,9 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="text-5xl md:text-7xl lg:text-8xl font-display font-medium text-white tracking-tighter leading-[1.1] mb-6 max-w-5xl"
+          className="text-6xl md:text-8xl lg:text-9xl font-display font-medium text-white tracking-tighter leading-[1.05] mb-8 max-w-6xl"
         >
-          The Autonomous Loop<span className="text-neon-cyan align-super text-2xl lg:text-4xl">&trade;</span>
+          The Autonomous Loop<span className="text-neon-cyan align-super text-3xl lg:text-5xl">&trade;</span>
           <br className="hidden md:block" />
           Intelligence, Autonomy, <span className="italic font-light text-cool-gray-400">Execution.</span>
         </motion.h1>
@@ -44,9 +50,9 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-          className="text-lg md:text-xl text-cool-gray-400 max-w-2xl mb-12 font-medium leading-relaxed"
+          className="text-xl md:text-2xl text-cool-gray-400 max-w-3xl mb-16 font-light leading-relaxed"
         >
-          We don&apos;t build AI. We deploy enterprise-grade autonomous systems that win funding and market leadership.
+          We deploy enterprise-grade autonomous systems that drive market leadership.
         </motion.p>
 
         <motion.div 

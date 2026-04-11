@@ -12,7 +12,7 @@
   --color-cool-gray-900: #111827;
   
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Satoshi', ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer base {
@@ -26,6 +26,10 @@
   }
 }
 
+html {
+  font-size: 16px;
+}
+
 body {
   background-color: var(--background);
   color: var(--foreground);
@@ -33,6 +37,10 @@ body {
 }
 
 @media (min-width: 1024px) {
+  html {
+    font-size: 18px; /* Added for improved desktop whitespace / typography layout */
+  }
+  
   body {
     cursor: none;
     background-color: var(--background);
@@ -46,10 +54,10 @@ body {
 /* Glass Panel Utilities */
 .glass {
   background: rgba(10, 10, 15, 0.4);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .glass-card {
@@ -149,4 +157,13 @@ html.lenis {
 
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-50% - 1rem)); } /* -50% to move half the container */
+}
+
+.animate-scroll {
+  animation: scroll 40s linear infinite;
 }

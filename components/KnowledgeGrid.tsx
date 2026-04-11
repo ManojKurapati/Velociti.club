@@ -40,31 +40,56 @@ const articles = [
 ];
 
 export function KnowledgeGrid() {
-  const [filter, setFilter] = useState("All");
+  const [techFilter, setTechFilter] = useState("All Tech");
+  const [industryFilter, setIndustryFilter] = useState("All Industries");
+  const [downloadState, setDownloadState] = useState(false);
 
-  const categories = ["All", "Voice", "RAG", "Workflow", "Strategy"];
+  const categories = ["All Tech", "Voice", "RAG", "Workflow", "Strategy"];
+  const industries = ["All Industries", "Logistics", "Technology", "Healthcare", "All"];
 
-  const filteredArticles = filter === "All" ? articles : articles.filter(a => a.category === filter);
+  const filteredArticles = articles.filter(a => {
+    const matchTech = techFilter === "All Tech" || a.category === techFilter;
+    const matchIndustry = industryFilter === "All Industries" || a.industry === industryFilter;
+    return matchTech && matchIndustry;
+  });
 
   return (
     <section className="py-20 relative">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Filters */}
-        <div className="flex flex-wrap gap-3 mb-12">
-          {categories.map(cat => (
-            <button 
-              key={cat}
-              onClick={() => setFilter(cat)}
-              className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all ${
-                filter === cat 
-                  ? 'bg-white text-black shadow-[0_0_15px_rgba(255,255,255,0.3)]' 
-                  : 'bg-white/5 text-cool-gray-400 border border-white/10 hover:border-white/30 hover:text-white'
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
+        <div className="flex flex-col md:flex-row gap-6 mb-12">
+          <div className="flex flex-wrap gap-3">
+            {categories.map(cat => (
+              <button 
+                key={cat}
+                onClick={() => setTechFilter(cat)}
+                className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all ${
+                  techFilter === cat 
+                    ? 'bg-neon-cyan text-black shadow-[0_0_15px_rgba(0,240,255,0.3)]' 
+                    : 'bg-white/5 text-cool-gray-400 border border-white/10 hover:border-white/30 hover:text-white'
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+          <div className="md:w-px h-px md:h-auto w-full bg-white/10" />
+          <div className="flex flex-wrap gap-3">
+            {industries.map(ind => (
+              <button 
+                key={ind}
+                onClick={() => setIndustryFilter(ind)}
+                className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all ${
+                  industryFilter === ind 
+                    ? 'bg-neon-violet text-white shadow-[0_0_15px_rgba(157,78,221,0.3)]' 
+                    : 'bg-white/5 text-cool-gray-400 border border-white/10 hover:border-white/30 hover:text-white'
+                }`}
+              >
+                {ind}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Grid */}
@@ -133,18 +158,54 @@ export function KnowledgeGrid() {
             </p>
           </div>
           
-          <div className="w-full md:w-auto relative z-10">
-            <form className="flex flex-col gap-3 min-w-[300px]" action="/api/submit">
-              <input 
-                type="email" 
-                placeholder="CEO / Executive Email" 
-                required
-                className="w-full bg-black/50 backdrop-blur-md border border-white/20 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-neon-cyan"
-              />
-              <button className="w-full bg-white text-black font-semibold py-4 rounded-xl flex items-center justify-center gap-2 hover:bg-neon-cyan transition-colors shadow-[0_0_20px_rgba(255,255,255,0.2)]">
-                <Download className="w-5 h-5" /> Download Playbook
-              </button>
-            </form>
+          <div className="w-full md:w-auto relative z-10 flex-1 max-w-sm">
+            {!downloadState ? (
+              <form 
+                className="flex flex-col gap-3 w-full"
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  setDownloadState(true);
+                }}
+              >
+                <input 
+                  type="text" 
+                  placeholder="Full Name" 
+                  required
+                  className="w-full bg-black/50 backdrop-blur-md border border-white/20 rounded-xl px-5 py-3 text-sm text-white focus:outline-none focus:border-neon-cyan"
+                />
+                <input 
+                  type="email" 
+                  placeholder="Work Email" 
+                  required
+                  className="w-full bg-black/50 backdrop-blur-md border border-white/20 rounded-xl px-5 py-3 text-sm text-white focus:outline-none focus:border-neon-cyan"
+                />
+                <select 
+                  required
+                  defaultValue=""
+                  className="w-full bg-black/50 backdrop-blur-md border border-white/20 rounded-xl px-4 py-3 text-sm text-cool-gray-300 focus:outline-none focus:border-neon-cyan appearance-none"
+                >
+                  <option value="" disabled>Company Size</option>
+                  <option value="1-50">1-50 employees</option>
+                  <option value="51-200">51-200 employees</option>
+                  <option value="201-1000">201-1000 employees</option>
+                  <option value="1000+">1000+ employees</option>
+                </select>
+                <button type="submit" className="mt-2 w-full bg-white text-black font-semibold py-3 rounded-xl flex items-center justify-center gap-2 hover:bg-neon-cyan transition-colors shadow-[0_0_20px_rgba(255,255,255,0.2)]">
+                  <Download className="w-4 h-4" /> Unlock Playbook
+                </button>
+              </form>
+            ) : (
+              <div className="flex flex-col items-center justify-center bg-black/40 backdrop-blur-md border border-neon-cyan/50 rounded-xl p-8 text-center h-full min-h-[240px]">
+                <div className="w-12 h-12 rounded-full bg-neon-cyan/20 text-neon-cyan flex items-center justify-center mb-4">
+                  <Download className="w-6 h-6" />
+                </div>
+                <h3 className="text-white font-medium mb-2">Playbook Unlocked</h3>
+                <p className="text-cool-gray-400 text-sm mb-4">Your PDF is ready for download.</p>
+                <a href="#" className="text-sm font-semibold text-black bg-neon-cyan px-6 py-2 rounded-full hover:bg-white transition-colors">
+                  Download PDF
+                </a>
+              </div>
+            )}
           </div>
         </div>
 
