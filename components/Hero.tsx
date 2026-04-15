@@ -1,10 +1,14 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Play } from "lucide-react";
+import { VideoModal } from "./VideoModal";
 
 export function Hero() {
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
+  
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-32 pb-20 overflow-hidden">
       {/* Background Video */}
@@ -32,7 +36,7 @@ export function Hero() {
           className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-neon-cyan/30 bg-neon-cyan/5 text-neon-cyan text-xs font-semibold uppercase tracking-widest mb-8 backdrop-blur-md"
         >
           <span className="w-2 h-2 rounded-full bg-neon-cyan animate-pulse" />
-          The next era of enterprise
+          The apex of enterprise engineering
         </motion.div>
 
         <motion.h1 
@@ -41,9 +45,9 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           className="text-6xl md:text-8xl lg:text-9xl font-display font-medium text-white tracking-tighter leading-[1.05] mb-8 max-w-6xl"
         >
-          The Autonomous Loop<span className="text-neon-cyan align-super text-3xl lg:text-5xl">&trade;</span>
+          The Autonomous Enterprise.
           <br className="hidden md:block" />
-          Intelligence, Autonomy, <span className="italic font-light text-cool-gray-400">Execution.</span>
+          Intelligence that <span className="italic font-light text-cool-gray-400">executes.</span>
         </motion.h1>
 
         <motion.p 
@@ -52,7 +56,7 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           className="text-xl md:text-2xl text-cool-gray-400 max-w-3xl mb-16 font-light leading-relaxed"
         >
-          We deploy enterprise-grade autonomous systems that drive market leadership.
+          We architect enterprise-grade autonomous systems that transmute operational friction into undeniable market dominance.
         </motion.p>
 
         <motion.div 
@@ -65,16 +69,17 @@ export function Hero() {
             href="https://calendly.com/manojkurapati96/30min" target="_blank" rel="noopener noreferrer"
             className="group relative flex items-center justify-center gap-2 bg-white text-black px-8 py-4 rounded-xl font-semibold text-lg hover:bg-neon-cyan transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:shadow-[0_0_30px_rgba(0,240,255,0.4)]"
           >
-            Start Your Velocity Assessment
+            Start Your Velociti Assessment
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Link>
-          <button className="flex items-center justify-center gap-2 bg-white/5 border border-white/10 text-white px-8 py-4 rounded-xl font-medium text-lg hover:bg-white/10 transition-colors backdrop-blur-md">
+          <button onClick={() => setIsVideoOpen(true)} className="flex items-center justify-center gap-2 bg-white/5 border border-white/10 text-white px-8 py-4 rounded-xl font-medium text-lg hover:bg-white/10 transition-colors backdrop-blur-md">
             <Play className="w-5 h-5" />
             Watch Showreel
           </button>
         </motion.div>
         
       </div>
+      <VideoModal isOpen={isVideoOpen} onClose={() => setIsVideoOpen(false)} />
     </section>
   );
 }

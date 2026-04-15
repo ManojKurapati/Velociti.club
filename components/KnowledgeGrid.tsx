@@ -162,24 +162,38 @@ export function KnowledgeGrid() {
             {!downloadState ? (
               <form 
                 className="flex flex-col gap-3 w-full"
-                onSubmit={(e) => {
+                onSubmit={async (e) => {
                   e.preventDefault();
+                  const formData = new FormData(e.target as HTMLFormElement);
+                  formData.append("Form", "Knowledge Playbook");
+                  try {
+                    await fetch("https://script.google.com/macros/s/AKfycbwSDNTxl5vXT52KCx5Jh6xFRcYkvrAK9nZbCE6VoZ5Y2S_TapBvXTd9bkgmuAd0pSAcNA/exec", {
+                      method: "POST",
+                      body: formData,
+                      mode: "no-cors"
+                    });
+                  } catch (err) {
+                    console.error(err);
+                  }
                   setDownloadState(true);
                 }}
               >
                 <input 
+                  name="fullName"
                   type="text" 
                   placeholder="Full Name" 
                   required
                   className="w-full bg-black/50 backdrop-blur-md border border-white/20 rounded-xl px-5 py-3 text-sm text-white focus:outline-none focus:border-neon-cyan"
                 />
                 <input 
+                  name="workEmail"
                   type="email" 
                   placeholder="Work Email" 
                   required
                   className="w-full bg-black/50 backdrop-blur-md border border-white/20 rounded-xl px-5 py-3 text-sm text-white focus:outline-none focus:border-neon-cyan"
                 />
                 <select 
+                  name="companySize"
                   required
                   defaultValue=""
                   className="w-full bg-black/50 backdrop-blur-md border border-white/20 rounded-xl px-4 py-3 text-sm text-cool-gray-300 focus:outline-none focus:border-neon-cyan appearance-none"
@@ -201,7 +215,7 @@ export function KnowledgeGrid() {
                 </div>
                 <h3 className="text-white font-medium mb-2">Playbook Unlocked</h3>
                 <p className="text-cool-gray-400 text-sm mb-4">Your PDF is ready for download.</p>
-                <a href="#" className="text-sm font-semibold text-black bg-neon-cyan px-6 py-2 rounded-full hover:bg-white transition-colors">
+                <a href="#playbook" onClick={(e) => { e.preventDefault(); alert("Playbook download complete."); }} className="text-sm font-semibold text-black bg-neon-cyan px-6 py-2 rounded-full hover:bg-white transition-colors">
                   Download PDF
                 </a>
               </div>

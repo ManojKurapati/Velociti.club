@@ -41,7 +41,7 @@ export function Navbar() {
         
         <div className="z-10 flex items-center gap-4">
           <ThemeToggle />
-          <Link href="#contact" className="btn-glow border border-neon-cyan text-neon-cyan px-6 py-2 rounded-full font-medium text-sm hidden md:inline-block interactive backdrop-blur-md">
+          <Link href="https://calendly.com/manojkurapati96/30min" target="_blank" rel="noopener noreferrer" className="btn-glow border border-neon-cyan text-neon-cyan px-6 py-2 rounded-full font-medium text-sm hidden md:inline-block interactive backdrop-blur-md">
             AI-fy Now
           </Link>
           <button 
@@ -67,7 +67,7 @@ export function Navbar() {
               {item.label}
             </Link>
           ))}
-          <Link href="#contact" onClick={() => setMobileMenuOpen(false)} className="bg-white text-black px-6 py-3 rounded-full text-center font-semibold mt-4">
+          <Link href="https://calendly.com/manojkurapati96/30min" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)} className="bg-white text-black px-6 py-3 rounded-full text-center font-semibold mt-4">
             AI-fy Now
           </Link>
         </div>

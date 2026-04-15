@@ -38,9 +38,9 @@ const pillars = [
     color: "from-white to-gray-500",
     useCases: {
       all: "Autonomous agents executing multi-step repetitive software processes.",
-      healthcare: "Automated medical billing and insurance claim generation.",
-      finance: "End-to-end autonomous loan origination and risk scoring.",
-      logistics: "Dynamic autonomous route optimization under changing conditions."
+      healthcare: "Automated medical billing and insurance claim generation logic.",
+      finance: "End-to-end autonomous loan origination and risk scoring matrices.",
+      logistics: "Dynamic autonomous route optimization under volatile conditions."
     }
   }
 ];

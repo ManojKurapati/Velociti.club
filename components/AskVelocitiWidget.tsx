@@ -11,13 +11,28 @@ export function AskVelocitiWidget() {
   ]);
   const [input, setInput] = useState('');
 
-  const handleSend = (e: React.FormEvent) => {
+  const handleSend = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!input.trim()) return;
     
     setMessages(prev => [...prev, { role: 'user', content: input }]);
+    const currentInput = input;
     setInput('');
     
+    const formData = new FormData();
+    formData.append("Form", "Ask Velociti");
+    formData.append("Question", currentInput);
+    
+    try {
+      await fetch("https://script.google.com/macros/s/AKfycbwSDNTxl5vXT52KCx5Jh6xFRcYkvrAK9nZbCE6VoZ5Y2S_TapBvXTd9bkgmuAd0pSAcNA/exec", {
+        method: "POST",
+        body: formData,
+        mode: "no-cors"
+      });
+    } catch(err) {
+      console.error(err);
+    }
+
     // Simulate AI typing delay
     setTimeout(() => {
       setMessages(prev => [...prev, { 

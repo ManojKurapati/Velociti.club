@@ -61,7 +61,7 @@ export function KnowledgeContent() {
   const downloads = [
     { title: "2026 Enterprise AI Readiness Checklist", type: "PDF" },
     { title: "The Compliance Guide to Secure LLMs", type: "eBook" },
-    { title: "Velocity Workflows Technical Blueprint", type: "Whitepaper" }
+    { title: "Velociti Workflows Technical Blueprint", type: "Whitepaper" }
   ];
 
   return (

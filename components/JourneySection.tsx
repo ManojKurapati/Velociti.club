@@ -121,7 +121,7 @@ export function JourneySection() {
                   <div className="glass-card p-10 rounded-3xl h-80 relative overflow-hidden group border-neon-purple/20">
                     <div className="absolute inset-0 bg-gradient-to-br from-neon-purple/20 to-neon-cyan/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                     <div className="flex flex-col h-full justify-between relative z-10">
-                      <div className="font-display text-2xl font-bold">Enterprise Velocity: <span className="text-neon-cyan">Maximized</span></div>
+                      <div className="font-display text-2xl font-bold">Enterprise Velociti: <span className="text-neon-cyan">Maximized</span></div>
                       <div className="flex items-end gap-2 h-32 w-full">
                         <div className="w-1/5 bg-white/10 rounded-t-sm h-1/4 transition-all duration-1000 group-hover:h-2/4"></div>
                         <div className="w-1/5 bg-white/20 rounded-t-sm h-2/4 transition-all duration-1000 group-hover:h-3/4"></div>

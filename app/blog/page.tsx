@@ -31,7 +31,7 @@ export default function BlogPage() {
     <main className="min-h-screen pt-40 pb-32 bg-obsidian">
       <section className="max-w-4xl mx-auto px-6 mb-20 text-center">
         <h1 className="text-5xl md:text-7xl font-display font-medium text-white tracking-tight mb-8">
-          The Velocity <span className="text-neon-cyan">Insights</span>
+          The Velociti <span className="text-neon-cyan">Insights</span>
         </h1>
         <p className="text-xl text-cool-gray-400">
           Executive briefings and deep dives into the autonomous loop.

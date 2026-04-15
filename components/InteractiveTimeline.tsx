@@ -7,20 +7,20 @@ const timelineData = [
   {
     phase: "01",
     title: "Diagnostic & Strategy",
-    description: "Deep-dive analysis of your legacy workflows. Identifying the highest leverage points for AI automation.",
-    caseStudy: "Identified $2.4M in potential savings for a Series D logistics firm within 48 hours."
+    description: "Deep-dive structural analysis of legacy workflows. Pinpointing the highest leverage automation vectors.",
+    caseStudy: "Identified $2.4M in operational friction for a Series D logistics firm within 48 hours."
   },
   {
     phase: "02",
     title: "Autonomous Architecture",
-    description: "Designing the neural backbone. Connecting secure LLMs to your private data lakes via RAG.",
-    caseStudy: "Architected a HIPAA-compliant voice routing system for a 500+ staff medical network."
+    description: "Designing the neural backbone. Interlocking secure LLMs to private enterprise data lakes via vector retrieval.",
+    caseStudy: "Architected a HIPAA-compliant autonomous voice routing system for a 500+ staff network."
   },
   {
     phase: "03",
     title: "Deployment & Scaling",
-    description: "Rolling out the agents. Transitioning from human-in-the-loop to full autonomous execution.",
-    caseStudy: "Deployed 15 concurrent sales agents handling 10k+ outbound calls daily, 24/7."
+    description: "Flipping the switch. Transitioning from human-in-the-loop to full autonomous structural logic.",
+    caseStudy: "Deployed 15 concurrent agentic nodes handling 10k+ outbound negotiations daily, 24/7."
   }
 ];
 

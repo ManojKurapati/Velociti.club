@@ -7,14 +7,25 @@ export function ClubApplicationForm() {
   const [step, setStep] = useState(1);
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (step < 3) {
       setStep(step + 1);
     } else {
-      setTimeout(() => {
+      const formData = new FormData(e.target as HTMLFormElement);
+      formData.append("Form", "Club Application");
+
+      try {
+        await fetch("https://script.google.com/macros/s/AKfycbwSDNTxl5vXT52KCx5Jh6xFRcYkvrAK9nZbCE6VoZ5Y2S_TapBvXTd9bkgmuAd0pSAcNA/exec", {
+          method: "POST",
+          body: formData,
+          mode: "no-cors",
+        });
         setSubmitted(true);
-      }, 1000);
+      } catch (err) {
+        console.error(err);
+        setSubmitted(true);
+      }
     }
   };
 
@@ -64,16 +75,16 @@ export function ClubApplicationForm() {
                   <div className="grid grid-cols-2 gap-6">
                     <div>
                       <label className="block text-sm text-cool-gray-400 mb-2">First Name *</label>
-                      <input required type="text" className="w-full bg-transparent border-b border-white/20 focus:border-neon-cyan pb-2 text-white outline-none transition-colors" />
+                      <input name="firstName" required type="text" className="w-full bg-transparent border-b border-white/20 focus:border-neon-cyan pb-2 text-white outline-none transition-colors" />
                     </div>
                     <div>
                       <label className="block text-sm text-cool-gray-400 mb-2">Last Name *</label>
-                      <input required type="text" className="w-full bg-transparent border-b border-white/20 focus:border-neon-cyan pb-2 text-white outline-none transition-colors" />
+                      <input name="lastName" required type="text" className="w-full bg-transparent border-b border-white/20 focus:border-neon-cyan pb-2 text-white outline-none transition-colors" />
                     </div>
                   </div>
                   <div>
                     <label className="block text-sm text-cool-gray-400 mb-2">Work Email *</label>
-                    <input required type="email" className="w-full bg-transparent border-b border-white/20 focus:border-neon-cyan pb-2 text-white outline-none transition-colors" />
+                    <input name="workEmail" required type="email" className="w-full bg-transparent border-b border-white/20 focus:border-neon-cyan pb-2 text-white outline-none transition-colors" />
                   </div>
                 </div>
               )}
@@ -97,7 +108,7 @@ export function ClubApplicationForm() {
                   </div>
                   <div>
                     <label className="block text-sm text-cool-gray-400 mb-2">LinkedIn Profile URL *</label>
-                    <input required type="url" className="w-full bg-transparent border-b border-white/20 focus:border-neon-cyan pb-2 text-white outline-none transition-colors" placeholder="https://linkedin.com/in/..." />
+                    <input name="linkedinUrl" required type="url" className="w-full bg-transparent border-b border-white/20 focus:border-neon-cyan pb-2 text-white outline-none transition-colors" placeholder="https://linkedin.com/in/..." />
                   </div>
                 </div>
               )}
@@ -108,7 +119,7 @@ export function ClubApplicationForm() {
                   <h3 className="text-2xl text-white font-medium mb-6">Why velocity?</h3>
                   <div>
                     <label className="block text-sm text-cool-gray-400 mb-2">Describe the core bottleneck you are trying to solve with an autonomous system. (Be specific) *</label>
-                    <textarea required rows={4} className="w-full bg-white/5 border border-white/20 rounded-xl p-4 text-white hover:border-white/50 focus:border-neon-cyan outline-none transition-colors resize-none" placeholder="We are spending $2M/yr on manual data entry for compliance..."></textarea>
+                    <textarea name="bottleneck" required rows={4} className="w-full bg-white/5 border border-white/20 rounded-xl p-4 text-white hover:border-white/50 focus:border-neon-cyan outline-none transition-colors resize-none" placeholder="We are spending $2M/yr on manual data entry for compliance..."></textarea>
                   </div>
                 </div>
               )}

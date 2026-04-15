@@ -14,11 +14,11 @@ export function TheClubTeaser() {
         </div>
         
         <h2 className="text-5xl md:text-7xl font-display font-medium text-white mb-6 tracking-tight">
-          The Velocity <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-violet to-neon-cyan">Club</span>
+          The Velociti <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-violet to-neon-cyan">Club</span>
         </h2>
         
         <p className="text-xl text-cool-gray-400 mb-12 max-w-2xl mx-auto">
-          Where ambition meets execution. Join a private syndicate of founders, enterprise leaders, and elite engineers building the autonomous future.
+          Where pure ambition meets autonomous execution. Join an exclusive nexus of founders, enterprise architects, and elite engineers defining the autonomous future.
         </p>
         
         <Link 

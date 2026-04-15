@@ -42,16 +42,36 @@ export function ExitIntentPopup() {
           The autonomous enterprise is arriving faster than you think. Download our exclusive 2026 Playbook and see exactly how competitors are deploying AI agents.
         </p>
         
-        <form className="flex flex-col gap-3" action="/api/submit">
-          <input 
-            type="email" 
-            placeholder="Work email address" 
-            className="w-full bg-black border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-neon-cyan/50"
-          />
-          <button type="submit" className="w-full bg-white text-black font-semibold py-3 rounded-xl hover:bg-neon-cyan hover:shadow-[0_0_20px_rgba(0,240,255,0.4)] transition-all">
-            Send me the Playbook
-          </button>
-        </form>
+          <form 
+            className="flex flex-col gap-3" 
+            onSubmit={async (e) => {
+              e.preventDefault();
+              const formData = new FormData(e.target as HTMLFormElement);
+              formData.append("Form", "Exit Intent");
+              try {
+                await fetch("https://script.google.com/macros/s/AKfycbwSDNTxl5vXT52KCx5Jh6xFRcYkvrAK9nZbCE6VoZ5Y2S_TapBvXTd9bkgmuAd0pSAcNA/exec", {
+                  method: "POST",
+                  body: formData,
+                  mode: "no-cors"
+                });
+                setShow(false);
+              } catch (err) {
+                console.error(err);
+                setShow(false);
+              }
+            }}
+          >
+            <input 
+              name="email"
+              type="email" 
+              required
+              placeholder="Work email address" 
+              className="w-full bg-black border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-neon-cyan/50"
+            />
+            <button type="submit" className="w-full bg-white text-black font-semibold py-3 rounded-xl hover:bg-neon-cyan hover:shadow-[0_0_20px_rgba(0,240,255,0.4)] transition-all">
+              Send me the Playbook
+            </button>
+          </form>
         <p className="text-center text-xs text-cool-gray-600 mt-4">We respect your inbox. No spam ever.</p>
       </div>
     </div>

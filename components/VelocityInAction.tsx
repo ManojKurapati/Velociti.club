@@ -37,10 +37,10 @@ export function VelocityInAction() {
         <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
           <div>
             <h2 className="text-4xl md:text-5xl font-display font-medium tracking-tight text-white mb-4">
-              Velocity in Action
+              Velociti in Action
             </h2>
             <p className="text-cool-gray-400 max-w-xl">
-              We measure success strictly in enterprise exit-velocity and capital efficiency.
+              We measure impact strictly in enterprise exit-velocity and extreme capital efficiency.
             </p>
           </div>
           <a href="/enterprise" className="text-neon-cyan hover:text-white transition-colors border-b border-neon-cyan/30 hover:border-white pb-1 font-medium">

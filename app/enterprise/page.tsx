@@ -15,13 +15,13 @@ export default function EnterprisePage() {
       {/* Enterprise Hero */}
       <section className="max-w-7xl mx-auto px-6 mb-32 text-center">
         <h1 className="text-6xl md:text-8xl font-display font-medium text-white tracking-tight mb-8 mt-12">
-          AI-fy Your Enterprise <br className="hidden md:block" />
+          Enterprise <br className="hidden md:block" />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-violet">
-            Deploy in weeks, not years.
+            Autonomous Logic.
           </span>
         </h1>
         <p className="text-2xl text-cool-gray-400 max-w-3xl mx-auto mb-12 font-light">
-          Transform legacy workflows into intelligent, autonomous systems. Stop playing with ChatGPT wrappers and start building structural moats.
+          Transmute legacy workflows into intelligent, autonomous neural backbones. Stop deploying fragile API wrappers and start architecting permanent structural moats.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-6">
           <a href="#roi" className="btn-glow inline-flex border border-white/20 bg-white/5 items-center justify-center gap-2 px-10 py-5 rounded-2xl font-medium text-white hover:bg-white/10 transition-colors text-lg">

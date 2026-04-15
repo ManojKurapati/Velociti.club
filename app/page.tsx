@@ -7,7 +7,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Velociti | The Autonomous Loop™ – Enterprise AI Agents & Autonomous Systems",
-  description: "We don't build AI. We deploy enterprise-grade autonomous systems that win funding and market leadership.",
+  description: "We don't build AI. We architect enterprise-grade autonomous systems that transmute operational friction into market dominance.",
 };
 
 export default function Home() {

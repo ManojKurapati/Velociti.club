@@ -15,10 +15,23 @@ export function RoiCalculator() {
   const [submitted, setSubmitted] = useState(false);
 
   const onSubmit = async (data: CalculatorForm) => {
-    // Artificial delay to simulate processing Request
-    setTimeout(() => {
+    const formData = new FormData();
+    formData.append("Form", "ROI Calculator");
+    formData.append("Headcount", String(data.headcount));
+    formData.append("AvgSalary", String(data.avgSalary));
+    formData.append("Email", data.email);
+
+    try {
+      await fetch("https://script.google.com/macros/s/AKfycbwSDNTxl5vXT52KCx5Jh6xFRcYkvrAK9nZbCE6VoZ5Y2S_TapBvXTd9bkgmuAd0pSAcNA/exec", {
+        method: "POST",
+        body: formData,
+        mode: "no-cors",
+      });
       setSubmitted(true);
-    }, 1000);
+    } catch (e) {
+      console.error(e);
+      setSubmitted(true); // show success anyway for UX
+    }
   };
 
   return (
@@ -82,7 +95,7 @@ export function RoiCalculator() {
                 <Download className="w-8 h-8" />
               </div>
               <h3 className="text-2xl font-medium text-white mb-2">Report Generated</h3>
-              <p className="text-cool-gray-400">Your custom 6-page ROI analysis has been sent to your inbox.</p>
+              <p className="text-cool-gray-400">Your custom 6-page ROI analysis and architectural blueprint has been securely routed to your inbox.</p>
             </div>
           )}
         </div>
