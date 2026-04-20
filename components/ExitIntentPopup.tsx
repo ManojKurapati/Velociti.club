@@ -23,7 +23,7 @@ export function ExitIntentPopup() {
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-300">
-      <div className="relative w-full max-w-lg bg-obsidian border border-white/10 rounded-3xl p-8 shadow-2xl shadow-neon-cyan/20 animate-in zoom-in-95 duration-500">
+      <div className="relative w-full max-w-lg bg-obsidian border border-white/10 rounded-3xl p-6 sm:p-8 shadow-2xl shadow-neon-cyan/20 animate-in zoom-in-95 duration-500">
         <button 
           onClick={() => setShow(false)}
           className="absolute top-4 right-4 p-2 bg-white/5 hover:bg-white/10 rounded-full transition-colors text-cool-gray-400 hover:text-white"

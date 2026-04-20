@@ -51,7 +51,7 @@ export function AskVelocitiWidget() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="w-[350px] sm:w-[400px] h-[500px] mb-4 bg-obsidian/90 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl flex flex-col overflow-hidden"
+            className="w-[calc(100vw-3rem)] sm:w-[400px] h-[500px] mb-4 bg-obsidian/90 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl flex flex-col overflow-hidden"
           >
             {/* Header */}
             <div className="p-4 border-b border-white/5 flex justify-between items-center bg-white/5">

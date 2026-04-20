@@ -72,7 +72,7 @@ export function ClubApplicationForm() {
               {step === 1 && (
                 <div className="space-y-6 animate-in fade-in slide-in-from-right-8 duration-500">
                   <h3 className="text-2xl text-white font-medium mb-6">Who are you?</h3>
-                  <div className="grid grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-sm text-cool-gray-400 mb-2">First Name *</label>
                       <input name="firstName" required type="text" className="w-full bg-transparent border-b border-white/20 focus:border-neon-cyan pb-2 text-white outline-none transition-colors" />
@@ -95,7 +95,7 @@ export function ClubApplicationForm() {
                   <h3 className="text-2xl text-white font-medium mb-6">What are you building?</h3>
                   <div>
                     <label className="block text-sm text-cool-gray-400 mb-4">You are representing an...</label>
-                    <div className="flex gap-4">
+                    <div className="flex flex-col sm:flex-row gap-4">
                       <label className="flex items-center gap-3 p-4 border border-white/20 rounded-xl cursor-pointer w-full hover:border-white/50 bg-white/5 has-[:checked]:border-neon-cyan has-[:checked]:bg-neon-cyan/5 transition-all">
                         <input type="radio" name="orgType" className="accent-neon-cyan w-4 h-4 cursor-pointer" required />
                         <span className="text-white text-sm font-medium">Enterprise</span>

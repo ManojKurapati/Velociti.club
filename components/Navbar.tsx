@@ -20,7 +20,7 @@ export function Navbar() {
 
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 px-4 sm:px-6 lg:px-8 ${scrolled ? "py-2" : "py-4"}`}>
-      <div className={`max-w-7xl mx-auto rounded-full px-6 py-4 flex justify-between items-center transition-all ${scrolled ? 'glass bg-midnight/40' : 'bg-transparent'}`}>
+      <div className={`max-w-7xl mx-auto rounded-full px-4 md:px-6 py-3 md:py-4 flex justify-between items-center transition-all ${scrolled ? 'glass bg-midnight/40' : 'bg-transparent'}`}>
         <Link href="/" className="z-10 block interactive group">
           <Logo />
         </Link>
