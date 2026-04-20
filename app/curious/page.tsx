@@ -11,10 +11,10 @@ export default function CuriousPage() {
   return (
     <main className="min-h-screen pt-32 pb-0 bg-obsidian">
       <section className="max-w-4xl mx-auto px-6 mb-20 text-center">
-        <h1 className="text-5xl md:text-7xl font-display font-medium text-white tracking-tight mb-8 mt-12">
+        <h1 className="text-4xl sm:text-5xl md:text-7xl font-display font-medium text-white tracking-tight mb-6 sm:mb-8 mt-12">
           Welcome to <br /> The Velociti <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-violet to-neon-cyan">Club</span>
         </h1>
-        <p className="text-2xl text-cool-gray-300 font-light mb-12">
+        <p className="text-xl sm:text-2xl text-cool-gray-300 font-light mb-12">
           Where pure ambition meets autonomous execution.
         </p>
       </section>

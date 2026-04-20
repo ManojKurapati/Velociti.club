@@ -4,8 +4,8 @@ import { CheckCircle2 } from "lucide-react";
 
 export function SplitLayout() {
   return (
-    <section className="min-h-screen bg-black flex border-y border-white/5 relative z-10" id="startups">
-      <div className="w-full lg:w-1/2 p-12 lg:p-24 xl:p-32 flex justify-center flex-col border-r border-white/5 relative group">
+    <section className="min-h-screen bg-black flex flex-col lg:flex-row border-y border-white/5 relative z-10" id="startups">
+      <div className="w-full lg:w-1/2 p-8 sm:p-12 lg:p-24 xl:p-32 flex justify-center flex-col border-b lg:border-b-0 lg:border-r border-white/5 relative group">
         <div className="absolute inset-0 bg-gradient-to-br from-neon-cyan/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
         
         <h3 className="text-sm font-bold uppercase tracking-widest text-neon-cyan mb-6">For Startups</h3>
@@ -33,7 +33,7 @@ export function SplitLayout() {
         </ul>
       </div>
 
-      <div className="hidden lg:flex w-1/2 p-24 xl:p-32 justify-center flex-col relative group">
+      <div className="flex w-full lg:w-1/2 p-8 sm:p-12 lg:p-24 xl:p-32 justify-center flex-col relative group">
         <div className="absolute inset-0 bg-gradient-to-bl from-neon-violet/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
         
         <h3 className="text-sm font-bold uppercase tracking-widest text-neon-violet mb-6">For Enterprises</h3>

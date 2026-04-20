@@ -14,20 +14,20 @@ export default function EnterprisePage() {
     <main className="min-h-screen pt-40 pb-32 bg-obsidian">
       {/* Enterprise Hero */}
       <section className="max-w-7xl mx-auto px-6 mb-32 text-center">
-        <h1 className="text-6xl md:text-8xl font-display font-medium text-white tracking-tight mb-8 mt-12">
+        <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-medium text-white tracking-tight mb-6 sm:mb-8 mt-12">
           Enterprise <br className="hidden md:block" />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-violet">
             Autonomous Logic.
           </span>
         </h1>
-        <p className="text-2xl text-cool-gray-400 max-w-3xl mx-auto mb-12 font-light">
+        <p className="text-lg sm:text-xl md:text-2xl text-cool-gray-400 max-w-3xl mx-auto mb-10 sm:mb-12 font-light">
           Transmute legacy workflows into intelligent, autonomous neural backbones. Stop deploying fragile API wrappers and start architecting permanent structural moats.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-6">
-          <a href="#roi" className="btn-glow inline-flex border border-white/20 bg-white/5 items-center justify-center gap-2 px-10 py-5 rounded-2xl font-medium text-white hover:bg-white/10 transition-colors text-lg">
+          <a href="#roi" className="btn-glow inline-flex border border-white/20 bg-white/5 items-center justify-center gap-2 px-6 sm:px-10 py-4 sm:py-5 rounded-xl sm:rounded-2xl font-medium text-white hover:bg-white/10 transition-colors text-base sm:text-lg">
             Calculate ROI
           </a>
-          <a href="https://calendly.com/manojkurapati96/30min" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-10 py-5 rounded-2xl font-medium text-black bg-white hover:bg-neon-cyan transition-colors text-lg shadow-[0_0_20px_rgba(255,255,255,0.2)]">
+          <a href="https://calendly.com/manojkurapati96/30min" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-6 sm:px-10 py-4 sm:py-5 rounded-xl sm:rounded-2xl font-medium text-black bg-white hover:bg-neon-cyan transition-colors text-base sm:text-lg shadow-[0_0_20px_rgba(255,255,255,0.2)]">
             Book Executive Briefing <ArrowRight className="w-5 h-5" />
           </a>
         </div>

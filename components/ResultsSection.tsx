@@ -62,17 +62,17 @@ export function ResultsSection() {
 
           <div className="grid grid-cols-2 gap-6 count-card-container">
             <div className="glass-card p-6 rounded-2xl border-t-2 border-t-neon-cyan/50 hover:bg-white/[0.02] transition-colors count-card">
-              <div className="font-display text-5xl font-bold text-white mb-2">{counts[0]}x</div>
+              <div className="font-display text-4xl md:text-5xl font-bold text-white mb-2">{counts[0]}x</div>
               <div className="text-sm font-medium text-gray-400 uppercase tracking-wider">Faster Deployment</div>
             </div>
             
             <div className="glass-card p-6 rounded-2xl border-t-2 border-t-neon-pink/50 hover:bg-white/[0.02] transition-colors count-card">
-              <div className="font-display text-5xl font-bold text-white mb-2">{counts[1]}%</div>
+              <div className="font-display text-4xl md:text-5xl font-bold text-white mb-2">{counts[1]}%</div>
               <div className="text-sm font-medium text-gray-400 uppercase tracking-wider">Cost Reduction</div>
             </div>
 
             <div className="glass-card p-6 rounded-2xl border-t-2 border-t-neon-purple/50 hover:bg-white/[0.02] transition-colors count-card">
-              <div className="font-display text-5xl font-bold text-white mb-2">{counts[2]}%</div>
+              <div className="font-display text-4xl md:text-5xl font-bold text-white mb-2">{counts[2]}%</div>
               <div className="text-sm font-medium text-gray-400 uppercase tracking-wider">Process Automation</div>
             </div>
 

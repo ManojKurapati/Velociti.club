@@ -61,7 +61,7 @@ export function VelocityInAction() {
               <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${stat.color} blur-[60px] opacity-20 group-hover:opacity-40 transition-opacity`} />
               
               <stat.icon className="w-8 h-8 text-white/50 mb-8" />
-              <div className={`text-6xl font-display font-bold text-transparent bg-clip-text bg-gradient-to-r ${stat.color} mb-4`}>
+              <div className={`text-5xl md:text-6xl font-display font-bold text-transparent bg-clip-text bg-gradient-to-r ${stat.color} mb-4`}>
                 {stat.metric}
               </div>
               <h4 className="text-xl font-medium text-white mb-2">{stat.label}</h4>

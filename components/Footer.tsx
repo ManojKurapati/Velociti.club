@@ -13,7 +13,7 @@ export function Footer() {
           <p className="text-gray-500 text-sm mt-2">AI-fy Your Enterprise.</p>
         </div>
         
-        <div className="flex space-x-6 text-sm text-gray-400">
+        <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-sm text-gray-400">
           <Link href="/enterprise" className="hover:text-white transition-colors interactive">Enterprise</Link>
           <Link href="/knowledge" className="hover:text-white transition-colors interactive">Knowledge</Link>
           <Link href="/curious" className="hover:text-white transition-colors interactive">The Club</Link>
@@ -24,7 +24,7 @@ export function Footer() {
           <div className="text-sm text-gray-600">
             &copy; {new Date().getFullYear()} Velociti Inc. All rights reserved.
           </div>
-          <div className="text-xs text-gray-800 flex items-center gap-1">
+          <div className="text-xs text-gray-500 flex items-center gap-1">
             Built with AI <Zap size={10} className="text-neon-cyan/50" /> velocity
           </div>
         </div>
