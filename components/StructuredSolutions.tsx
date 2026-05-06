@@ -11,16 +11,32 @@ const solutions = [
     description: "Automate complex internal workflows, reporting, and process optimization to drastically reduce operational overhead.",
     benefits: ["Workflow automation", "Intelligent reporting", "Internal operations", "Process optimization"],
     diagram: (
-      <svg viewBox="0 0 400 200" className="w-full h-auto text-cool-gray-400">
-        <rect x="50" y="80" width="60" height="40" rx="8" fill="currentColor" fillOpacity="0.1" stroke="currentColor" strokeWidth="2" />
-        <rect x="170" y="80" width="60" height="40" rx="8" fill="currentColor" fillOpacity="0.2" stroke="currentColor" strokeWidth="2" />
-        <rect x="290" y="80" width="60" height="40" rx="8" fill="currentColor" fillOpacity="0.4" stroke="currentColor" strokeWidth="2" />
-        <path d="M110,100 L160,100 M230,100 L280,100" stroke="currentColor" strokeWidth="2" strokeDasharray="4 4" />
-        <circle cx="135" cy="100" r="4" fill="currentColor" />
-        <circle cx="255" cy="100" r="4" fill="currentColor" />
-        <text x="80" y="145" fontSize="12" fill="currentColor" textAnchor="middle">Input Data</text>
-        <text x="200" y="145" fontSize="12" fill="currentColor" textAnchor="middle">AI Processing</text>
-        <text x="320" y="145" fontSize="12" fill="currentColor" textAnchor="middle">Action / Output</text>
+      <svg viewBox="0 0 400 200" className="w-full h-full text-cool-gray-300 font-sans">
+        <defs>
+          <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="currentColor" stopOpacity="0.1" />
+            <stop offset="100%" stopColor="currentColor" stopOpacity="0.05" />
+          </linearGradient>
+          <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#00f0ff" stopOpacity="0.2" />
+            <stop offset="100%" stopColor="#00f0ff" stopOpacity="0.05" />
+          </linearGradient>
+        </defs>
+        
+        <rect x="40" y="75" width="80" height="50" rx="12" fill="url(#grad1)" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.3" />
+        <text x="80" y="100" fontSize="13" fontWeight="500" fill="currentColor" textAnchor="middle" dominantBaseline="middle">ERP Data</text>
+
+        <rect x="160" y="75" width="80" height="50" rx="12" fill="url(#grad2)" stroke="#00f0ff" strokeWidth="1.5" strokeOpacity="0.6" />
+        <text x="200" y="100" fontSize="13" fontWeight="600" fill="#00f0ff" textAnchor="middle" dominantBaseline="middle">AI Engine</text>
+
+        <rect x="280" y="75" width="80" height="50" rx="12" fill="url(#grad1)" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.3" />
+        <text x="320" y="100" fontSize="13" fontWeight="500" fill="currentColor" textAnchor="middle" dominantBaseline="middle">Action</text>
+
+        <path d="M120,100 L155,100" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.5" strokeDasharray="3 3" />
+        <polygon points="155,97 160,100 155,103" fill="currentColor" fillOpacity="0.5" />
+        
+        <path d="M240,100 L275,100" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.5" strokeDasharray="3 3" />
+        <polygon points="275,97 280,100 275,103" fill="currentColor" fillOpacity="0.5" />
       </svg>
     ),
     color: "from-neon-cyan/20 to-blue-500/20",
@@ -32,15 +48,35 @@ const solutions = [
     description: "Deploy intelligent voice and text agents that handle L1/L2 support seamlessly in multiple languages.",
     benefits: ["Voice agents", "Ticket automation", "Multilingual support", "Knowledge systems"],
     diagram: (
-      <svg viewBox="0 0 400 200" className="w-full h-auto text-cool-gray-400">
-        <circle cx="100" cy="100" r="30" fill="currentColor" fillOpacity="0.1" stroke="currentColor" strokeWidth="2" />
-        <path d="M130,100 L180,100" stroke="currentColor" strokeWidth="2" strokeDasharray="4 4" />
-        <rect x="190" y="70" width="120" height="60" rx="8" fill="currentColor" fillOpacity="0.2" stroke="currentColor" strokeWidth="2" />
-        <path d="M310,90 L340,70 M310,110 L340,130" stroke="currentColor" strokeWidth="2" />
-        <circle cx="350" cy="65" r="15" fill="currentColor" fillOpacity="0.3" stroke="currentColor" strokeWidth="2" />
-        <circle cx="350" cy="135" r="15" fill="currentColor" fillOpacity="0.3" stroke="currentColor" strokeWidth="2" />
-        <text x="100" y="150" fontSize="12" fill="currentColor" textAnchor="middle">Customer</text>
-        <text x="250" y="150" fontSize="12" fill="currentColor" textAnchor="middle">AI Agent (Voice/Text)</text>
+      <svg viewBox="0 0 400 200" className="w-full h-full text-cool-gray-300 font-sans">
+        <defs>
+          <linearGradient id="gradViolet" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#b026ff" stopOpacity="0.2" />
+            <stop offset="100%" stopColor="#b026ff" stopOpacity="0.05" />
+          </linearGradient>
+        </defs>
+
+        <circle cx="80" cy="100" r="30" fill="currentColor" fillOpacity="0.05" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.3" />
+        <text x="80" y="100" fontSize="12" fontWeight="500" fill="currentColor" textAnchor="middle" dominantBaseline="middle">User</text>
+
+        <rect x="140" y="60" width="100" height="80" rx="16" fill="url(#gradViolet)" stroke="#b026ff" strokeWidth="1.5" strokeOpacity="0.6" />
+        <text x="190" y="90" fontSize="14" fontWeight="600" fill="#b026ff" textAnchor="middle" dominantBaseline="middle">Voice Agent</text>
+        <text x="190" y="110" fontSize="10" fill="#b026ff" fillOpacity="0.7" textAnchor="middle" dominantBaseline="middle">Low Latency</text>
+
+        <rect x="280" y="50" width="80" height="40" rx="8" fill="currentColor" fillOpacity="0.05" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.3" />
+        <text x="320" y="70" fontSize="11" fontWeight="500" fill="currentColor" textAnchor="middle" dominantBaseline="middle">Zendesk</text>
+
+        <rect x="280" y="110" width="80" height="40" rx="8" fill="currentColor" fillOpacity="0.05" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.3" />
+        <text x="320" y="130" fontSize="11" fontWeight="500" fill="currentColor" textAnchor="middle" dominantBaseline="middle">Internal KB</text>
+
+        <path d="M110,100 L135,100" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.5" strokeDasharray="3 3" />
+        <polygon points="135,97 140,100 135,103" fill="currentColor" fillOpacity="0.5" />
+        
+        <path d="M240,85 L275,70" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.5" strokeDasharray="3 3" />
+        <polygon points="274,67 280,68 276,72" fill="currentColor" fillOpacity="0.5" />
+
+        <path d="M240,115 L275,130" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.5" strokeDasharray="3 3" />
+        <polygon points="276,128 280,132 274,133" fill="currentColor" fillOpacity="0.5" />
       </svg>
     ),
     color: "from-neon-violet/20 to-purple-600/20",
@@ -52,15 +88,35 @@ const solutions = [
     description: "Scale outbound efforts and accelerate inbound lead qualification with autonomous sales development representatives.",
     benefits: ["Lead qualification", "SDR automation", "CRM enrichment", "Outbound workflows"],
     diagram: (
-      <svg viewBox="0 0 400 200" className="w-full h-auto text-cool-gray-400">
-        <polygon points="100,50 160,100 100,150" fill="currentColor" fillOpacity="0.1" stroke="currentColor" strokeWidth="2" />
-        <path d="M160,100 L220,100" stroke="currentColor" strokeWidth="2" strokeDasharray="4 4" />
-        <rect x="230" y="75" width="50" height="50" rx="8" fill="currentColor" fillOpacity="0.2" stroke="currentColor" strokeWidth="2" />
-        <path d="M280,100 L340,100" stroke="currentColor" strokeWidth="2" />
-        <circle cx="350" cy="100" r="20" fill="currentColor" fillOpacity="0.4" stroke="currentColor" strokeWidth="2" />
-        <text x="110" y="110" fontSize="12" fill="currentColor" textAnchor="middle">Leads</text>
-        <text x="255" y="145" fontSize="12" fill="currentColor" textAnchor="middle">AI Qualify</text>
-        <text x="350" y="145" fontSize="12" fill="currentColor" textAnchor="middle">CRM</text>
+      <svg viewBox="0 0 400 200" className="w-full h-full text-cool-gray-300 font-sans">
+        <defs>
+          <linearGradient id="gradEmerald" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#34d399" stopOpacity="0.2" />
+            <stop offset="100%" stopColor="#34d399" stopOpacity="0.05" />
+          </linearGradient>
+        </defs>
+
+        <rect x="40" y="55" width="70" height="30" rx="6" fill="currentColor" fillOpacity="0.05" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.3" />
+        <text x="75" y="70" fontSize="11" fontWeight="500" fill="currentColor" textAnchor="middle" dominantBaseline="middle">Inbound</text>
+        
+        <rect x="40" y="115" width="70" height="30" rx="6" fill="currentColor" fillOpacity="0.05" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.3" />
+        <text x="75" y="130" fontSize="11" fontWeight="500" fill="currentColor" textAnchor="middle" dominantBaseline="middle">Outbound</text>
+
+        <rect x="150" y="70" width="100" height="60" rx="12" fill="url(#gradEmerald)" stroke="#34d399" strokeWidth="1.5" strokeOpacity="0.6" />
+        <text x="200" y="92" fontSize="13" fontWeight="600" fill="#34d399" textAnchor="middle" dominantBaseline="middle">AI SDR</text>
+        <text x="200" y="110" fontSize="10" fill="#34d399" fillOpacity="0.8" textAnchor="middle" dominantBaseline="middle">Qualify & Book</text>
+
+        <rect x="290" y="75" width="80" height="50" rx="8" fill="currentColor" fillOpacity="0.05" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.3" />
+        <text x="330" y="100" fontSize="12" fontWeight="500" fill="currentColor" textAnchor="middle" dominantBaseline="middle">Salesforce</text>
+
+        <path d="M110,70 L145,85" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.5" strokeDasharray="3 3" />
+        <polygon points="144,82 150,87 146,88" fill="currentColor" fillOpacity="0.5" />
+        
+        <path d="M110,130 L145,115" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.5" strokeDasharray="3 3" />
+        <polygon points="146,112 150,113 144,118" fill="currentColor" fillOpacity="0.5" />
+
+        <path d="M250,100 L285,100" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.5" strokeDasharray="3 3" />
+        <polygon points="285,97 290,100 285,103" fill="currentColor" fillOpacity="0.5" />
       </svg>
     ),
     color: "from-emerald-400/20 to-green-600/20",
@@ -72,17 +128,36 @@ const solutions = [
     description: "Connect your enterprise data silos into a single, intelligent RAG system for instant internal retrieval and compliance checking.",
     benefits: ["Internal copilots", "SOP retrieval", "Enterprise search", "RAG systems"],
     diagram: (
-      <svg viewBox="0 0 400 200" className="w-full h-auto text-cool-gray-400">
-        <rect x="80" y="50" width="40" height="30" rx="4" fill="currentColor" fillOpacity="0.1" stroke="currentColor" strokeWidth="2" />
-        <rect x="80" y="90" width="40" height="30" rx="4" fill="currentColor" fillOpacity="0.1" stroke="currentColor" strokeWidth="2" />
-        <rect x="80" y="130" width="40" height="30" rx="4" fill="currentColor" fillOpacity="0.1" stroke="currentColor" strokeWidth="2" />
-        <path d="M120,65 L180,100 M120,105 L180,100 M120,145 L180,100" stroke="currentColor" strokeWidth="2" strokeDasharray="2 2" />
-        <circle cx="200" cy="100" r="30" fill="currentColor" fillOpacity="0.3" stroke="currentColor" strokeWidth="2" />
-        <path d="M230,100 L280,100" stroke="currentColor" strokeWidth="2" />
-        <rect x="290" y="80" width="60" height="40" rx="8" fill="currentColor" fillOpacity="0.5" stroke="currentColor" strokeWidth="2" />
-        <text x="100" y="40" fontSize="12" fill="currentColor" textAnchor="middle">Data Silos</text>
-        <text x="200" y="150" fontSize="12" fill="currentColor" textAnchor="middle">Vector DB</text>
-        <text x="320" y="140" fontSize="12" fill="currentColor" textAnchor="middle">Copilot</text>
+      <svg viewBox="0 0 400 200" className="w-full h-full text-cool-gray-300 font-sans">
+        <defs>
+          <linearGradient id="gradWhite" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#ffffff" stopOpacity="0.15" />
+            <stop offset="100%" stopColor="#ffffff" stopOpacity="0.02" />
+          </linearGradient>
+        </defs>
+
+        <rect x="40" y="50" width="70" height="28" rx="6" fill="currentColor" fillOpacity="0.05" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.3" />
+        <text x="75" y="64" fontSize="11" fontWeight="500" fill="currentColor" textAnchor="middle" dominantBaseline="middle">Notion</text>
+
+        <rect x="40" y="86" width="70" height="28" rx="6" fill="currentColor" fillOpacity="0.05" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.3" />
+        <text x="75" y="100" fontSize="11" fontWeight="500" fill="currentColor" textAnchor="middle" dominantBaseline="middle">S3 / Docs</text>
+
+        <rect x="40" y="122" width="70" height="28" rx="6" fill="currentColor" fillOpacity="0.05" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.3" />
+        <text x="75" y="136" fontSize="11" fontWeight="500" fill="currentColor" textAnchor="middle" dominantBaseline="middle">Jira</text>
+
+        <rect x="150" y="60" width="100" height="80" rx="16" fill="url(#gradWhite)" stroke="#ffffff" strokeWidth="1.5" strokeOpacity="0.4" />
+        <text x="200" y="90" fontSize="13" fontWeight="600" fill="#ffffff" textAnchor="middle" dominantBaseline="middle">Vector DB</text>
+        <text x="200" y="110" fontSize="10" fill="#ffffff" fillOpacity="0.6" textAnchor="middle" dominantBaseline="middle">& RAG System</text>
+
+        <rect x="290" y="75" width="80" height="50" rx="12" fill="currentColor" fillOpacity="0.05" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.3" />
+        <text x="330" y="100" fontSize="11" fontWeight="600" fill="currentColor" textAnchor="middle" dominantBaseline="middle">Internal Copilot</text>
+
+        <path d="M110,64 L145,85" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.5" strokeDasharray="3 3" />
+        <path d="M110,100 L145,100" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.5" strokeDasharray="3 3" />
+        <path d="M110,136 L145,115" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.5" strokeDasharray="3 3" />
+        
+        <path d="M250,100 L285,100" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.5" strokeDasharray="3 3" />
+        <polygon points="285,97 290,100 285,103" fill="currentColor" fillOpacity="0.5" />
       </svg>
     ),
     color: "from-white/10 to-gray-500/10",

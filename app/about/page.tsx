@@ -18,8 +18,8 @@ export default function AboutPage() {
       </section>
 
       <section className="max-w-3xl mx-auto px-6 pt-12 border-t border-white/10">
-        <div className="flex flex-col md:flex-row gap-12 items-center">
-          <div className="w-48 h-48 rounded-full bg-gradient-to-br from-neon-violet to-neon-cyan flex-shrink-0 p-1">
+        <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center md:items-start text-center md:text-left">
+          <div className="w-40 h-40 md:w-48 md:h-48 rounded-full bg-gradient-to-br from-neon-violet to-neon-cyan flex-shrink-0 p-1">
             <div className="w-full h-full bg-black rounded-full overflow-hidden flex items-center justify-center relative">
               <div className="absolute inset-0 bg-white/5 backdrop-blur-md"></div>
               {/* Note: Update with actual founder image later */}
@@ -41,8 +41,8 @@ export default function AboutPage() {
       </section>
 
       <section className="max-w-3xl mx-auto px-6 pt-12 mt-12 border-t border-white/10">
-        <div className="flex flex-col md:flex-row gap-12 items-center">
-          <div className="w-48 h-48 rounded-full bg-gradient-to-br from-blue-500 to-neon-cyan flex-shrink-0 p-1">
+        <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center md:items-start text-center md:text-left">
+          <div className="w-40 h-40 md:w-48 md:h-48 rounded-full bg-gradient-to-br from-blue-500 to-neon-cyan flex-shrink-0 p-1">
             <div className="w-full h-full bg-black rounded-full overflow-hidden flex items-center justify-center relative">
               <div className="absolute inset-0 bg-white/5 backdrop-blur-md"></div>
               {/* Note: Update with actual founder image later */}
