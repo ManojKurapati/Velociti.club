@@ -28,10 +28,11 @@ export function Navbar() {
         <div className="hidden md:flex space-x-8 text-sm font-medium text-gray-400 absolute left-1/2 transform -translate-x-1/2">
           {[
             { label: 'Home', href: '/' },
-            { label: 'Enterprise', href: '/enterprise' },
-            { label: 'Knowledge', href: '/knowledge' },
-            { label: 'The Club', href: '/curious' },
-            { label: 'Startups', href: '/curious#startups' },
+            { label: 'Solutions', href: '/#solutions' },
+            { label: 'Industries', href: '/#industries' },
+            { label: 'Case Studies', href: '/#case-studies' },
+            { label: 'Security', href: '/#security' },
+            { label: 'About', href: '/about' },
           ].map((item) => (
             <Link key={item.label} href={item.href} className="hover:text-white transition-colors interactive">
               {item.label}
@@ -42,7 +43,7 @@ export function Navbar() {
         <div className="z-10 flex items-center gap-4">
           <ThemeToggle />
           <Link href="https://calendly.com/manojkurapati96/30min" target="_blank" rel="noopener noreferrer" className="btn-glow border border-neon-cyan text-neon-cyan px-6 py-2 rounded-full font-medium text-sm hidden md:inline-block interactive backdrop-blur-md">
-            AI-fy Now
+            Book Workflow Audit
           </Link>
           <button 
             className="md:hidden text-white interactive"
@@ -58,17 +59,18 @@ export function Navbar() {
         <div className="absolute top-[80px] left-4 right-4 glass rounded-2xl p-6 md:hidden flex flex-col gap-4 animate-in fade-in slide-in-from-top-4">
           {[
             { label: 'Home', href: '/' },
-            { label: 'Enterprise', href: '/enterprise' },
-            { label: 'Knowledge', href: '/knowledge' },
-            { label: 'The Club', href: '/curious' },
-            { label: 'Startups', href: '/curious#startups' },
+            { label: 'Solutions', href: '/#solutions' },
+            { label: 'Industries', href: '/#industries' },
+            { label: 'Case Studies', href: '/#case-studies' },
+            { label: 'Security', href: '/#security' },
+            { label: 'About', href: '/about' },
           ].map((item) => (
             <Link key={item.label} href={item.href} onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-white hover:text-neon-cyan transition-colors">
               {item.label}
             </Link>
           ))}
           <Link href="https://calendly.com/manojkurapati96/30min" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)} className="bg-white text-black px-6 py-3 rounded-full text-center font-semibold mt-4">
-            AI-fy Now
+            Book Workflow Audit
           </Link>
         </div>
       )}

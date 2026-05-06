@@ -28,11 +28,11 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://velociti.club"),
-  title: "Velociti — AI-fy Your Enterprise | Intelligent AI Transformation",
-  description: "Rapidly transform your legacy enterprise operations into autonomous AI-powered systems with Velociti. 10x Faster Deployment. 65% Cost Reduction.",
+  title: "Velociti — Enterprise AI Systems That Automate Real Operations",
+  description: "We deploy secure AI agents across sales, support, operations, and workflows using your existing systems and data.",
   openGraph: {
-    title: "Velociti — AI-fy Your Enterprise",
-    description: "Rapidly transform your legacy enterprise operations into autonomous AI-powered systems with Velociti.",
+    title: "Velociti — Enterprise AI Systems",
+    description: "Secure AI agents for sales, support, operations, and workflows.",
     url: "https://velociti.club",
     siteName: "Velociti",
     images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
@@ -41,8 +41,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Velociti — AI-fy Your Enterprise",
-    description: "Rapidly transform your legacy enterprise operations into autonomous AI-powered systems with Velociti.",
+    title: "Velociti — Enterprise AI Systems",
+    description: "Secure AI agents for sales, support, operations, and workflows.",
     images: ["/og-image.jpg"],
   },
   robots: {
@@ -57,7 +57,7 @@ const jsonLd = {
   name: "Velociti",
   url: "https://velociti.club",
   logo: "https://velociti.club/logo.png",
-  description: "The intelligent orchestration platform that helps large enterprises rapidly and securely transform legacy operations into autonomous, AI-powered systems.",
+  description: "Enterprise AI systems company deploying secure AI agents across sales, support, operations, and workflows.",
   sameAs: [
     "https://twitter.com/velociti",
     "https://linkedin.com/company/velociti"

@@ -10,14 +10,15 @@ export function Footer() {
           <Link href="/" className="interactive block">
             <Logo />
           </Link>
-          <p className="text-gray-500 text-sm mt-2">AI-fy Your Enterprise.</p>
+          <p className="text-gray-500 text-sm mt-2">Enterprise AI Systems That Automate Real Operations.</p>
         </div>
         
         <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-sm text-gray-400">
-          <Link href="/enterprise" className="hover:text-white transition-colors interactive">Enterprise</Link>
-          <Link href="/knowledge" className="hover:text-white transition-colors interactive">Knowledge</Link>
-          <Link href="/curious" className="hover:text-white transition-colors interactive">The Club</Link>
-          <Link href="/curious#startups" className="hover:text-white transition-colors interactive">Startups</Link>
+          <Link href="/#solutions" className="hover:text-white transition-colors interactive">Solutions</Link>
+          <Link href="/#industries" className="hover:text-white transition-colors interactive">Industries</Link>
+          <Link href="/#case-studies" className="hover:text-white transition-colors interactive">Case Studies</Link>
+          <Link href="/#security" className="hover:text-white transition-colors interactive">Security</Link>
+          <Link href="/about" className="hover:text-white transition-colors interactive">About</Link>
         </div>
 
         <div className="flex flex-col items-center md:items-end gap-2">

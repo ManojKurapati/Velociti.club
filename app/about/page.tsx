@@ -39,6 +39,29 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <section className="max-w-3xl mx-auto px-6 pt-12 mt-12 border-t border-white/10">
+        <div className="flex flex-col md:flex-row gap-12 items-center">
+          <div className="w-48 h-48 rounded-full bg-gradient-to-br from-blue-500 to-neon-cyan flex-shrink-0 p-1">
+            <div className="w-full h-full bg-black rounded-full overflow-hidden flex items-center justify-center relative">
+              <div className="absolute inset-0 bg-white/5 backdrop-blur-md"></div>
+              {/* Note: Update with actual founder image later */}
+              <span className="text-3xl font-display text-white z-10 relative">FQ</span>
+            </div>
+          </div>
+          
+          <div>
+            <h2 className="text-3xl font-medium text-white mb-2">Fatima Qazi</h2>
+            <h3 className="text-neon-cyan uppercase tracking-widest text-sm font-bold mb-6">COO</h3>
+            <p className="text-cool-gray-400 mb-6 leading-relaxed">
+              Fatima works intimately with enterprise leadership to identify the precise operational bottlenecks where AI deployment can drive maximum efficiency and immediate cost reduction. 
+            </p>
+            <p className="text-cool-gray-400 leading-relaxed">
+              She ensures that every autonomous system integrated delivers measurable business outcomes and perfectly aligns with the organization's overarching strategic goals.
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

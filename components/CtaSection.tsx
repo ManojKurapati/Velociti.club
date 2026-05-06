@@ -34,10 +34,10 @@ export function CtaSection() {
       
       <div className="max-w-4xl mx-auto px-6 text-center">
         <h2 className="font-display text-5xl md:text-7xl font-bold mb-6 tracking-tight gs-reveal opacity-0">
-          Ready to <span className="text-white drop-shadow-[0_0_15px_rgba(0,240,255,0.8)]">AI-fy</span> Your Enterprise?
+          Ready to <span className="text-white drop-shadow-[0_0_15px_rgba(0,240,255,0.8)]">Automate</span> Your Operations?
         </h2>
         <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto font-light gs-reveal opacity-0">
-          Join the organizations already operating at AI velocity. Schedule a strategy session with our architects.
+          Book a comprehensive AI workflow audit to identify operational bottlenecks and deployment opportunities.
         </p>
         
         <div className="gs-reveal opacity-0">
