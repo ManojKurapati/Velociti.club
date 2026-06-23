@@ -2,24 +2,7 @@ import React from "react";
 
 const logos = [
   {
-    name: "Stellar Dynamics",
-    svg: (
-      <svg viewBox="0 0 100 30" className="h-8 fill-current">
-        <path d="M10,15 L20,5 L30,15 L20,25 Z M35,5 h10 v20 h-10 Z M50,5 h20 v5 h-15 v5 h10 v5 h-10 v5 h-5 Z" />
-      </svg>
-    )
-  },
-  {
-    name: "Nexus Global",
-    svg: (
-      <svg viewBox="0 0 100 30" className="h-8 fill-current">
-        <circle cx="15" cy="15" r="10" stroke="currentColor" strokeWidth="3" fill="none" />
-        <path d="M35,25 v-20 h15 a5,5 0 0 1 5,5 v10 a5,5 0 0 1 -5,5 h-15 m5,-5 h10" fill="none" stroke="currentColor" strokeWidth="3" />
-      </svg>
-    )
-  },
-  {
-    name: "Aegis Health",
+    name: "Alera Health",
     svg: (
       <svg viewBox="0 0 100 30" className="h-8 fill-current">
         <rect x="5" y="5" width="20" height="20" rx="4" fill="none" stroke="currentColor" strokeWidth="3" />
@@ -28,7 +11,24 @@ const logos = [
     )
   },
   {
-    name: "Vanguard Tech",
+    name: "OQpin",
+    svg: (
+      <svg viewBox="0 0 100 30" className="h-8 fill-current">
+        <circle cx="15" cy="15" r="10" stroke="currentColor" strokeWidth="3" fill="none" />
+        <path d="M35,25 v-20 h15 a5,5 0 0 1 5,5 v10 a5,5 0 0 1 -5,5 h-15 m5,-5 h10" fill="none" stroke="currentColor" strokeWidth="3" />
+      </svg>
+    )
+  },
+  {
+    name: "L&M logistics",
+    svg: (
+      <svg viewBox="0 0 100 30" className="h-8 fill-current">
+        <path d="M10,15 L20,5 L30,15 L20,25 Z M35,5 h10 v20 h-10 Z M50,5 h20 v5 h-15 v5 h10 v5 h-10 v5 h-5 Z" />
+      </svg>
+    )
+  },
+  {
+    name: "Emersn",
     svg: (
       <svg viewBox="0 0 100 30" className="h-8 fill-current">
         <path d="M5,25 l10,-20 l10,20 h-5 l-5,-10 l-5,10 z" />
@@ -36,7 +36,7 @@ const logos = [
     )
   },
   {
-    name: "Horizon Systems",
+    name: "JCS info solutions",
     svg: (
       <svg viewBox="0 0 100 30" className="h-8 fill-current">
         <path d="M5,15 a10,10 0 1 1 20,0 h-20" fill="currentColor" />
@@ -45,7 +45,7 @@ const logos = [
     )
   },
   {
-    name: "Quantum Finance",
+    name: "Bezvada Biomed",
     svg: (
       <svg viewBox="0 0 100 30" className="h-8 fill-current">
         <path d="M5,25 v-20 l10,10 l10,-10 v20" fill="none" stroke="currentColor" strokeWidth="3" />

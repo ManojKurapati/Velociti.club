@@ -82,7 +82,7 @@ export default function EnterprisePage() {
       <TestimonialQuote 
         quote="The Voice-Native Routing Control deployed by Velociti fundamentally changed our cost structure. We're scaling 5x without adding headcount."
         author="David Chen"
-        role="VP Operations, Nexus Global"
+        role="VP Operations, L&M logistics"
         metric="5x"
         metricLabel="Scalability Matrix"
       />

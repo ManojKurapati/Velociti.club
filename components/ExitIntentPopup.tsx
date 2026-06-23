@@ -8,15 +8,17 @@ export function ExitIntentPopup() {
   const [hasTriggered, setHasTriggered] = useState(false);
 
   useEffect(() => {
-    const handleMouseLeave = (e: MouseEvent) => {
-      if (e.clientY <= 0 && !hasTriggered) {
+    const handleBeforeUnload = (e: BeforeUnloadEvent) => {
+      if (!hasTriggered) {
         setShow(true);
         setHasTriggered(true);
+        e.preventDefault();
+        e.returnValue = "";
       }
     };
 
-    document.addEventListener("mouseleave", handleMouseLeave);
-    return () => document.removeEventListener("mouseleave", handleMouseLeave);
+    window.addEventListener("beforeunload", handleBeforeUnload);
+    return () => window.removeEventListener("beforeunload", handleBeforeUnload);
   }, [hasTriggered]);
 
   if (!show) return null;

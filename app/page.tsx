@@ -1,5 +1,6 @@
 import { Hero } from "@/components/Hero";
 import { TrustBar } from "@/components/TrustBar";
+import { Showreel } from "@/components/Showreel";
 import { StructuredSolutions } from "@/components/StructuredSolutions";
 import { IndustryPositioning } from "@/components/IndustryPositioning";
 import { SecurityGovernance } from "@/components/SecurityGovernance";
@@ -18,6 +19,7 @@ export default function Home() {
     <main className="min-h-screen bg-obsidian overflow-hidden relative">
       <Hero />
       <TrustBar />
+      <Showreel />
       <StructuredSolutions />
       <IndustryPositioning />
       <SecurityGovernance />
