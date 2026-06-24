@@ -20,16 +20,8 @@ export function Hero() {
   
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-24 sm:pt-32 pb-12 sm:pb-20 overflow-hidden">
-      {/* Background Video */}
+      {/* Background */}
       <div className="absolute inset-0 z-0 bg-black">
-        <video 
-          className="absolute inset-0 w-full h-full object-cover opacity-25 mix-blend-screen"
-          autoPlay 
-          loop 
-          muted 
-          playsInline 
-          src="/Velociti.mp4" 
-        />
         {/* Core glowing orb fallback/overlay */}
         <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-neon-cyan/20 rounded-full blur-[120px] mix-blend-screen pointer-events-none" />
         {/* Velocity Grid Overlay */}
