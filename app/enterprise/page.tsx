@@ -1,4 +1,5 @@
 import { EnterprisePillars } from "@/components/EnterprisePillars";
+import { OnPremDeployment } from "@/components/OnPremDeployment";
 import { RoiCalculator } from "@/components/RoiCalculator";
 import { TestimonialQuote } from "@/components/TestimonialQuote";
 import { ArrowRight } from "lucide-react";
@@ -34,6 +35,7 @@ export default function EnterprisePage() {
       </section>
 
       <EnterprisePillars />
+      <OnPremDeployment />
       
       {/* Proven Deployments Section (Case Studies) */}
       <section className="py-32 bg-black border-y border-white/5 relative z-10 box-shadow-[0_-50px_100px_rgba(0,0,0,0.5)]">

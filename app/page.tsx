@@ -4,6 +4,7 @@ import { Showreel } from "@/components/Showreel";
 import { StructuredSolutions } from "@/components/StructuredSolutions";
 import { IndustryPositioning } from "@/components/IndustryPositioning";
 import { SecurityGovernance } from "@/components/SecurityGovernance";
+import { OnPremDeployment } from "@/components/OnPremDeployment";
 import { EnterpriseCaseStudies } from "@/components/EnterpriseCaseStudies";
 import { TestimonialQuote } from "@/components/TestimonialQuote";
 import { CtaSection } from "@/components/CtaSection";
@@ -23,6 +24,7 @@ export default function Home() {
       <StructuredSolutions />
       <IndustryPositioning />
       <SecurityGovernance />
+      <OnPremDeployment />
       <EnterpriseCaseStudies />
       <TestimonialQuote 
         quote="Velociti reduced our deployment timeline by 8 months. The autonomous voice agents handled our seasonal spike without a single dropped query."
