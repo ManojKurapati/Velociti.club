@@ -2,8 +2,26 @@ import { KnowledgeGrid } from "@/components/KnowledgeGrid";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Knowledge Lab | AI Enterprise Playbooks & Diagnostics",
+  title: "Knowledge Lab | AI Enterprise Playbooks & Diagnostics | Velociti",
   description: "Explore frameworks, deployment metrics, and thought-leadership resources for architecting autonomous enterprise AI systems.",
+  keywords: [
+    "enterprise AI playbooks",
+    "AI system deployment metrics",
+    "AI diagnostics",
+    "autonomous logic frameworks",
+    "RAG telemetry",
+    "state of AI assessment"
+  ],
+  alternates: {
+    canonical: "https://velociti.club/knowledge",
+  },
+  openGraph: {
+    title: "Knowledge Lab | AI Enterprise Playbooks & Diagnostics | Velociti",
+    description: "Explore frameworks, deployment metrics, and thought-leadership resources for architecting autonomous enterprise AI systems.",
+    url: "https://velociti.club/knowledge",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Velociti Knowledge Lab" }],
+    type: "website",
+  }
 };
 
 export default function KnowledgePage() {

@@ -1,13 +1,71 @@
 import { Metadata } from "next";
+import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: "About Us | Velociti",
-  description: "Meet the team engineering the autonomous enterprise transition.",
+  title: "About Us | Velociti Leadership & Elite AI Engineers",
+  description: "Meet the executive team engineering the autonomous enterprise transition. Guided by Manoj Kurapati (Founder & CEO) and Fatima Qazi (COO).",
+  keywords: [
+    "Velociti leadership",
+    "Manoj Kurapati",
+    "Fatima Qazi",
+    "AI engineers",
+    "autonomous enterprise transition",
+    "Velociti founders"
+  ],
+  alternates: {
+    canonical: "https://velociti.club/about",
+  },
+  openGraph: {
+    title: "About Us | Velociti Leadership & Elite AI Engineers",
+    description: "Meet the executive team engineering the autonomous enterprise transition. Guided by Manoj Kurapati (Founder & CEO) and Fatima Qazi (COO).",
+    url: "https://velociti.club/about",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Velociti Leadership Team" }],
+    type: "profile",
+  }
+};
+
+const aboutPeopleJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "name": "Manoj Kurapati",
+      "jobTitle": "Founder & CEO",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Velociti",
+        "url": "https://velociti.club"
+      },
+      "description": "Manoj founded Velociti to fundamentally rewire corporate infrastructure to run on agentic logic, drawing from years of experience leading engineering systems at elite tech startups.",
+      "sameAs": [
+        "https://www.linkedin.com/company/velociti-club/"
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Fatima Qazi",
+      "jobTitle": "COO",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Velociti",
+        "url": "https://velociti.club"
+      },
+      "description": "Fatima works intimately with enterprise leadership to identify operational bottlenecks and deploy AI systems that drive maximum efficiency and immediate cost reduction.",
+      "sameAs": [
+        "https://www.linkedin.com/company/velociti-club/"
+      ]
+    }
+  ]
 };
 
 export default function AboutPage() {
   return (
     <main className="min-h-screen pt-40 pb-32 bg-obsidian">
+      <Script
+        id="about-people-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutPeopleJsonLd) }}
+      />
       <section className="max-w-4xl mx-auto px-6 mb-20 text-center">
         <h1 className="text-5xl md:text-7xl font-display font-medium text-white tracking-tight mb-8">
           The Architecture <span className="text-white/50">Syndicate</span>

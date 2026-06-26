@@ -4,15 +4,77 @@ import { RoiCalculator } from "@/components/RoiCalculator";
 import { TestimonialQuote } from "@/components/TestimonialQuote";
 import { ArrowRight } from "lucide-react";
 import { Metadata } from "next";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Enterprise AI Solutions | Voice Agents, RAG & Autonomous Workflows | Velociti",
-  description: "Deploy autonomous systems in weeks, not years. Explore Voice Agents, RAG, and Workflow Automation tailored for Healthcare, Finance, and Logistics.",
+  description: "Deploy secure autonomous systems in weeks, not years. Enterprise-grade AI Voice Agents, RAG, and Workflow Automation built for Healthcare, Finance, and Logistics.",
+  keywords: [
+    "enterprise AI solutions",
+    "healthcare AI systems",
+    "fintech AI underwriting",
+    "logistics voice agents",
+    "on-premise RAG deployment",
+    "private cloud AI systems"
+  ],
+  alternates: {
+    canonical: "https://velociti.club/enterprise",
+  },
+  openGraph: {
+    title: "Enterprise AI Solutions | Voice Agents, RAG & Autonomous Workflows | Velociti",
+    description: "Deploy secure autonomous systems in weeks, not years. Enterprise-grade AI Voice Agents, RAG, and Workflow Automation built for Healthcare, Finance, and Logistics.",
+    url: "https://velociti.club/enterprise",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Velociti Enterprise AI Solutions" }],
+    type: "website",
+  }
+};
+
+const enterpriseServiceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Enterprise Autonomous AI Systems",
+  "provider": {
+    "@type": "Organization",
+    "name": "Velociti",
+    "url": "https://velociti.club"
+  },
+  "description": "Enterprise-grade autonomous AI systems integrating Voice Agents, RAG databases, and workflow orchestration. Tailored deployment pipelines for highly regulated industries including Healthcare, Finance, and Logistics.",
+  "offers": [
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Voice-Native Routing & Dispatch Agents",
+        "description": "Low-latency voice agents handling high-volume logistics dispatch and customer triage."
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Autonomous Loan Underwriting & Finance Logic",
+        "description": "Secure underwriting models pre-approving applicants based on paystubs, W-2s, and bank bank feeds."
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "On-Premise & Private Cloud (VPC) Deployment",
+        "description": "Highly secure AI stack deployment behind client firewalls with zero external data sharing."
+      }
+    }
+  ]
 };
 
 export default function EnterprisePage() {
   return (
     <main className="min-h-screen pt-40 pb-32 bg-obsidian">
+      <Script
+        id="enterprise-service-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(enterpriseServiceJsonLd) }}
+      />
       {/* Enterprise Hero */}
       <section className="max-w-7xl mx-auto px-6 mb-32 text-center">
         <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-medium text-white tracking-tight mb-6 sm:mb-8 mt-12">

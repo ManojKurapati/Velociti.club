@@ -30,12 +30,28 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://velociti.club"),
   title: "Velociti — Enterprise AI Systems That Automate Real Operations",
   description: "We deploy secure AI agents across sales, support, operations, and workflows using your existing systems and data.",
+  keywords: [
+    "enterprise AI systems",
+    "autonomous AI agents",
+    "workflow automation",
+    "AI voice agents",
+    "RAG systems",
+    "retrieval augmented generation",
+    "AI operations automation",
+    "AI sales automation",
+    "SDR automation",
+    "on-premise AI deployment",
+    "secure AI agents"
+  ],
+  alternates: {
+    canonical: "https://velociti.club",
+  },
   openGraph: {
     title: "Velociti — Enterprise AI Systems",
     description: "Secure AI agents for sales, support, operations, and workflows.",
     url: "https://velociti.club",
     siteName: "Velociti",
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Velociti — Enterprise AI Systems That Automate Real Operations" }],
     locale: "en_US",
     type: "website",
   },
@@ -54,13 +70,33 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "Velociti",
-  url: "https://velociti.club",
-  logo: "https://velociti.club/logo.png",
-  description: "Enterprise AI systems company deploying secure AI agents across sales, support, operations, and workflows.",
-  sameAs: [
-    "https://twitter.com/velociti",
-    "https://linkedin.com/company/velociti"
+  "name": "Velociti",
+  "url": "https://velociti.club",
+  "logo": "https://velociti.club/logo.png",
+  "image": "https://velociti.club/og-image.jpg",
+  "description": "Enterprise AI systems company deploying secure autonomous AI agents across sales, support, operations, and workflows using existing systems and data.",
+  "sameAs": [
+    "https://www.instagram.com/velociti.club/",
+    "https://www.linkedin.com/company/velociti-club/"
+  ],
+  "knowsAbout": [
+    "Artificial Intelligence",
+    "Autonomous Agents",
+    "Enterprise Software",
+    "Workflow Automation",
+    "Retrieval-Augmented Generation",
+    "Customer Support Automation",
+    "AI SDR"
+  ],
+  "founder": [
+    {
+      "@type": "Person",
+      "name": "Manoj Kurapati"
+    },
+    {
+      "@type": "Person",
+      "name": "Fatima Qazi"
+    }
   ]
 };
 

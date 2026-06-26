@@ -1,8 +1,26 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Insights & Blog | Velociti",
-  description: "Read the latest insights on enterprise AI, autonomous systems, and generative engine optimization.",
+  title: "Insights & Blog | Enterprise AI & Agentic Loops | Velociti",
+  description: "Read the latest deep dives and executive briefings on enterprise AI, autonomous agentic loops, voice latency, and generative engine optimization.",
+  keywords: [
+    "enterprise AI blog",
+    "agentic loops strategy",
+    "latency voice native UI",
+    "autonomous context RAG",
+    "generative engine optimization strategy",
+    "Velociti insights"
+  ],
+  alternates: {
+    canonical: "https://velociti.club/blog",
+  },
+  openGraph: {
+    title: "Insights & Blog | Enterprise AI & Agentic Loops | Velociti",
+    description: "Read the latest deep dives and executive briefings on enterprise AI, autonomous agentic loops, voice latency, and generative engine optimization.",
+    url: "https://velociti.club/blog",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Velociti Insights & Blog" }],
+    type: "website",
+  }
 };
 
 export default function BlogPage() {

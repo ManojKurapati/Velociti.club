@@ -3,8 +3,25 @@ import { ClubApplicationForm } from "@/components/ClubApplicationForm";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "The Velociti Club | Exclusive Club Membership",
-  description: "Join a private club of founders, enterprise leaders, and elite engineers building the autonomous future.",
+  title: "The Velociti Club | Exclusive Club Membership | Velociti",
+  description: "Join a private syndicate of founders, enterprise leaders, and elite engineers building the autonomous future with advanced AI systems.",
+  keywords: [
+    "Velociti Club",
+    "autonomous AI syndicate",
+    "agentic AI network",
+    "AI founders club",
+    "enterprise AI advisory"
+  ],
+  alternates: {
+    canonical: "https://velociti.club/curious",
+  },
+  openGraph: {
+    title: "The Velociti Club | Exclusive Club Membership | Velociti",
+    description: "Join a private syndicate of founders, enterprise leaders, and elite engineers building the autonomous future with advanced AI systems.",
+    url: "https://velociti.club/curious",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "The Velociti Club" }],
+    type: "website",
+  }
 };
 
 export default function CuriousPage() {

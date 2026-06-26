@@ -1,0 +1,38 @@
+# https://www.robotstxt.org/robotstxt.html
+
+# Allow all search engines
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Explicitly welcome and allow AI search bots for GEO (Generative Engine Optimization)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Cohere-ai
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+# Host & Sitemap
+Host: https://velociti.club
+Sitemap: https://velociti.club/sitemap.xml

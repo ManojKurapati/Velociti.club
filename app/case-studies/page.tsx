@@ -1,10 +1,77 @@
 import { Metadata } from "next";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: "Case Studies | Proven Deployments by Velociti",
-  description: "Review quantitative results of Velociti autonomous integration across healthcare, logistics, and finance.",
+  title: "Case Studies & Proven Deployments | Velociti",
+  description: "Review detailed quantitative case studies of Velociti's autonomous AI agent deployments across Healthcare, Logistics, and Fintech.",
+  keywords: [
+    "Velociti case studies",
+    "healthcare AI case study",
+    "fintech automation metrics",
+    "logistics AI dispatch ROI",
+    "agentic AI results",
+    "proven AI deployments"
+  ],
+  alternates: {
+    canonical: "https://velociti.club/case-studies",
+  },
+  openGraph: {
+    title: "Case Studies & Proven Deployments | Velociti",
+    description: "Review detailed quantitative case studies of Velociti's autonomous AI agent deployments across Healthcare, Logistics, and Fintech.",
+    url: "https://velociti.club/case-studies",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Velociti Case Studies" }],
+    type: "website",
+  }
+};
+
+const caseStudiesJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "headline": "Healthcare Patient Triage & Analytics Automation Case Study",
+      "description": "How Velociti deployed an integrated AI agent framework to reduce manual charting times in healthcare by 94% through autonomous structured record generation from voice.",
+      "author": {
+        "@type": "Organization",
+        "name": "Velociti"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Velociti",
+        "url": "https://velociti.club"
+      }
+    },
+    {
+      "@type": "TechArticle",
+      "headline": "Fintech Auto-Loan Underwriting Automation Case Study",
+      "description": "How Velociti deployed a secure financial AI pipeline in 12 days to pre-approve 85% of standard loans instantly with complete audit logs and secure data reasoning.",
+      "author": {
+        "@type": "Organization",
+        "name": "Velociti"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Velociti",
+        "url": "https://velociti.club"
+      }
+    },
+    {
+      "@type": "TechArticle",
+      "headline": "Logistics Voice-Native Fleet Rerouting Agent Case Study",
+      "description": "How Velociti engineered a voice-native fleet rerouting dispatch agent communicating in 12 languages, generating $4.1M in Year 1 OPEX savings.",
+      "author": {
+        "@type": "Organization",
+        "name": "Velociti"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Velociti",
+        "url": "https://velociti.club"
+      }
+    }
+  ]
 };
 
 export default function CaseStudiesPage() {
@@ -34,6 +101,11 @@ export default function CaseStudiesPage() {
 
   return (
     <main className="min-h-screen pt-40 pb-32 bg-obsidian">
+      <Script
+        id="case-studies-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(caseStudiesJsonLd) }}
+      />
       <section className="max-w-6xl mx-auto px-6 mb-20">
         <h1 className="text-5xl md:text-7xl font-display font-medium text-white tracking-tight mb-8">
           Proven <span className="text-neon-violet">Deployments</span>

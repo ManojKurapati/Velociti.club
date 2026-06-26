@@ -1,0 +1,51 @@
+# Velociti
+
+Velociti deploys secure, high-performance, enterprise-grade AI systems and autonomous agents that integrate directly into existing workflows and databases to automate core business operations.
+
+## Core Offerings & Services
+
+### 1. AI Operations Automation
+- **Description**: Autonomously reasoning agents that synchronize with ERPs, perform auto-reconciliation, audit financial records, compile compliance data, and execute workflow pipelines.
+- **Key Metrics**: Eliminates 95% of manual reporting work; 24/7 continuous daemons.
+- **Integrations**: Custom back-ends, ERP data, SQL Databases, Slack alert reporting.
+
+### 2. AI Customer Support Systems
+- **Description**: Low-latency multilingual voice-native and text-based support agents handling L1/L2 customer queries and proactive ticketing follow-ups.
+- **Key Metrics**: Latency under 1.4 seconds (voice); 99.2% resolution rates.
+- **Integrations**: Zendesk, Salesforce, internal knowledge bases, custom telephony.
+
+### 3. AI Sales Automation
+- **Description**: Autonomous SDR (Sales Development Representative) systems executing hyper-personalized outbound outreach sequences, lead qualification, and CRM updates.
+- **Key Metrics**: Hyper-personalized lead qualification; direct booking of qualified sales meetings.
+- **Integrations**: HubSpot, Salesforce, Outreach.
+
+### 4. Enterprise Knowledge AI (RAG)
+- **Description**: Secure Retrieval-Augmented Generation (RAG) pipelines bridging company data silos into unified vector search systems.
+- **Key Metrics**: Zero-hallucination compliance checking; millisecond-level document queries.
+- **Integrations**: Slack, Notion, Jira, Amazon S3, PDF docs, custom vector databases.
+
+---
+
+## Technical Specifications & Infrastructure
+
+- **Deployment Model**: Fully managed cloud or on-premise private deployment (Virtual Private Cloud / VPC).
+- **Security & Compliance**: End-to-end encryption, strict RAG security boundaries, GDPR/HIPAA-ready systems.
+- **Latency**: Voice interaction latency of 1.2–1.4 seconds.
+- **Implementation Speed**: 4 to 11 weeks average deployment to production, compared to 12-18 months legacy dev times.
+
+---
+
+## Primary Navigation & Routes
+- **Home**: [https://velociti.club/](https://velociti.club/) — Core system overview and solutions.
+- **Enterprise**: [https://velociti.club/enterprise](https://velociti.club/enterprise) — Enterprise pillars, ROI calculator, and security parameters.
+- **Knowledge Lab**: [https://velociti.club/knowledge](https://velociti.club/knowledge) — Deployment playbooks, telemetry research, and comparison metrics.
+- **Case Studies**: [https://velociti.club/case-studies](https://velociti.club/case-studies) — Quantitative results across Fintech, Healthcare, and Logistics.
+- **About**: [https://velociti.club/about](https://velociti.club/about) — Syndicate details and executive leadership.
+- **Blog**: [https://velociti.club/blog](https://velociti.club/blog) — Insights on the autonomous transition and agentic loops.
+- **The Club**: [https://velociti.club/curious](https://velociti.club/curious) — Private network portal for startup and enterprise leaders.
+
+---
+
+## Leadership
+- **Manoj Kurapati**, Founder & CEO: Focused on rewiring corporate infrastructure to run on agentic logic.
+- **Fatima Qazi**, COO: Directing enterprise alignment, cost reduction, and business outcomes.
