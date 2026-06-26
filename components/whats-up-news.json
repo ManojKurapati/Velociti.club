@@ -1,0 +1,60 @@
+{
+  "source": "fallback",
+  "timestamp": 1782476040204,
+  "articles": [
+    {
+      "title": "Claude 3.7 Sonnet and Claude Code",
+      "summary": "Anthropic introduces Claude 3.7 Sonnet, their first hybrid reasoning model capable of both instant responses and extended reasoning. Alongside it, they launched Claude Code, a terminal-based agent for complete repository-wide development tasks.",
+      "date": "2026-05-24",
+      "url": "https://www.anthropic.com/news/claude-3-7-sonnet",
+      "category": "Labs",
+      "author": "Anthropic Team",
+      "sourceName": "Anthropic"
+    },
+    {
+      "title": "GPT-4o: Reasoning across audio, vision, and text in real-time",
+      "summary": "OpenAI introduces its flagship model GPT-4o, delivering human-like response speeds across text, audio, and visual inputs. The model sets new standards in voice conversational latency and multimodal reasoning.",
+      "date": "2026-05-13",
+      "url": "https://openai.com/newsroom/gpt-4o-our-new-flagship-model/",
+      "category": "Labs",
+      "author": "OpenAI Team",
+      "sourceName": "OpenAI"
+    },
+    {
+      "title": "AlphaFold 3 predicts structure and interactions of all of life's molecules",
+      "summary": "Google DeepMind unveils AlphaFold 3, which maps the structure and interactions of proteins, DNA, RNA, and chemical compounds. This leap enables scientists to model cellular machinery and accelerate drug discovery.",
+      "date": "2026-05-08",
+      "url": "https://deepmind.google/blog/alphafold-3-predicts-structure-and-interactions-of-all-lifes-molecules/",
+      "category": "Labs",
+      "author": "Google DeepMind",
+      "sourceName": "Google DeepMind"
+    },
+    {
+      "title": "LLM Powered Autonomous Agents",
+      "summary": "An in-depth analysis of constructing autonomous agents with Large Language Models as the brain. The article explores planning, memory architecture (short/long-term), and tool use via methods like ReAct and AutoGPT.",
+      "date": "2025-06-23",
+      "url": "https://lilianweng.github.io/posts/2023-06-23-agent/",
+      "category": "Thinkers",
+      "author": "Lilian Weng",
+      "sourceName": "Lil'Log"
+    },
+    {
+      "title": "Things I learned building an automated AI web scraper",
+      "summary": "Simon Willison shares practical findings on using frontier models for data extraction. The post details cost control, handling unexpected DOM changes, writing prompt wrappers, and dealing with model hallucination in structured extraction.",
+      "date": "2026-06-15",
+      "url": "https://simonwillison.net/2026/Jun/15/scraping-with-llms/",
+      "category": "Thinkers",
+      "author": "Simon Willison",
+      "sourceName": "Simon's Weblog"
+    },
+    {
+      "title": "Introducing OpenAI o1-preview: Reasoning models for complex tasks",
+      "summary": "OpenAI releases o1-preview, a new series of AI models that spend more time thinking before answering. They can reason through scientific workflows, complex math, and competitive programming challenges.",
+      "date": "2025-09-12",
+      "url": "https://openai.com/newsroom/introducing-openai-o1-preview/",
+      "category": "Labs",
+      "author": "OpenAI Team",
+      "sourceName": "OpenAI"
+    }
+  ]
+}

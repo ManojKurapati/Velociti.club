@@ -2,6 +2,7 @@ import { Hero } from "@/components/Hero";
 import { TrustBar } from "@/components/TrustBar";
 import { Showreel } from "@/components/Showreel";
 import { StructuredSolutions } from "@/components/StructuredSolutions";
+import { WhatsUpNews } from "@/components/WhatsUpNews";
 import { IndustryPositioning } from "@/components/IndustryPositioning";
 import { SecurityGovernance } from "@/components/SecurityGovernance";
 import { OnPremDeployment } from "@/components/OnPremDeployment";
@@ -22,6 +23,7 @@ export default function Home() {
       <TrustBar />
       <Showreel />
       <StructuredSolutions />
+      <WhatsUpNews />
       <IndustryPositioning />
       <SecurityGovernance />
       <OnPremDeployment />

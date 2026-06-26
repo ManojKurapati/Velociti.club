@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "fetch-news": "node scripts/fetch-news.mjs",
+    "build": "npm run fetch-news && next build",
     "start": "next start",
     "lint": "eslint"
   },
