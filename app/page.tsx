@@ -13,7 +13,7 @@ import { Metadata } from "next";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: "Velociti | Enterprise AI Systems That Automate Real Operations",
+  title: "Velociti | Enterprise AI Systems That Automate Operations",
   description: "We deploy secure AI agents across sales, support, operations, and workflows using your existing systems and data.",
   keywords: [
     "enterprise AI agents",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     canonical: "https://velociti.club",
   },
   openGraph: {
-    title: "Velociti | Enterprise AI Systems That Automate Real Operations",
+    title: "Velociti | Enterprise AI Systems That Automate Operations",
     description: "We deploy secure AI agents across sales, support, operations, and workflows using your existing systems and data.",
     url: "https://velociti.club",
     images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Velociti Enterprise AI Systems" }],

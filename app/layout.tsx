@@ -28,7 +28,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://velociti.club"),
-  title: "Velociti — Enterprise AI Systems That Automate Real Operations",
+  title: "Velociti — Enterprise AI Systems That Automate Operations",
   description: "We deploy secure AI agents across sales, support, operations, and workflows using your existing systems and data.",
   keywords: [
     "enterprise AI systems",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     description: "Secure AI agents for sales, support, operations, and workflows.",
     url: "https://velociti.club",
     siteName: "Velociti",
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Velociti — Enterprise AI Systems That Automate Real Operations" }],
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Velociti — Enterprise AI Systems That Automate Operations" }],
     locale: "en_US",
     type: "website",
   },

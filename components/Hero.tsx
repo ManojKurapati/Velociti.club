@@ -59,7 +59,7 @@ export function Hero() {
             />
           </div>
           <p className="text-[2.25rem] sm:text-5xl md:text-7xl lg:text-9xl font-display font-medium text-white tracking-tighter leading-[1.1] mt-1 sm:mt-1 md:mt-2 lg:mt-2">
-            Real Operations.
+            Operations.
           </p>
         </motion.div>
 

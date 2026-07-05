@@ -10,7 +10,7 @@ export function Footer() {
           <Link href="/" className="interactive block">
             <Logo />
           </Link>
-          <p className="text-gray-500 text-sm mt-2">Enterprise AI Systems That Automate Real Operations.</p>
+          <p className="text-gray-500 text-sm mt-2">Enterprise AI Systems That Automate Operations.</p>
         </div>
         
         <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-sm text-gray-400">
