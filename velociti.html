@@ -128,42 +128,28 @@
 
         /* Custom Cursor */
         .custom-cursor {
-            width: 30px;
-            height: 30px;
-            border: 1px solid rgba(0, 240, 255, 0.5);
-            border-radius: 50%;
             position: fixed;
             pointer-events: none;
             z-index: 9999;
-            transform: translate(-50%, -50%);
-            transition: width 0.3s, height 0.3s, background-color 0.3s;
             mix-blend-mode: difference;
+            transform: translate3d(-100px, -100px, 0);
         }
         
-        .cursor-dot {
-            width: 6px;
-            height: 6px;
-            background-color: #00f0ff;
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            z-index: 9999;
-            transform: translate(-50%, -50%);
-            transition: transform 0.1s;
-        }
-
-        .custom-cursor.hover {
-            width: 60px;
-            height: 60px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-color: transparent;
+        .custom-cursor.hover svg {
+            transform: scale(1.3);
+            filter: drop-shadow(0px 0px 8px rgba(0, 240, 255, 1)) !important;
         }
 
         @media (max-width: 768px) {
-            .custom-cursor, .cursor-dot {
+            .custom-cursor {
                 display: none;
             }
-            body { cursor: auto; }
+        }
+
+        @media (min-width: 769px) {
+            body, body * {
+                cursor: none !important;
+            }
         }
 
         /* Buttons */
@@ -238,8 +224,11 @@
 </head>
 <body class="antialiased selection:bg-neon-cyan selection:text-black">
 
-    <div class="custom-cursor"></div>
-    <div class="cursor-dot"></div>
+    <div class="custom-cursor">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="filter: drop-shadow(0px 0px 4px rgba(0, 240, 255, 0.6)); transition: transform 0.2s, filter 0.2s; transform-origin: center;">
+            <path d="M12 4L3 18H6L12 8L18 18H21L12 4Z" fill="#00f0ff"/>
+        </svg>
+    </div>
 
     <!-- Background Orbs representing Neural Mesh/Data -->
     <div class="orb orb-1 fixed"></div>
@@ -567,20 +556,26 @@
     <script>
         // Custom Cursor Implementation
         const cursor = document.querySelector('.custom-cursor');
-        const dot = document.querySelector('.cursor-dot');
-        const interactives = document.querySelectorAll('.interactive, a, button, input');
+        const interactives = document.querySelectorAll('.interactive, a, button, input, [role="button"], .cursor-pointer');
 
         if(window.innerWidth > 768) {
+            let cursorX = window.innerWidth / 2;
+            let cursorY = window.innerHeight / 2;
+            let currentX = window.innerWidth / 2;
+            let currentY = window.innerHeight / 2;
+
             document.addEventListener('mousemove', (e) => {
-                // Request animation frame for smooth cursor
-                requestAnimationFrame(() => {
-                    cursor.style.left = e.clientX + 'px';
-                    cursor.style.top = e.clientY + 'px';
-                    
-                    dot.style.left = e.clientX + 'px';
-                    dot.style.top = e.clientY + 'px';
-                });
+                cursorX = e.clientX;
+                cursorY = e.clientY;
             });
+
+            function animateCursor() {
+                currentX += (cursorX - currentX) * 0.18;
+                currentY += (cursorY - currentY) * 0.18;
+                cursor.style.transform = `translate3d(${currentX}px, ${currentY}px, 0) translate(-12px, -4px)`;
+                requestAnimationFrame(animateCursor);
+            }
+            requestAnimationFrame(animateCursor);
 
             interactives.forEach(el => {
                 el.addEventListener('mouseenter', () => {

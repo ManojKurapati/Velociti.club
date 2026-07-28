@@ -57,13 +57,13 @@ export function IndustryPositioning() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="bg-black/40 border border-white/10 rounded-2xl p-6 hover:border-white/30 transition-colors"
+              className="bg-black/40 border border-cool-gray-800 rounded-2xl p-6 hover:border-cool-gray-700 transition-colors"
             >
               <div className={`w-12 h-12 rounded-xl ${ind.bg} flex items-center justify-center mb-6`}>
                 <ind.icon className={`w-6 h-6 ${ind.color}`} />
               </div>
               <h3 className="text-lg font-medium text-white mb-2">{ind.name}</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">{ind.description}</p>
+              <p className="text-cool-gray-400 text-sm leading-relaxed">{ind.description}</p>
             </motion.div>
           ))}
         </div>

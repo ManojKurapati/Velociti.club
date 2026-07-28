@@ -57,7 +57,7 @@ export function JourneySection() {
                   <span className="text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.3)]">Transformation</span> <br/>
                   Journey
                 </h2>
-                <p className="text-2xl text-gray-400 font-light max-w-lg">
+                <p className="text-2xl text-cool-gray-400 font-light max-w-lg">
                   Four phases to fundamentally upgrade how your enterprise operates. Scroll to explore <span className="text-neon-cyan ml-2 animate-pulse inline-block">→</span>
                 </p>
               </div>
@@ -70,7 +70,7 @@ export function JourneySection() {
                 <div className="w-1/2 text-right">
                   <span className="text-neon-cyan font-bold tracking-widest text-sm uppercase block mb-2">Phase 01</span>
                   <h3 className="font-display text-5xl font-bold mb-4 drop-shadow-[0_0_15px_rgba(0,240,255,0.3)]">Strategy & Assessment</h3>
-                  <p className="text-gray-400 text-lg">We map your operational nervous system. Identifying high-friction processes, data silos, and exact insertion points where AI will deliver immediate alpha.</p>
+                  <p className="text-cool-gray-400 text-lg">We map your operational nervous system. Identifying high-friction processes, data silos, and exact insertion points where AI will deliver immediate alpha.</p>
                 </div>
                 <div className="w-1/2">
                   <div className="glass-card p-10 rounded-3xl h-80 flex flex-col justify-between border-neon-cyan/20">
@@ -79,7 +79,7 @@ export function JourneySection() {
                       <div className="h-2 w-full bg-white/10 rounded-full overflow-hidden">
                         <div className="h-full w-1/4 bg-neon-cyan shadow-[0_0_10px_#00f0ff]"></div>
                       </div>
-                      <div className="flex justify-between text-xs text-gray-500 uppercase tracking-wider font-bold">
+                      <div className="flex justify-between text-xs text-cool-gray-500 uppercase tracking-wider font-bold">
                         <span>Current: Manual</span>
                         <span className="text-neon-cyan">Target: Autonomous</span>
                       </div>
@@ -95,7 +95,7 @@ export function JourneySection() {
                 <div className="w-1/2 text-left">
                   <span className="text-neon-pink font-bold tracking-widest text-sm uppercase block mb-2">Phase 02</span>
                   <h3 className="font-display text-5xl font-bold mb-4 drop-shadow-[0_0_15px_rgba(255,0,170,0.3)]">Secure Integration</h3>
-                  <p className="text-gray-400 text-lg">Deploying custom-trained agents into your secure environment. Integrating securely with legacy APIs, cloud infrastructure, and internal databases.</p>
+                  <p className="text-cool-gray-400 text-lg">Deploying custom-trained agents into your secure environment. Integrating securely with legacy APIs, cloud infrastructure, and internal databases.</p>
                 </div>
                 <div className="w-1/2">
                   <div className="glass-card p-10 rounded-3xl h-80 flex items-center justify-center relative overflow-hidden border-neon-pink/20">
@@ -115,7 +115,7 @@ export function JourneySection() {
                 <div className="w-1/2 text-right">
                   <span className="text-neon-purple font-bold tracking-widest text-sm uppercase block mb-2">Phase 03 & 04</span>
                   <h3 className="font-display text-5xl font-bold mb-4 drop-shadow-[0_0_15px_rgba(138,43,226,0.3)]">Autonomous Transformation</h3>
-                  <p className="text-gray-400 text-lg">Agents take over repetitive tasks. Workflows run 24/7. Continuous optimization algorithms monitor outputs to make your enterprise faster and smarter every single day.</p>
+                  <p className="text-cool-gray-400 text-lg">Agents take over repetitive tasks. Workflows run 24/7. Continuous optimization algorithms monitor outputs to make your enterprise faster and smarter every single day.</p>
                 </div>
                 <div className="w-1/2">
                   <div className="glass-card p-10 rounded-3xl h-80 relative overflow-hidden group border-neon-purple/20">
@@ -152,7 +152,7 @@ export function JourneySection() {
             <div className="flex items-center justify-center w-10 h-10 rounded-full border border-neon-cyan bg-black text-neon-cyan shadow-[0_0_15px_#00f0ff] shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">1</div>
             <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass-card p-6 rounded-2xl">
               <h3 className="font-display font-bold text-xl mb-2 text-white">Strategy & Assessment</h3>
-              <p className="text-gray-400 text-sm">Mapping your operational nervous system to identify exact AI insertion points.</p>
+              <p className="text-cool-gray-400 text-sm">Mapping your operational nervous system to identify exact AI insertion points.</p>
             </div>
           </div>
 
@@ -160,7 +160,7 @@ export function JourneySection() {
             <div className="flex items-center justify-center w-10 h-10 rounded-full border border-neon-pink bg-black text-neon-pink shadow-[0_0_15px_#ff00aa] shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">2</div>
             <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass-card p-6 rounded-2xl">
               <h3 className="font-display font-bold text-xl mb-2 text-white">Integration & Deployment</h3>
-              <p className="text-gray-400 text-sm">Securely deploying custom-trained agents into your existing infrastructure.</p>
+              <p className="text-cool-gray-400 text-sm">Securely deploying custom-trained agents into your existing infrastructure.</p>
             </div>
           </div>
 
@@ -168,7 +168,7 @@ export function JourneySection() {
             <div className="flex items-center justify-center w-10 h-10 rounded-full border border-neon-purple bg-black text-neon-purple shadow-[0_0_15px_#8a2be2] shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">3</div>
             <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass-card p-6 rounded-2xl">
               <h3 className="font-display font-bold text-xl mb-2 text-white">Autonomous Operations</h3>
-              <p className="text-gray-400 text-sm">Agents take over repetitive tasks. Workflows run 24/7 with oversight.</p>
+              <p className="text-cool-gray-400 text-sm">Agents take over repetitive tasks. Workflows run 24/7 with oversight.</p>
             </div>
           </div>
 

@@ -38,7 +38,7 @@ const caseStudies = [
 
 export function EnterpriseCaseStudies() {
   return (
-    <section id="case-studies" className="py-24 bg-black relative border-t border-white/5">
+    <section id="case-studies" className="py-24 bg-black relative border-t border-cool-gray-800/50">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <div>
@@ -57,33 +57,33 @@ export function EnterpriseCaseStudies() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.2 }}
-              className="bg-obsidian rounded-3xl border border-white/10 hover:border-white/30 transition-all group overflow-hidden flex flex-col"
+              className="bg-obsidian rounded-3xl border border-cool-gray-800 hover:border-cool-gray-700 transition-all group overflow-hidden flex flex-col"
             >
               <div className="p-8 flex-grow">
                 <div className="flex justify-between items-start mb-6">
                   <div>
-                    <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">{study.industry}</div>
+                    <div className="text-xs font-semibold text-cool-gray-500 uppercase tracking-wider mb-2">{study.industry}</div>
                     <h3 className="text-2xl font-medium text-white">{study.client}</h3>
                   </div>
-                  <div className="bg-white/5 rounded-full px-3 py-1 text-sm text-gray-300 border border-white/10">
+                  <div className="bg-cool-gray-900/50 rounded-full px-3 py-1 text-sm text-cool-gray-300 border border-cool-gray-700/30">
                     {study.timeline}
                   </div>
                 </div>
 
                 <div className="space-y-6">
                   <div>
-                    <h4 className="text-sm font-medium text-gray-400 mb-1">Operational Problem</h4>
-                    <p className="text-gray-300 text-sm leading-relaxed">{study.problem}</p>
+                    <h4 className="text-sm font-medium text-cool-gray-400 mb-1">Operational Problem</h4>
+                    <p className="text-cool-gray-300 text-sm leading-relaxed">{study.problem}</p>
                   </div>
                   <div>
-                    <h4 className="text-sm font-medium text-gray-400 mb-1">Deployment Process</h4>
-                    <p className="text-gray-300 text-sm leading-relaxed">{study.process}</p>
+                    <h4 className="text-sm font-medium text-cool-gray-400 mb-1">Deployment Process</h4>
+                    <p className="text-cool-gray-300 text-sm leading-relaxed">{study.process}</p>
                   </div>
                   <div>
-                    <h4 className="text-sm font-medium text-gray-400 mb-2">Systems Integrated</h4>
+                    <h4 className="text-sm font-medium text-cool-gray-400 mb-2">Systems Integrated</h4>
                     <div className="flex flex-wrap gap-2">
                       {study.systems.map((sys, idx) => (
-                        <span key={idx} className="bg-black border border-white/10 text-gray-400 text-xs px-2 py-1 rounded">
+                        <span key={idx} className="bg-cool-gray-900 border border-cool-gray-700/30 text-cool-gray-400 text-xs px-2 py-1 rounded">
                           {sys}
                         </span>
                       ))}
@@ -92,12 +92,12 @@ export function EnterpriseCaseStudies() {
                 </div>
               </div>
 
-              <div className={`bg-gradient-to-r ${study.color} border-t border-white/5 p-8`}>
+              <div className={`bg-gradient-to-r ${study.color} border-t border-cool-gray-800/50 p-8`}>
                 <div className="grid grid-cols-3 gap-4">
                   {study.results.map((result, idx) => (
                     <div key={idx}>
                       <div className="text-2xl md:text-3xl font-display font-bold text-white mb-1">{result.metric}</div>
-                      <div className="text-xs text-gray-300">{result.label}</div>
+                      <div className="text-xs text-cool-gray-300">{result.label}</div>
                     </div>
                   ))}
                 </div>

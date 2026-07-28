@@ -25,7 +25,7 @@ export function Navbar() {
           <Logo />
         </Link>
         
-        <div className="hidden md:flex space-x-8 text-sm font-medium text-gray-400 absolute left-1/2 transform -translate-x-1/2">
+        <div className="hidden md:flex space-x-8 text-sm font-medium text-cool-gray-400 absolute left-1/2 transform -translate-x-1/2">
           {[
             { label: 'Home', href: '/' },
             { label: 'Solutions', href: '/#solutions' },

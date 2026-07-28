@@ -5,56 +5,63 @@ import gsap from "gsap";
 
 export function CustomCursor() {
   const cursorRef = useRef<HTMLDivElement>(null);
-  const dotRef = useRef<HTMLDivElement>(null);
+  const iconRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Check if device is touch or small screen, bypass cursor
+    // Check if device is touch or small screen, bypass custom cursor
     if (window.matchMedia("(max-width: 1024px)").matches) return;
 
     let cursorX = window.innerWidth / 2;
     let cursorY = window.innerHeight / 2;
+    let currentX = window.innerWidth / 2;
+    let currentY = window.innerHeight / 2;
     
     const onMouseMove = (e: MouseEvent) => {
       cursorX = e.clientX;
       cursorY = e.clientY;
-
-      if (dotRef.current) {
-        dotRef.current.style.left = `${cursorX}px`;
-        dotRef.current.style.top = `${cursorY}px`;
-      }
     };
 
+    let animationFrameId: number;
+
     const animateCursor = () => {
+      // Smooth lerp for trailing effect
+      currentX += (cursorX - currentX) * 0.18;
+      currentY += (cursorY - currentY) * 0.18;
+
       if (cursorRef.current) {
-        const currentX = parseFloat(cursorRef.current.style.left) || cursorX;
-        const currentY = parseFloat(cursorRef.current.style.top) || cursorY;
-        
-        // Fast lerp for smooth trailing effect
-        const dx = cursorX - currentX;
-        const dy = cursorY - currentY;
-        
-        cursorRef.current.style.left = `${currentX + dx * 0.2}px`;
-        cursorRef.current.style.top = `${currentY + dy * 0.2}px`;
+        // Shift by -12px, -4px so that the apex of the inverted V SVG is exactly under the pointer tip
+        cursorRef.current.style.transform = `translate3d(${currentX}px, ${currentY}px, 0) translate(-12px, -4px)`;
       }
-      requestAnimationFrame(animateCursor);
+      animationFrameId = requestAnimationFrame(animateCursor);
     };
 
     window.addEventListener("mousemove", onMouseMove);
-    requestAnimationFrame(animateCursor);
+    animationFrameId = requestAnimationFrame(animateCursor);
 
     // Add glowing hover states for interactive elements
     const handleMouseOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      if (target.tagName.toLowerCase() === 'a' || 
-          target.tagName.toLowerCase() === 'button' || 
-          target.closest('a') || 
-          target.closest('button')) {
-        gsap.to(cursorRef.current, { scale: 2.5, backgroundColor: "rgba(255,255,255,0.1)", borderColor: "transparent", duration: 0.3 });
+      if (
+        target.tagName.toLowerCase() === 'a' || 
+        target.tagName.toLowerCase() === 'button' || 
+        target.closest('a') || 
+        target.closest('button') ||
+        target.closest('.cursor-pointer')
+      ) {
+        gsap.to(iconRef.current, { 
+          scale: 1.3, 
+          filter: "drop-shadow(0px 0px 8px rgba(0, 240, 255, 1))", 
+          duration: 0.2 
+        });
       }
     };
 
     const handleMouseOut = () => {
-      gsap.to(cursorRef.current, { scale: 1, backgroundColor: "transparent", borderColor: "rgba(0, 240, 255, 0.5)", duration: 0.3 });
+      gsap.to(iconRef.current, { 
+        scale: 1, 
+        filter: "drop-shadow(0px 0px 4px rgba(0, 240, 255, 0.6))", 
+        duration: 0.2 
+      });
     };
 
     document.addEventListener("mouseover", handleMouseOver);
@@ -64,21 +71,35 @@ export function CustomCursor() {
       window.removeEventListener("mousemove", onMouseMove);
       document.removeEventListener("mouseover", handleMouseOver);
       document.removeEventListener("mouseout", handleMouseOut);
+      cancelAnimationFrame(animationFrameId);
     };
   }, []);
 
   return (
-    <>
+    <div 
+      ref={cursorRef} 
+      className="fixed top-0 left-0 pointer-events-none z-[9999] mix-blend-difference hidden lg:block"
+      style={{ transform: 'translate3d(-100px, -100px, 0)' }}
+    >
       <div 
-        ref={cursorRef} 
-        className="fixed top-0 left-0 w-8 h-8 rounded-full border border-neon-cyan/50 pointer-events-none z-[9999] mix-blend-difference transform -translate-x-1/2 -translate-y-1/2 hidden lg:block"
-        style={{ left: '-100px', top: '-100px' }}
-      />
-      <div 
-        ref={dotRef} 
-        className="fixed top-0 left-0 w-1.5 h-1.5 bg-neon-cyan rounded-full pointer-events-none z-[9999] transform -translate-x-1/2 -translate-y-1/2 hidden lg:block"
-        style={{ left: '-100px', top: '-100px' }}
-      />
-    </>
+        ref={iconRef}
+        className="origin-center"
+        style={{ filter: "drop-shadow(0px 0px 4px rgba(0, 240, 255, 0.6))" }}
+      >
+        <svg 
+          width="24" 
+          height="24" 
+          viewBox="0 0 24 24" 
+          fill="none" 
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path 
+            d="M12 4L3 18H6L12 8L18 18H21L12 4Z" 
+            fill="#00f0ff"
+          />
+        </svg>
+      </div>
+    </div>
   );
 }
+

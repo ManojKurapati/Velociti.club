@@ -148,7 +148,7 @@ export function WhatsUpNews() {
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.4, delay: idx * 0.05 }}
                   key={article.url}
-                  className="glass-card border border-white/5 hover:border-white/15 rounded-3xl p-6 h-[310px] flex flex-col justify-between transition-all duration-300 group hover:shadow-[0_20px_40px_rgba(0,0,0,0.5)] relative"
+                  className="glass-card border border-cool-gray-700/20 hover:border-cool-gray-700/50 rounded-3xl p-6 h-[310px] flex flex-col justify-between transition-all duration-300 group hover:shadow-[0_20px_40px_rgba(0,0,0,0.5)] relative"
                 >
                   {/* Subtle hover background glow */}
                   <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-neon-cyan/0 via-neon-cyan/5 to-neon-violet/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />

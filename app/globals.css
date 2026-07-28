@@ -7,12 +7,27 @@
   --color-white: var(--theme-white);
   --color-neon-cyan: var(--theme-cyan);
   --color-neon-violet: var(--theme-violet);
+  
+  /* Map both cool-gray and standard gray to theme-aware variables */
   --color-cool-gray-100: var(--theme-gray-100);
+  --color-cool-gray-200: var(--theme-gray-200);
   --color-cool-gray-300: var(--theme-gray-300);
   --color-cool-gray-400: var(--theme-gray-400);
   --color-cool-gray-500: var(--theme-gray-500);
+  --color-cool-gray-600: var(--theme-gray-600);
   --color-cool-gray-700: var(--theme-gray-700);
+  --color-cool-gray-800: var(--theme-gray-800);
   --color-cool-gray-900: var(--theme-gray-900);
+
+  --color-gray-100: var(--theme-gray-100);
+  --color-gray-200: var(--theme-gray-200);
+  --color-gray-300: var(--theme-gray-300);
+  --color-gray-400: var(--theme-gray-400);
+  --color-gray-500: var(--theme-gray-500);
+  --color-gray-600: var(--theme-gray-600);
+  --color-gray-700: var(--theme-gray-700);
+  --color-gray-800: var(--theme-gray-800);
+  --color-gray-900: var(--theme-gray-900);
   
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-display: 'Satoshi', ui-sans-serif, system-ui, sans-serif;
@@ -32,10 +47,13 @@
     --theme-violet: #6b21a8;
     
     --theme-gray-100: #111827; 
+    --theme-gray-200: #1f2937;
     --theme-gray-300: #374151;
     --theme-gray-400: #4b5563;
     --theme-gray-500: #6b7280;
+    --theme-gray-600: #9ca3af;
     --theme-gray-700: #d1d5db;
+    --theme-gray-800: #e5e7eb;
     --theme-gray-900: #f3f4f6;
 
     --glass-bg: rgba(255, 255, 255, 0.6);
@@ -58,10 +76,13 @@
     --theme-violet: #9D4EDD;
     
     --theme-gray-100: #F3F4F6;
+    --theme-gray-200: #e5e7eb;
     --theme-gray-300: #D1D5DB;
     --theme-gray-400: #9ca3af;
     --theme-gray-500: #6B7280;
+    --theme-gray-600: #4B5563;
     --theme-gray-700: #374151;
+    --theme-gray-800: #1F2937;
     --theme-gray-900: #111827;
 
     --glass-bg: rgba(10, 10, 15, 0.4);
@@ -88,8 +109,8 @@ body {
     font-size: 18px;
   }
   
-  body, a, button, input {
-    cursor: none;
+  body, body * {
+    cursor: none !important;
   }
 }
 

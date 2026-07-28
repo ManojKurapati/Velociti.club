@@ -55,7 +55,7 @@ export function ResultsSection() {
           <div className="stat-reveal">
             <span className="text-neon-cyan font-bold tracking-widest text-sm uppercase block mb-4">The Impact</span>
             <h2 className="font-display text-4xl md:text-5xl lg:text-7xl font-bold mb-6">Results That <br/>Matter.</h2>
-            <p className="text-gray-400 text-lg mb-8 max-w-xl">
+            <p className="text-cool-gray-400 text-lg mb-8 max-w-xl">
               When you move from manual processing to autonomous execution, the numbers speak for themselves. This is the ROI of operating at AI velocity.
             </p>
           </div>
@@ -63,20 +63,20 @@ export function ResultsSection() {
           <div className="grid grid-cols-2 gap-6 count-card-container">
             <div className="glass-card p-6 rounded-2xl border-t-2 border-t-neon-cyan/50 hover:bg-white/[0.02] transition-colors count-card">
               <div className="font-display text-4xl md:text-5xl font-bold text-white mb-2">{counts[0]}x</div>
-              <div className="text-sm font-medium text-gray-400 uppercase tracking-wider">Faster Deployment</div>
+              <div className="text-sm font-medium text-cool-gray-400 uppercase tracking-wider">Faster Deployment</div>
             </div>
             
             <div className="glass-card p-6 rounded-2xl border-t-2 border-t-neon-pink/50 hover:bg-white/[0.02] transition-colors count-card">
               <div className="font-display text-4xl md:text-5xl font-bold text-white mb-2">{counts[1]}%</div>
-              <div className="text-sm font-medium text-gray-400 uppercase tracking-wider">Cost Reduction</div>
+              <div className="text-sm font-medium text-cool-gray-400 uppercase tracking-wider">Cost Reduction</div>
             </div>
 
             <div className="glass-card p-6 rounded-2xl border-t-2 border-t-neon-purple/50 hover:bg-white/[0.02] transition-colors count-card">
               <div className="font-display text-4xl md:text-5xl font-bold text-white mb-2">{counts[2]}%</div>
-              <div className="text-sm font-medium text-gray-400 uppercase tracking-wider">Process Automation</div>
+              <div className="text-sm font-medium text-cool-gray-400 uppercase tracking-wider">Process Automation</div>
             </div>
 
-            <div className="glass-card p-6 rounded-2xl border-t-2 border-t-white/30 hover:bg-white/[0.02] transition-colors count-card flex flex-col justify-center">
+            <div className="glass-card p-6 rounded-2xl border-t-2 border-t-cool-gray-400/30 hover:bg-white/[0.02] transition-colors count-card flex flex-col justify-center">
               <div className="font-display text-2xl font-bold text-white mb-2">Enterprise</div>
               <div className="text-sm font-medium text-neon-cyan uppercase tracking-wider flex items-center gap-2">
                 <Lock size={16} /> Grade Security
