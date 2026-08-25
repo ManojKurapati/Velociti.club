@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { Mic, Database, Zap, Stethoscope, Briefcase, Truck } from "lucide-react";
+import { Mic, Database, Zap, Stethoscope, Briefcase, Droplet, Car, Pill, Hotel, GraduationCap } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-type Industry = "all" | "healthcare" | "finance" | "logistics";
+type Industry = "all" | "healthcare" | "finance" | "oilAndGas" | "automobile" | "pharma" | "hospitality" | "education";
 
 const pillars = [
   {
@@ -16,7 +16,11 @@ const pillars = [
       all: "Automate outbound sales, inbound routing, and Level 1 customer support.",
       healthcare: "HIPAA-compliant patient scheduling and triage routing.",
       finance: "PCI-compliant debt collection and secure account verification.",
-      logistics: "Automated driver dispatch and real-time delivery tracking."
+      oilAndGas: "Automated field operator updates and emergency dispatch triage.",
+      automobile: "Supply chain voice tracking and parts dispatch verification.",
+      pharma: "Adverse event voice intake and clinical trials helpline triage.",
+      hospitality: "Autonomous guest concierge, room booking, and dining reservation management.",
+      education: "Student admissions helpline triage and enrollment guidance voice lines."
     }
   },
   {
@@ -28,7 +32,11 @@ const pillars = [
       all: "Enterprise search across internal wikis, docs, and structured databases.",
       healthcare: "Diagnostic assistance reasoning over vast medical histories and research.",
       finance: "Real-time compliance checks against complex regulatory texts.",
-      logistics: "Supply chain anomaly detection via historical contract analysis."
+      oilAndGas: "AI semantic search over technical schematics, drilling logs, and compliance regulations.",
+      automobile: "Semantic parsing of part schemas, recall history manuals, and parts databases.",
+      pharma: "Protocol search, trial results checking, and patent documentation analysis.",
+      hospitality: "Property SOP retrieval, guest preference search, and local attraction database querying.",
+      education: "Student record search, course syllabus parsing, and academic regulation lookups."
     }
   },
   {
@@ -40,7 +48,11 @@ const pillars = [
       all: "Autonomous agents executing multi-step repetitive software processes.",
       healthcare: "Automated medical billing and insurance claim generation logic.",
       finance: "End-to-end autonomous loan origination and risk scoring matrices.",
-      logistics: "Dynamic autonomous route optimization under volatile conditions."
+      oilAndGas: "Autonomous predictive maintenance scheduling and sensor telemetry alerting.",
+      automobile: "Assembly line defect routing, parts ordering, and supply pipeline logs.",
+      pharma: "Clinical trial patient matching and drug discovery data processing loops.",
+      hospitality: "Automatic check-in/check-out orchestration and room allocation pipelines.",
+      education: "Automated credit transfers, application scoring, and financial aid compliance checking."
     }
   }
 ];
@@ -51,7 +63,7 @@ export function EnterprisePillars() {
   return (
     <section className="py-24 bg-obsidian border-t border-white/5 relative">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+        <div className="flex flex-col xl:flex-row justify-between items-start xl:items-end mb-16 gap-6">
           <div>
             <h2 className="text-3xl md:text-4xl font-display font-medium text-white mb-4">Core Architecture</h2>
             <p className="text-cool-gray-400">Deploy modular, scalable autonomous systems in weeks, not years.</p>
@@ -65,8 +77,20 @@ export function EnterprisePillars() {
             <button onClick={() => setFilter("finance")} className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors whitespace-nowrap flex items-center gap-2 ${filter === "finance" ? 'bg-neon-violet/20 text-neon-violet border border-neon-violet/50' : 'text-cool-gray-400 hover:text-white'}`}>
               <Briefcase className="w-4 h-4" /> Finance
             </button>
-            <button onClick={() => setFilter("logistics")} className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors whitespace-nowrap flex items-center gap-2 ${filter === "logistics" ? 'bg-white/20 text-white border border-white/50' : 'text-cool-gray-400 hover:text-white'}`}>
-              <Truck className="w-4 h-4" /> Logistics
+            <button onClick={() => setFilter("oilAndGas")} className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors whitespace-nowrap flex items-center gap-2 ${filter === "oilAndGas" ? 'bg-blue-500/20 text-blue-400 border border-blue-500/50' : 'text-cool-gray-400 hover:text-white'}`}>
+              <Droplet className="w-4 h-4" /> Oil & Gas
+            </button>
+            <button onClick={() => setFilter("automobile")} className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors whitespace-nowrap flex items-center gap-2 ${filter === "automobile" ? 'bg-orange-500/20 text-orange-400 border border-orange-500/50' : 'text-cool-gray-400 hover:text-white'}`}>
+              <Car className="w-4 h-4" /> Automobile
+            </button>
+            <button onClick={() => setFilter("pharma")} className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors whitespace-nowrap flex items-center gap-2 ${filter === "pharma" ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/50' : 'text-cool-gray-400 hover:text-white'}`}>
+              <Pill className="w-4 h-4" /> Pharma
+            </button>
+            <button onClick={() => setFilter("hospitality")} className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors whitespace-nowrap flex items-center gap-2 ${filter === "hospitality" ? 'bg-pink-500/20 text-pink-400 border border-pink-500/50' : 'text-cool-gray-400 hover:text-white'}`}>
+              <Hotel className="w-4 h-4" /> Hospitality
+            </button>
+            <button onClick={() => setFilter("education")} className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors whitespace-nowrap flex items-center gap-2 ${filter === "education" ? 'bg-yellow-500/20 text-yellow-400 border border-yellow-500/50' : 'text-cool-gray-400 hover:text-white'}`}>
+              <GraduationCap className="w-4 h-4" /> Education
             </button>
           </div>
         </div>

@@ -1,22 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Truck, HeartPulse, Building2, Landmark } from "lucide-react";
+import { Droplet, HeartPulse, Landmark, Car, Pill, Hotel, GraduationCap } from "lucide-react";
 
 const industries = [
-  {
-    id: "logistics",
-    name: "Logistics & Supply Chain",
-    icon: Truck,
-    description: "Dynamic route optimization, automated dispatching, and vendor contract analysis.",
-    color: "text-blue-400",
-    bg: "bg-blue-400/10"
-  },
   {
     id: "healthcare",
     name: "Healthcare",
     icon: HeartPulse,
-    description: "HIPAA-compliant patient scheduling, billing automation, and diagnostic reasoning assistance.",
+    description: "Ambient clinical voice scribing, medical billing automation, and diagnostic RAG systems.",
     color: "text-emerald-400",
     bg: "bg-emerald-400/10"
   },
@@ -24,17 +16,49 @@ const industries = [
     id: "finance",
     name: "Finance",
     icon: Landmark,
-    description: "Automated loan origination, real-time regulatory compliance checks, and secure collections.",
+    description: "Structured credit underwriting pre-verification, real-time compliance auditing, and secure debt recovery.",
     color: "text-purple-400",
     bg: "bg-purple-400/10"
   },
   {
-    id: "realestate",
-    name: "Real Estate",
-    icon: Building2,
-    description: "Intelligent lead qualification, automated tenant support, and property document parsing.",
+    id: "oil-gas",
+    name: "Oil & Gas",
+    icon: Droplet,
+    description: "Predictive asset telemetry, automated technician dispatch, and technical schematic RAG systems.",
+    color: "text-blue-400",
+    bg: "bg-blue-400/10"
+  },
+  {
+    id: "automobile",
+    name: "Automobile",
+    icon: Car,
+    description: "Computer vision assembly line anomaly routing, parts tracking, and supply chain audit workflows.",
     color: "text-orange-400",
     bg: "bg-orange-400/10"
+  },
+  {
+    id: "pharma",
+    name: "Pharma",
+    icon: Pill,
+    description: "Clinical trial protocol checking, automated adverse event intake, and chemical patent compliance search.",
+    color: "text-teal-400",
+    bg: "bg-teal-400/10"
+  },
+  {
+    id: "hospitality",
+    name: "Hospitality",
+    icon: Hotel,
+    description: "Low-latency booking voice agents, guest preference matching, and room service dispatch routing.",
+    color: "text-pink-400",
+    bg: "bg-pink-400/10"
+  },
+  {
+    id: "education",
+    name: "Education",
+    icon: GraduationCap,
+    description: "Admissions enrollment assistants, automated credit transfer evaluation, and financial aid compliance check loops.",
+    color: "text-yellow-400",
+    bg: "bg-yellow-400/10"
   }
 ];
 
@@ -49,7 +73,7 @@ export function IndustryPositioning() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {industries.map((ind, i) => (
             <motion.div
               key={ind.id}

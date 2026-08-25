@@ -7,9 +7,9 @@ import { motion, AnimatePresence } from "framer-motion";
 const articles = [
   {
     id: 1,
-    title: "How Velociti powers scalable autonomous workflows in Logistics",
+    title: "How Velociti powers scalable autonomous workflows in Oil & Gas",
     category: "Workflow",
-    industry: "Logistics",
+    industry: "Oil & Gas",
     type: "Video",
     image: "bg-gradient-to-br from-neon-cyan/20 to-blue-900/40",
   },
@@ -45,7 +45,7 @@ export function KnowledgeGrid() {
   const [downloadState, setDownloadState] = useState(false);
 
   const categories = ["All Tech", "Voice", "RAG", "Workflow", "Strategy"];
-  const industries = ["All Industries", "Logistics", "Technology", "Healthcare", "All"];
+  const industries = ["All Industries", "Oil & Gas", "Technology", "Healthcare", "All"];
 
   const filteredArticles = articles.filter(a => {
     const matchTech = techFilter === "All Tech" || a.category === techFilter;

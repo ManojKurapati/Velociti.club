@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Lock, ArrowRight, CheckCircle2 } from "lucide-react";
+import mixpanel from "mixpanel-browser";
 
 export function ClubApplicationForm() {
   const [step, setStep] = useState(1);
@@ -21,6 +22,25 @@ export function ClubApplicationForm() {
           body: formData,
           mode: "no-cors",
         });
+
+        // Mixpanel tracking
+        const email = formData.get("workEmail") as string;
+        if (email) {
+          mixpanel.identify(email);
+          mixpanel.people.set({
+            $first_name: formData.get("firstName") || "",
+            $last_name: formData.get("lastName") || "",
+            $email: email,
+            org_type: formData.get("orgType") || "",
+            linkedin_url: formData.get("linkedinUrl") || "",
+            bottleneck: formData.get("bottleneck") || ""
+          });
+        }
+        mixpanel.track("club_application_submitted", {
+          org_type: formData.get("orgType") || "",
+          platform: "web"
+        });
+
         setSubmitted(true);
       } catch (err) {
         console.error(err);

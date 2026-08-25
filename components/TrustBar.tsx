@@ -20,7 +20,7 @@ const logos = [
     )
   },
   {
-    name: "L&M logistics",
+    name: "L&M Energy",
     svg: (
       <svg viewBox="0 0 100 30" className="h-8 fill-current">
         <path d="M10,15 L20,5 L30,15 L20,25 Z M35,5 h10 v20 h-10 Z M50,5 h20 v5 h-15 v5 h10 v5 h-10 v5 h-5 Z" />

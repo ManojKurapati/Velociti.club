@@ -8,7 +8,7 @@ const timelineData = [
     phase: "01",
     title: "Diagnostic & Strategy",
     description: "Deep-dive structural analysis of legacy workflows. Pinpointing the highest leverage automation vectors.",
-    caseStudy: "Identified $2.4M in operational friction for a Series D logistics firm within 48 hours."
+    caseStudy: "Identified $450K in annual maintenance inefficiencies for a pipeline operator within 48 hours."
   },
   {
     phase: "02",

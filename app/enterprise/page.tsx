@@ -8,12 +8,12 @@ import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Enterprise AI Solutions | Voice Agents, RAG & Autonomous Workflows | Velociti",
-  description: "Deploy secure autonomous systems in weeks, not years. Enterprise-grade AI Voice Agents, RAG, and Workflow Automation built for Healthcare, Finance, and Logistics.",
+  description: "Deploy secure autonomous systems in weeks, not years. Enterprise-grade AI Voice Agents, RAG, and Workflow Automation built for Healthcare, Finance, and Oil & Gas.",
   keywords: [
     "enterprise AI solutions",
     "healthcare AI systems",
-    "fintech AI underwriting",
-    "logistics voice agents",
+    "finance AI underwriting",
+    "oil and gas predictive AI",
     "on-premise RAG deployment",
     "private cloud AI systems"
   ],
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Enterprise AI Solutions | Voice Agents, RAG & Autonomous Workflows | Velociti",
-    description: "Deploy secure autonomous systems in weeks, not years. Enterprise-grade AI Voice Agents, RAG, and Workflow Automation built for Healthcare, Finance, and Logistics.",
+    description: "Deploy secure autonomous systems in weeks, not years. Enterprise-grade AI Voice Agents, RAG, and Workflow Automation built for Healthcare, Finance, and Oil & Gas.",
     url: "https://velociti.club/enterprise",
     images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Velociti Enterprise AI Solutions" }],
     type: "website",
@@ -38,14 +38,14 @@ const enterpriseServiceJsonLd = {
     "name": "Velociti",
     "url": "https://velociti.club"
   },
-  "description": "Enterprise-grade autonomous AI systems integrating Voice Agents, RAG databases, and workflow orchestration. Tailored deployment pipelines for highly regulated industries including Healthcare, Finance, and Logistics.",
+  "description": "Enterprise-grade autonomous AI systems integrating Voice Agents, RAG databases, and workflow orchestration. Tailored deployment pipelines for highly regulated industries including Healthcare, Finance, and Oil & Gas.",
   "offers": [
     {
       "@type": "Offer",
       "itemOffered": {
         "@type": "Service",
-        "name": "Voice-Native Routing & Dispatch Agents",
-        "description": "Low-latency voice agents handling high-volume logistics dispatch and customer triage."
+        "name": "Healthcare Claims Verification Systems",
+        "description": "HIPAA-compliant RAG Copilots pre-verifying insurance claims against medical compliance texts."
       }
     },
     {
@@ -53,15 +53,15 @@ const enterpriseServiceJsonLd = {
       "itemOffered": {
         "@type": "Service",
         "name": "Autonomous Loan Underwriting & Finance Logic",
-        "description": "Secure underwriting models pre-approving applicants based on paystubs, W-2s, and bank bank feeds."
+        "description": "Secure underwriting models pre-evaluating applicant loan files based on bank statement PDFs and credit histories."
       }
     },
     {
       "@type": "Offer",
       "itemOffered": {
         "@type": "Service",
-        "name": "On-Premise & Private Cloud (VPC) Deployment",
-        "description": "Highly secure AI stack deployment behind client firewalls with zero external data sharing."
+        "name": "Predictive Asset Telemetry Pipelines",
+        "description": "Telemetry reasoning agents predicting drilling valve failure from temperature and vibration sensor streams."
       }
     }
   ]
@@ -109,46 +109,46 @@ export default function EnterprisePage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             <div className="glass-card card-hover p-10 rounded-[2rem] backdrop-blur-md">
-              <div className="text-neon-cyan text-sm font-bold tracking-widest uppercase mb-4">Fintech • Series C</div>
-              <h3 className="text-2xl font-medium text-white mb-4">Autonomous Loan Underwriting</h3>
+              <div className="text-neon-cyan text-sm font-bold tracking-widest uppercase mb-4">Finance • Underwriting</div>
+              <h3 className="text-2xl font-medium text-white mb-4">Auto-Loan Pre-Verification</h3>
               <div className="grid grid-cols-2 gap-6 mb-6 pt-6 border-t border-white/10">
                 <div>
-                  <div className="text-3xl font-display font-bold text-white mb-1">12 days</div>
-                  <div className="text-xs text-cool-gray-400">Total Deploy Time</div>
+                  <div className="text-3xl font-display font-bold text-white mb-1">8 Weeks</div>
+                  <div className="text-xs text-cool-gray-400">Deploy Time</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-display font-bold text-white mb-1">-65%</div>
-                  <div className="text-xs text-cool-gray-400">Processing Cost</div>
+                  <div className="text-3xl font-display font-bold text-white mb-1">42%</div>
+                  <div className="text-xs text-cool-gray-400">Throughput Gain</div>
                 </div>
               </div>
-              <p className="text-cool-gray-400 text-sm">Agents successfully reason over W-2s, paystubs, and bank logic to autonomously pre-approve 80% of applicants.</p>
+              <p className="text-cool-gray-400 text-sm">Agents securely analyze financial PDFs, bank transaction statements, and credit files to pre-verify candidate loans for underwriters.</p>
             </div>
             
             <div className="glass-card card-hover p-10 rounded-[2rem] backdrop-blur-md">
-              <div className="text-neon-violet text-sm font-bold tracking-widest uppercase mb-4">Logistics • Enterprise</div>
-              <h3 className="text-2xl font-medium text-white mb-4">Voice-Native Routing Control</h3>
+              <div className="text-neon-violet text-sm font-bold tracking-widest uppercase mb-4">Oil & Gas • Operations</div>
+              <h3 className="text-2xl font-medium text-white mb-4">Predictive Valve Telemetry</h3>
               <div className="grid grid-cols-2 gap-6 mb-6 pt-6 border-t border-white/10">
                 <div>
-                  <div className="text-3xl font-display font-bold text-white mb-1">2.4M</div>
-                  <div className="text-xs text-cool-gray-400">Calls Handled / mo</div>
+                  <div className="text-3xl font-display font-bold text-white mb-1">10B+</div>
+                  <div className="text-xs text-cool-gray-400">Telemetry Logs / day</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-display font-bold text-white mb-1">99.2%</div>
-                  <div className="text-xs text-cool-gray-400">Resolution Rate</div>
+                  <div className="text-3xl font-display font-bold text-white mb-1">18%</div>
+                  <div className="text-xs text-cool-gray-400">Downtime Reduction</div>
                 </div>
               </div>
-              <p className="text-cool-gray-400 text-sm">Zero-latency voice agents managing driver dispatch and customer updates, replacing a 400-person offshore center.</p>
+              <p className="text-cool-gray-400 text-sm">AI reasoning telemetry pipeline monitoring valve temperature and pressure alert thresholds to schedule preemptive technician dispatches.</p>
             </div>
           </div>
         </div>
       </section>
 
       <TestimonialQuote 
-        quote="The Voice-Native Routing Control deployed by Velociti fundamentally changed our cost structure. We're scaling 5x without adding headcount."
+        quote="The Predictive Valve Telemetry platform deployed by Velociti fundamentally changed our maintenance overhead, reducing unplanned downtime by 18%."
         author="David Chen"
-        role="VP Operations, L&M logistics"
-        metric="5x"
-        metricLabel="Scalability Matrix"
+        role="VP Technical Operations, Energy Infrastructure Corp"
+        metric="18%"
+        metricLabel="Downtime Reduction"
       />
       <RoiCalculator />
       

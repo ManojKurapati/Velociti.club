@@ -147,11 +147,11 @@ export default function Home() {
       <OnPremDeployment />
       <EnterpriseCaseStudies />
       <TestimonialQuote 
-        quote="Velociti reduced our deployment timeline by 8 months. The autonomous voice agents handled our seasonal spike without a single dropped query."
+        quote="Velociti deployed secure clinical claim reasoning agents that reduced manual verification overhead by 35% while keeping audit logs fully compliant."
         author="Sarah Jenkins"
-        role="CTO, Global Logistics Corp"
-        metric="8.4M"
-        metricLabel="Calls Automated"
+        role="Director of Clinical Operations, Regional Healthcare Network"
+        metric="35%"
+        metricLabel="Claim Processing Speedup"
       />
       <CtaSection />
     </main>

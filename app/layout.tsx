@@ -10,6 +10,7 @@ import { AnimatedBackground } from "@/components/AnimatedBackground";
 import { GlobalCtaBar } from "@/components/GlobalCtaBar";
 import { ExitIntentPopup } from "@/components/ExitIntentPopup";
 import { AskVelocitiWidget } from "@/components/AskVelocitiWidget";
+import { CookieBanner } from "@/components/CookieBanner";
 import Script from "next/script";
 import "./globals.css";
 
@@ -114,6 +115,19 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        {/* Google Analytics */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID || 'G-Y26VSBBVLT'}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${process.env.NEXT_PUBLIC_GA_ID || "G-Y26VSBBVLT"}');
+          `}
+        </Script>
       </head>
       <body className={`${inter.variable} font-sans antialiased bg-background text-foreground tracking-tight selection:bg-neon-cyan selection:text-black overflow-x-hidden`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
@@ -128,6 +142,7 @@ export default function RootLayout({
           </SmoothScroll>
           <ExitIntentPopup />
           <AskVelocitiWidget />
+          <CookieBanner />
         </ThemeProvider>
       </body>
     </html>
