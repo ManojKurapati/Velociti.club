@@ -1,77 +1,25 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import gsap from "gsap";
 
 export function CustomCursor() {
   const cursorRef = useRef<HTMLDivElement>(null);
-  const iconRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // Check if device is touch or small screen, bypass custom cursor
     if (window.matchMedia("(max-width: 1024px)").matches) return;
 
-    let cursorX = window.innerWidth / 2;
-    let cursorY = window.innerHeight / 2;
-    let currentX = window.innerWidth / 2;
-    let currentY = window.innerHeight / 2;
-    
     const onMouseMove = (e: MouseEvent) => {
-      cursorX = e.clientX;
-      cursorY = e.clientY;
-    };
-
-    let animationFrameId: number;
-
-    const animateCursor = () => {
-      // Smooth lerp for trailing effect
-      currentX += (cursorX - currentX) * 0.18;
-      currentY += (cursorY - currentY) * 0.18;
-
       if (cursorRef.current) {
         // Shift by -12px, -4px so that the apex of the inverted V SVG is exactly under the pointer tip
-        cursorRef.current.style.transform = `translate3d(${currentX}px, ${currentY}px, 0) translate(-12px, -4px)`;
+        cursorRef.current.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-12px, -4px)`;
       }
-      animationFrameId = requestAnimationFrame(animateCursor);
     };
 
     window.addEventListener("mousemove", onMouseMove);
-    animationFrameId = requestAnimationFrame(animateCursor);
-
-    // Add glowing hover states for interactive elements
-    const handleMouseOver = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      if (
-        target.tagName.toLowerCase() === 'a' || 
-        target.tagName.toLowerCase() === 'button' || 
-        target.closest('a') || 
-        target.closest('button') ||
-        target.closest('.cursor-pointer')
-      ) {
-        gsap.to(iconRef.current, { 
-          scale: 1.3, 
-          filter: "drop-shadow(0px 0px 8px rgba(0, 240, 255, 1))", 
-          duration: 0.2 
-        });
-      }
-    };
-
-    const handleMouseOut = () => {
-      gsap.to(iconRef.current, { 
-        scale: 1, 
-        filter: "drop-shadow(0px 0px 4px rgba(0, 240, 255, 0.6))", 
-        duration: 0.2 
-      });
-    };
-
-    document.addEventListener("mouseover", handleMouseOver);
-    document.addEventListener("mouseout", handleMouseOut);
 
     return () => {
       window.removeEventListener("mousemove", onMouseMove);
-      document.removeEventListener("mouseover", handleMouseOver);
-      document.removeEventListener("mouseout", handleMouseOut);
-      cancelAnimationFrame(animationFrameId);
     };
   }, []);
 
@@ -82,7 +30,6 @@ export function CustomCursor() {
       style={{ transform: 'translate3d(-100px, -100px, 0)' }}
     >
       <div 
-        ref={iconRef}
         className="origin-center"
         style={{ filter: "drop-shadow(0px 0px 4px rgba(0, 240, 255, 0.6))" }}
       >
@@ -102,4 +49,5 @@ export function CustomCursor() {
     </div>
   );
 }
+
 

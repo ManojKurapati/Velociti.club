@@ -1,57 +1,57 @@
 {
   "source": "live",
-  "timestamp": 1785241877960,
+  "timestamp": 1787666105920,
   "articles": [
     {
-      "title": "How AI is expanding what people do at work",
-      "summary": "New OpenAI research shows how AI is expanding what workers do, with ChatGPT users taking on tasks across roles and reshaping job boundaries....",
-      "date": "2026-07-27",
-      "url": "https://openai.com/index/how-ai-is-expanding-what-people-do-at-work",
+      "title": "Disrupting a new covert influence campaign from Russia",
+      "summary": "OpenAI banned Russia-origin accounts using AI to promote a fake Israel-based think tank and a “sovereignty” index praising Russia and criticizing the West....",
+      "date": "2026-08-25",
+      "url": "https://openai.com/index/disrupting-malicious-uses-of-ai-influence-campaign-russia",
       "category": "Labs",
       "author": "OpenAI Team",
       "sourceName": "OpenAI"
     },
     {
-      "title": "Our position on open-weights models",
-      "summary": "Our position on open-weights models. Published under Announcements on Jul 27, 2026.",
-      "date": "2026-07-26",
-      "url": "https://www.anthropic.com/news/position-open-weights-models",
-      "category": "Labs",
-      "author": "Anthropic Team",
-      "sourceName": "Anthropic"
-    },
-    {
-      "title": "Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients",
-      "summary": "Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients. Published under Announcements on Jul 27, 2026.",
-      "date": "2026-07-26",
-      "url": "https://www.anthropic.com/news/cognizant-anthropic",
-      "category": "Labs",
-      "author": "Anthropic Team",
-      "sourceName": "Anthropic"
-    },
-    {
-      "title": "Launching Health in ChatGPT",
-      "summary": "Health in ChatGPT now lets eligible U.S. users securely connect medical records and Apple Health to get more personalized insights and better understand their health....",
-      "date": "2026-07-23",
-      "url": "https://openai.com/index/health-in-chatgpt",
+      "title": "Advancing price-performance for developers with GPT‑5.6 in Kiro",
+      "summary": "GPT‑5.6 is now available in Kiro, helping developers plan, build, review, and test software with better price-performance....",
+      "date": "2026-08-24",
+      "url": "https://openai.com/index/gpt-5-6-in-kiro",
       "category": "Labs",
       "author": "OpenAI Team",
       "sourceName": "OpenAI"
     },
     {
-      "title": "Introducing Claude Opus 5",
-      "summary": "Introducing Claude Opus 5. Published under Product on Jul 24, 2026.",
-      "date": "2026-07-23",
-      "url": "https://www.anthropic.com/news/claude-opus-5",
+      "title": "From Atari to EVE Online: Building on 15 Years of AI Research in Games",
+      "summary": "Google DeepMind partners with game studios to prototype breakthrough AI gameplay....",
+      "date": "2026-08-21",
+      "url": "https://deepmind.google/blog/from-atari-to-eve-online-building-on-15-years-of-ai-research-in-games/",
       "category": "Labs",
-      "author": "Anthropic Team",
-      "sourceName": "Anthropic"
+      "author": "DeepMind Team",
+      "sourceName": "Google DeepMind"
     },
     {
-      "title": "Building AI infrastructure with the Effingham County community",
-      "summary": "OpenAI announces Project Camellia in Effingham County, Georgia, with commitments to responsible energy, community investment, jobs, and access to Codex....",
-      "date": "2026-07-22",
-      "url": "https://openai.com/index/building-ai-infrastructure-with-the-effingham-county-community",
+      "title": "Introducing AI Futures",
+      "summary": "Introducing AI Futures, a new OpenAI blog exploring how transformative AI could reshape power, governance, the economy, and individual freedom....",
+      "date": "2026-08-20",
+      "url": "https://openai.com/index/introducing-ai-futures",
+      "category": "Labs",
+      "author": "OpenAI Team",
+      "sourceName": "OpenAI"
+    },
+    {
+      "title": "Stampli cuts launch hours by 68% using ChatGPT Work",
+      "summary": "With a fixed deadline and design resources committed elsewhere, Stampli used Codex and ChatGPT Work to compress weeks of launch production into days....",
+      "date": "2026-08-20",
+      "url": "https://openai.com/index/stampli",
+      "category": "Labs",
+      "author": "OpenAI Team",
+      "sourceName": "OpenAI"
+    },
+    {
+      "title": "Offering Zero Data Retention for frontier models",
+      "summary": "OpenAI reaffirms Zero Data Retention for eligible API customers and previews Private Safety Processing for advanced AI safety without compromising data privacy....",
+      "date": "2026-08-19",
+      "url": "https://openai.com/index/offering-zero-data-retention-for-frontier-models",
       "category": "Labs",
       "author": "OpenAI Team",
       "sourceName": "OpenAI"
