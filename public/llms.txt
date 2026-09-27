@@ -47,5 +47,5 @@ Velociti deploys secure, high-performance, enterprise-grade AI systems and auton
 ---
 
 ## Leadership
-- **Manoj Kurapati**, Founder & CEO: Focused on rewiring corporate infrastructure to run on agentic logic.
-- **Fatima Qazi**, COO: Directing enterprise alignment, cost reduction, and business outcomes.
+- **Manoj Kurapati**, Founder & CEO: Focused on rewiring corporate infrastructure to run on agentic logic. Background in applied AI research (Center for Cloud Computing and Big Data), technology leadership at early childhood startups, and Generative AI leadership for oil and gas and energy companies.
+- **Lavine Hemlani**, Board Member & Investor: Founder & CEO of Zenith and founder of Xccelerate, bringing capital markets expertise and a global founder network.
