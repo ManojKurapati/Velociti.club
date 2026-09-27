@@ -93,10 +93,6 @@ const jsonLd = {
     {
       "@type": "Person",
       "name": "Manoj Kurapati"
-    },
-    {
-      "@type": "Person",
-      "name": "Fatima Qazi"
     }
   ]
 };
