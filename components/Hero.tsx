@@ -8,11 +8,9 @@ import { VideoModal } from "./VideoModal";
 import { GooeyText } from "./ui/gooey-text-morphing";
 
 const MORPHING_WORDS = [
-  "Automate",
-  "Scale",
-  "Transform",
-  "Accelerate",
-  "Optimize",
+  "Think Different",
+  "Think Big",
+  "Think Velociti",
 ];
 
 export function Hero() {
@@ -44,23 +42,18 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="mb-6 sm:mb-8 max-w-6xl"
+          className="mb-6 sm:mb-8 w-full max-w-6xl"
         >
-          <h1 className="text-[2.25rem] sm:text-5xl md:text-7xl lg:text-9xl font-display font-medium text-white tracking-tighter leading-[1.1]">
-            Enterprise AI Systems That
-          </h1>
-          <div className="relative h-[2.75rem] sm:h-[3.5rem] md:h-[5rem] lg:h-[8rem] mt-1 sm:mt-1 md:mt-2 lg:mt-2">
+          <h1 className="sr-only">Think Different. Think Big. Think Velociti.</h1>
+          <div aria-hidden="true" className="relative h-[2.75rem] sm:h-[3.5rem] md:h-[5rem] lg:h-[8rem]">
             <GooeyText
               texts={MORPHING_WORDS}
               morphTime={1.5}
               cooldownTime={0.5}
               className="h-full"
-              textClassName="font-display font-medium tracking-tighter text-neon-cyan"
+              textClassName="font-display font-medium tracking-tighter whitespace-nowrap text-neon-cyan"
             />
           </div>
-          <p className="text-[2.25rem] sm:text-5xl md:text-7xl lg:text-9xl font-display font-medium text-white tracking-tighter leading-[1.1] mt-1 sm:mt-1 md:mt-2 lg:mt-2">
-            Operations.
-          </p>
         </motion.div>
 
         <motion.p 
