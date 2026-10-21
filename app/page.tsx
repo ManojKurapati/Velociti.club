@@ -2,6 +2,7 @@ import { Hero } from "@/components/Hero";
 import { TrustBar } from "@/components/TrustBar";
 import { Showreel } from "@/components/Showreel";
 import { StructuredSolutions } from "@/components/StructuredSolutions";
+import { ForwardDeployedEngineers } from "@/components/ForwardDeployedEngineers";
 import { WhatsUpNews } from "@/components/WhatsUpNews";
 import { IndustryPositioning } from "@/components/IndustryPositioning";
 import { SecurityGovernance } from "@/components/SecurityGovernance";
@@ -38,6 +39,17 @@ export const metadata: Metadata = {
 const serviceJsonLd = {
   "@context": "https://schema.org",
   "@graph": [
+    {
+      "@type": "Service",
+      "name": "Forward Deployed Engineering",
+      "provider": {
+        "@type": "Organization",
+        "name": "Velociti",
+        "url": "https://velociti.club"
+      },
+      "description": "Velociti Forward Deployed Engineers embed with your team to make you AI-ready, engineer and unify your data, and integrate secure AI agents into your CRM, databases, billing, and documents.",
+      "areaServed": "Worldwide"
+    },
     {
       "@type": "Service",
       "name": "AI Operations Automation",
@@ -141,6 +153,7 @@ export default function Home() {
       <TrustBar />
       <Showreel />
       <StructuredSolutions />
+      <ForwardDeployedEngineers />
       <WhatsUpNews />
       <IndustryPositioning />
       <SecurityGovernance />
