@@ -54,7 +54,7 @@ export function ForwardDeployedEngineers() {
           <div className="flex items-center gap-4 mb-8">
             <span className="h-px w-10 bg-neon-cyan shrink-0" />
             <span className="text-neon-cyan text-[11px] sm:text-xs font-medium uppercase tracking-[0.25em]">
-              Prime Service · Forward Deployed Engineering
+              Forward Deployed Engineering
             </span>
           </div>
           <h2 className="text-4xl sm:text-5xl md:text-7xl font-display font-medium text-white tracking-tight leading-[1.05] mb-8">
