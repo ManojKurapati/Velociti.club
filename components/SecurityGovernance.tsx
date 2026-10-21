@@ -40,12 +40,10 @@ export function SecurityGovernance() {
   return (
     <section id="security" className="py-24 bg-obsidian relative border-t border-white/5 overflow-hidden">
       {/* Background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-[400px] bg-blue-500/5 blur-[120px] rounded-full pointer-events-none" />
-
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center justify-center p-3 bg-blue-500/10 rounded-2xl mb-6">
-            <Shield className="w-8 h-8 text-blue-400" />
+          <div className="inline-flex items-center justify-center p-3 bg-white/5 border border-white/10 rounded-2xl mb-6">
+            <Shield className="w-8 h-8 text-neon-cyan" />
           </div>
           <h2 className="text-3xl md:text-5xl font-display font-medium text-white mb-6">Security & Governance</h2>
           <p className="text-cool-gray-400 max-w-2xl mx-auto text-lg">
@@ -61,9 +59,9 @@ export function SecurityGovernance() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-black/50 border border-white/10 rounded-2xl p-8 hover:border-blue-500/30 transition-colors"
+              className="bg-black/50 border border-white/10 rounded-2xl p-8 hover:border-white/20 transition-colors"
             >
-              <feature.icon className="w-6 h-6 text-blue-400 mb-6" />
+              <feature.icon className="w-6 h-6 text-neon-cyan mb-6" />
               <h3 className="text-xl font-medium text-white mb-3">{feature.title}</h3>
               <p className="text-gray-400 text-sm leading-relaxed">{feature.description}</p>
             </motion.div>

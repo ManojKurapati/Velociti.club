@@ -17,7 +17,7 @@ const caseStudies = [
       { metric: "HIPAA", label: "Fully Compliant" }
     ],
     timeline: "14 Weeks",
-    color: "from-emerald-500/20 to-emerald-900/20"
+    color: "from-white/[0.04] to-transparent"
   },
   {
     id: "finance",
@@ -32,7 +32,7 @@ const caseStudies = [
       { metric: "100%", label: "Audit Log Coverage" }
     ],
     timeline: "8 Weeks",
-    color: "from-purple-500/20 to-purple-900/20"
+    color: "from-white/[0.04] to-transparent"
   },
   {
     id: "oil-gas",
@@ -47,7 +47,7 @@ const caseStudies = [
       { metric: "94%", label: "Alert Accuracy" }
     ],
     timeline: "12 Weeks",
-    color: "from-blue-500/20 to-blue-900/20"
+    color: "from-white/[0.04] to-transparent"
   },
   {
     id: "automobile",
@@ -62,7 +62,7 @@ const caseStudies = [
       { metric: "Real-time", label: "Latency Profile" }
     ],
     timeline: "10 Weeks",
-    color: "from-orange-500/20 to-orange-900/20"
+    color: "from-white/[0.04] to-transparent"
   }
 ];
 

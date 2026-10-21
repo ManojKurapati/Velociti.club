@@ -19,16 +19,16 @@ const solutions = [
             <stop offset="100%" stopColor="currentColor" stopOpacity="0.05" />
           </linearGradient>
           <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#00f0ff" stopOpacity="0.2" />
-            <stop offset="100%" stopColor="#00f0ff" stopOpacity="0.05" />
+            <stop offset="0%" stopColor="#CBB08A" stopOpacity="0.2" />
+            <stop offset="100%" stopColor="#CBB08A" stopOpacity="0.05" />
           </linearGradient>
         </defs>
         
         <rect x="40" y="75" width="80" height="50" rx="12" fill="url(#grad1)" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.3" />
         <text x="80" y="100" fontSize="13" fontWeight="500" fill="currentColor" textAnchor="middle" dominantBaseline="middle">ERP Data</text>
 
-        <rect x="160" y="75" width="80" height="50" rx="12" fill="url(#grad2)" stroke="#00f0ff" strokeWidth="1.5" strokeOpacity="0.6" />
-        <text x="200" y="100" fontSize="13" fontWeight="600" fill="#00f0ff" textAnchor="middle" dominantBaseline="middle">AI Engine</text>
+        <rect x="160" y="75" width="80" height="50" rx="12" fill="url(#grad2)" stroke="#CBB08A" strokeWidth="1.5" strokeOpacity="0.6" />
+        <text x="200" y="100" fontSize="13" fontWeight="600" fill="#CBB08A" textAnchor="middle" dominantBaseline="middle">AI Engine</text>
 
         <rect x="280" y="75" width="80" height="50" rx="12" fill="url(#grad1)" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.3" />
         <text x="320" y="100" fontSize="13" fontWeight="500" fill="currentColor" textAnchor="middle" dominantBaseline="middle">Action</text>
@@ -40,7 +40,7 @@ const solutions = [
         <polygon points="275,97 280,100 275,103" fill="currentColor" fillOpacity="0.5" />
       </svg>
     ),
-    color: "from-neon-cyan/20 to-blue-500/20",
+    color: "from-white/[0.05] to-white/[0.01]",
     borderColor: "border-neon-cyan/30",
     appTitle: "ops-agent-01 // daemon",
     appStatus: "Active 24/7",
@@ -55,17 +55,17 @@ const solutions = [
       <svg viewBox="0 0 400 200" className="w-full h-full text-cool-gray-300 font-sans">
         <defs>
           <linearGradient id="gradViolet" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#b026ff" stopOpacity="0.2" />
-            <stop offset="100%" stopColor="#b026ff" stopOpacity="0.05" />
+            <stop offset="0%" stopColor="#A1A1AA" stopOpacity="0.2" />
+            <stop offset="100%" stopColor="#A1A1AA" stopOpacity="0.05" />
           </linearGradient>
         </defs>
 
         <circle cx="80" cy="100" r="30" fill="currentColor" fillOpacity="0.05" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.3" />
         <text x="80" y="100" fontSize="12" fontWeight="500" fill="currentColor" textAnchor="middle" dominantBaseline="middle">User</text>
 
-        <rect x="140" y="60" width="100" height="80" rx="16" fill="url(#gradViolet)" stroke="#b026ff" strokeWidth="1.5" strokeOpacity="0.6" />
-        <text x="190" y="90" fontSize="14" fontWeight="600" fill="#b026ff" textAnchor="middle" dominantBaseline="middle">Voice Agent</text>
-        <text x="190" y="110" fontSize="10" fill="#b026ff" fillOpacity="0.7" textAnchor="middle" dominantBaseline="middle">Low Latency</text>
+        <rect x="140" y="60" width="100" height="80" rx="16" fill="url(#gradViolet)" stroke="#A1A1AA" strokeWidth="1.5" strokeOpacity="0.6" />
+        <text x="190" y="90" fontSize="14" fontWeight="600" fill="#A1A1AA" textAnchor="middle" dominantBaseline="middle">Voice Agent</text>
+        <text x="190" y="110" fontSize="10" fill="#A1A1AA" fillOpacity="0.7" textAnchor="middle" dominantBaseline="middle">Low Latency</text>
 
         <rect x="280" y="50" width="80" height="40" rx="8" fill="currentColor" fillOpacity="0.05" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.3" />
         <text x="320" y="70" fontSize="11" fontWeight="500" fill="currentColor" textAnchor="middle" dominantBaseline="middle">Zendesk</text>
@@ -83,7 +83,7 @@ const solutions = [
         <polygon points="276,128 280,132 274,133" fill="currentColor" fillOpacity="0.5" />
       </svg>
     ),
-    color: "from-neon-violet/20 to-purple-600/20",
+    color: "from-white/[0.05] to-white/[0.01]",
     borderColor: "border-neon-violet/30",
     appTitle: "Voice Agent // Call Monitor",
     appStatus: "Live Follow-up",
@@ -98,8 +98,8 @@ const solutions = [
       <svg viewBox="0 0 400 200" className="w-full h-full text-cool-gray-300 font-sans">
         <defs>
           <linearGradient id="gradEmerald" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#34d399" stopOpacity="0.2" />
-            <stop offset="100%" stopColor="#34d399" stopOpacity="0.05" />
+            <stop offset="0%" stopColor="#CBB08A" stopOpacity="0.2" />
+            <stop offset="100%" stopColor="#CBB08A" stopOpacity="0.05" />
           </linearGradient>
         </defs>
 
@@ -109,9 +109,9 @@ const solutions = [
         <rect x="40" y="115" width="70" height="30" rx="6" fill="currentColor" fillOpacity="0.05" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.3" />
         <text x="75" y="130" fontSize="11" fontWeight="500" fill="currentColor" textAnchor="middle" dominantBaseline="middle">Outbound</text>
 
-        <rect x="150" y="70" width="100" height="60" rx="12" fill="url(#gradEmerald)" stroke="#34d399" strokeWidth="1.5" strokeOpacity="0.6" />
-        <text x="200" y="92" fontSize="13" fontWeight="600" fill="#34d399" textAnchor="middle" dominantBaseline="middle">AI SDR</text>
-        <text x="200" y="110" fontSize="10" fill="#34d399" fillOpacity="0.8" textAnchor="middle" dominantBaseline="middle">Qualify & Book</text>
+        <rect x="150" y="70" width="100" height="60" rx="12" fill="url(#gradEmerald)" stroke="#CBB08A" strokeWidth="1.5" strokeOpacity="0.6" />
+        <text x="200" y="92" fontSize="13" fontWeight="600" fill="#CBB08A" textAnchor="middle" dominantBaseline="middle">AI SDR</text>
+        <text x="200" y="110" fontSize="10" fill="#CBB08A" fillOpacity="0.8" textAnchor="middle" dominantBaseline="middle">Qualify & Book</text>
 
         <rect x="290" y="75" width="80" height="50" rx="8" fill="currentColor" fillOpacity="0.05" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.3" />
         <text x="330" y="100" fontSize="12" fontWeight="500" fill="currentColor" textAnchor="middle" dominantBaseline="middle">Salesforce</text>
@@ -126,8 +126,8 @@ const solutions = [
         <polygon points="285,97 290,100 285,103" fill="currentColor" fillOpacity="0.5" />
       </svg>
     ),
-    color: "from-emerald-400/20 to-green-600/20",
-    borderColor: "border-emerald-400/30",
+    color: "from-white/[0.05] to-white/[0.01]",
+    borderColor: "border-neon-cyan/30",
     appTitle: "Sales SDR // Active Sequence",
     appStatus: "Outreach Active",
     backType: "sales"
@@ -170,7 +170,7 @@ const solutions = [
         <polygon points="285,97 290,100 285,103" fill="currentColor" fillOpacity="0.5" />
       </svg>
     ),
-    color: "from-white/10 to-gray-500/10",
+    color: "from-white/[0.05] to-white/[0.01]",
     borderColor: "border-white/20",
     appTitle: "Enterprise Copilot // Search",
     appStatus: "Ready",
@@ -197,7 +197,7 @@ function renderBackContent(backType: string) {
           <div className="text-cool-gray-500">// Scheduled daemon run at 03:00 AM</div>
           <div className="flex gap-2">
             <span className="text-neon-cyan">[03:14:22]</span>
-            <span className="text-emerald-400">[ERP Sync]</span>
+            <span className="text-neon-cyan">[ERP Sync]</span>
             <span>Syncing transactions... Success (142 files)</span>
           </div>
           <div className="flex gap-2">
@@ -207,7 +207,7 @@ function renderBackContent(backType: string) {
           </div>
           <div className="flex gap-2">
             <span className="text-neon-cyan">[03:14:30]</span>
-            <span className="text-[#b026ff]">[Compliance]</span>
+            <span className="text-[#A1A1AA]">[Compliance]</span>
             <span>Generating PDF reports... Completed</span>
           </div>
           <div className="flex gap-2">
@@ -219,7 +219,7 @@ function renderBackContent(backType: string) {
             <span>&gt; Daemon idle. Listening for events...</span>
           </div>
         </div>
-        <div className="bg-[#00f0ff]/5 border border-[#00f0ff]/10 rounded-xl p-3">
+        <div className="bg-[#CBB08A]/5 border border-[#CBB08A]/10 rounded-xl p-3">
           <div className="text-[10px] text-neon-cyan font-bold tracking-wider uppercase mb-0.5">Impact Metric</div>
           <div className="text-xs font-semibold text-white leading-snug">
             Agents that work 24*7. Eliminates 95% of manual ledger and reporting work with zero errors.
@@ -260,13 +260,13 @@ function renderBackContent(backType: string) {
               <span className="italic text-cool-gray-300">"Hi Sarah, checking back on Case #9821. The latency is resolved."</span>
             </div>
             <div className="flex gap-2">
-              <span className="font-medium text-emerald-400 flex-shrink-0">Sarah:</span>
+              <span className="font-medium text-neon-cyan flex-shrink-0">Sarah:</span>
               <span className="italic text-cool-gray-300">"Oh, wow! Yes, it's working perfectly now. Thanks for checking in."</span>
             </div>
           </div>
         </div>
 
-        <div className="bg-[#b026ff]/5 border border-[#b026ff]/10 rounded-xl p-3">
+        <div className="bg-[#A1A1AA]/5 border border-[#A1A1AA]/10 rounded-xl p-3">
           <div className="text-[10px] text-neon-violet font-bold tracking-wider uppercase mb-0.5">Impact Metric</div>
           <div className="text-xs font-semibold text-white leading-snug">
             Voice agents that follow up. Autonomously checks back with customers when a ticket is resolved.
@@ -284,7 +284,7 @@ function renderBackContent(backType: string) {
           <div className="space-y-1 pb-2 border-b border-white/5 font-sans">
             <div className="flex justify-between">
               <span className="text-cool-gray-500">To: <span className="text-gray-300 font-medium">alex.p@techcorp.com</span></span>
-              <span className="text-emerald-400 font-mono text-[9px] bg-emerald-500/10 px-1.5 py-0.5 rounded border border-emerald-500/20">HubSpot</span>
+              <span className="text-neon-cyan font-mono text-[9px] bg-neon-cyan/10 px-1.5 py-0.5 rounded border border-neon-cyan/20">HubSpot</span>
             </div>
             <div>
               <span className="text-cool-gray-500">Subject: <span className="text-gray-300 font-medium text-[11px]">Scale manual workflows at TechCorp?</span></span>
@@ -292,20 +292,20 @@ function renderBackContent(backType: string) {
           </div>
 
           {/* Email Body */}
-          <div className="font-sans text-cool-gray-400 pl-2 border-l-2 border-emerald-500/30 py-0.5 text-[11px] leading-relaxed">
+          <div className="font-sans text-cool-gray-400 pl-2 border-l-2 border-neon-cyan/30 py-0.5 text-[11px] leading-relaxed">
             <p className="mb-1">Hey Alex, saw you recently grew your customer success team.</p>
             <p>I built a custom automation blueprint for your ticket routing that could save you 15+ hours/week. Do you have 10 mins this week?</p>
           </div>
 
           {/* Reply Bubble */}
-          <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-lg p-2 self-end max-w-[90%] font-sans text-white text-[11px]">
-            <div className="text-[9px] text-emerald-400 font-semibold mb-0.5">Alex P. (Reply)</div>
+          <div className="bg-neon-cyan/10 border border-neon-cyan/20 rounded-lg p-2 self-end max-w-[90%] font-sans text-white text-[11px]">
+            <div className="text-[9px] text-neon-cyan font-semibold mb-0.5">Alex P. (Reply)</div>
             <div>Actually, yes. Let's talk. Do you have time on Thursday at 2 PM?</div>
           </div>
         </div>
 
-        <div className="bg-emerald-400/5 border border-emerald-400/10 rounded-xl p-3">
-          <div className="text-[10px] text-emerald-400 font-bold tracking-wider uppercase mb-0.5">Impact Metric</div>
+        <div className="bg-neon-cyan/5 border border-neon-cyan/10 rounded-xl p-3">
+          <div className="text-[10px] text-neon-cyan font-bold tracking-wider uppercase mb-0.5">Impact Metric</div>
           <div className="text-xs font-semibold text-white leading-snug">
             Autonomous SDRs sending hyper-personalized outreach and booking qualified sales meetings.
           </div>
@@ -334,7 +334,7 @@ function renderBackContent(backType: string) {
             </div>
             <div>
               <div className="text-[9px] text-white font-semibold mb-0.5 flex items-center gap-1">
-                <Sparkles className="w-2.5 h-2.5 text-[#00f0ff] fill-[#00f0ff]/10" />
+                <Sparkles className="w-2.5 h-2.5 text-[#CBB08A] fill-[#CBB08A]/10" />
                 <span>Velociti Copilot</span>
               </div>
               <div className="text-gray-200 bg-white/[0.08] border border-white/5 rounded-lg p-2 space-y-1">

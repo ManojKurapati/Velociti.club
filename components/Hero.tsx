@@ -21,7 +21,6 @@ export function Hero() {
       {/* Background */}
       <div className="absolute inset-0 z-0 bg-black">
         {/* Core glowing orb fallback/overlay */}
-        <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-neon-cyan/20 rounded-full blur-[120px] mix-blend-screen pointer-events-none" />
         {/* Velocity Grid Overlay */}
         <div className="absolute inset-0 grid-bg opacity-30 animate-scroll pointer-events-none" />
       </div>
@@ -73,7 +72,7 @@ export function Hero() {
         >
           <Link 
             href="https://calendly.com/manojkurapati96/30min" target="_blank" rel="noopener noreferrer"
-            className="group relative flex items-center justify-center gap-2 bg-white text-black px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg hover:bg-neon-cyan transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:shadow-[0_0_30px_rgba(0,240,255,0.4)]"
+            className="group relative flex items-center justify-center gap-2 bg-white text-black px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg hover:bg-neon-cyan transition-all duration-300"
           >
             Book an AI Workflow Audit
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

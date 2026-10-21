@@ -224,7 +224,7 @@ export default function CaseStudiesPage() {
         </div>
 
         <div className="mt-20 text-center">
-          <Link href="/curious" className="inline-flex items-center justify-center gap-2 px-10 py-5 rounded-2xl font-medium text-black bg-white hover:bg-neon-cyan transition-colors text-lg shadow-[0_0_20px_rgba(255,255,255,0.2)]">
+          <Link href="/curious" className="inline-flex items-center justify-center gap-2 px-10 py-5 rounded-2xl font-medium text-black bg-white hover:bg-neon-cyan transition-colors text-lg">
             Start Your Deployment <ArrowRight className="w-5 h-5" />
           </Link>
         </div>

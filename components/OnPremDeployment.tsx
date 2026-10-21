@@ -47,9 +47,6 @@ export function OnPremDeployment() {
   return (
     <section id="on-prem" className="py-32 bg-obsidian relative border-t border-white/5 overflow-hidden">
       {/* Dynamic background lighting */}
-      <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-neon-cyan/5 blur-[150px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-1/3 left-1/4 w-[500px] h-[500px] bg-neon-violet/5 blur-[150px] rounded-full pointer-events-none" />
-
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
         {/* Header Section */}
@@ -72,7 +69,7 @@ export function OnPremDeployment() {
             className="text-4xl md:text-6xl font-display font-medium text-white mb-6 tracking-tight"
           >
             Sovereign On-Premise & <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-violet">
+            <span className="text-neon-cyan">
               Airgapped AI Infrastructure
             </span>
           </motion.h2>
@@ -137,12 +134,12 @@ export function OnPremDeployment() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative w-full aspect-square max-w-[450px] rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(0,240,255,0.15)] group"
+              className="relative w-full aspect-square max-w-[450px] rounded-3xl overflow-hidden border border-white/10 group"
             >
               <img 
                 src="/images/onprem_secure_node.png" 
                 alt="Airgapped Server Node illustration" 
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                className="w-full h-full object-cover grayscale contrast-110 brightness-90 transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60 pointer-events-none" />
               

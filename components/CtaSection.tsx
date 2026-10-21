@@ -29,12 +29,9 @@ export function CtaSection() {
 
   return (
     <section id="contact" ref={container} className="py-40 relative z-10 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-neon-cyan/5 pointer-events-none"></div>
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-[500px] bg-neon-cyan/20 blur-[150px] rounded-full z-[-1] opacity-50 pointer-events-none"></div>
-      
       <div className="max-w-4xl mx-auto px-6 text-center">
         <h2 className="font-display text-5xl md:text-7xl font-bold mb-6 tracking-tight gs-reveal opacity-0">
-          Ready to <span className="text-white drop-shadow-[0_0_15px_rgba(0,240,255,0.8)]">Automate</span> Your Operations?
+          Ready to <span className="text-white">Automate</span> Your Operations?
         </h2>
         <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto font-light gs-reveal opacity-0">
           Book a comprehensive AI workflow audit to identify operational bottlenecks and deployment opportunities.

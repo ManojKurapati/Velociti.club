@@ -38,8 +38,6 @@ export function RoiCalculator() {
     <section id="roi" className="py-24 bg-obsidian relative">
       <div className="max-w-4xl mx-auto px-6">
         <div className="bg-gradient-to-br from-white/5 to-white/0 border border-white/10 rounded-3xl p-8 md:p-12 relative overflow-hidden backdrop-blur-xl">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-neon-cyan/10 blur-[100px]" />
-          
           <div className="flex items-center gap-4 mb-8">
             <div className="w-12 h-12 rounded-xl bg-neon-cyan/20 flex items-center justify-center text-neon-cyan">
               <Calculator className="w-6 h-6" />

@@ -42,7 +42,7 @@ export function PlatformSection() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-20 platform-header">
           <h2 className="font-display text-4xl md:text-6xl font-bold mb-6">
-            The <span className="text-neon-cyan drop-shadow-[0_0_15px_rgba(0,240,255,0.5)]">Intelligent</span> Orchestration
+            The <span className="text-neon-cyan">Intelligent</span> Orchestration
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto text-lg font-light">
             We don't just provide API keys. We build neural pathways across your legacy systems, turning static workflows into autonomous, learning engines.
@@ -51,7 +51,7 @@ export function PlatformSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="glass-card p-8 rounded-3xl card-hover interactive floating platform-card">
-            <div className="w-14 h-14 rounded-full bg-neon-cyan/10 border border-neon-cyan/30 flex items-center justify-center mb-6 text-neon-cyan hover:shadow-[0_0_20px_rgba(0,240,255,0.5)] transition-shadow">
+            <div className="w-14 h-14 rounded-full bg-neon-cyan/10 border border-neon-cyan/30 flex items-center justify-center mb-6 text-neon-cyan transition-shadow">
               <Link2 size={24} />
             </div>
             <h3 className="text-xl font-bold font-display mb-3">Rapid Integration</h3>
@@ -61,7 +61,7 @@ export function PlatformSection() {
           </div>
           
           <div className="glass-card p-8 rounded-3xl card-hover interactive floating-delayed platform-card">
-            <div className="w-14 h-14 rounded-full bg-neon-pink/10 border border-neon-pink/30 flex items-center justify-center mb-6 text-neon-pink hover:shadow-[0_0_20px_rgba(255,0,170,0.5)] transition-shadow">
+            <div className="w-14 h-14 rounded-full bg-neon-pink/10 border border-neon-pink/30 flex items-center justify-center mb-6 text-neon-pink transition-shadow">
               <Cpu size={24} />
             </div>
             <h3 className="text-xl font-bold font-display mb-3">Autonomous Execution</h3>
@@ -71,7 +71,7 @@ export function PlatformSection() {
           </div>
 
           <div className="glass-card p-8 rounded-3xl card-hover interactive floating platform-card">
-            <div className="w-14 h-14 rounded-full bg-neon-purple/10 border border-neon-purple/30 flex items-center justify-center mb-6 text-neon-purple hover:shadow-[0_0_20px_rgba(138,43,226,0.5)] transition-shadow">
+            <div className="w-14 h-14 rounded-full bg-neon-purple/10 border border-neon-purple/30 flex items-center justify-center mb-6 text-neon-purple transition-shadow">
               <ShieldCheck size={24} />
             </div>
             <h3 className="text-xl font-bold font-display mb-3">Enterprise Governance</h3>

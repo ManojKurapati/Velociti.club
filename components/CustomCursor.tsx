@@ -42,7 +42,7 @@ export function CustomCursor() {
         >
           <path 
             d="M12 4L3 18H6L12 8L18 18H21L12 4Z" 
-            fill="#00f0ff"
+            fill="#CBB08A"
           />
         </svg>
       </div>

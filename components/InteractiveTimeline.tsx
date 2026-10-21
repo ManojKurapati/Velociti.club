@@ -57,7 +57,7 @@ export function InteractiveTimeline() {
             <div key={index} className={`relative flex flex-col md:flex-row gap-8 md:gap-16 items-start mb-24 last:mb-0 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
               
               {/* Timeline Dot */}
-              <div className="absolute left-[20px] md:left-1/2 top-0 -translate-x-1/2 w-4 h-4 rounded-full bg-black border-2 border-neon-cyan shadow-[0_0_15px_rgba(0,240,255,1)] z-10" />
+              <div className="absolute left-[20px] md:left-1/2 top-0 -translate-x-1/2 w-4 h-4 rounded-full bg-black border-2 border-neon-cyan z-10" />
 
               {/* Content */}
               <div className={`pl-12 md:pl-0 w-full md:w-1/2 flex flex-col ${index % 2 === 0 ? 'md:items-start md:text-left' : 'md:items-end md:text-right'}`}>

@@ -66,7 +66,7 @@ export function KnowledgeGrid() {
                 onClick={() => setTechFilter(cat)}
                 className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all ${
                   techFilter === cat 
-                    ? 'bg-neon-cyan text-black shadow-[0_0_15px_rgba(0,240,255,0.3)]' 
+                    ? 'bg-neon-cyan text-black' 
                     : 'bg-white/5 text-cool-gray-400 border border-white/10 hover:border-white/30 hover:text-white'
                 }`}
               >
@@ -82,7 +82,7 @@ export function KnowledgeGrid() {
                 onClick={() => setIndustryFilter(ind)}
                 className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all ${
                   industryFilter === ind 
-                    ? 'bg-neon-violet text-white shadow-[0_0_15px_rgba(157,78,221,0.3)]' 
+                    ? 'bg-neon-violet text-white' 
                     : 'bg-white/5 text-cool-gray-400 border border-white/10 hover:border-white/30 hover:text-white'
                 }`}
               >
@@ -204,7 +204,7 @@ export function KnowledgeGrid() {
                   <option value="201-1000">201-1000 employees</option>
                   <option value="1000+">1000+ employees</option>
                 </select>
-                <button type="submit" className="mt-2 w-full bg-white text-black font-semibold py-3 rounded-xl flex items-center justify-center gap-2 hover:bg-neon-cyan transition-colors shadow-[0_0_20px_rgba(255,255,255,0.2)]">
+                <button type="submit" className="mt-2 w-full bg-white text-black font-semibold py-3 rounded-xl flex items-center justify-center gap-2 hover:bg-neon-cyan transition-colors">
                   <Download className="w-4 h-4" /> Unlock Playbook
                 </button>
               </form>

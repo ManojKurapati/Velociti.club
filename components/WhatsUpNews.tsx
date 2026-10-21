@@ -34,21 +34,21 @@ export function WhatsUpNews() {
   const getSourceStyles = (sourceName: string) => {
     const name = sourceName.toLowerCase();
     if (name.includes("openai")) {
-      return "bg-neon-cyan/10 border-neon-cyan/30 text-neon-cyan shadow-[0_0_15px_rgba(0,240,255,0.15)]";
+      return "bg-white/5 border-white/15 text-cool-gray-200";
     }
     if (name.includes("anthropic")) {
-      return "bg-neon-violet/10 border-neon-violet/30 text-neon-violet shadow-[0_0_15px_rgba(157,78,221,0.15)]";
+      return "bg-white/5 border-white/15 text-cool-gray-200";
     }
     if (name.includes("deepmind")) {
-      return "bg-emerald-500/10 border-emerald-500/30 text-emerald-400 shadow-[0_0_15px_rgba(16,185,129,0.15)]";
+      return "bg-white/5 border-white/15 text-cool-gray-200";
     }
     if (name.includes("log") || name.includes("lilian")) {
-      return "bg-amber-500/10 border-amber-500/30 text-amber-400 shadow-[0_0_15px_rgba(245,158,11,0.15)]";
+      return "bg-white/5 border-white/15 text-cool-gray-200";
     }
     if (name.includes("simon")) {
-      return "bg-blue-500/10 border-blue-500/30 text-blue-400 shadow-[0_0_15px_rgba(59,130,246,0.15)]";
+      return "bg-white/5 border-white/15 text-cool-gray-200";
     }
-    return "bg-white/10 border-white/20 text-white shadow-[0_0_15px_rgba(255,255,255,0.05)]";
+    return "bg-white/10 border-white/20 text-white";
   };
 
   // Helper to format date nicely
@@ -69,9 +69,9 @@ export function WhatsUpNews() {
   const renderStatusBadge = () => {
     const badgeText = source === "live" ? "Weekly AI Feed" : "Weekly AI Cache";
     const badgeColor = source === "live"
-      ? "bg-emerald-500/20 text-emerald-300 border-emerald-500/20"
-      : "bg-amber-500/20 text-amber-400 border-amber-500/30";
-    const pingColor = source === "live" ? "bg-emerald-400" : "bg-amber-400";
+      ? "bg-white/5 text-cool-gray-300 border-white/10"
+      : "bg-white/5 text-cool-gray-400 border-white/10";
+    const pingColor = source === "live" ? "bg-neon-cyan" : "bg-cool-gray-500";
 
     const buildDate = new Date(timestamp).toLocaleDateString("en-US", {
       month: "short",
@@ -94,8 +94,6 @@ export function WhatsUpNews() {
   return (
     <section id="whats-up" className="py-24 bg-black relative border-t border-white/5 overflow-hidden">
       {/* Background Glows */}
-      <div className="absolute top-[20%] left-[-10%] w-[35%] h-[35%] bg-neon-cyan/5 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-[20%] right-[-10%] w-[35%] h-[35%] bg-neon-violet/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute inset-0 grid-bg opacity-10 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -151,7 +149,7 @@ export function WhatsUpNews() {
                   className="glass-card border border-cool-gray-700/20 hover:border-cool-gray-700/50 rounded-3xl p-6 h-[310px] flex flex-col justify-between transition-all duration-300 group hover:shadow-[0_20px_40px_rgba(0,0,0,0.5)] relative"
                 >
                   {/* Subtle hover background glow */}
-                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-neon-cyan/0 via-neon-cyan/5 to-neon-violet/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                  <div className="absolute inset-0 rounded-3xl bg-white/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
                   <div>
                     {/* Top Row: Brand + Category */}

@@ -19,11 +19,9 @@ export function AiFyContent() {
         <section className="relative pt-40 pb-20 md:pt-48 md:pb-32 px-6 flex items-center justify-center overflow-hidden">
           <div className="grid-bg absolute inset-0"></div>
           {/* subtle mesh background using pseudo elements or just absolute divs */}
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-[400px] bg-neon-cyan/10 blur-[120px] rounded-full z-[-1] opacity-50 pointer-events-none"></div>
-
           <div className="max-w-5xl mx-auto text-center relative z-10 w-full text-white">
             <h1 className="font-display text-5xl md:text-7xl lg:text-[6rem] font-bold tracking-tighter mb-6 leading-[1.05] gs-reveal opacity-0">
-              <span className="gradient-text drop-shadow-[0_0_15px_rgba(0,240,255,0.4)]">AI-fy</span> Your Enterprise
+              <span className="gradient-text">AI-fy</span> Your Enterprise
             </h1>
             <p className="text-xl md:text-2xl text-gray-400 font-light max-w-3xl mx-auto gs-reveal opacity-0">
               Seamlessly integrate Voice Agents, Secure RAG, and Intelligent Workflow Automation to turn legacy operations into autonomous, intelligent systems.
@@ -39,10 +37,10 @@ export function AiFyContent() {
             <div className="relative">
               <div className="flex flex-col lg:flex-row gap-12 items-start">
                 <div className="lg:w-1/3 gs-reveal opacity-0 sticky top-32">
-                  <div className="w-16 h-16 rounded-full bg-neon-cyan/10 border border-neon-cyan/30 flex items-center justify-center mb-6 text-neon-cyan shadow-[0_0_20px_rgba(0,240,255,0.3)]">
+                  <div className="w-16 h-16 rounded-full bg-neon-cyan/10 border border-neon-cyan/30 flex items-center justify-center mb-6 text-neon-cyan">
                     <PhoneCall size={28} />
                   </div>
-                  <h2 className="text-4xl font-display font-bold mb-4 drop-shadow-[0_0_15px_rgba(0,240,255,0.3)] text-white">Voice Agents</h2>
+                  <h2 className="text-4xl font-display font-bold mb-4 text-white">Voice Agents</h2>
                   <p className="text-gray-400 text-lg mb-6 leading-relaxed">
                     Deploy 24/7 autonomous, context-aware voice assistants capable of natural conversations across phone and web. 
                   </p>
@@ -74,10 +72,10 @@ export function AiFyContent() {
             <div className="relative">
               <div className="flex flex-col lg:flex-row-reverse gap-12 items-start">
                 <div className="lg:w-1/3 gs-reveal opacity-0 sticky top-32 lg:pl-12">
-                  <div className="w-16 h-16 rounded-full bg-neon-pink/10 border border-neon-pink/30 flex items-center justify-center mb-6 text-neon-pink shadow-[0_0_20px_rgba(255,0,170,0.3)]">
+                  <div className="w-16 h-16 rounded-full bg-neon-pink/10 border border-neon-pink/30 flex items-center justify-center mb-6 text-neon-pink">
                     <Lock size={28} />
                   </div>
-                  <h2 className="text-4xl font-display font-bold mb-4 drop-shadow-[0_0_15px_rgba(255,0,170,0.3)] text-white">Secure RAG</h2>
+                  <h2 className="text-4xl font-display font-bold mb-4 text-white">Secure RAG</h2>
                   <p className="text-gray-400 text-lg mb-6 leading-relaxed">
                     Chat with your proprietary data securely. Unlock institutional knowledge locked away in scattered documents.
                   </p>
@@ -109,10 +107,10 @@ export function AiFyContent() {
             <div className="relative">
               <div className="flex flex-col lg:flex-row gap-12 items-start">
                 <div className="lg:w-1/3 gs-reveal opacity-0 sticky top-32">
-                  <div className="w-16 h-16 rounded-full bg-neon-purple/10 border border-neon-purple/30 flex items-center justify-center mb-6 text-neon-purple shadow-[0_0_20px_rgba(138,43,226,0.3)]">
+                  <div className="w-16 h-16 rounded-full bg-neon-purple/10 border border-neon-purple/30 flex items-center justify-center mb-6 text-neon-purple">
                     <Settings size={28} />
                   </div>
-                  <h2 className="text-4xl font-display font-bold mb-4 drop-shadow-[0_0_15px_rgba(138,43,226,0.3)] text-white">Intelligent Workflow</h2>
+                  <h2 className="text-4xl font-display font-bold mb-4 text-white">Intelligent Workflow</h2>
                   <p className="text-gray-400 text-lg mb-6 leading-relaxed">
                     AI agents orchestrating multi-step processes securely across your existing fragmented tools and APIs.
                   </p>

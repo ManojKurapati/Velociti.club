@@ -7,7 +7,7 @@ export const MegaMenu = () => {
     <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[600px] p-6 rounded-2xl glass border border-white/10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
       <div className="grid grid-cols-3 gap-6">
         
-        <Link href="/enterprise#voice" className="group/item flex flex-col gap-3 p-4 rounded-xl hover:bg-white/5 transition-colors border border-transparent hover:border-white/10 hover:shadow-[0_0_20px_rgba(0,240,255,0.1)]">
+        <Link href="/enterprise#voice" className="group/item flex flex-col gap-3 p-4 rounded-xl hover:bg-white/5 transition-colors border border-transparent hover:border-white/10">
           <div className="w-10 h-10 rounded-lg bg-neon-cyan/20 flex items-center justify-center text-neon-cyan group-hover/item:scale-110 transition-transform">
             <Mic className="w-5 h-5" />
           </div>
@@ -17,7 +17,7 @@ export const MegaMenu = () => {
           </div>
         </Link>
         
-        <Link href="/enterprise#rag" className="group/item flex flex-col gap-3 p-4 rounded-xl hover:bg-white/5 transition-colors border border-transparent hover:border-white/10 hover:shadow-[0_0_20px_rgba(157,78,221,0.1)]">
+        <Link href="/enterprise#rag" className="group/item flex flex-col gap-3 p-4 rounded-xl hover:bg-white/5 transition-colors border border-transparent hover:border-white/10">
           <div className="w-10 h-10 rounded-lg bg-neon-violet/20 flex items-center justify-center text-neon-violet group-hover/item:scale-110 transition-transform">
             <Database className="w-5 h-5" />
           </div>
@@ -27,7 +27,7 @@ export const MegaMenu = () => {
           </div>
         </Link>
         
-        <Link href="/enterprise#workflow" className="group/item flex flex-col gap-3 p-4 rounded-xl hover:bg-white/5 transition-colors border border-transparent hover:border-white/10 hover:shadow-[0_0_20px_rgba(255,255,255,0.1)]">
+        <Link href="/enterprise#workflow" className="group/item flex flex-col gap-3 p-4 rounded-xl hover:bg-white/5 transition-colors border border-transparent hover:border-white/10">
           <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-white group-hover/item:scale-110 transition-transform">
             <Zap className="w-5 h-5" />
           </div>

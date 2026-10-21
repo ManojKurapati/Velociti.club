@@ -52,8 +52,6 @@ export function ClubApplicationForm() {
   return (
     <section className="py-32 bg-obsidian relative" id="apply">
       {/* Glow motif */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-neon-violet/10 to-transparent blur-[100px] pointer-events-none" />
-
       <div className="max-w-3xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/5 border border-white/10 mb-6 text-white">
@@ -80,7 +78,7 @@ export function ClubApplicationForm() {
                   <div 
                     key={num} 
                     className={`relative z-10 w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold transition-colors ${
-                      step >= num ? 'bg-neon-cyan text-black shadow-[0_0_15px_rgba(0,240,255,0.5)]' : 'bg-black border border-white/20 text-white'
+                      step >= num ? 'bg-neon-cyan text-black' : 'bg-black border border-white/20 text-white'
                     }`}
                   >
                     {num}
@@ -151,14 +149,14 @@ export function ClubApplicationForm() {
                   </button>
                 ) : <div />}
                 
-                <button type="submit" className="bg-white text-black px-8 py-3 rounded-xl font-semibold flex items-center gap-2 hover:bg-neon-cyan hover:shadow-[0_0_20px_rgba(0,240,255,0.4)] transition-all">
+                <button type="submit" className="bg-white text-black px-8 py-3 rounded-xl font-semibold flex items-center gap-2 hover:bg-neon-cyan transition-all">
                   {step === 3 ? "Submit Application" : "Continue"} <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
             </form>
           ) : (
             <div className="text-center py-16 animate-in zoom-in duration-500">
-              <div className="w-20 h-20 rounded-full bg-neon-cyan/20 border border-neon-cyan text-neon-cyan flex items-center justify-center mx-auto mb-6 shadow-[0_0_30px_rgba(0,240,255,0.3)]">
+              <div className="w-20 h-20 rounded-full bg-neon-cyan/20 border border-neon-cyan text-neon-cyan flex items-center justify-center mx-auto mb-6">
                 <CheckCircle2 className="w-10 h-10" />
               </div>
               <h3 className="text-3xl font-display font-medium text-white mb-4">Application Received</h3>

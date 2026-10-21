@@ -56,7 +56,7 @@ export function AskVelocitiWidget() {
             {/* Header */}
             <div className="p-4 border-b border-white/5 flex justify-between items-center bg-white/5">
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-neon-cyan to-neon-violet flex items-center justify-center">
+                <div className="w-8 h-8 rounded-full bg-white/10 border border-white/15 text-neon-cyan flex items-center justify-center">
                   <Sparkles className="w-4 h-4 text-white" />
                 </div>
                 <div>
@@ -105,7 +105,7 @@ export function AskVelocitiWidget() {
 
       <button 
         onClick={() => setIsOpen(!isOpen)}
-        className="w-14 h-14 rounded-full bg-gradient-to-tr from-neon-cyan to-neon-violet shadow-[0_0_20px_rgba(0,240,255,0.3)] hover:shadow-[0_0_30px_rgba(0,240,255,0.5)] flex items-center justify-center text-white transition-all hover:scale-105 active:scale-95"
+        className="w-14 h-14 rounded-full bg-white border border-white/10 flex items-center justify-center text-black transition-all hover:scale-105 active:scale-95"
       >
         {isOpen ? <X className="w-6 h-6" /> : <MessageSquare className="w-6 h-6" />}
       </button>

@@ -70,8 +70,6 @@ export function KnowledgeContent() {
         
         {/* Hero */}
         <section className="relative pt-20 pb-20 px-6 flex items-center justify-center">
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-lg h-[400px] bg-neon-purple/20 blur-[150px] rounded-full z-[-1] opacity-60 pointer-events-none"></div>
-
           <div className="max-w-5xl mx-auto text-center relative z-10 w-full text-white">
             <div className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full glass border border-neon-purple/30 text-xs font-semibold text-neon-purple mb-6 uppercase tracking-[0.2em] gs-reveal opacity-0">
                Insights & Research

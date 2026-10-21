@@ -70,7 +70,7 @@ export function ExitIntentPopup() {
               placeholder="Work email address" 
               className="w-full bg-black border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-neon-cyan/50"
             />
-            <button type="submit" className="w-full bg-white text-black font-semibold py-3 rounded-xl hover:bg-neon-cyan hover:shadow-[0_0_20px_rgba(0,240,255,0.4)] transition-all">
+            <button type="submit" className="w-full bg-white text-black font-semibold py-3 rounded-xl hover:bg-neon-cyan transition-all">
               Send me the Playbook
             </button>
           </form>

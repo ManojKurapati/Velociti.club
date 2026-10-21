@@ -32,7 +32,7 @@ export function VideoModal({ isOpen, onClose }: Props) {
         className="modal-backdrop absolute inset-0 bg-black/80 backdrop-blur-md interactive" 
         onClick={onClose}
       />
-      <div className="modal-content relative w-full max-w-5xl aspect-video bg-black border border-white/10 rounded-2xl overflow-hidden glass shadow-[0_0_50px_rgba(0,240,255,0.15)] z-10">
+      <div className="modal-content relative w-full max-w-5xl aspect-video bg-black border border-white/10 rounded-2xl overflow-hidden glass z-10">
         <button 
           onClick={onClose}
           className="absolute top-4 right-4 z-20 w-10 h-10 bg-black/50 hover:bg-white/10 rounded-full flex items-center justify-center text-white transition-colors interactive border border-white/10"
@@ -43,7 +43,7 @@ export function VideoModal({ isOpen, onClose }: Props) {
           {/* Subtle neural background for the modal placeholder */}
           <div className="absolute inset-0 grid-bg opacity-30"></div>
           <div className="relative z-10 flex flex-col items-center gap-6">
-            <span className="w-20 h-20 rounded-full border border-neon-cyan/50 flex items-center justify-center animate-pulse text-neon-cyan bg-neon-cyan/5 shadow-[0_0_30px_rgba(0,240,255,0.3)]">
+            <span className="w-20 h-20 rounded-full border border-neon-cyan/50 flex items-center justify-center animate-pulse text-neon-cyan bg-neon-cyan/5">
               <Play className="w-8 h-8 ml-1" fill="currentColor" />
             </span>
             <div className="text-center">

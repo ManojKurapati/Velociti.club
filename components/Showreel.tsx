@@ -115,9 +115,6 @@ export function Showreel() {
   return (
     <section id="showreel" className="py-24 bg-black relative overflow-hidden border-t border-white/5">
       {/* Background glow effects matching neon cyan & violet */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-neon-cyan/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-96 h-96 bg-neon-violet/10 rounded-full blur-[120px] pointer-events-none" />
-
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="mb-16 text-center lg:text-left">
           <motion.h2
@@ -206,7 +203,7 @@ export function Showreel() {
                 onChange={handleSeek}
                 className="flex-1 h-1 bg-white/20 hover:bg-white/30 rounded-lg appearance-none cursor-pointer accent-neon-cyan transition-colors"
                 style={{
-                  background: `linear-gradient(to right, #00f0ff 0%, #00f0ff ${(currentTime / (duration || 1)) * 100}%, rgba(255,255,255,0.2) ${(currentTime / (duration || 1)) * 100}%, rgba(255,255,255,0.2) 100%)`
+                  background: `linear-gradient(to right, #CBB08A 0%, #CBB08A ${(currentTime / (duration || 1)) * 100}%, rgba(255,255,255,0.2) ${(currentTime / (duration || 1)) * 100}%, rgba(255,255,255,0.2) 100%)`
                 }}
               />
               <span className="text-xs font-mono text-gray-300 select-none">{formatTime(duration)}</span>

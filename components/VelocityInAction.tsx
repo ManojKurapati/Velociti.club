@@ -31,8 +31,6 @@ export function VelocityInAction() {
   return (
     <section className="py-32 bg-black relative border-t border-white/5 overflow-hidden">
       {/* Background flare */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-[400px] bg-neon-cyan/5 blur-[150px] rounded-full pointer-events-none" />
-
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
           <div>

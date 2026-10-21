@@ -31,9 +31,6 @@ export const AnimatedBackground = () => {
       />
       
       {/* Abstract Gradient Glows */}
-      <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-neon-cyan/10 blur-[100px] rounded-full mix-blend-screen" />
-      <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-neon-violet/10 blur-[100px] rounded-full mix-blend-screen" />
-
       {/* Particle Field - Velocity Motif */}
       {particles.map((p) => (
         <motion.div
