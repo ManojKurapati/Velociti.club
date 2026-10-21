@@ -69,23 +69,23 @@ export function CookieBanner() {
   return (
     <div className="fixed bottom-6 left-6 right-6 md:left-auto md:max-w-md bg-obsidian border border-white/10 rounded-2xl p-6 shadow-[0_10px_30px_rgba(0,0,0,0.5)] z-[9999] backdrop-blur-md flex flex-col gap-4">
       <div>
-        <h4 className="text-white font-semibold mb-1 text-sm">Cookie Consent</h4>
-        <p className="text-xs text-cool-gray-400 leading-relaxed">
-          We use analytics cookies to measure conversion metrics and improve your experience on our website.
+        <h4 className="text-white font-semibold mb-1 text-sm">Cookies</h4>
+        <p className="text-sm text-cool-gray-400 leading-relaxed">
+          We use analytics cookies to understand how the site is used. Nothing is tracked unless you accept.
         </p>
       </div>
       <div className="flex gap-3 justify-end">
         <button 
           onClick={handleDecline} 
-          className="text-xs text-cool-gray-400 hover:text-white px-3 py-2 rounded-lg transition-colors cursor-pointer"
+          className="text-sm text-cool-gray-400 hover:text-white px-3 py-2 rounded-full transition-colors cursor-pointer"
         >
           Decline
         </button>
         <button 
           onClick={handleAccept} 
-          className="bg-white text-black text-xs font-semibold px-4 py-2 rounded-lg hover:bg-neon-cyan transition-colors cursor-pointer"
+          className="bg-white text-black text-sm font-medium px-4 py-2 rounded-full hover:bg-cool-gray-200 transition-colors cursor-pointer"
         >
-          Accept Cookies
+          Accept
         </button>
       </div>
     </div>

@@ -23,13 +23,13 @@ export function BackToTop() {
   if (!visible) return null;
 
   return (
-    <div className="fixed bottom-8 right-8 z-50 animate-in fade-in slide-in-from-bottom-4">
+    <div className="fixed bottom-24 right-6 z-40 animate-in fade-in slide-in-from-bottom-4">
       <MagneticButton 
         onClick={scrollToTop}
-        className="w-12 h-12 rounded-full bg-black border-2 border-neon-cyan text-neon-cyan flex items-center justify-center hover:bg-neon-cyan hover:text-black transition-colors focus:outline-none focus:ring-2 focus:ring-neon-cyan focus:ring-offset-2 focus:ring-offset-black"
+        className="w-12 h-12 rounded-full bg-black border border-white/15 text-white flex items-center justify-center hover:border-white/40 transition-colors"
       >
         <span className="sr-only">Back to top</span>
-        <ArrowUp size={20} className="stroke-[3]" />
+        <ArrowUp size={20} className="stroke-2" />
       </MagneticButton>
     </div>
   );

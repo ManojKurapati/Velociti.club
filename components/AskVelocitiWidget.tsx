@@ -61,10 +61,10 @@ export function AskVelocitiWidget() {
                 </div>
                 <div>
                   <h4 className="text-sm font-medium text-white">Ask Velociti</h4>
-                  <p className="text-[10px] text-neon-cyan uppercase tracking-widest">RAG Agent Active</p>
+                  <p className="text-xs text-cool-gray-500">Answers from our knowledge base</p>
                 </div>
               </div>
-              <button onClick={() => setIsOpen(false)} className="text-cool-gray-400 hover:text-white transition-colors">
+              <button onClick={() => setIsOpen(false)} aria-label="Close chat" className="text-cool-gray-400 hover:text-white transition-colors">
                 <X className="w-5 h-5" />
               </button>
             </div>
@@ -92,9 +92,9 @@ export function AskVelocitiWidget() {
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   placeholder="Ask anything..." 
-                  className="w-full bg-white/5 border border-white/10 rounded-full pl-4 pr-12 py-3 text-sm text-white focus:outline-none focus:border-neon-cyan"
+                  className="w-full bg-white/5 border border-white/10 rounded-full pl-4 pr-12 py-3 text-sm text-white focus:outline-none focus:border-white/40"
                 />
-                <button type="submit" className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full flex items-center justify-center text-black hover:bg-neon-cyan transition-colors">
+                <button type="submit" className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full flex items-center justify-center text-black hover:bg-cool-gray-200 transition-colors" aria-label="Send">
                   <Send className="w-4 h-4 ml-[-2px]" />
                 </button>
               </div>
@@ -105,6 +105,7 @@ export function AskVelocitiWidget() {
 
       <button 
         onClick={() => setIsOpen(!isOpen)}
+        aria-label={isOpen ? "Close chat" : "Ask Velociti a question"}
         className="w-14 h-14 rounded-full bg-white border border-white/10 flex items-center justify-center text-black transition-all hover:scale-105 active:scale-95"
       >
         {isOpen ? <X className="w-6 h-6" /> : <MessageSquare className="w-6 h-6" />}
