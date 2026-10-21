@@ -116,28 +116,20 @@ export function Showreel() {
     <section id="showreel" className="py-24 bg-black relative overflow-hidden border-t border-white/5">
       {/* Background glow effects matching neon cyan & violet */}
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="mb-16 text-center lg:text-left">
+        <div className="mb-12">
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
             className="text-3xl md:text-5xl font-display font-medium text-white"
           >
-            Experience <span className="gradient-text">Velociti</span>
+            See Velociti at work
           </motion.h2>
         </div>
 
         {/* Video Player Container */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
           ref={containerRef}
           onMouseMove={triggerControlsVisibility}
           onMouseLeave={() => isPlaying && setShowControls(false)}
-          className="relative w-full aspect-video rounded-3xl overflow-hidden bg-obsidian border border-white/10 group shadow-[0_0_40px_rgba(0,0,0,0.8)] hover:border-neon-cyan/30 transition-all duration-500"
+          className="relative w-full aspect-video rounded-3xl overflow-hidden bg-obsidian border border-white/10 group shadow-[0_0_40px_rgba(0,0,0,0.8)] hover:border-white/20 transition-all duration-500"
         >
           {/* Inner pulse ring */}
           <div className="absolute inset-0 border border-white/5 rounded-3xl pointer-events-none z-10" />
@@ -174,7 +166,7 @@ export function Showreel() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.8 }}
                   onClick={handlePlayPause}
-                  className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white/10 hover:bg-neon-cyan text-white hover:text-black border border-white/20 hover:border-transparent flex items-center justify-center backdrop-blur-md transition-all duration-300 pointer-events-auto cursor-pointer shadow-[0_0_30px_rgba(0,0,0,0.5)] active:scale-95"
+                  className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white/10 hover:bg-white text-white hover:text-black border border-white/20 hover:border-transparent flex items-center justify-center backdrop-blur-md transition-all duration-300 pointer-events-auto cursor-pointer shadow-[0_0_30px_rgba(0,0,0,0.5)] active:scale-95"
                 >
                   {isPlaying ? (
                     <Pause className="w-6 h-6 sm:w-8 sm:h-8" fill="currentColor" />
@@ -194,7 +186,7 @@ export function Showreel() {
           >
             {/* Progress Slider */}
             <div className="flex items-center gap-3 w-full">
-              <span className="text-xs font-mono text-gray-300 select-none">{formatTime(currentTime)}</span>
+              <span className="text-xs tabular-nums text-gray-300 select-none">{formatTime(currentTime)}</span>
               <input
                 type="range"
                 min={0}
@@ -206,7 +198,7 @@ export function Showreel() {
                   background: `linear-gradient(to right, #CBB08A 0%, #CBB08A ${(currentTime / (duration || 1)) * 100}%, rgba(255,255,255,0.2) ${(currentTime / (duration || 1)) * 100}%, rgba(255,255,255,0.2) 100%)`
                 }}
               />
-              <span className="text-xs font-mono text-gray-300 select-none">{formatTime(duration)}</span>
+              <span className="text-xs tabular-nums text-gray-300 select-none">{formatTime(duration)}</span>
             </div>
 
             {/* Buttons Row */}
@@ -226,7 +218,7 @@ export function Showreel() {
                   className="text-white hover:text-neon-cyan transition-colors cursor-pointer flex items-center gap-2"
                 >
                   {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
-                  <span className="text-xs font-mono hidden sm:inline text-gray-300">
+                  <span className="text-xs tabular-nums hidden sm:inline text-gray-300">
                     {isMuted ? "Unmute" : "Muted"}
                   </span>
                 </button>

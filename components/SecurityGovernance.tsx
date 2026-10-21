@@ -1,70 +1,61 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Shield, Lock, Eye, FileCheck, Server, AlertTriangle } from "lucide-react";
 
 const securityFeatures = [
   {
     icon: Lock,
-    title: "Enterprise Encryption",
+    title: "Enterprise encryption",
     description: "AES-256 encryption at rest and TLS 1.3 in transit. Your proprietary data never trains public LLMs."
   },
   {
     icon: Eye,
-    title: "Audit Logs & Observability",
+    title: "Audit logs and observability",
     description: "Complete tracking of every agent action, API call, and reasoning trace for full operational transparency."
   },
   {
     icon: Shield,
-    title: "Human-in-the-Loop",
+    title: "Human in the loop",
     description: "Configurable approval workflows. Agents pause and request human authorization for high-risk actions."
   },
   {
     icon: AlertTriangle,
-    title: "Hallucination Mitigation",
+    title: "Hallucination mitigation",
     description: "Multi-agent cross-verification, grounding in your specific data, and strict deterministic fallback logic."
   },
   {
     icon: FileCheck,
-    title: "Compliance Readiness",
+    title: "Compliance readiness",
     description: "Architectures built to support SOC2, HIPAA, and GDPR compliance from day one of deployment."
   },
   {
     icon: Server,
-    title: "Private Deployments",
+    title: "Private deployments",
     description: "Option for VPC/On-Premise deployments to ensure your systems remain entirely within your perimeter."
   }
 ];
 
 export function SecurityGovernance() {
   return (
-    <section id="security" className="py-24 bg-obsidian relative border-t border-white/5 overflow-hidden">
-      {/* Background glow */}
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center justify-center p-3 bg-white/5 border border-white/10 rounded-2xl mb-6">
-            <Shield className="w-8 h-8 text-neon-cyan" />
+    <section id="security" className="py-24 md:py-32 bg-black relative border-t border-white/5">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+        <div className="lg:col-span-4">
+          <div className="lg:sticky lg:top-32">
+            <Shield className="w-7 h-7 text-cool-gray-400 mb-6" aria-hidden="true" />
+            <h2 className="text-3xl md:text-5xl font-display font-medium text-white mb-6">Security and governance</h2>
+            <p className="text-cool-gray-400 text-lg leading-relaxed">
+              AI that acts on your systems has to be trustworthy. Every deployment ships with these controls from day one.
+            </p>
           </div>
-          <h2 className="text-3xl md:text-5xl font-display font-medium text-white mb-6">Security & Governance</h2>
-          <p className="text-cool-gray-400 max-w-2xl mx-auto text-lg">
-            Autonomous systems require absolute trust. We build with defensive engineering principles to ensure your enterprise data and operations are fully protected.
-          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {securityFeatures.map((feature, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="bg-black/50 border border-white/10 rounded-2xl p-8 hover:border-white/20 transition-colors"
-            >
-              <feature.icon className="w-6 h-6 text-neon-cyan mb-6" />
-              <h3 className="text-xl font-medium text-white mb-3">{feature.title}</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">{feature.description}</p>
-            </motion.div>
+        <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-12">
+          {securityFeatures.map((feature) => (
+            <div key={feature.title}>
+              <feature.icon className="w-5 h-5 text-cool-gray-500 mb-5" aria-hidden="true" />
+              <h3 className="text-xl font-medium text-white mb-2">{feature.title}</h3>
+              <p className="text-cool-gray-400 text-base leading-relaxed">{feature.description}</p>
+            </div>
           ))}
         </div>
       </div>

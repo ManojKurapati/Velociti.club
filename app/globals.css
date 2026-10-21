@@ -7,6 +7,7 @@
   --color-white: var(--theme-white);
   --color-neon-cyan: var(--theme-cyan);
   --color-neon-violet: var(--theme-violet);
+  --color-brass: var(--theme-brass);
   
   /* Map both cool-gray and standard gray to theme-aware variables */
   --color-cool-gray-100: var(--theme-gray-100);
@@ -29,8 +30,8 @@
   --color-gray-800: var(--theme-gray-800);
   --color-gray-900: var(--theme-gray-900);
   
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-display: 'Satoshi', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer base {
@@ -43,7 +44,8 @@
     --theme-black: #ffffff;    /* White replacing black blocks */
     --theme-white: #0c0a09;    /* Near-black replacing white blocks/text */
     
-    --theme-cyan: #8A6D3B;   /* Champagne accent (light) */
+    --theme-cyan: #44403C;   /* Quiet emphasis (light) */
+    --theme-brass: #8A6D3B;  /* Brand brass, used sparingly (light) */
     --theme-violet: #52525B; /* Neutral silver (light) */
     
     --theme-gray-100: #171717; 
@@ -72,7 +74,8 @@
     --theme-black: #000000;
     --theme-white: #ffffff;
     
-    --theme-cyan: #CBB08A;   /* Champagne accent */
+    --theme-cyan: #D6D3D1;   /* Quiet emphasis */
+    --theme-brass: #CBB08A;  /* Brand brass, used sparingly */
     --theme-violet: #A1A1AA; /* Neutral silver */
     
     --theme-gray-100: #F5F5F5;
@@ -108,9 +111,34 @@ body {
   html {
     font-size: 18px;
   }
-  
-  body, body * {
-    cursor: none !important;
+}
+
+/* Display type: Archivo's wider cut gives headings an engineered voice */
+.font-display {
+  font-stretch: 112%;
+  letter-spacing: -0.025em;
+}
+
+h1, h2, h3, h4 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+:focus-visible {
+  outline: 2px solid var(--theme-brass);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 

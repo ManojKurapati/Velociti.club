@@ -1,74 +1,29 @@
 "use client";
 
-import { useState, useRef } from "react";
-import { ArrowRight, CheckCircle2, Loader2 } from "lucide-react";
-import { MagneticButton } from "./MagneticButton";
-import { useScrollReveal } from "@/hooks/useScrollAnimation";
+import Link from "next/link";
 
 export function CtaSection() {
-  const container = useRef<HTMLElement>(null);
-  const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
-  
-  useScrollReveal(container);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus("loading");
-    
-    // Simulate network request perfectly suited for Formspree/Resend integration later
-    setTimeout(() => {
-      console.log("Form Submitted Successfully:", { email });
-      setStatus("success");
-      setEmail("");
-      
-      // Auto reset success message after 5 seconds
-      setTimeout(() => setStatus("idle"), 5000);
-    }, 1500);
-  };
-
   return (
-    <section id="contact" ref={container} className="py-40 relative z-10 overflow-hidden">
-      <div className="max-w-4xl mx-auto px-6 text-center">
-        <h2 className="font-display text-5xl md:text-7xl font-bold mb-6 tracking-tight gs-reveal opacity-0">
-          Ready to <span className="text-white">Automate</span> Your Operations?
-        </h2>
-        <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto font-light gs-reveal opacity-0">
-          Book a comprehensive AI workflow audit to identify operational bottlenecks and deployment opportunities.
-        </p>
-        
-        <div className="gs-reveal opacity-0">
-          {status === "success" ? (
-            <div className="glass-card p-6 rounded-full flex items-center justify-center gap-3 max-w-md mx-auto border-neon-cyan/50 text-neon-cyan animate-in fade-in zoom-in duration-300">
-              <CheckCircle2 size={24} />
-              <span className="font-medium">Request received. We will be in touch shortly.</span>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="glass-card p-2 rounded-full flex flex-col sm:flex-row max-w-lg mx-auto relative hover:-translate-y-1 transition-transform duration-300">
-              <input 
-                type="email" 
-                placeholder="Enter your work email" 
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="bg-transparent border-none outline-none px-6 py-4 flex-1 text-white placeholder-gray-500 w-full rounded-full disabled:opacity-50"
-                required
-                disabled={status === "loading"}
-                aria-label="Email address"
-              />
-              <MagneticButton 
-                type="submit" 
-                className="bg-white text-black font-semibold rounded-full px-8 py-3 mt-2 sm:mt-0 sm:ml-2 hover:bg-gray-200 transition-colors flex items-center justify-center gap-2 group disabled:opacity-50 disabled:hover:scale-100"
-              >
-                {status === "loading" ? (
-                  <>Processing <Loader2 size={18} className="animate-spin" /></>
-                ) : (
-                  <>Get Started <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" /></>
-                )}
-              </MagneticButton>
-            </form>
-          )}
+    <section id="contact" className="py-28 md:py-40 relative z-10 border-t border-white/5">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-end">
+        <div className="lg:col-span-8">
+          <h2 className="font-display text-4xl sm:text-5xl md:text-7xl font-medium text-white mb-8">
+            Find out where AI pays off in your operations
+          </h2>
+          <p className="text-lg md:text-xl text-cool-gray-400 max-w-2xl font-light leading-relaxed">
+            In a 30-minute workflow audit, we map your bottlenecks and show you which ones an AI agent can take over first. No commitment, and everything you share stays confidential.
+          </p>
         </div>
-        <p className="mt-6 text-sm text-gray-500 gs-reveal opacity-0">No commitment required. Strictly confidential.</p>
+        <div className="lg:col-span-4 flex lg:justify-end">
+          <Link
+            href="https://calendly.com/manojkurapati96/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center bg-white text-black px-8 py-4 rounded-full font-medium text-lg hover:bg-cool-gray-200 transition-colors"
+          >
+            Book a workflow audit
+          </Link>
+        </div>
       </div>
     </section>
   );

@@ -1,22 +1,21 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Archivo } from "next/font/google";
 import { SmoothScroll } from "@/components/SmoothScroll";
-import { CustomCursor } from "@/components/CustomCursor";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { BackToTop } from "@/components/BackToTop";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { AnimatedBackground } from "@/components/AnimatedBackground";
-import { GlobalCtaBar } from "@/components/GlobalCtaBar";
 import { ExitIntentPopup } from "@/components/ExitIntentPopup";
 import { AskVelocitiWidget } from "@/components/AskVelocitiWidget";
 import { CookieBanner } from "@/components/CookieBanner";
 import Script from "next/script";
 import "./globals.css";
 
-const inter = Inter({
+const archivo = Archivo({
   subsets: ["latin"],
-  variable: "--font-inter",
+  axes: ["wdth"],
+  variable: "--font-archivo",
   display: "swap"
 });
 
@@ -105,7 +104,6 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400,300&display=swap" rel="stylesheet" />
         <Script
           id="organization-jsonld"
           type="application/ld+json"
@@ -125,11 +123,9 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className={`${inter.variable} font-sans antialiased bg-background text-foreground tracking-tight selection:bg-neon-cyan selection:text-black overflow-x-hidden`}>
+      <body className={`${archivo.variable} font-sans antialiased bg-background text-foreground selection:bg-brass selection:text-black overflow-x-hidden`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-          <GlobalCtaBar />
           <AnimatedBackground />
-          <CustomCursor />
           <SmoothScroll>
             <Navbar />
             {children}

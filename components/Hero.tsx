@@ -1,10 +1,7 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, Play } from "lucide-react";
-import { VideoModal } from "./VideoModal";
 import { GooeyText } from "./ui/gooey-text-morphing";
 
 const MORPHING_WORDS = [
@@ -14,76 +11,53 @@ const MORPHING_WORDS = [
 ];
 
 export function Hero() {
-  const [isVideoOpen, setIsVideoOpen] = useState(false);
-  
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-24 sm:pt-32 pb-12 sm:pb-20 overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 z-0 bg-black">
-        {/* Core glowing orb fallback/overlay */}
-        {/* Velocity Grid Overlay */}
-        <div className="absolute inset-0 grid-bg opacity-30 animate-scroll pointer-events-none" />
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 text-center flex flex-col items-center">
-        
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
+    <section className="relative min-h-[92vh] flex items-end pt-32 sm:pt-40 pb-16 sm:pb-24 overflow-hidden">
+      <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-neon-cyan/30 bg-neon-cyan/5 text-neon-cyan text-[10px] sm:text-xs font-semibold uppercase tracking-widest mb-6 sm:mb-8 backdrop-blur-md"
-        >
-          <span className="w-2 h-2 rounded-full bg-neon-cyan animate-pulse" />
-          Enterprise-Grade Infrastructure
-        </motion.div>
-
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="mb-6 sm:mb-8 w-full max-w-6xl"
+          transition={{ duration: 0.9, ease: "easeOut" }}
         >
           <h1 className="sr-only">Think Different. Think Big. Think Velociti.</h1>
-          <div aria-hidden="true" className="relative h-[2.75rem] sm:h-[3.5rem] md:h-[5rem] lg:h-[8rem]">
+          <div aria-hidden="true" className="relative h-[3rem] sm:h-[4rem] md:h-[5.5rem] lg:h-[9.5rem] -ml-1">
             <GooeyText
               texts={MORPHING_WORDS}
               morphTime={1.5}
-              cooldownTime={0.5}
+              cooldownTime={1.25}
               className="h-full"
-              textClassName="font-display font-medium tracking-tighter whitespace-nowrap text-neon-cyan"
+              textClassName="font-display font-semibold whitespace-nowrap text-left text-brass text-[2.3rem] sm:text-5xl md:text-7xl lg:text-9xl"
             />
           </div>
         </motion.div>
 
-        <motion.p 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-          className="text-base sm:text-lg md:text-2xl text-cool-gray-400 max-w-3xl mb-10 sm:mb-16 font-light leading-relaxed px-2 sm:px-0"
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.9, delay: 0.5, ease: "easeOut" }}
+          className="mt-10 sm:mt-14 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end border-t border-white/10 pt-8 sm:pt-10"
         >
-          We deploy secure AI agents across sales, support, operations, and workflows using your existing systems and data.
-        </motion.p>
-
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-          className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
-        >
-          <Link 
-            href="https://calendly.com/manojkurapati96/30min" target="_blank" rel="noopener noreferrer"
-            className="group relative flex items-center justify-center gap-2 bg-white text-black px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg hover:bg-neon-cyan transition-all duration-300"
-          >
-            Book an AI Workflow Audit
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </Link>
-          <Link href="/#case-studies" className="flex items-center justify-center gap-2 bg-white/5 border border-white/10 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-medium text-base sm:text-lg hover:bg-white/10 transition-colors backdrop-blur-md">
-            View Case Studies
-          </Link>
+          <p className="lg:col-span-7 text-lg sm:text-xl md:text-2xl text-cool-gray-300 font-light leading-relaxed max-w-2xl">
+            We embed engineers with your team to deploy secure AI agents across sales, support, and operations, built on the systems and data you already run.
+          </p>
+          <div className="lg:col-span-5 flex flex-col sm:flex-row lg:justify-end gap-3">
+            <Link
+              href="https://calendly.com/manojkurapati96/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center bg-white text-black px-7 py-3.5 rounded-full font-medium text-base hover:bg-cool-gray-200 transition-colors"
+            >
+              Book a workflow audit
+            </Link>
+            <Link
+              href="/#case-studies"
+              className="inline-flex items-center justify-center text-white px-7 py-3.5 rounded-full font-medium text-base border border-white/15 hover:border-white/40 transition-colors"
+            >
+              See case studies
+            </Link>
+          </div>
         </motion.div>
-        
       </div>
-      <VideoModal isOpen={isVideoOpen} onClose={() => setIsVideoOpen(false)} />
     </section>
   );
 }

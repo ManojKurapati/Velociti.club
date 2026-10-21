@@ -23,6 +23,16 @@ export function GooeyText({
   const animFrameRef = React.useRef<number>(0);
 
   React.useEffect(() => {
+    // Respect reduced motion: show the final phrase without morphing
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      if (text1Ref.current && text2Ref.current) {
+        text1Ref.current.textContent = "";
+        text2Ref.current.textContent = texts[texts.length - 1];
+        text2Ref.current.style.opacity = "100%";
+      }
+      return;
+    }
+
     let textIndex = texts.length - 1;
     let time = new Date();
     let morph = 0;

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { CheckCircle2, ArrowRight, RotateCw, Sparkles } from "lucide-react";
+import { CheckCircle2, RotateCw, Sparkles } from "lucide-react";
 import Link from "next/link";
 
 const solutions = [
@@ -368,9 +368,19 @@ function SolutionCard({ solution, index }: { solution: any; index: number }) {
 
   return (
     <div 
-      className="w-full h-[580px] sm:h-[560px] cursor-pointer group relative"
+      className="w-full h-[580px] sm:h-[560px] cursor-pointer group relative rounded-3xl"
       style={{ perspective: "1500px" }}
+      role="button"
+      tabIndex={0}
+      aria-pressed={isFlipped}
+      aria-label={`${solution.title}: ${isFlipped ? "show overview" : "show demo"}`}
       onClick={() => setIsFlipped(!isFlipped)}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          setIsFlipped(!isFlipped);
+        }
+      }}
     >
       <motion.div
         className="w-full h-full relative"
@@ -409,8 +419,8 @@ function SolutionCard({ solution, index }: { solution: any; index: number }) {
             </div>
 
             <div className="flex items-center justify-between pt-4 border-t border-white/5">
-              <span className="inline-flex items-center gap-2 text-sm font-medium text-white group-hover:text-neon-cyan transition-colors">
-                View Real-World Application <ArrowRight className="w-4 h-4" />
+              <span className="inline-flex items-center gap-2 text-sm font-medium text-white group-hover:text-cool-gray-300 transition-colors">
+                <RotateCw className="w-4 h-4" /> Flip to see it in action
               </span>
             </div>
           </div>
@@ -457,9 +467,9 @@ function SolutionCard({ solution, index }: { solution: any; index: number }) {
               <Link 
                 href="/#contact" 
                 onClick={(e) => e.stopPropagation()} 
-                className="inline-flex items-center gap-2 text-sm font-medium text-neon-cyan hover:text-white transition-colors"
+                className="inline-flex items-center gap-2 text-sm font-medium text-white underline underline-offset-4 decoration-white/30 hover:decoration-white transition-colors"
               >
-                Book Consultation <ArrowRight className="w-4 h-4" />
+                Book a consultation
               </Link>
               <button 
                 onClick={(e) => {
@@ -469,7 +479,7 @@ function SolutionCard({ solution, index }: { solution: any; index: number }) {
                 className="inline-flex items-center gap-1.5 text-xs text-cool-gray-400 hover:text-white transition-colors border border-white/10 rounded-lg px-2.5 py-1 bg-white/5"
               >
                 <RotateCw className="w-3 h-3" />
-                <span>Flip Back</span>
+                <span>Flip back</span>
               </button>
             </div>
           </div>
@@ -481,13 +491,13 @@ function SolutionCard({ solution, index }: { solution: any; index: number }) {
 
 export function StructuredSolutions() {
   return (
-    <section id="solutions" className="py-24 bg-black relative border-t border-white/5">
+    <section id="solutions" className="py-24 md:py-32 bg-black relative border-t border-white/5">
       <style dangerouslySetInnerHTML={{ __html: voiceWaveStyle }} />
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="mb-16">
-          <h2 className="text-3xl md:text-5xl font-display font-medium text-white mb-6">Structured Solutions</h2>
+          <h2 className="text-3xl md:text-5xl font-display font-medium text-white mb-6">What we build</h2>
           <p className="text-cool-gray-400 max-w-2xl text-lg">
-            We deploy purpose-built AI architectures that integrate securely with your existing tech stack, designed specifically for measurable operational impact.
+            The four AI systems we deploy most often, each wired into the tools your teams already use. Select a card to see a live example.
           </p>
         </div>
 

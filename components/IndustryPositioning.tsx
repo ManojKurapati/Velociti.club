@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Droplet, HeartPulse, Landmark, Car, Pill, Hotel, GraduationCap } from "lucide-react";
 
 const industries = [
@@ -8,89 +7,68 @@ const industries = [
     id: "healthcare",
     name: "Healthcare",
     icon: HeartPulse,
-    description: "Ambient clinical voice scribing, medical billing automation, and diagnostic RAG systems.",
-    color: "text-neon-cyan",
-    bg: "bg-white/5"
+    description: "Ambient clinical voice scribing, medical billing automation, and diagnostic RAG systems."
   },
   {
     id: "finance",
     name: "Finance",
     icon: Landmark,
-    description: "Structured credit underwriting pre-verification, real-time compliance auditing, and secure debt recovery.",
-    color: "text-neon-cyan",
-    bg: "bg-white/5"
+    description: "Structured credit underwriting pre-verification, real-time compliance auditing, and secure debt recovery."
   },
   {
     id: "oil-gas",
     name: "Oil & Gas",
     icon: Droplet,
-    description: "Predictive asset telemetry, automated technician dispatch, and technical schematic RAG systems.",
-    color: "text-neon-cyan",
-    bg: "bg-white/5"
+    description: "Predictive asset telemetry, automated technician dispatch, and technical schematic RAG systems."
   },
   {
     id: "automobile",
     name: "Automobile",
     icon: Car,
-    description: "Computer vision assembly line anomaly routing, parts tracking, and supply chain audit workflows.",
-    color: "text-neon-cyan",
-    bg: "bg-white/5"
+    description: "Computer vision assembly line anomaly routing, parts tracking, and supply chain audit workflows."
   },
   {
     id: "pharma",
     name: "Pharma",
     icon: Pill,
-    description: "Clinical trial protocol checking, automated adverse event intake, and chemical patent compliance search.",
-    color: "text-neon-cyan",
-    bg: "bg-white/5"
+    description: "Clinical trial protocol checking, automated adverse event intake, and chemical patent compliance search."
   },
   {
     id: "hospitality",
     name: "Hospitality",
     icon: Hotel,
-    description: "Low-latency booking voice agents, guest preference matching, and room service dispatch routing.",
-    color: "text-neon-cyan",
-    bg: "bg-white/5"
+    description: "Low-latency booking voice agents, guest preference matching, and room service dispatch routing."
   },
   {
     id: "education",
     name: "Education",
     icon: GraduationCap,
-    description: "Admissions enrollment assistants, automated credit transfer evaluation, and financial aid compliance check loops.",
-    color: "text-neon-cyan",
-    bg: "bg-white/5"
+    description: "Admissions enrollment assistants, automated credit transfer evaluation, and financial aid compliance check loops."
   }
 ];
 
 export function IndustryPositioning() {
   return (
-    <section id="industries" className="py-24 bg-obsidian relative border-t border-white/5">
+    <section id="industries" className="py-24 md:py-32 bg-obsidian relative border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="mb-16">
-          <h2 className="text-3xl md:text-5xl font-display font-medium text-white mb-4">Industry Agnostic. Operationally Specific.</h2>
+          <h2 className="text-3xl md:text-5xl font-display font-medium text-white mb-4">Built around how your industry works</h2>
           <p className="text-cool-gray-400 max-w-2xl text-lg">
-            We adapt our core autonomous architectures to the specific regulatory, security, and operational needs of your vertical.
+            The same core systems, adapted to the regulations, security rules, and day-to-day operations of each sector.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {industries.map((ind, i) => (
-            <motion.div
-              key={ind.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="bg-black/40 border border-cool-gray-800 rounded-2xl p-6 hover:border-cool-gray-700 transition-colors"
-            >
-              <div className={`w-12 h-12 rounded-xl ${ind.bg} flex items-center justify-center mb-6`}>
-                <ind.icon className={`w-6 h-6 ${ind.color}`} />
+        <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-16">
+          {industries.map((ind) => (
+            <li key={ind.id} className="flex gap-5 py-7 border-t border-white/10">
+              <ind.icon className="w-5 h-5 mt-1 text-cool-gray-500 shrink-0" aria-hidden="true" />
+              <div>
+                <h3 className="text-lg font-medium text-white mb-1.5">{ind.name}</h3>
+                <p className="text-cool-gray-400 text-base leading-relaxed max-w-md">{ind.description}</p>
               </div>
-              <h3 className="text-lg font-medium text-white mb-2">{ind.name}</h3>
-              <p className="text-cool-gray-400 text-sm leading-relaxed">{ind.description}</p>
-            </motion.div>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );

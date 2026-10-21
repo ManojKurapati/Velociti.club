@@ -154,7 +154,6 @@ export default function Home() {
       <Showreel />
       <StructuredSolutions />
       <ForwardDeployedEngineers />
-      <WhatsUpNews />
       <IndustryPositioning />
       <SecurityGovernance />
       <OnPremDeployment />
@@ -166,6 +165,7 @@ export default function Home() {
         metric="35%"
         metricLabel="Claim Processing Speedup"
       />
+      <WhatsUpNews />
       <CtaSection />
     </main>
   );

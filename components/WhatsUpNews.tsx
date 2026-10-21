@@ -18,7 +18,7 @@ interface Article {
 export function WhatsUpNews() {
   const [activeTab, setActiveTab] = useState<"All" | "Labs" | "Thinkers">("All");
 
-  const { source, timestamp, articles } = newsData as {
+  const { timestamp, articles } = newsData as {
     source: "live" | "fallback";
     timestamp: number;
     articles: Article[];
@@ -66,50 +66,30 @@ export function WhatsUpNews() {
     }
   };
 
-  const renderStatusBadge = () => {
-    const badgeText = source === "live" ? "Weekly AI Feed" : "Weekly AI Cache";
-    const badgeColor = source === "live"
-      ? "bg-white/5 text-cool-gray-300 border-white/10"
-      : "bg-white/5 text-cool-gray-400 border-white/10";
-    const pingColor = source === "live" ? "bg-neon-cyan" : "bg-cool-gray-500";
-
+  const renderStatusLine = () => {
     const buildDate = new Date(timestamp).toLocaleDateString("en-US", {
       month: "short",
       day: "numeric",
-      hour: "2-digit",
-      minute: "2-digit",
     });
 
     return (
-      <div className={`flex items-center gap-2 px-3 py-1 rounded-full border text-[11px] font-mono ${badgeColor}`}>
-        <span className="relative flex h-2 w-2">
-          <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${pingColor}`}></span>
-          <span className={`relative inline-flex rounded-full h-2 w-2 ${pingColor}`}></span>
-        </span>
-        <span>{badgeText} // Compiled {buildDate}</span>
-      </div>
+      <p className="text-sm text-cool-gray-500 mt-4">
+        Collected weekly from AI labs and researchers. Last updated {buildDate}.
+      </p>
     );
   };
 
   return (
-    <section id="whats-up" className="py-24 bg-black relative border-t border-white/5 overflow-hidden">
-      {/* Background Glows */}
-      <div className="absolute inset-0 grid-bg opacity-10 pointer-events-none" />
-
+    <section id="whats-up" className="py-24 md:py-32 bg-black relative border-t border-white/5 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
-            <div className="flex items-center gap-3 mb-4">
-              <span className="text-xs uppercase tracking-widest font-semibold text-neon-cyan px-2.5 py-0.5 rounded-full bg-neon-cyan/5 border border-neon-cyan/20">
-                Pulse Feed
-              </span>
-              {renderStatusBadge()}
-            </div>
-            <h2 className="text-3xl md:text-5xl font-display font-medium text-white tracking-tight">
-              What's Up in AI
+            <h2 className="text-3xl md:text-5xl font-display font-medium text-white">
+              What&apos;s new in AI
             </h2>
+            {renderStatusLine()}
           </div>
 
           {/* Tab Filters */}
@@ -118,13 +98,14 @@ export function WhatsUpNews() {
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-4 py-2 rounded-lg text-xs font-semibold tracking-wide transition-all cursor-pointer ${
+                aria-pressed={activeTab === tab}
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors cursor-pointer ${
                   activeTab === tab
                     ? "bg-white/10 text-white shadow-sm"
                     : "text-cool-gray-400 hover:text-white hover:bg-white/5"
                 }`}
               >
-                {tab === "All" ? "All Signals" : tab === "Labs" ? "AI Labs" : "AI Thinkers"}
+                {tab === "All" ? "All" : tab === "Labs" ? "AI labs" : "Researchers"}
               </button>
             ))}
           </div>
@@ -146,25 +127,23 @@ export function WhatsUpNews() {
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.4, delay: idx * 0.05 }}
                   key={article.url}
-                  className="glass-card border border-cool-gray-700/20 hover:border-cool-gray-700/50 rounded-3xl p-6 h-[310px] flex flex-col justify-between transition-all duration-300 group hover:shadow-[0_20px_40px_rgba(0,0,0,0.5)] relative"
+                  className="bg-white/[0.02] border border-white/[0.06] hover:border-white/15 rounded-2xl p-6 min-h-[310px] flex flex-col justify-between transition-colors duration-300 group relative"
                 >
-                  {/* Subtle hover background glow */}
-                  <div className="absolute inset-0 rounded-3xl bg-white/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
                   <div>
                     {/* Top Row: Brand + Category */}
                     <div className="flex items-center justify-between mb-4 relative z-10">
-                      <span className={`px-2.5 py-0.5 rounded-full border text-[10px] font-mono font-semibold tracking-wider ${pillClass}`}>
+                      <span className={`px-2.5 py-0.5 rounded-full border text-xs font-medium ${pillClass}`}>
                         {article.sourceName}
                       </span>
                       
-                      <span className="text-[10px] font-mono text-cool-gray-500 uppercase tracking-widest">
-                        {article.category === "Labs" ? "Research Lab" : "AI Thought"}
+                      <span className="text-xs text-cool-gray-500">
+                        {article.category === "Labs" ? "Research lab" : "Commentary"}
                       </span>
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-lg font-medium text-white line-clamp-2 leading-snug group-hover:text-neon-cyan transition-colors mb-3">
+                    <h3 className="text-lg font-medium text-white line-clamp-2 leading-snug transition-colors mb-3">
                       <a href={article.url} target="_blank" rel="noopener noreferrer" className="hover:underline flex items-start gap-1 relative z-10">
                         {article.title}
                       </a>
@@ -178,7 +157,7 @@ export function WhatsUpNews() {
 
                   {/* Metadata Row */}
                   <div className="flex items-center justify-between pt-4 border-t border-white/5 relative z-10 mt-4">
-                    <div className="flex flex-col gap-1 text-[11px] text-cool-gray-500 font-mono">
+                    <div className="flex flex-col gap-1 text-xs text-cool-gray-500">
                       <span className="flex items-center gap-1">
                         <User className="w-3.5 h-3.5 text-cool-gray-600" />
                         <span className="truncate max-w-[130px]">{article.author}</span>
@@ -193,8 +172,9 @@ export function WhatsUpNews() {
                       href={article.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center w-9 h-9 rounded-full bg-white/5 group-hover:bg-neon-cyan group-hover:text-black border border-white/10 group-hover:border-neon-cyan text-cool-gray-300 transition-all duration-300"
-                      title="Read original source"
+                      className="flex items-center justify-center w-9 h-9 rounded-full bg-white/5 group-hover:bg-white group-hover:text-black border border-white/10 text-cool-gray-300 transition-all duration-300"
+                      title="Read the original article"
+                      aria-label={`Read the original article: ${article.title}`}
                     >
                       <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                     </a>
@@ -206,7 +186,7 @@ export function WhatsUpNews() {
 
           {filteredArticles.length === 0 && (
             <div className="col-span-full py-16 text-center">
-              <p className="text-cool-gray-500 font-mono text-sm">No updates match the selected filter.</p>
+              <p className="text-cool-gray-500 text-sm">Nothing in this category this week. Try another filter.</p>
             </div>
           )}
         </motion.div>

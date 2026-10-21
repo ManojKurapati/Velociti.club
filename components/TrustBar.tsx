@@ -55,24 +55,17 @@ const logos = [
 ];
 
 export function TrustBar() {
-  // Duplicate logos array to ensure seamless infinite scroll
-  const duplicatedLogos = [...logos, ...logos, ...logos, ...logos];
-
   return (
-    <div className="w-full relative overflow-hidden py-10 flex">
-      <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-obsidian to-transparent z-10 pointer-events-none" />
-      <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-obsidian to-transparent z-10 pointer-events-none" />
-      
-      <div className="flex w-max animate-scroll">
-        {duplicatedLogos.map((logo, index) => (
-          <div 
-            key={`${logo.name}-${index}`} 
-            className="flex items-center justify-center min-w-[200px] sm:min-w-[250px] opacity-40 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-500 text-cool-gray-400 hover:text-white"
-          >
-            {logo.svg}
-            <span className="ml-3 font-display font-medium text-xl tracking-tight">{logo.name}</span>
-          </div>
-        ))}
+    <div className="w-full py-12 sm:py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col gap-6">
+        <p className="text-sm text-cool-gray-500 shrink-0">Trusted by operations teams at</p>
+        <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-8 gap-y-6">
+          {logos.map((logo) => (
+            <li key={logo.name} className="font-display font-medium text-lg text-cool-gray-400 whitespace-nowrap">
+              {logo.name}
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );

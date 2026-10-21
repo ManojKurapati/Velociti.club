@@ -29,8 +29,9 @@ export function Navbar() {
           {[
             { label: 'Home', href: '/' },
             { label: 'Solutions', href: '/#solutions' },
+            { label: 'FDEs', href: '/#forward-deployed-engineers' },
             { label: 'Industries', href: '/#industries' },
-            { label: 'Case Studies', href: '/#case-studies' },
+            { label: 'Case studies', href: '/#case-studies' },
             { label: 'Security', href: '/#security' },
             { label: 'About', href: '/about' },
           ].map((item) => (
@@ -42,11 +43,13 @@ export function Navbar() {
         
         <div className="z-10 flex items-center gap-4">
           <ThemeToggle />
-          <Link href="https://calendly.com/manojkurapati96/30min" target="_blank" rel="noopener noreferrer" className="btn-glow border border-neon-cyan text-neon-cyan px-6 py-2 rounded-full font-medium text-sm hidden md:inline-block interactive backdrop-blur-md">
-            Book Workflow Audit
+          <Link href="https://calendly.com/manojkurapati96/30min" target="_blank" rel="noopener noreferrer" className="bg-white text-black hover:bg-cool-gray-200 transition-colors px-5 py-2 rounded-full font-medium text-sm hidden md:inline-block interactive">
+            Book a workflow audit
           </Link>
           <button 
             className="md:hidden text-white interactive"
+            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileMenuOpen}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -60,17 +63,18 @@ export function Navbar() {
           {[
             { label: 'Home', href: '/' },
             { label: 'Solutions', href: '/#solutions' },
+            { label: 'FDEs', href: '/#forward-deployed-engineers' },
             { label: 'Industries', href: '/#industries' },
-            { label: 'Case Studies', href: '/#case-studies' },
+            { label: 'Case studies', href: '/#case-studies' },
             { label: 'Security', href: '/#security' },
             { label: 'About', href: '/about' },
           ].map((item) => (
-            <Link key={item.label} href={item.href} onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-white hover:text-neon-cyan transition-colors">
+            <Link key={item.label} href={item.href} onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-white hover:text-cool-gray-300 transition-colors">
               {item.label}
             </Link>
           ))}
           <Link href="https://calendly.com/manojkurapati96/30min" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)} className="bg-white text-black px-6 py-3 rounded-full text-center font-semibold mt-4">
-            Book Workflow Audit
+            Book a workflow audit
           </Link>
         </div>
       )}
