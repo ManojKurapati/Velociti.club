@@ -1,5 +1,7 @@
 "use client";
 
+import { Section, SectionHeader } from "./ui/section";
+import { Badge } from "./ui/badge";
 
 const caseStudies = [
   {
@@ -10,12 +12,11 @@ const caseStudies = [
     process: "Built a secure HIPAA-compliant RAG Copilot to reason over insurance guidelines and automatically pre-verify claims.",
     systems: ["Epic", "SharePoint", "AWS S3", "Private Cloud"],
     results: [
-      { metric: "99.2%", label: "Accuracy Rate" },
-      { metric: "35%", label: "Processing Speedup" },
-      { metric: "HIPAA", label: "Fully Compliant" }
+      { metric: "99.2%", label: "Accuracy rate" },
+      { metric: "35%", label: "Processing speedup" },
+      { metric: "HIPAA", label: "Fully compliant" }
     ],
-    timeline: "14 Weeks",
-    color: "from-white/[0.04] to-transparent"
+    timeline: "14 weeks"
   },
   {
     id: "finance",
@@ -25,12 +26,11 @@ const caseStudies = [
     process: "Deployed a secure underwriting RAG agent that parses financial PDFs and credit files to pre-evaluate credit risk.",
     systems: ["Salesforce", "Equifax API", "Internal SQL", "SharePoint"],
     results: [
-      { metric: "42%", label: "Throughput Gain" },
-      { metric: "31%", label: "Review Time Saved" },
-      { metric: "100%", label: "Audit Log Coverage" }
+      { metric: "42%", label: "Throughput gain" },
+      { metric: "31%", label: "Review time saved" },
+      { metric: "100%", label: "Audit log coverage" }
     ],
-    timeline: "8 Weeks",
-    color: "from-white/[0.04] to-transparent"
+    timeline: "8 weeks"
   },
   {
     id: "oil-gas",
@@ -40,12 +40,11 @@ const caseStudies = [
     process: "Integrated an agentic data pipeline monitoring pressure and temperature sensors to forecast anomaly thresholds.",
     systems: ["SAP PM", "Honeywell Forge", "Azure Blob", "TimescaleDB"],
     results: [
-      { metric: "18%", label: "Downtime Reduction" },
-      { metric: "15%", label: "OPEX Maintenance Saved" },
-      { metric: "94%", label: "Alert Accuracy" }
+      { metric: "18%", label: "Downtime reduction" },
+      { metric: "15%", label: "OPEX maintenance saved" },
+      { metric: "94%", label: "Alert accuracy" }
     ],
-    timeline: "12 Weeks",
-    color: "from-white/[0.04] to-transparent"
+    timeline: "12 weeks"
   },
   {
     id: "automobile",
@@ -55,81 +54,64 @@ const caseStudies = [
     process: "Deployed real-time computer vision models coupled with workflow orchestrations to flag micro-defects and alert engineers.",
     systems: ["Siemens PLC", "Kafka", "AWS IoT Core", "PostgreSQL"],
     results: [
-      { metric: "24%", label: "QA Cycle Reduction" },
-      { metric: "12%", label: "Defect Reduction" },
-      { metric: "Real-time", label: "Latency Profile" }
+      { metric: "24%", label: "QA cycle reduction" },
+      { metric: "12%", label: "Defect reduction" },
+      { metric: "Real-time", label: "Latency profile" }
     ],
-    timeline: "10 Weeks",
-    color: "from-white/[0.04] to-transparent"
+    timeline: "10 weeks"
   }
 ];
 
 export function EnterpriseCaseStudies() {
   return (
-    <section id="case-studies" className="py-24 md:py-32 bg-black relative border-t border-white/5">
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-          <div>
-            <h2 className="text-3xl md:text-5xl font-display font-medium text-white mb-4">Results from recent deployments</h2>
-            <p className="text-cool-gray-400 max-w-xl text-lg">
-              We measure every engagement the same way: hours saved, costs cut, and time to production.
-            </p>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {caseStudies.map((study) => (
-            <div 
-              key={study.id}
-              className="bg-obsidian rounded-2xl border border-white/[0.08] overflow-hidden flex flex-col"
-            >
-              <div className="p-8 flex-grow">
-                <div className="flex justify-between items-start mb-6">
-                  <div>
-                    <div className="text-sm text-cool-gray-500 mb-2">{study.industry}</div>
-                    <h3 className="text-2xl font-medium text-white">{study.project}</h3>
-                  </div>
-                  <div className="bg-cool-gray-900/50 rounded-full px-3 py-1 text-sm text-cool-gray-300 border border-cool-gray-700/30">
-                    {study.timeline}
-                  </div>
+    <Section id="case-studies">
+      <SectionHeader
+        title="Results from recent deployments"
+        description="We measure every engagement the same way: hours saved, costs cut, and time to production."
+      />
+      <div className="grid gap-px border-t border-line bg-line lg:grid-cols-2">
+        {caseStudies.map((study) => (
+          <article key={study.id} className="flex flex-col bg-canvas">
+            <div className="flex-grow p-6 md:p-8">
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <p className="text-sm text-cool-gray-500">{study.industry}</p>
+                  <h3 className="mt-1.5 font-display text-xl font-semibold text-white md:text-2xl">{study.project}</h3>
                 </div>
-
-                <div className="space-y-6">
-                  <div>
-                    <h4 className="text-sm font-medium text-cool-gray-400 mb-1">The problem</h4>
-                    <p className="text-cool-gray-300 text-sm leading-relaxed">{study.problem}</p>
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-medium text-cool-gray-400 mb-1">What we deployed</h4>
-                    <p className="text-cool-gray-300 text-sm leading-relaxed">{study.process}</p>
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-medium text-cool-gray-400 mb-2">Systems connected</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {study.systems.map((sys, idx) => (
-                        <span key={idx} className="bg-cool-gray-900 border border-cool-gray-700/30 text-cool-gray-400 text-xs px-2 py-1 rounded">
-                          {sys}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
+                <Badge>{study.timeline}</Badge>
               </div>
 
-              <div className={`bg-gradient-to-r ${study.color} border-t border-cool-gray-800/50 p-8`}>
-                <div className="grid grid-cols-3 gap-4">
-                  {study.results.map((result, idx) => (
-                    <div key={idx}>
-                      <div className="text-2xl md:text-3xl font-display font-medium text-white mb-1 tabular-nums">{result.metric}</div>
-                      <div className="text-xs text-cool-gray-300">{result.label}</div>
-                    </div>
-                  ))}
+              <dl className="mt-8 space-y-5">
+                <div>
+                  <dt className="text-sm font-medium text-white">The problem</dt>
+                  <dd className="mt-1 text-[15px] leading-relaxed text-cool-gray-400">{study.problem}</dd>
                 </div>
-              </div>
+                <div>
+                  <dt className="text-sm font-medium text-white">What we deployed</dt>
+                  <dd className="mt-1 text-[15px] leading-relaxed text-cool-gray-400">{study.process}</dd>
+                </div>
+                <div>
+                  <dt className="text-sm font-medium text-white">Systems connected</dt>
+                  <dd className="mt-2 flex flex-wrap gap-1.5">
+                    {study.systems.map((sys) => (
+                      <Badge key={sys}>{sys}</Badge>
+                    ))}
+                  </dd>
+                </div>
+              </dl>
             </div>
-          ))}
-        </div>
+
+            <div className="grid grid-cols-3 divide-x divide-line border-t border-line bg-surface">
+              {study.results.map((result) => (
+                <div key={result.label} className="px-6 py-5 md:px-8">
+                  <div className="font-display text-2xl font-semibold tabular-nums text-white md:text-3xl">{result.metric}</div>
+                  <div className="mt-1 text-xs text-cool-gray-500">{result.label}</div>
+                </div>
+              ))}
+            </div>
+          </article>
+        ))}
       </div>
-    </section>
+    </Section>
   );
 }

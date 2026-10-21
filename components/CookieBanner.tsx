@@ -67,7 +67,7 @@ export function CookieBanner() {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-6 left-6 right-6 md:left-auto md:max-w-md bg-obsidian border border-white/10 rounded-2xl p-6 shadow-[0_10px_30px_rgba(0,0,0,0.5)] z-[9999] backdrop-blur-md flex flex-col gap-4">
+    <div className="fixed bottom-6 left-6 right-6 md:left-auto md:max-w-md bg-surface border border-line rounded-lg p-5 shadow-2xl shadow-black/50 z-[9999] backdrop-blur-md flex flex-col gap-4">
       <div>
         <h4 className="text-white font-semibold mb-1 text-sm">Cookies</h4>
         <p className="text-sm text-cool-gray-400 leading-relaxed">
@@ -77,13 +77,13 @@ export function CookieBanner() {
       <div className="flex gap-3 justify-end">
         <button 
           onClick={handleDecline} 
-          className="text-sm text-cool-gray-400 hover:text-white px-3 py-2 rounded-full transition-colors cursor-pointer"
+          className="h-8 px-3 rounded-md text-sm text-cool-gray-400 hover:text-white hover:bg-raised transition-colors cursor-pointer"
         >
           Decline
         </button>
         <button 
           onClick={handleAccept} 
-          className="bg-white text-black text-sm font-medium px-4 py-2 rounded-full hover:bg-cool-gray-200 transition-colors cursor-pointer"
+          className="h-8 px-3 rounded-md bg-white text-black text-sm font-medium hover:bg-cool-gray-200 transition-colors cursor-pointer"
         >
           Accept
         </button>

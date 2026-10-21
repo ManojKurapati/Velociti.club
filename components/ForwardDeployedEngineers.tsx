@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { buttonVariants } from "./ui/button";
 
 const mess = [
   "A legacy ERP from 2009 nobody wants to touch",
@@ -27,38 +28,35 @@ const steps = [
 
 export function ForwardDeployedEngineers() {
   return (
-    <section id="forward-deployed-engineers" className="py-24 md:py-36 bg-obsidian relative border-t border-white/5">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="max-w-4xl mb-16 md:mb-24">
-          <h2 className="text-4xl sm:text-5xl md:text-7xl font-display font-medium text-white leading-[1.05] mb-8">
+    <section id="forward-deployed-engineers" className="border-t border-line">
+      <div className="mx-auto max-w-7xl border-x border-line">
+        <div className="px-6 pt-20 pb-12 md:px-10 md:pt-24 md:pb-14">
+          <h2 className="max-w-4xl font-display text-4xl font-semibold leading-[1.05] text-white md:text-6xl">
             We don&apos;t hand you a login. We send engineers.
           </h2>
-          <p className="text-cool-gray-400 max-w-2xl text-lg md:text-xl font-light leading-relaxed">
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-cool-gray-400 md:text-lg">
             Our forward deployed engineers (FDEs) join your team for weeks or months, untangle the systems you actually run, and ship production AI on your data, inside your stack.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 mb-20 md:mb-28">
-          <div className="lg:col-span-5 rounded-2xl bg-white/[0.03] border border-white/[0.06] p-8 md:p-10">
-            <h3 className="text-lg font-medium text-white mb-6">What most teams are working with</h3>
-            <ul className="space-y-4">
+        <div className="grid gap-px border-t border-line bg-line lg:grid-cols-12">
+          <div className="bg-surface p-6 md:p-10 lg:col-span-5">
+            <h3 className="text-sm font-medium text-white">What most teams are working with</h3>
+            <ul className="mt-6 divide-y divide-line border-y border-line">
               {mess.map((item) => (
-                <li key={item} className="flex gap-3 text-cool-gray-300 text-base md:text-lg font-light leading-snug">
-                  <span className="mt-2.5 h-1.5 w-1.5 rounded-full bg-cool-gray-500 shrink-0" aria-hidden="true" />
+                <li key={item} className="py-3.5 text-[15px] leading-snug text-cool-gray-400">
                   {item}
                 </li>
               ))}
             </ul>
-            <p className="mt-8 text-white text-base md:text-lg">
-              FDEs are built for exactly this.
-            </p>
+            <p className="mt-6 text-[15px] text-white">FDEs are built for exactly this.</p>
           </div>
 
-          <div className="lg:col-span-7 lg:pt-4">
-            <h3 className="text-2xl md:text-3xl font-display font-medium text-white mb-6">
+          <div className="bg-canvas p-6 md:p-10 lg:col-span-7">
+            <h3 className="font-display text-2xl font-semibold text-white md:text-3xl">
               What is a forward deployed engineer?
             </h3>
-            <div className="space-y-5 text-cool-gray-400 font-light text-base md:text-lg leading-relaxed max-w-2xl">
+            <div className="mt-6 max-w-2xl space-y-4 text-base leading-relaxed text-cool-gray-400">
               <p>
                 A senior engineer who comes into your environment and makes AI work there. Part software engineer, part solutions architect, part product manager, part consultant, with one difference: FDEs build. They wire up systems, write production code, debug integrations, build dashboards, and create new features when your business needs them.
               </p>
@@ -69,35 +67,30 @@ export function ForwardDeployedEngineers() {
           </div>
         </div>
 
-        <div className="mb-20 md:mb-28">
-          <h3 className="text-2xl md:text-3xl font-display font-medium text-white mb-10">How an engagement runs</h3>
-          <ol className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
-            {steps.map((step, index) => (
-              <li key={step.title}>
-                <div className="flex items-center gap-4 mb-5">
-                  <span className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-sm text-white tabular-nums">
-                    {index + 1}
-                  </span>
-                  {index < steps.length - 1 && <span className="hidden md:block h-px flex-1 bg-white/10" aria-hidden="true" />}
-                </div>
-                <h4 className="text-xl md:text-2xl font-display font-medium text-white mb-3">{step.title}</h4>
-                <p className="text-cool-gray-400 text-base font-light leading-relaxed">{step.description}</p>
-              </li>
-            ))}
-          </ol>
+        <div className="border-t border-line px-6 pt-10 pb-6 md:px-10">
+          <h3 className="text-sm font-medium text-white">How an engagement runs</h3>
         </div>
+        <ol className="grid gap-px border-t border-line bg-line md:grid-cols-3">
+          {steps.map((step, index) => (
+            <li key={step.title} className="bg-canvas p-6 md:p-8">
+              <span className="font-mono text-xs text-cool-gray-500">Step {index + 1}</span>
+              <h4 className="mt-4 font-display text-xl font-semibold text-white">{step.title}</h4>
+              <p className="mt-3 text-[15px] leading-relaxed text-cool-gray-400">{step.description}</p>
+            </li>
+          ))}
+        </ol>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-end">
-          <p className="lg:col-span-8 font-display text-3xl sm:text-4xl md:text-5xl font-medium leading-tight">
+        <div className="grid gap-px border-t border-line bg-line lg:grid-cols-12">
+          <p className="bg-canvas p-6 font-display text-2xl font-semibold leading-tight md:p-10 md:text-4xl lg:col-span-8">
             <span className="text-cool-gray-500">Software engineers build the product. Consultants explain it. </span>
             <span className="text-white">FDEs show up and make it work for your problem.</span>
           </p>
-          <div className="lg:col-span-4 flex lg:justify-end">
+          <div className="flex items-end bg-canvas p-6 md:p-10 lg:col-span-4 lg:justify-end">
             <Link
               href="https://calendly.com/manojkurapati96/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center bg-white text-black px-8 py-4 rounded-full font-medium text-base sm:text-lg hover:bg-cool-gray-200 transition-colors"
+              className={buttonVariants({ size: "lg" })}
             >
               Book a call with an FDE
             </Link>

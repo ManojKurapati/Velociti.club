@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { CheckCircle2, RotateCw, Sparkles } from "lucide-react";
 import Link from "next/link";
+import { SectionHeader } from "./ui/section";
 
 const solutions = [
   {
@@ -19,18 +20,18 @@ const solutions = [
             <stop offset="100%" stopColor="currentColor" stopOpacity="0.05" />
           </linearGradient>
           <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#CBB08A" stopOpacity="0.2" />
-            <stop offset="100%" stopColor="#CBB08A" stopOpacity="0.05" />
+            <stop offset="0%" stopColor="var(--theme-white)" stopOpacity="0.2" />
+            <stop offset="100%" stopColor="var(--theme-white)" stopOpacity="0.05" />
           </linearGradient>
         </defs>
         
-        <rect x="40" y="75" width="80" height="50" rx="12" fill="url(#grad1)" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.3" />
+        <rect x="40" y="75" width="80" height="50" rx="6" fill="url(#grad1)" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.3" />
         <text x="80" y="100" fontSize="13" fontWeight="500" fill="currentColor" textAnchor="middle" dominantBaseline="middle">ERP Data</text>
 
-        <rect x="160" y="75" width="80" height="50" rx="12" fill="url(#grad2)" stroke="#CBB08A" strokeWidth="1.5" strokeOpacity="0.6" />
-        <text x="200" y="100" fontSize="13" fontWeight="600" fill="#CBB08A" textAnchor="middle" dominantBaseline="middle">AI Engine</text>
+        <rect x="160" y="75" width="80" height="50" rx="6" fill="url(#grad2)" stroke="var(--theme-white)" strokeWidth="1.5" strokeOpacity="0.6" />
+        <text x="200" y="100" fontSize="13" fontWeight="600" fill="var(--theme-white)" textAnchor="middle" dominantBaseline="middle">AI Engine</text>
 
-        <rect x="280" y="75" width="80" height="50" rx="12" fill="url(#grad1)" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.3" />
+        <rect x="280" y="75" width="80" height="50" rx="6" fill="url(#grad1)" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.3" />
         <text x="320" y="100" fontSize="13" fontWeight="500" fill="currentColor" textAnchor="middle" dominantBaseline="middle">Action</text>
 
         <path d="M120,100 L155,100" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.5" strokeDasharray="3 3" />
@@ -40,8 +41,6 @@ const solutions = [
         <polygon points="275,97 280,100 275,103" fill="currentColor" fillOpacity="0.5" />
       </svg>
     ),
-    color: "from-white/[0.05] to-white/[0.01]",
-    borderColor: "border-neon-cyan/30",
     appTitle: "ops-agent-01 // daemon",
     appStatus: "Active 24/7",
     backType: "ops"
@@ -55,17 +54,17 @@ const solutions = [
       <svg viewBox="0 0 400 200" className="w-full h-full text-cool-gray-300 font-sans">
         <defs>
           <linearGradient id="gradViolet" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#A1A1AA" stopOpacity="0.2" />
-            <stop offset="100%" stopColor="#A1A1AA" stopOpacity="0.05" />
+            <stop offset="0%" stopColor="var(--theme-gray-400)" stopOpacity="0.2" />
+            <stop offset="100%" stopColor="var(--theme-gray-400)" stopOpacity="0.05" />
           </linearGradient>
         </defs>
 
         <circle cx="80" cy="100" r="30" fill="currentColor" fillOpacity="0.05" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.3" />
         <text x="80" y="100" fontSize="12" fontWeight="500" fill="currentColor" textAnchor="middle" dominantBaseline="middle">User</text>
 
-        <rect x="140" y="60" width="100" height="80" rx="16" fill="url(#gradViolet)" stroke="#A1A1AA" strokeWidth="1.5" strokeOpacity="0.6" />
-        <text x="190" y="90" fontSize="14" fontWeight="600" fill="#A1A1AA" textAnchor="middle" dominantBaseline="middle">Voice Agent</text>
-        <text x="190" y="110" fontSize="10" fill="#A1A1AA" fillOpacity="0.7" textAnchor="middle" dominantBaseline="middle">Low Latency</text>
+        <rect x="140" y="60" width="100" height="80" rx="6" fill="url(#gradViolet)" stroke="var(--theme-white)" strokeWidth="1.5" strokeOpacity="0.6" />
+        <text x="190" y="90" fontSize="14" fontWeight="600" fill="var(--theme-white)" textAnchor="middle" dominantBaseline="middle">Voice Agent</text>
+        <text x="190" y="110" fontSize="10" fill="var(--theme-white)" fillOpacity="0.7" textAnchor="middle" dominantBaseline="middle">Low Latency</text>
 
         <rect x="280" y="50" width="80" height="40" rx="8" fill="currentColor" fillOpacity="0.05" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.3" />
         <text x="320" y="70" fontSize="11" fontWeight="500" fill="currentColor" textAnchor="middle" dominantBaseline="middle">Zendesk</text>
@@ -83,8 +82,6 @@ const solutions = [
         <polygon points="276,128 280,132 274,133" fill="currentColor" fillOpacity="0.5" />
       </svg>
     ),
-    color: "from-white/[0.05] to-white/[0.01]",
-    borderColor: "border-neon-violet/30",
     appTitle: "Voice Agent // Call Monitor",
     appStatus: "Live Follow-up",
     backType: "support"
@@ -98,8 +95,8 @@ const solutions = [
       <svg viewBox="0 0 400 200" className="w-full h-full text-cool-gray-300 font-sans">
         <defs>
           <linearGradient id="gradEmerald" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#CBB08A" stopOpacity="0.2" />
-            <stop offset="100%" stopColor="#CBB08A" stopOpacity="0.05" />
+            <stop offset="0%" stopColor="var(--theme-white)" stopOpacity="0.2" />
+            <stop offset="100%" stopColor="var(--theme-white)" stopOpacity="0.05" />
           </linearGradient>
         </defs>
 
@@ -109,9 +106,9 @@ const solutions = [
         <rect x="40" y="115" width="70" height="30" rx="6" fill="currentColor" fillOpacity="0.05" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.3" />
         <text x="75" y="130" fontSize="11" fontWeight="500" fill="currentColor" textAnchor="middle" dominantBaseline="middle">Outbound</text>
 
-        <rect x="150" y="70" width="100" height="60" rx="12" fill="url(#gradEmerald)" stroke="#CBB08A" strokeWidth="1.5" strokeOpacity="0.6" />
-        <text x="200" y="92" fontSize="13" fontWeight="600" fill="#CBB08A" textAnchor="middle" dominantBaseline="middle">AI SDR</text>
-        <text x="200" y="110" fontSize="10" fill="#CBB08A" fillOpacity="0.8" textAnchor="middle" dominantBaseline="middle">Qualify & Book</text>
+        <rect x="150" y="70" width="100" height="60" rx="6" fill="url(#gradEmerald)" stroke="var(--theme-white)" strokeWidth="1.5" strokeOpacity="0.6" />
+        <text x="200" y="92" fontSize="13" fontWeight="600" fill="var(--theme-white)" textAnchor="middle" dominantBaseline="middle">AI SDR</text>
+        <text x="200" y="110" fontSize="10" fill="var(--theme-white)" fillOpacity="0.8" textAnchor="middle" dominantBaseline="middle">Qualify & Book</text>
 
         <rect x="290" y="75" width="80" height="50" rx="8" fill="currentColor" fillOpacity="0.05" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.3" />
         <text x="330" y="100" fontSize="12" fontWeight="500" fill="currentColor" textAnchor="middle" dominantBaseline="middle">Salesforce</text>
@@ -126,8 +123,6 @@ const solutions = [
         <polygon points="285,97 290,100 285,103" fill="currentColor" fillOpacity="0.5" />
       </svg>
     ),
-    color: "from-white/[0.05] to-white/[0.01]",
-    borderColor: "border-neon-cyan/30",
     appTitle: "Sales SDR // Active Sequence",
     appStatus: "Outreach Active",
     backType: "sales"
@@ -141,8 +136,8 @@ const solutions = [
       <svg viewBox="0 0 400 200" className="w-full h-full text-cool-gray-300 font-sans">
         <defs>
           <linearGradient id="gradWhite" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#ffffff" stopOpacity="0.15" />
-            <stop offset="100%" stopColor="#ffffff" stopOpacity="0.02" />
+            <stop offset="0%" stopColor="var(--theme-white)" stopOpacity="0.15" />
+            <stop offset="100%" stopColor="var(--theme-white)" stopOpacity="0.02" />
           </linearGradient>
         </defs>
 
@@ -155,11 +150,11 @@ const solutions = [
         <rect x="40" y="122" width="70" height="28" rx="6" fill="currentColor" fillOpacity="0.05" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.3" />
         <text x="75" y="136" fontSize="11" fontWeight="500" fill="currentColor" textAnchor="middle" dominantBaseline="middle">Jira</text>
 
-        <rect x="150" y="60" width="100" height="80" rx="16" fill="url(#gradWhite)" stroke="#ffffff" strokeWidth="1.5" strokeOpacity="0.4" />
-        <text x="200" y="90" fontSize="13" fontWeight="600" fill="#ffffff" textAnchor="middle" dominantBaseline="middle">Vector DB</text>
-        <text x="200" y="110" fontSize="10" fill="#ffffff" fillOpacity="0.6" textAnchor="middle" dominantBaseline="middle">& RAG System</text>
+        <rect x="150" y="60" width="100" height="80" rx="6" fill="url(#gradWhite)" stroke="var(--theme-white)" strokeWidth="1.5" strokeOpacity="0.4" />
+        <text x="200" y="90" fontSize="13" fontWeight="600" fill="var(--theme-white)" textAnchor="middle" dominantBaseline="middle">Vector DB</text>
+        <text x="200" y="110" fontSize="10" fill="var(--theme-white)" fillOpacity="0.6" textAnchor="middle" dominantBaseline="middle">& RAG System</text>
 
-        <rect x="290" y="75" width="80" height="50" rx="12" fill="currentColor" fillOpacity="0.05" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.3" />
+        <rect x="290" y="75" width="80" height="50" rx="6" fill="currentColor" fillOpacity="0.05" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.3" />
         <text x="330" y="100" fontSize="11" fontWeight="600" fill="currentColor" textAnchor="middle" dominantBaseline="middle">Internal Copilot</text>
 
         <path d="M110,64 L145,85" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.5" strokeDasharray="3 3" />
@@ -170,8 +165,6 @@ const solutions = [
         <polygon points="285,97 290,100 285,103" fill="currentColor" fillOpacity="0.5" />
       </svg>
     ),
-    color: "from-white/[0.05] to-white/[0.01]",
-    borderColor: "border-white/20",
     appTitle: "Enterprise Copilot // Search",
     appStatus: "Ready",
     backType: "knowledge"
@@ -193,7 +186,7 @@ function renderBackContent(backType: string) {
   if (backType === "ops") {
     return (
       <div className="font-mono text-xs text-cool-gray-300 space-y-3 flex-1 flex flex-col justify-between">
-        <div className="bg-black/40 border border-white/5 rounded-xl p-4 space-y-2 flex-1 overflow-y-auto max-h-[220px]">
+        <div className="bg-canvas border border-line rounded-md p-4 space-y-2 flex-1 overflow-y-auto max-h-[220px]">
           <div className="text-cool-gray-500">// Scheduled daemon run at 03:00 AM</div>
           <div className="flex gap-2">
             <span className="text-neon-cyan">[03:14:22]</span>
@@ -207,7 +200,7 @@ function renderBackContent(backType: string) {
           </div>
           <div className="flex gap-2">
             <span className="text-neon-cyan">[03:14:30]</span>
-            <span className="text-[#A1A1AA]">[Compliance]</span>
+            <span className="text-cool-gray-400">[Compliance]</span>
             <span>Generating PDF reports... Completed</span>
           </div>
           <div className="flex gap-2">
@@ -219,7 +212,7 @@ function renderBackContent(backType: string) {
             <span>&gt; Daemon idle. Listening for events...</span>
           </div>
         </div>
-        <div className="bg-[#CBB08A]/5 border border-[#CBB08A]/10 rounded-xl p-3">
+        <div className="bg-white/5 border border-line rounded-md p-3">
           <div className="text-[10px] text-neon-cyan font-bold tracking-wider uppercase mb-0.5">Impact Metric</div>
           <div className="text-xs font-semibold text-white leading-snug">
             Agents that work 24*7. Eliminates 95% of manual ledger and reporting work with zero errors.
@@ -232,9 +225,9 @@ function renderBackContent(backType: string) {
   if (backType === "support") {
     return (
       <div className="text-xs text-cool-gray-300 space-y-3 flex-1 flex flex-col justify-between">
-        <div className="bg-black/40 border border-white/5 rounded-xl p-4 flex-1 flex flex-col justify-between min-h-[180px] max-h-[220px]">
+        <div className="bg-canvas border border-line rounded-md p-4 flex-1 flex flex-col justify-between min-h-[180px] max-h-[220px]">
           {/* Call waveform panel */}
-          <div className="flex items-center justify-between pb-2 border-b border-white/5 mb-1">
+          <div className="flex items-center justify-between pb-2 border-b border-line mb-1">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-neon-violet rounded-full animate-ping" />
               <span className="font-mono text-cool-gray-400 text-[10px]">Caller: Sarah Jenkins (Lead)</span>
@@ -266,7 +259,7 @@ function renderBackContent(backType: string) {
           </div>
         </div>
 
-        <div className="bg-[#A1A1AA]/5 border border-[#A1A1AA]/10 rounded-xl p-3">
+        <div className="bg-white/[0.03] border border-line rounded-md p-3">
           <div className="text-[10px] text-neon-violet font-bold tracking-wider uppercase mb-0.5">Impact Metric</div>
           <div className="text-xs font-semibold text-white leading-snug">
             Voice agents that follow up. Autonomously checks back with customers when a ticket is resolved.
@@ -279,9 +272,9 @@ function renderBackContent(backType: string) {
   if (backType === "sales") {
     return (
       <div className="text-xs text-cool-gray-300 space-y-3 flex-1 flex flex-col justify-between">
-        <div className="bg-black/40 border border-white/5 rounded-xl p-4 flex-1 flex flex-col gap-2 overflow-y-auto max-h-[220px]">
+        <div className="bg-canvas border border-line rounded-md p-4 flex-1 flex flex-col gap-2 overflow-y-auto max-h-[220px]">
           {/* Email Header */}
-          <div className="space-y-1 pb-2 border-b border-white/5 font-sans">
+          <div className="space-y-1 pb-2 border-b border-line font-sans">
             <div className="flex justify-between">
               <span className="text-cool-gray-500">To: <span className="text-gray-300 font-medium">alex.p@techcorp.com</span></span>
               <span className="text-neon-cyan font-mono text-[9px] bg-neon-cyan/10 px-1.5 py-0.5 rounded border border-neon-cyan/20">HubSpot</span>
@@ -304,7 +297,7 @@ function renderBackContent(backType: string) {
           </div>
         </div>
 
-        <div className="bg-neon-cyan/5 border border-neon-cyan/10 rounded-xl p-3">
+        <div className="bg-white/[0.03] border border-line rounded-md p-3">
           <div className="text-[10px] text-neon-cyan font-bold tracking-wider uppercase mb-0.5">Impact Metric</div>
           <div className="text-xs font-semibold text-white leading-snug">
             Autonomous SDRs sending hyper-personalized outreach and booking qualified sales meetings.
@@ -317,9 +310,9 @@ function renderBackContent(backType: string) {
   if (backType === "knowledge") {
     return (
       <div className="text-xs text-cool-gray-300 space-y-3 flex-1 flex flex-col justify-between">
-        <div className="bg-black/40 border border-white/5 rounded-xl p-4 flex-1 flex flex-col gap-2.5 overflow-y-auto max-h-[220px]">
+        <div className="bg-canvas border border-line rounded-md p-4 flex-1 flex flex-col gap-2.5 overflow-y-auto max-h-[220px]">
           {/* Slack Channel Header */}
-          <div className="pb-1.5 border-b border-white/5 font-sans flex items-center gap-1.5">
+          <div className="pb-1.5 border-b border-line font-sans flex items-center gap-1.5">
             <span className="text-cool-gray-500 font-bold text-sm">#</span>
             <span className="text-white font-medium tracking-wide text-[11px]">ask-velociti-copilot</span>
           </div>
@@ -328,16 +321,16 @@ function renderBackContent(backType: string) {
           <div className="space-y-2.5 font-sans text-[11px] leading-relaxed">
             <div>
               <div className="text-[9px] text-cool-gray-500 font-semibold mb-0.5">David K. [Product]</div>
-              <div className="text-gray-300 bg-white/5 rounded-lg px-2 py-1.5 inline-block">
+              <div className="text-gray-300 bg-white/5 rounded-md px-2 py-1.5 inline-block">
                 What is our policy on remote work stipends for international contractor hires?
               </div>
             </div>
             <div>
               <div className="text-[9px] text-white font-semibold mb-0.5 flex items-center gap-1">
-                <Sparkles className="w-2.5 h-2.5 text-[#CBB08A] fill-[#CBB08A]/10" />
+                <Sparkles className="w-2.5 h-2.5 text-white fill-white/10" />
                 <span>Velociti Copilot</span>
               </div>
-              <div className="text-gray-200 bg-white/[0.08] border border-white/5 rounded-lg p-2 space-y-1">
+              <div className="text-gray-200 bg-white/[0.08] border border-line rounded-md p-2 space-y-1">
                 <p>Full-time employees receive a $500 workspace stipend (Handbook p. 24).</p>
                 <p>Notion Doc #108 states this applies to contractors on a pro-rata basis after 90 days.</p>
                 <div className="flex gap-1.5 text-[9px] font-mono text-cool-gray-500 mt-1">
@@ -350,7 +343,7 @@ function renderBackContent(backType: string) {
           </div>
         </div>
 
-        <div className="bg-white/5 border border-white/10 rounded-xl p-3">
+        <div className="bg-white/[0.03] border border-line rounded-md p-3">
           <div className="text-[10px] text-white font-bold tracking-wider uppercase mb-0.5">Impact Metric</div>
           <div className="text-xs font-semibold text-white leading-snug">
             LLM intelligence that knows your company. Indexes Slack, Notion, Jira, and PDFs for instant answers.
@@ -368,7 +361,7 @@ function SolutionCard({ solution, index }: { solution: any; index: number }) {
 
   return (
     <div 
-      className="w-full h-[580px] sm:h-[560px] cursor-pointer group relative rounded-3xl"
+      className="w-full h-[580px] sm:h-[560px] cursor-pointer group relative bg-canvas focus-visible:z-10"
       style={{ perspective: "1500px" }}
       role="button"
       tabIndex={0}
@@ -390,35 +383,35 @@ function SolutionCard({ solution, index }: { solution: any; index: number }) {
       >
         {/* FRONT FACE */}
         <div 
-          className={`absolute inset-0 w-full h-full flex flex-col bg-obsidian border ${solution.borderColor} rounded-3xl overflow-hidden transition-all duration-300 group-hover:border-white/30`}
+          className="absolute inset-0 w-full h-full flex flex-col bg-canvas overflow-hidden transition-colors duration-150 group-hover:bg-surface"
           style={{ backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden" }}
         >
           {/* Card Front Content */}
-          <div className={`h-48 w-full bg-gradient-to-br ${solution.color} flex items-center justify-center p-6 border-b border-white/5 relative overflow-hidden`}>
+          <div className="h-48 w-full bg-surface flex items-center justify-center p-6 border-b border-line relative overflow-hidden">
             {solution.diagram}
             {/* Flip hint badge in corner */}
-            <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-md border border-white/10 rounded-full px-3 py-1 flex items-center gap-1.5 text-xs text-cool-gray-300">
-              <RotateCw className="w-3.5 h-3.5" />
+            <div className="absolute top-4 right-4 bg-canvas border border-line rounded-md h-6 px-2 flex items-center gap-1.5 font-mono text-[11px] text-cool-gray-400">
+              <RotateCw className="w-3 h-3" />
               <span>Demo</span>
             </div>
           </div>
           
-          <div className="p-8 flex-1 flex flex-col justify-between">
+          <div className="p-6 md:p-8 flex-1 flex flex-col justify-between">
             <div>
-              <h3 className="text-2xl font-display font-medium text-white mb-3">{solution.title}</h3>
+              <h3 className="text-xl md:text-2xl font-display font-semibold text-white mb-3">{solution.title}</h3>
               <p className="text-cool-gray-400 mb-6 text-sm sm:text-base leading-relaxed">{solution.description}</p>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
                 {solution.benefits.map((benefit: string, i: number) => (
                   <div key={i} className="flex items-center gap-2 text-sm text-gray-300">
-                    <CheckCircle2 className="w-4 h-4 text-neon-cyan flex-shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-cool-gray-500 flex-shrink-0" />
                     <span>{benefit}</span>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="flex items-center justify-between pt-4 border-t border-white/5">
+            <div className="flex items-center justify-between pt-4 border-t border-line">
               <span className="inline-flex items-center gap-2 text-sm font-medium text-white group-hover:text-cool-gray-300 transition-colors">
                 <RotateCw className="w-4 h-4" /> Flip to see it in action
               </span>
@@ -428,7 +421,7 @@ function SolutionCard({ solution, index }: { solution: any; index: number }) {
 
         {/* BACK FACE */}
         <div 
-          className={`absolute inset-0 w-full h-full flex flex-col bg-obsidian border ${solution.borderColor} rounded-3xl overflow-hidden`}
+          className="absolute inset-0 w-full h-full flex flex-col bg-surface overflow-hidden"
           style={{ 
             backfaceVisibility: "hidden", 
             WebkitBackfaceVisibility: "hidden",
@@ -436,13 +429,13 @@ function SolutionCard({ solution, index }: { solution: any; index: number }) {
           }}
         >
           {/* App Window Chrome */}
-          <div className="h-12 w-full bg-black/40 border-b border-white/5 flex items-center justify-between px-6">
+          <div className="h-12 w-full bg-canvas border-b border-line flex items-center justify-between px-6">
             <div className="flex items-center">
               {/* Mac-style traffic lights */}
               <div className="flex gap-1.5 items-center mr-4">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#FF5F56]/80" />
-                <span className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]/80" />
-                <span className="w-2.5 h-2.5 rounded-full bg-[#27C93F]/80" />
+                <span className="w-2.5 h-2.5 rounded-full bg-cool-gray-700" />
+                <span className="w-2.5 h-2.5 rounded-full bg-cool-gray-700" />
+                <span className="w-2.5 h-2.5 rounded-full bg-cool-gray-700" />
               </div>
               <span className="text-[10px] font-mono text-cool-gray-500 tracking-wider">
                 {solution.appTitle}
@@ -450,20 +443,20 @@ function SolutionCard({ solution, index }: { solution: any; index: number }) {
             </div>
             
             {/* Status indicator */}
-            <div className="flex items-center gap-1.5 bg-[#27C93F]/10 border border-[#27C93F]/20 rounded-full px-2.5 py-0.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#27C93F] animate-pulse" />
-              <span className="text-[9px] font-mono text-[#27C93F] tracking-wide font-medium uppercase">
+            <div className="flex items-center gap-1.5 bg-secure/10 border border-secure/30 rounded-md h-5 px-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-secure" />
+              <span className="text-[9px] font-mono text-secure tracking-wide font-medium uppercase">
                 {solution.appStatus}
               </span>
             </div>
           </div>
 
           {/* Interactive Simulated Interface Body */}
-          <div className="flex-1 p-6 bg-black/20 flex flex-col justify-between overflow-y-auto">
+          <div className="flex-1 p-6 flex flex-col justify-between overflow-y-auto">
             {renderBackContent(solution.backType)}
 
             {/* Back Card Footer Details */}
-            <div className="mt-4 pt-4 border-t border-white/5 flex items-center justify-between">
+            <div className="mt-4 pt-4 border-t border-line flex items-center justify-between">
               <Link 
                 href="/#contact" 
                 onClick={(e) => e.stopPropagation()} 
@@ -476,7 +469,7 @@ function SolutionCard({ solution, index }: { solution: any; index: number }) {
                   e.stopPropagation();
                   setIsFlipped(false);
                 }}
-                className="inline-flex items-center gap-1.5 text-xs text-cool-gray-400 hover:text-white transition-colors border border-white/10 rounded-lg px-2.5 py-1 bg-white/5"
+                className="inline-flex items-center gap-1.5 h-7 text-xs text-cool-gray-400 hover:text-white transition-colors border border-line rounded-md px-2.5 bg-canvas hover:bg-raised"
               >
                 <RotateCw className="w-3 h-3" />
                 <span>Flip back</span>
@@ -491,17 +484,14 @@ function SolutionCard({ solution, index }: { solution: any; index: number }) {
 
 export function StructuredSolutions() {
   return (
-    <section id="solutions" className="py-24 md:py-32 bg-black relative border-t border-white/5">
+    <section id="solutions" className="border-t border-line">
       <style dangerouslySetInnerHTML={{ __html: voiceWaveStyle }} />
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="mb-16">
-          <h2 className="text-3xl md:text-5xl font-display font-medium text-white mb-6">What we build</h2>
-          <p className="text-cool-gray-400 max-w-2xl text-lg">
-            The four AI systems we deploy most often, each wired into the tools your teams already use. Select a card to see a live example.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="mx-auto max-w-7xl border-x border-line">
+        <SectionHeader
+          title="What we build"
+          description="The four AI systems we deploy most often, each wired into the tools your teams already use. Select a card to see a live example."
+        />
+        <div className="grid grid-cols-1 gap-px border-t border-line bg-line lg:grid-cols-2">
           {solutions.map((solution, index) => (
             <SolutionCard key={solution.id} solution={solution} index={index} />
           ))}

@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { GooeyText } from "./ui/gooey-text-morphing";
+import { buttonVariants } from "./ui/button";
+import { Badge } from "./ui/badge";
 
 const MORPHING_WORDS = [
   "Think Different",
@@ -10,23 +12,30 @@ const MORPHING_WORDS = [
   "Think Velociti",
 ];
 
+const ASSURANCES = [
+  "HIPAA-ready architectures",
+  "Human-in-the-loop approvals",
+  "Airgapped deployments available",
+];
+
 export function Hero() {
   return (
-    <section className="relative min-h-[92vh] flex items-end pt-32 sm:pt-40 pb-16 sm:pb-24 overflow-hidden">
-      <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 relative z-10">
+    <section className="pt-16">
+      <div className="mx-auto max-w-7xl border-x border-line">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, ease: "easeOut" }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="px-6 pt-24 pb-16 md:px-10 md:pt-36 md:pb-20"
         >
           <h1 className="sr-only">Think Different. Think Big. Think Velociti.</h1>
-          <div aria-hidden="true" className="relative h-[3rem] sm:h-[4rem] md:h-[5.5rem] lg:h-[9.5rem] -ml-1">
+          <div aria-hidden="true" className="relative h-[2.75rem] sm:h-[3.75rem] md:h-[5rem] lg:h-[7.25rem]">
             <GooeyText
               texts={MORPHING_WORDS}
               morphTime={1.5}
               cooldownTime={1.25}
               className="h-full"
-              textClassName="font-display font-semibold whitespace-nowrap text-left text-brass text-[2.3rem] sm:text-5xl md:text-7xl lg:text-9xl"
+              textClassName="font-display font-semibold whitespace-nowrap text-left text-white tracking-[-0.045em] text-[2.5rem] sm:text-6xl md:text-7xl lg:text-8xl"
             />
           </div>
         </motion.div>
@@ -34,28 +43,35 @@ export function Hero() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.9, delay: 0.5, ease: "easeOut" }}
-          className="mt-10 sm:mt-14 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end border-t border-white/10 pt-8 sm:pt-10"
+          transition={{ duration: 0.7, delay: 0.35, ease: "easeOut" }}
         >
-          <p className="lg:col-span-7 text-lg sm:text-xl md:text-2xl text-cool-gray-300 font-light leading-relaxed max-w-2xl">
-            We embed engineers with your team to deploy secure AI agents across sales, support, and operations, built on the systems and data you already run.
-          </p>
-          <div className="lg:col-span-5 flex flex-col sm:flex-row lg:justify-end gap-3">
-            <Link
-              href="https://calendly.com/manojkurapati96/30min"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center bg-white text-black px-7 py-3.5 rounded-full font-medium text-base hover:bg-cool-gray-200 transition-colors"
-            >
-              Book a workflow audit
-            </Link>
-            <Link
-              href="/#case-studies"
-              className="inline-flex items-center justify-center text-white px-7 py-3.5 rounded-full font-medium text-base border border-white/15 hover:border-white/40 transition-colors"
-            >
-              See case studies
-            </Link>
+          <div className="grid gap-px border-t border-line bg-line lg:grid-cols-12">
+            <div className="bg-canvas px-6 py-8 md:px-10 md:py-10 lg:col-span-7">
+              <p className="max-w-xl text-lg leading-relaxed text-cool-gray-400 md:text-xl">
+                We embed engineers with your team to deploy secure AI agents across sales, support, and operations, built on the systems and data you already run.
+              </p>
+            </div>
+            <div className="flex flex-col gap-3 bg-canvas px-6 py-8 sm:flex-row sm:items-center md:px-10 md:py-10 lg:col-span-5 lg:justify-end">
+              <Link
+                href="https://calendly.com/manojkurapati96/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={buttonVariants({ size: "lg" })}
+              >
+                Book a workflow audit
+              </Link>
+              <Link href="/#case-studies" className={buttonVariants({ variant: "secondary", size: "lg" })}>
+                See case studies
+              </Link>
+            </div>
           </div>
+          <ul className="grid gap-px border-t border-line bg-line sm:grid-cols-3">
+            {ASSURANCES.map((item) => (
+              <li key={item} className="flex items-center bg-canvas px-6 py-4 md:px-10">
+                <Badge secure>{item}</Badge>
+              </li>
+            ))}
+          </ul>
         </motion.div>
       </div>
     </section>

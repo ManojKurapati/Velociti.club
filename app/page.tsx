@@ -138,7 +138,7 @@ const faqJsonLd = {
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-obsidian overflow-hidden relative">
+    <main className="min-h-screen bg-canvas overflow-hidden relative">
       <Script
         id="home-services-jsonld"
         type="application/ld+json"

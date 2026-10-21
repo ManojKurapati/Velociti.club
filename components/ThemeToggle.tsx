@@ -6,26 +6,26 @@ import { useEffect, useState } from "react";
 
 export function ThemeToggle() {
   const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme: theme, setTheme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
   if (!mounted) {
-    return <div className="w-9 h-9" />;
+    return <div className="w-8 h-8" />;
   }
 
   return (
     <button
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-      className="p-2 rounded-full border border-white/10 hover:bg-white/10 text-white transition-colors flex items-center justify-center backdrop-blur-md"
-      aria-label="Toggle Dark Mode"
+      className="inline-flex h-8 w-8 items-center justify-center rounded-md border border-line text-cool-gray-400 transition-colors hover:bg-raised hover:text-white"
+      aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
     >
       {theme === 'dark' ? (
-        <Sun className="w-5 h-5 text-neon-cyan" />
+        <Sun className="w-4 h-4" />
       ) : (
-        <Moon className="w-5 h-5 text-neon-violet" />
+        <Moon className="w-4 h-4" />
       )}
     </button>
   );

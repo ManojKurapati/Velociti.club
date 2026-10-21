@@ -1,5 +1,8 @@
 "use client";
 
+import Link from "next/link";
+import { Section, SectionHeader } from "./ui/section";
+import { buttonVariants } from "./ui/button";
 import { Droplet, HeartPulse, Landmark, Car, Pill, Hotel, GraduationCap } from "lucide-react";
 
 const industries = [
@@ -49,27 +52,34 @@ const industries = [
 
 export function IndustryPositioning() {
   return (
-    <section id="industries" className="py-24 md:py-32 bg-obsidian relative border-t border-white/5">
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="mb-16">
-          <h2 className="text-3xl md:text-5xl font-display font-medium text-white mb-4">Built around how your industry works</h2>
-          <p className="text-cool-gray-400 max-w-2xl text-lg">
-            The same core systems, adapted to the regulations, security rules, and day-to-day operations of each sector.
+    <Section id="industries">
+      <SectionHeader
+        title="Built around how your industry works"
+        description="The same core systems, adapted to the regulations, security rules, and day-to-day operations of each sector."
+      />
+      <ul className="grid gap-px border-t border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+        {industries.map((ind) => (
+          <li key={ind.id} className="flex flex-col bg-canvas p-6 md:p-8">
+            <ind.icon className="h-5 w-5 text-cool-gray-500" aria-hidden="true" />
+            <h3 className="mt-8 text-base font-semibold text-white">{ind.name}</h3>
+            <p className="mt-2 text-[15px] leading-relaxed text-cool-gray-400">{ind.description}</p>
+          </li>
+        ))}
+        <li className="flex flex-col justify-between bg-surface p-6 md:p-8">
+          <h3 className="text-base font-semibold text-white">Not listed?</h3>
+          <p className="mt-2 text-[15px] leading-relaxed text-cool-gray-400">
+            We adapt to any regulated, process-heavy operation.
           </p>
-        </div>
-
-        <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-16">
-          {industries.map((ind) => (
-            <li key={ind.id} className="flex gap-5 py-7 border-t border-white/10">
-              <ind.icon className="w-5 h-5 mt-1 text-cool-gray-500 shrink-0" aria-hidden="true" />
-              <div>
-                <h3 className="text-lg font-medium text-white mb-1.5">{ind.name}</h3>
-                <p className="text-cool-gray-400 text-base leading-relaxed max-w-md">{ind.description}</p>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </section>
+          <Link
+            href="https://calendly.com/manojkurapati96/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={buttonVariants({ variant: "secondary", size: "sm", className: "mt-8 self-start" })}
+          >
+            Talk to us
+          </Link>
+        </li>
+      </ul>
+    </Section>
   );
 }

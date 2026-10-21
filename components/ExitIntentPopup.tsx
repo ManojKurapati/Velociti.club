@@ -25,11 +25,11 @@ export function ExitIntentPopup() {
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-300">
-      <div className="relative w-full max-w-lg bg-obsidian border border-white/10 rounded-2xl p-6 sm:p-8 shadow-2xl animate-in zoom-in-95 duration-300">
+      <div className="relative w-full max-w-lg bg-surface border border-line rounded-lg p-6 sm:p-8 shadow-2xl shadow-black/50 animate-in zoom-in-95 duration-300">
         <button 
           onClick={() => setShow(false)}
           aria-label="Close"
-          className="absolute top-4 right-4 p-2 bg-white/5 hover:bg-white/10 rounded-full transition-colors text-cool-gray-400 hover:text-white"
+          className="absolute top-4 right-4 inline-flex h-8 w-8 items-center justify-center rounded-md hover:bg-raised transition-colors text-cool-gray-400 hover:text-white"
         >
           <X className="w-5 h-5" />
         </button>
@@ -65,9 +65,9 @@ export function ExitIntentPopup() {
               type="email" 
               required
               placeholder="Work email address" 
-              className="w-full bg-black border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-white/40"
+              className="w-full h-10 bg-canvas border border-line rounded-md px-3 text-sm text-white placeholder:text-cool-gray-500 focus:outline-none focus:border-line-strong focus:ring-2 focus:ring-cool-gray-700"
             />
-            <button type="submit" className="w-full bg-white text-black font-medium py-3 rounded-full hover:bg-cool-gray-200 transition-colors">
+            <button type="submit" className="w-full h-10 bg-white text-black text-sm font-medium rounded-md hover:bg-cool-gray-200 transition-colors">
               Email me the playbook
             </button>
           </form>

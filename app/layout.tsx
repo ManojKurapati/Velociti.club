@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Archivo } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -12,15 +12,20 @@ import { CookieBanner } from "@/components/CookieBanner";
 import Script from "next/script";
 import "./globals.css";
 
-const archivo = Archivo({
+const geistSans = Geist({
   subsets: ["latin"],
-  axes: ["wdth"],
-  variable: "--font-archivo",
+  variable: "--font-geist-sans",
+  display: "swap"
+});
+
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-geist-mono",
   display: "swap"
 });
 
 export const viewport: Viewport = {
-  themeColor: "#0A0A0A",
+  themeColor: "#000000",
   width: "device-width",
   initialScale: 1,
   maximumScale: 1,
@@ -123,7 +128,7 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className={`${archivo.variable} font-sans antialiased bg-background text-foreground selection:bg-brass selection:text-black overflow-x-hidden`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased bg-background text-foreground selection:bg-white selection:text-black overflow-x-hidden`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <AnimatedBackground />
           <SmoothScroll>

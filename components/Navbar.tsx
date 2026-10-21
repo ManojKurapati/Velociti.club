@@ -1,81 +1,91 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { Logo } from "@/components/Logo";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { buttonVariants } from "@/components/ui/button";
+
+const NAV = [
+  { label: "Solutions", href: "/#solutions" },
+  { label: "FDEs", href: "/#forward-deployed-engineers" },
+  { label: "Industries", href: "/#industries" },
+  { label: "Security", href: "/#security" },
+  { label: "Case studies", href: "/#case-studies" },
+  { label: "About", href: "/about" },
+];
+
+const CALENDLY = "https://calendly.com/manojkurapati96/30min";
 
 export function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 px-4 sm:px-6 lg:px-8 ${scrolled ? "py-2" : "py-4"}`}>
-      <div className={`max-w-7xl mx-auto rounded-full px-4 md:px-6 py-3 md:py-4 flex justify-between items-center transition-all ${scrolled ? 'glass bg-midnight/40' : 'bg-transparent'}`}>
-        <Link href="/" className="z-10 block interactive group">
+    <nav className="fixed top-0 inset-x-0 z-50 border-b border-line bg-canvas/80 backdrop-blur-md">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between border-x border-line px-6">
+        <Link href="/" className="interactive flex items-center" aria-label="Velociti home">
           <Logo />
         </Link>
-        
-        <div className="hidden md:flex space-x-8 text-sm font-medium text-cool-gray-400 absolute left-1/2 transform -translate-x-1/2">
-          {[
-            { label: 'Home', href: '/' },
-            { label: 'Solutions', href: '/#solutions' },
-            { label: 'FDEs', href: '/#forward-deployed-engineers' },
-            { label: 'Industries', href: '/#industries' },
-            { label: 'Case studies', href: '/#case-studies' },
-            { label: 'Security', href: '/#security' },
-            { label: 'About', href: '/about' },
-          ].map((item) => (
-            <Link key={item.label} href={item.href} className="hover:text-white transition-colors interactive">
+
+        <div className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-1 lg:flex">
+          {NAV.map((item) => (
+            <Link
+              key={item.label}
+              href={item.href}
+              className="interactive rounded-md px-3 py-1.5 text-sm text-cool-gray-400 transition-colors hover:bg-raised hover:text-white"
+            >
               {item.label}
             </Link>
           ))}
         </div>
-        
-        <div className="z-10 flex items-center gap-4">
+
+        <div className="flex items-center gap-2">
           <ThemeToggle />
-          <Link href="https://calendly.com/manojkurapati96/30min" target="_blank" rel="noopener noreferrer" className="bg-white text-black hover:bg-cool-gray-200 transition-colors px-5 py-2 rounded-full font-medium text-sm hidden md:inline-block interactive">
+          <Link
+            href={CALENDLY}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={buttonVariants({ size: "sm", className: "interactive hidden md:inline-flex" })}
+          >
             Book a workflow audit
           </Link>
-          <button 
-            className="md:hidden text-white interactive"
+          <button
+            className="interactive inline-flex h-8 w-8 items-center justify-center rounded-md border border-line text-white lg:hidden"
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileMenuOpen}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {mobileMenuOpen ? <X size={16} /> : <Menu size={16} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="absolute top-[80px] left-4 right-4 glass rounded-2xl p-6 md:hidden flex flex-col gap-4 animate-in fade-in slide-in-from-top-4">
-          {[
-            { label: 'Home', href: '/' },
-            { label: 'Solutions', href: '/#solutions' },
-            { label: 'FDEs', href: '/#forward-deployed-engineers' },
-            { label: 'Industries', href: '/#industries' },
-            { label: 'Case studies', href: '/#case-studies' },
-            { label: 'Security', href: '/#security' },
-            { label: 'About', href: '/about' },
-          ].map((item) => (
-            <Link key={item.label} href={item.href} onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-white hover:text-cool-gray-300 transition-colors">
-              {item.label}
-            </Link>
-          ))}
-          <Link href="https://calendly.com/manojkurapati96/30min" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)} className="bg-white text-black px-6 py-3 rounded-full text-center font-semibold mt-4">
-            Book a workflow audit
-          </Link>
+        <div className="border-t border-line bg-canvas lg:hidden">
+          <div className="mx-auto max-w-7xl border-x border-line">
+            {NAV.map((item) => (
+              <Link
+                key={item.label}
+                href={item.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className="block border-b border-line px-6 py-4 text-base text-white transition-colors hover:bg-raised"
+              >
+                {item.label}
+              </Link>
+            ))}
+            <div className="p-6">
+              <Link
+                href={CALENDLY}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileMenuOpen(false)}
+                className={buttonVariants({ size: "lg", className: "w-full" })}
+              >
+                Book a workflow audit
+              </Link>
+            </div>
+          </div>
         </div>
       )}
     </nav>

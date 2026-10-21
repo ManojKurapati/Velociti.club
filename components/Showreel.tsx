@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { SectionHeader } from "./ui/section";
 import { Play, Pause, Volume2, VolumeX, Maximize2, Minimize2 } from "lucide-react";
 
 export function Showreel() {
@@ -113,26 +114,18 @@ export function Showreel() {
   }, []);
 
   return (
-    <section id="showreel" className="py-24 bg-black relative overflow-hidden border-t border-white/5">
-      {/* Background glow effects matching neon cyan & violet */}
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="mb-12">
-          <motion.h2
-            className="text-3xl md:text-5xl font-display font-medium text-white"
-          >
-            See Velociti at work
-          </motion.h2>
-        </div>
+    <section id="showreel" className="border-t border-line">
+      <div className="mx-auto max-w-7xl border-x border-line">
+        <SectionHeader title="See Velociti at work" description="A short look at how we deploy AI agents inside client operations." />
+        <div className="border-t border-line p-2 md:p-3">
 
         {/* Video Player Container */}
         <motion.div
           ref={containerRef}
           onMouseMove={triggerControlsVisibility}
           onMouseLeave={() => isPlaying && setShowControls(false)}
-          className="relative w-full aspect-video rounded-3xl overflow-hidden bg-obsidian border border-white/10 group shadow-[0_0_40px_rgba(0,0,0,0.8)] hover:border-white/20 transition-all duration-500"
+          className="relative w-full aspect-video rounded-lg overflow-hidden bg-surface border border-line group"
         >
-          {/* Inner pulse ring */}
-          <div className="absolute inset-0 border border-white/5 rounded-3xl pointer-events-none z-10" />
 
           {/* Video element */}
           <video
@@ -166,7 +159,7 @@ export function Showreel() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.8 }}
                   onClick={handlePlayPause}
-                  className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white/10 hover:bg-white text-white hover:text-black border border-white/20 hover:border-transparent flex items-center justify-center backdrop-blur-md transition-all duration-300 pointer-events-auto cursor-pointer shadow-[0_0_30px_rgba(0,0,0,0.5)] active:scale-95"
+                  className="w-14 h-14 sm:w-16 sm:h-16 rounded-lg bg-black/60 hover:bg-white text-white hover:text-black border border-line-strong hover:border-white flex items-center justify-center backdrop-blur-md transition-all duration-300 pointer-events-auto cursor-pointer shadow-[0_0_30px_rgba(0,0,0,0.5)] active:scale-95"
                 >
                   {isPlaying ? (
                     <Pause className="w-6 h-6 sm:w-8 sm:h-8" fill="currentColor" />
@@ -207,7 +200,7 @@ export function Showreel() {
                 {/* Play/Pause */}
                 <button
                   onClick={handlePlayPause}
-                  className="text-white hover:text-neon-cyan transition-colors cursor-pointer"
+                  className="text-white hover:text-cool-gray-300 transition-colors cursor-pointer"
                 >
                   {isPlaying ? <Pause size={20} /> : <Play size={20} />}
                 </button>
@@ -215,7 +208,7 @@ export function Showreel() {
                 {/* Mute/Unmute */}
                 <button
                   onClick={handleMuteToggle}
-                  className="text-white hover:text-neon-cyan transition-colors cursor-pointer flex items-center gap-2"
+                  className="text-white hover:text-cool-gray-300 transition-colors cursor-pointer flex items-center gap-2"
                 >
                   {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
                   <span className="text-xs tabular-nums hidden sm:inline text-gray-300">
@@ -227,13 +220,14 @@ export function Showreel() {
               {/* Fullscreen */}
               <button
                 onClick={handleFullscreenToggle}
-                className="text-white hover:text-neon-cyan transition-colors cursor-pointer"
+                className="text-white hover:text-cool-gray-300 transition-colors cursor-pointer"
               >
                 {isFullscreen ? <Minimize2 size={20} /> : <Maximize2 size={20} />}
               </button>
             </div>
           </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { MessageSquare, X, Send, Sparkles } from "lucide-react";
+import { MessageSquare, X, Send } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export function AskVelocitiWidget() {
@@ -51,13 +51,13 @@ export function AskVelocitiWidget() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="w-[calc(100vw-3rem)] sm:w-[400px] h-[500px] mb-4 bg-obsidian/90 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl flex flex-col overflow-hidden"
+            className="w-[calc(100vw-3rem)] sm:w-[400px] h-[500px] mb-4 bg-surface border border-line rounded-lg shadow-2xl shadow-black/50 flex flex-col overflow-hidden"
           >
             {/* Header */}
-            <div className="p-4 border-b border-white/5 flex justify-between items-center bg-white/5">
+            <div className="p-4 border-b border-line flex justify-between items-center">
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-white/10 border border-white/15 text-neon-cyan flex items-center justify-center">
-                  <Sparkles className="w-4 h-4 text-white" />
+                <div className="w-8 h-8 rounded-md bg-raised border border-line flex items-center justify-center">
+                  <MessageSquare className="w-4 h-4 text-cool-gray-300" />
                 </div>
                 <div>
                   <h4 className="text-sm font-medium text-white">Ask Velociti</h4>
@@ -73,10 +73,10 @@ export function AskVelocitiWidget() {
             <div className="flex-1 overflow-y-auto p-4 flex flex-col gap-4">
               {messages.map((msg, i) => (
                 <div key={i} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-                  <div className={`max-w-[80%] p-3 rounded-2xl text-sm ${
+                  <div className={`max-w-[80%] px-3 py-2 rounded-md text-sm ${
                     msg.role === 'user' 
-                      ? 'bg-white text-black rounded-tr-sm' 
-                      : 'bg-white/10 text-cool-gray-300 rounded-tl-sm border border-white/5'
+                      ? 'bg-white text-black ' 
+                      : 'bg-raised text-cool-gray-300 border border-line'
                   }`}>
                     {msg.content}
                   </div>
@@ -85,16 +85,16 @@ export function AskVelocitiWidget() {
             </div>
             
             {/* Input */}
-            <form onSubmit={handleSend} className="p-4 border-t border-white/5 bg-black/50">
+            <form onSubmit={handleSend} className="p-4 border-t border-line bg-surface">
               <div className="relative">
                 <input 
                   type="text" 
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   placeholder="Ask anything..." 
-                  className="w-full bg-white/5 border border-white/10 rounded-full pl-4 pr-12 py-3 text-sm text-white focus:outline-none focus:border-white/40"
+                  className="w-full h-10 bg-canvas border border-line rounded-md pl-3 pr-11 text-sm text-white focus:outline-none focus:border-white/40"
                 />
-                <button type="submit" className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full flex items-center justify-center text-black hover:bg-cool-gray-200 transition-colors" aria-label="Send">
+                <button type="submit" className="absolute right-2 top-1/2 -translate-y-1/2 w-7 h-7 bg-white rounded-[5px] flex items-center justify-center text-black hover:bg-cool-gray-200 transition-colors" aria-label="Send">
                   <Send className="w-4 h-4 ml-[-2px]" />
                 </button>
               </div>
@@ -106,7 +106,7 @@ export function AskVelocitiWidget() {
       <button 
         onClick={() => setIsOpen(!isOpen)}
         aria-label={isOpen ? "Close chat" : "Ask Velociti a question"}
-        className="w-14 h-14 rounded-full bg-white border border-white/10 flex items-center justify-center text-black transition-all hover:scale-105 active:scale-95"
+        className="w-12 h-12 rounded-lg bg-white flex items-center justify-center text-black transition-colors hover:bg-cool-gray-200 active:scale-95"
       >
         {isOpen ? <X className="w-6 h-6" /> : <MessageSquare className="w-6 h-6" />}
       </button>
