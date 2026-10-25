@@ -95,3 +95,14 @@ The site is a static export on GitHub Pages, so forms POST JSON to endpoints set
 - `NEXT_PUBLIC_TRUST_FORM_ENDPOINT`: Trust Center document requests and vulnerability reports.
 
 Until they are set, the forms show a visible placeholder and a mailto fallback.
+
+## Site chat ("Ask Velociti")
+
+The chat button (bottom right) answers questions from this website only. It's deterministic: no AI model, no external service.
+
+- **What it knows** is rebuilt on every build from the same content files the pages use (solutions, industries, case studies, engineers, trust, about, careers, published insights). It's served as `/chat-index.json`. Change a page and the chat's answer changes with it.
+- **Hand-written answers** (pricing, timeline, contact, location, data use, booking) live in `content/chat.ts` (`chatFaq`). Add an entry with a title, page URL, keywords and an answer, using only facts that appear on the site.
+- **Greeting, suggestions and the fallback message** are also in `content/chat.ts`.
+- **Matching** is in `lib/chat/engine.ts`. If visitors use words the site doesn't, add them to `SYNONYMS` there, or add sector words to `INDUSTRY_TERMS` in `lib/chat/build-index.ts`.
+
+**Adding an LLM later:** keep this search as the retrieval step and send the top matches to the model as context. Because the site is static, the API key must sit behind a small server-side function (for example a Cloudflare Worker or Vercel function) that the chat calls. Never put the key in a `NEXT_PUBLIC_` variable.

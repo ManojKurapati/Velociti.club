@@ -7,6 +7,7 @@ import { Footer } from "@/components/site/Footer";
 import { JsonLd } from "@/components/site/JsonLd";
 import { RevealObserver } from "@/components/site/RevealObserver";
 import { CookieBanner } from "@/components/CookieBanner";
+import { ChatLauncher } from "@/components/site/ChatLauncher";
 import { announcement, site } from "@/content/site";
 import { organizationJsonLd } from "@/lib/seo";
 import { ANNOUNCE_KEY, CONSENT_KEY } from "@/lib/storage-keys";
@@ -74,6 +75,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           {children}
         </main>
         <Footer />
+        <ChatLauncher />
         <CookieBanner />
         <RevealObserver />
       </body>

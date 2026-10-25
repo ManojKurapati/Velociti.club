@@ -95,6 +95,8 @@ These are the Mixpanel events currently tracked in this project. **All new Mixpa
 | `video_played` | User opens the Home film lightbox with sound | `video_name`, `location`, `is_lightbox` | [`components/home/ScrollVideo.tsx`](file:///Users/klm/Velociti.club/components/home/ScrollVideo.tsx) |
 | `lead_submitted` | Workflow-audit form accepted by the lead endpoint (after `identify`) | `industry`, `company_size`, `country`, `automation_interests`, `is_free_email` | [`components/site/ContactForm.tsx`](file:///Users/klm/Velociti.club/components/site/ContactForm.tsx) |
 | `meeting_booked` | Calendly embed posts `calendly.event_scheduled` | `meeting_type`, `location` | [`components/site/CalendlyEmbed.tsx`](file:///Users/klm/Velociti.club/components/site/CalendlyEmbed.tsx) |
+| `chat_opened` | Visitor opens the site chat ("Ask Velociti") | `location` | [`components/site/ChatLauncher.tsx`](file:///Users/klm/Velociti.club/components/site/ChatLauncher.tsx) |
+| `chat_question_answered` | The chat responds to a question (the question text is never sent) | `is_answered`, `matched_topic` | [`components/site/ChatPanel.tsx`](file:///Users/klm/Velociti.club/components/site/ChatPanel.tsx) |
 | `form_submitted` | Trust Center document request, vulnerability report or careers open application accepted | `form_type`, `location` | [`components/site/SimpleForm.tsx`](file:///Users/klm/Velociti.club/components/site/SimpleForm.tsx) |
 
 `club_application_submitted` was retired with the old `/curious` page (the club application form no longer exists).
