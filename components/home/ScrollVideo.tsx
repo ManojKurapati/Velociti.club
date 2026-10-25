@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from "react";
 import { track } from "@/lib/analytics";
 
 const POSTER = "/video/velociti-poster.webp";
-const CAPTIONS = "/video/velociti.en.vtt";
 
 function Sources() {
   return (
@@ -20,7 +19,7 @@ function Sources() {
 /**
  * The Home film. Scales from 86% to full content width as it scrolls in,
  * autoplays muted while at least 40% visible, and opens a lightbox player
- * with sound and captions. Reduced motion: no scaling, no autoplay.
+ * with sound. Reduced motion: no scaling, no autoplay.
  */
 export function ScrollVideo({ title, playLabel }: { title: string; playLabel: string }) {
   const frameRef = useRef<HTMLDivElement>(null);
@@ -187,7 +186,6 @@ export function ScrollVideo({ title, playLabel }: { title: string; playLabel: st
           </button>
           <video ref={lightboxVideoRef} className="aspect-video w-full rounded-[12px] bg-night" controls playsInline preload="none" poster={POSTER}>
             <Sources />
-            <track kind="captions" src={CAPTIONS} srcLang="en" label="English" default />
           </video>
         </div>
       </dialog>

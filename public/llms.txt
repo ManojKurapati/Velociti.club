@@ -15,7 +15,7 @@
 - Deployment options: managed cloud, single-tenant, the client's VPC (AWS, Azure, GCP), or on-prem / airgapped with zero internet egress.
 
 ## Industries
-Healthcare, Finance, Oil & Gas, Automotive, Pharma, Hospitality, Education: https://thinkvelociti.com/industries
+Healthcare, Finance, Oil & Gas, Mining, Automotive, Pharma, Government, Hospitality, Education: https://thinkvelociti.com/industries
 
 ## Results (published case studies)
 - Healthcare: 99.2% claim pre-verification accuracy, 35% faster processing — https://thinkvelociti.com/customers/clinical-claim-pre-verification

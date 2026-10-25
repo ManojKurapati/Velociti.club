@@ -223,6 +223,77 @@ export function EducationArt(props: ArtProps) {
   );
 }
 
+export function MiningArt(props: ArtProps) {
+  // Open-pit benches as stepped contours, with a haul truck on the ramp.
+  const benches = [0, 1, 2, 3, 4];
+  return (
+    <ArtFrame label="Line illustration of an open-pit mine with a haul truck" {...props}>
+      {benches.map((i) => {
+        const inset = 70 + i * 62;
+        const y = 150 + i * 46;
+        return (
+          <path
+            key={i}
+            d={`M${inset} ${y} H${1050 - inset}`}
+            {...(i === 2 ? L : S)}
+            strokeWidth={i === 2 ? 2.5 : 1.5}
+          />
+        );
+      })}
+      {benches.slice(0, 4).map((i) => {
+        const inset = 70 + i * 62;
+        const y = 150 + i * 46;
+        return <path key={`w${i}`} d={`M${inset} ${y} L${inset + 62} ${y + 46} M${1050 - inset} ${y} L${1050 - inset - 62} ${y + 46}`} {...S} />;
+      })}
+      <path d="M320 380 H730" {...S} strokeDasharray="6 8" />
+      {/* Haul truck on bench 3 */}
+      <g transform="translate(440 196)">
+        <path d="M0 40 L14 6 H96 L110 40 Z" {...L} fill="rgba(143,162,255,0.12)" />
+        <rect x={110} y={14} width={38} height={26} rx={3} {...L} fill={ART.bg} />
+        <path d="M118 20 h18 v10 h-18 z" {...S} />
+        <circle cx={26} cy={48} r={10} {...L} fill={ART.bg} />
+        <circle cx={84} cy={48} r={10} {...L} fill={ART.bg} />
+        <circle cx={132} cy={48} r={10} {...L} fill={ART.bg} />
+      </g>
+      <Focal cx={586} cy={218} r={5} />
+      {/* Ore stockpile */}
+      <path d="M760 150 q 40 -50 80 0 Z" {...S} strokeWidth={2} />
+      <path d="M150 150 l20 -40 l20 40 M180 110 V90" {...S} />
+    </ArtFrame>
+  );
+}
+
+export function GovernmentArt(props: ArtProps) {
+  const cols = [400, 445, 490, 535, 580, 625];
+  return (
+    <ArtFrame label="Line illustration of a civic building with columns and a dome" {...props}>
+      <path d="M0 410 H1050" {...S} />
+      {/* Steps */}
+      <path d="M360 410 V396 H690 V410 M372 396 V384 H678 V396" {...S} strokeWidth={2} />
+      {/* Columns */}
+      {cols.map((x) => (
+        <g key={x}>
+          <path d={`M${x} 384 V244`} {...L} />
+          <path d={`M${x + 22} 384 V244`} {...L} />
+          <path d={`M${x - 4} 244 H${x + 26} M${x - 4} 384 H${x + 26}`} {...S} strokeWidth={2} />
+        </g>
+      ))}
+      {/* Entablature and pediment */}
+      <rect x={378} y={226} width={294} height={18} rx={2} {...L} />
+      <path d="M370 226 L525 160 L680 226 Z" {...L} fill="rgba(143,162,255,0.08)" />
+      {/* Dome */}
+      <path d="M470 160 A55 55 0 0 1 580 160" {...S} strokeWidth={2} />
+      <path d="M525 105 V86" {...S} strokeWidth={2} />
+      <Focal cx={525} cy={80} r={5} />
+      {/* Wings */}
+      <path d="M200 410 V280 H350 V410 M700 410 V280 H850 V410" {...S} />
+      {[230, 270, 310, 730, 770, 810].map((x) => (
+        <rect key={x} x={x - 10} y={310} width={20} height={34} rx={2} {...S} />
+      ))}
+    </ArtFrame>
+  );
+}
+
 const map = {
   healthcare: HealthcareArt,
   finance: FinanceArt,
@@ -231,6 +302,8 @@ const map = {
   pharma: PharmaArt,
   hospitality: HospitalityArt,
   education: EducationArt,
+  mining: MiningArt,
+  government: GovernmentArt,
 } as const;
 
 export function IndustryArt({ slug, ...props }: ArtProps & { slug: string }) {

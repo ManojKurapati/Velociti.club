@@ -13,7 +13,7 @@ export const aboutPage = {
   },
   stats: [
     { display: "25+", label: "Production deployments" },
-    { value: 8, label: "Industries" },
+    { value: 9, label: "Industries" },
     { display: "8–14", suffix: " wks", label: "To production" },
     { display: "Dubai", label: "Headquarters" },
   ],
