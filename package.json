@@ -8,11 +8,11 @@
     "start": "next start",
     "lint": "eslint",
     "grade-images": "node scripts/grade-images.ts",
-    "encode-video": "bash scripts/encode-video.sh"
+    "encode-video": "bash scripts/encode-video.sh",
+    "build-redirects": "node scripts/build-redirects.mjs"
   },
   "dependencies": {
     "clsx": "^2.1.1",
-    "framer-motion": "^12.23.26",
     "geist": "^1.8.2",
     "gray-matter": "^4.0.3",
     "mixpanel": "^0.23.0",

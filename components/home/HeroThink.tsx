@@ -26,7 +26,7 @@ export function HeroThink() {
         </h1>
         <div className="hero-after">
           <p className="t-lead mx-auto mt-9 max-w-[720px]">{hero.subhead}</p>
-          <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <div className="hero-after-late mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Button href={hero.primary.href} arrow track="Book an AI workflow audit (hero)">
               {hero.primary.label}
             </Button>
@@ -34,7 +34,7 @@ export function HeroThink() {
               {hero.secondary.label}
             </Button>
           </div>
-          <ul className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-[14px] text-body" aria-label="Highlights">
+          <ul className="hero-after-late mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-[14px] text-body" aria-label="Highlights">
             {hero.chips.map((c) => (
               <li key={c} className="inline-flex items-center gap-2">
                 <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-cobalt" />

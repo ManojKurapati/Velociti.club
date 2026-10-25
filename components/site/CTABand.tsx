@@ -21,7 +21,7 @@ export function CTABand({
           <Button href={button.href} variant="white" arrow track={`${button.label} (CTA band)`}>
             {button.label}
           </Button>
-          <p className="t-mono text-white/80">{meta}</p>
+          <p className="t-mono text-white">{meta}</p>
         </div>
       </div>
     </section>

@@ -44,6 +44,7 @@ export function GridView({ cases, filters, active, onSelect }: { cases: CaseStud
           ))}
         </div>
       </div>
+      <h2 className="sr-only">Case studies</h2>
       <p className="sr-only" aria-live="polite">
         {cases.length} case {cases.length === 1 ? "study" : "studies"} shown
       </p>

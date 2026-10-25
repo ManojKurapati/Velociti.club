@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import { site } from "@/content/site";
 
+/** Same rule as lib/og-pages ogKey (kept here so seo.ts stays free of content imports). */
+function ogImage(path: string) {
+  const key = path.replace(/^\/|\/$/g, "").replace(/\//g, "-");
+  return { url: `/og/${key || "home"}.png`, width: 1200, height: 630 };
+}
+
 export function absoluteUrl(path = "/") {
   return new URL(path, site.url).toString();
 }
@@ -21,8 +27,8 @@ export function pageMetadata({
     title,
     description,
     alternates: { canonical: path },
-    openGraph: { title, description, url: path, type, siteName: site.name, locale: "en_US" },
-    twitter: { card: "summary_large_image", title, description },
+    openGraph: { title, description, url: path, type, siteName: site.name, locale: "en_US", images: [ogImage(path)] },
+    twitter: { card: "summary_large_image", title, description, images: [ogImage(path).url] },
   };
 }
 

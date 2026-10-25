@@ -2,10 +2,10 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { registerMixpanel, track, withMixpanel } from "@/lib/analytics";
+import { hasMixpanel, registerMixpanel, track, withMixpanel } from "@/lib/analytics";
 import { OPEN_CONSENT_EVENT } from "@/components/site/CookieSettingsButton";
+import { CONSENT_KEY } from "@/lib/storage-keys";
 
-const CONSENT_KEY = "velociti_cookie_consent";
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
 function loadGoogleAnalytics() {
@@ -25,33 +25,39 @@ function loadGoogleAnalytics() {
   w.gtag("config", GA_ID, { anonymize_ip: true });
 }
 
+function loadMixpanel(onReady?: () => void) {
+  const token = process.env.NEXT_PUBLIC_MIXPANEL_TOKEN;
+  if (!token) return;
+  import("mixpanel-browser").then(({ default: mixpanel }) => {
+    if (!hasMixpanel()) {
+      mixpanel.init(token, {
+        debug: process.env.NODE_ENV === "development",
+        opt_out_tracking_by_default: true,
+        persistence: "localStorage",
+      });
+      registerMixpanel(mixpanel);
+    }
+    onReady?.();
+  });
+}
+
+/**
+ * Consent banner. Server-rendered so it paints with the page; a pre-paint
+ * script hides it (html[data-consent]) for visitors who already chose.
+ * Mixpanel and GA4 are only downloaded after the visitor accepts.
+ */
 export function CookieBanner() {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
     let consent: string | null = null;
     try {
       consent = localStorage.getItem(CONSENT_KEY);
     } catch {}
-    if (!consent) setIsVisible(true);
-    if (consent === "accepted") loadGoogleAnalytics();
-
-    // Mixpanel is loaded after first paint to keep it off the critical path.
-    const token = process.env.NEXT_PUBLIC_MIXPANEL_TOKEN;
-    let cancelled = false;
-    if (token) {
-      const load = () =>
-        import("mixpanel-browser").then(({ default: mixpanel }) => {
-          if (cancelled) return;
-          mixpanel.init(token, {
-            debug: process.env.NODE_ENV === "development",
-            opt_out_tracking_by_default: true,
-            persistence: "localStorage",
-          });
-          if (consent === "accepted") mixpanel.opt_in_tracking();
-          registerMixpanel(mixpanel);
-        });
+    if (consent === "accepted") {
+      loadGoogleAnalytics();
       const ric = (window as unknown as { requestIdleCallback?: (cb: () => void) => number }).requestIdleCallback;
+      const load = () => loadMixpanel(() => withMixpanel((mp) => mp.opt_in_tracking()));
       if (ric) ric(load);
       else setTimeout(load, 1500);
     }
@@ -77,12 +83,14 @@ export function CookieBanner() {
       }
     };
 
-    const reopen = () => setIsVisible(true);
+    const reopen = () => {
+      document.documentElement.removeAttribute("data-consent");
+      setIsVisible(true);
+    };
     document.addEventListener("click", handleDocumentClick);
     window.addEventListener(OPEN_CONSENT_EVENT, reopen);
 
     return () => {
-      cancelled = true;
       document.removeEventListener("click", handleDocumentClick);
       window.removeEventListener(OPEN_CONSENT_EVENT, reopen);
     };
@@ -92,13 +100,15 @@ export function CookieBanner() {
     try {
       localStorage.setItem(CONSENT_KEY, "accepted");
     } catch {}
-    withMixpanel((mixpanel) => {
-      mixpanel.opt_in_tracking();
-      mixpanel.track("consent_granted", {
-        consent_type: "cookies",
-        platform: "web",
-      });
-    });
+    loadMixpanel(() =>
+      withMixpanel((mixpanel) => {
+        mixpanel.opt_in_tracking();
+        mixpanel.track("consent_granted", {
+          consent_type: "cookies",
+          platform: "web",
+        });
+      }),
+    );
     loadGoogleAnalytics();
     setIsVisible(false);
   };
@@ -107,7 +117,8 @@ export function CookieBanner() {
     try {
       localStorage.setItem(CONSENT_KEY, "declined");
     } catch {}
-    withMixpanel((mixpanel) => mixpanel.opt_out_tracking());
+    // Only reachable if Mixpanel was loaded by an earlier "accept".
+    if (hasMixpanel()) withMixpanel((mixpanel) => mixpanel.opt_out_tracking());
     setIsVisible(false);
   };
 
@@ -117,7 +128,8 @@ export function CookieBanner() {
     <div
       role="region"
       aria-label="Cookie consent"
-      className="card fixed inset-x-4 bottom-4 z-[60] flex flex-col gap-4 p-5 sm:left-auto sm:right-6 sm:bottom-6 sm:max-w-[420px]"
+      data-consent-banner
+      className="card fixed inset-x-4 bottom-4 z-40 flex flex-col gap-4 p-5 sm:left-auto sm:right-6 sm:bottom-6 sm:max-w-[420px]"
     >
       <div>
         <p className="mb-1 text-[15px] font-semibold text-ink">Cookies</p>

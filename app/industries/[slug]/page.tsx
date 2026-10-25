@@ -40,7 +40,7 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
         above={
           <div className="space-y-6">
             <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Industries", path: "/industries" }, { name: ind.name, path: `/industries/${ind.slug}` }]} />
-            <PillSwitcher label="Industries" active={ind.slug} items={industries.map((i) => ({ label: i.name, href: `/industries/${i.slug}`, value: i.slug }))} />
+            <PillSwitcher label="Switch industry" active={ind.slug} items={industries.map((i) => ({ label: i.name, href: `/industries/${i.slug}`, value: i.slug }))} />
           </div>
         }
       />

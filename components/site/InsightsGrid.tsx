@@ -43,6 +43,7 @@ export function InsightsView({ posts, categories, active, onSelect }: { posts: P
           ))}
         </div>
       </div>
+      <h2 className="sr-only">Posts</h2>
       <p className="sr-only" aria-live="polite">{shown.length} posts shown</p>
       {shown.length ? (
         <ul className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">

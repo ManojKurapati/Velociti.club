@@ -243,8 +243,9 @@
   }
 }
 
-/* Announcement bar dismissal is applied before paint (see layout head script). */
-html[data-announce-dismissed] [data-announcement] {
+/* Announcement dismissal and cookie choice are applied before paint (see layout head script). */
+html[data-announce-dismissed] [data-announcement],
+html[data-consent] [data-consent-banner] {
   display: none;
 }
 
@@ -278,6 +279,16 @@ html[data-announce-dismissed] [data-announcement] {
 }
 .hero-animate .hero-after {
   animation: hero-rise 0.8s var(--ease-out-brand) 2.8s both;
+}
+/* On phones the subhead is the largest text block, so it is the LCP element:
+   show it immediately and only stage the CTAs and chips. */
+@media (max-width: 767px) {
+  .hero-animate .hero-after {
+    animation: none;
+  }
+  .hero-animate .hero-after-late {
+    animation: hero-rise 0.8s var(--ease-out-brand) 2.8s both;
+  }
 }
 @keyframes hero-rise {
   from {

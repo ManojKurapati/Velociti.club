@@ -31,7 +31,7 @@ export function IndustryTiles() {
           className="group flex aspect-[4/5] flex-col justify-between rounded-[20px] bg-cobalt p-6 text-white transition-[transform,background-color] duration-300 hover:-translate-y-1 hover:bg-cobalt-hover"
           data-track="Not listed? Talk to us (industries)"
         >
-          <span className="t-mono text-white/80">Every sector</span>
+          <span className="t-mono text-white">Every sector</span>
           <span>
             <span className="block text-[28px] font-semibold leading-none tracking-[-0.03em]">{nl.title}</span>
             <span className="mt-3 block text-[15px] leading-snug text-white/90">{nl.body}</span>

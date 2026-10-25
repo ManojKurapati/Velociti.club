@@ -2,7 +2,7 @@
 
 import { useId, useRef, useState } from "react";
 import Link from "next/link";
-import { z } from "zod";
+import * as z from "zod/mini";
 import { contactPage } from "@/content/contact";
 import { site } from "@/content/site";
 import { FormEndpointMissingError, isFreeEmail, postForm } from "@/lib/forms";
@@ -11,17 +11,20 @@ import { cn } from "@/lib/utils";
 import { Field, Honeypot, inputCls } from "./Field";
 import { CalendlyEmbed } from "./CalendlyEmbed";
 
+// zod/mini keeps the validator small; the contact route is prefetched from every page.
+const required = (msg: string) => z.string().check(z.trim(), z.minLength(1, msg));
+
 const schema = z.object({
-  firstName: z.string().trim().min(1, "Enter your first name"),
-  lastName: z.string().trim().min(1, "Enter your last name"),
+  firstName: required("Enter your first name"),
+  lastName: required("Enter your last name"),
   email: z.email("Enter a valid work email"),
-  jobTitle: z.string().trim().min(1, "Enter your job title"),
-  company: z.string().trim().min(1, "Enter your company"),
-  country: z.string().trim().min(1, "Enter your country"),
-  industry: z.string().min(1, "Choose an industry"),
-  companySize: z.string().min(1, "Choose a company size"),
-  interests: z.array(z.string()).min(1, "Pick at least one"),
-  message: z.string().max(2000, "Keep it under 2,000 characters").optional(),
+  jobTitle: required("Enter your job title"),
+  company: required("Enter your company"),
+  country: required("Enter your country"),
+  industry: z.string().check(z.minLength(1, "Choose an industry")),
+  companySize: z.string().check(z.minLength(1, "Choose a company size")),
+  interests: z.array(z.string()).check(z.minLength(1, "Pick at least one")),
+  message: z.optional(z.string().check(z.maxLength(2000, "Keep it under 2,000 characters"))),
 });
 
 type Values = z.infer<typeof schema>;

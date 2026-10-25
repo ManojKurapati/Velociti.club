@@ -1,10 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { m, useMotionValue, useMotionValueEvent, useReducedMotion, useScroll } from "framer-motion";
 import { track } from "@/lib/analytics";
 
-const POSTER = "/video/velociti-poster.jpg";
+const POSTER = "/video/velociti-poster.webp";
 const CAPTIONS = "/video/velociti.en.vtt";
 
 function Sources() {
@@ -28,26 +27,50 @@ export function ScrollVideo({ title, playLabel }: { title: string; playLabel: st
   const videoRef = useRef<HTMLVideoElement>(null);
   const dialogRef = useRef<HTMLDialogElement>(null);
   const lightboxVideoRef = useRef<HTMLVideoElement>(null);
-  const reduce = useReducedMotion();
+  const measureRef = useRef<HTMLDivElement>(null);
+  const [reduce, setReduce] = useState(false);
   const [near, setNear] = useState(false);
 
-  // Manual motion values so server HTML and reduced-motion clients agree.
-  const { scrollYProgress } = useScroll({ target: frameRef, offset: ["start end", "center center"] });
-  const scale = useMotionValue(0.86);
-  const radius = useMotionValue(28);
-  const apply = (p: number) => {
-    scale.set(0.86 + 0.14 * p);
-    radius.set(28 - 16 * p);
-  };
-  useMotionValueEvent(scrollYProgress, "change", (p) => {
-    if (!reduce) apply(p);
-  });
   useEffect(() => {
+    const mq = matchMedia("(prefers-reduced-motion: reduce)");
+    const update = () => setReduce(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+
+  // Scroll-linked expand: 0.86 -> 1 scale and 28px -> 12px radius between the
+  // frame entering the viewport and its centre reaching the viewport centre.
+  // Measured on an untransformed wrapper; written straight to the style (no re-renders).
+  useEffect(() => {
+    const wrap = measureRef.current;
+    const frame = frameRef.current;
+    if (!wrap || !frame) return;
     if (reduce) {
-      scale.set(1);
-      radius.set(28);
-    } else apply(scrollYProgress.get());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+      frame.style.transform = "none";
+      frame.style.borderRadius = "28px";
+      return;
+    }
+    let raf = 0;
+    const apply = () => {
+      raf = 0;
+      const r = wrap.getBoundingClientRect();
+      const vh = window.innerHeight;
+      const p = Math.min(1, Math.max(0, (vh - r.top) / (vh / 2 + r.height / 2)));
+      frame.style.transform = `scale(${(0.86 + 0.14 * p).toFixed(4)})`;
+      frame.style.borderRadius = `${(28 - 16 * p).toFixed(1)}px`;
+    };
+    const onScroll = () => {
+      if (!raf) raf = requestAnimationFrame(apply);
+    };
+    apply();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
   }, [reduce]);
 
   // Attach sources only once the frame is near the viewport.
@@ -102,9 +125,10 @@ export function ScrollVideo({ title, playLabel }: { title: string; playLabel: st
   return (
     <section aria-label={title} className="pb-[72px] lg:pb-[120px]">
       <div className="container-site">
-        <m.div
+        <div ref={measureRef}>
+        <div
           ref={frameRef}
-          style={{ scale, borderRadius: radius }}
+          style={{ transform: "scale(0.86)", borderRadius: 28 }}
           className="relative mx-auto aspect-video w-full origin-top overflow-hidden bg-night will-change-transform"
         >
           {near && !reduce ? (
@@ -137,7 +161,8 @@ export function ScrollVideo({ title, playLabel }: { title: string; playLabel: st
               <path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z" />
             </svg>
           </button>
-        </m.div>
+        </div>
+        </div>
       </div>
 
       <dialog

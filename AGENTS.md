@@ -37,7 +37,7 @@ Wrong assumptions about platform, identity, or consent will produce broken Mixpa
 
 Mixpanel is initialized in:
 
-**Client-Side File:** [`components/CookieBanner.tsx`](file:///Users/klm/Velociti.club/components/CookieBanner.tsx)
+**Client-Side File:** [`components/CookieBanner.tsx`](file:///Users/klm/Velociti.club/components/CookieBanner.tsx) — downloads `mixpanel-browser` only after the visitor accepts cookies (dynamic import; returning visitors who accepted get it at idle), initialises it with the config below, and registers the instance with [`lib/analytics.ts`](file:///Users/klm/Velociti.club/lib/analytics.ts). Feature code calls `track()` / `identify()` from `lib/analytics.ts`; calls made before Mixpanel loads are queued.
 **Server-Side File:** [`lib/mixpanel-server.ts`](file:///Users/klm/Velociti.club/lib/mixpanel-server.ts)
 
 ```typescript
@@ -65,11 +65,11 @@ Mixpanel identity is managed through:
 
 | Action | When to call | Code location |
 |---|---|---|
-| `mixpanel.identify(email)` | On club application submission | [`components/ClubApplicationForm.tsx`](file:///Users/klm/Velociti.club/components/ClubApplicationForm.tsx) |
-| `mixpanel.people.set(properties)` | Setting profile details (name, organization, etc.) | [`components/ClubApplicationForm.tsx`](file:///Users/klm/Velociti.club/components/ClubApplicationForm.tsx) |
+| `mixpanel.identify(email)` (via `identify()` in `lib/analytics.ts`) | After the workflow-audit lead form is accepted by the lead endpoint | [`components/site/ContactForm.tsx`](file:///Users/klm/Velociti.club/components/site/ContactForm.tsx) |
+| `mixpanel.people.set(properties)` (via `identify()`) | Setting profile details (name, job title, company) | [`components/site/ContactForm.tsx`](file:///Users/klm/Velociti.club/components/site/ContactForm.tsx) |
 
 **Rules:**
-- Call `mixpanel.identify()` with a stable identifier. Since there is no database login session on this static-export web frontend, we use the user's validated `workEmail` upon form submission.
+- Call `mixpanel.identify()` with a stable identifier. Since there is no database login session on this static-export web frontend, we use the user's validated work email from the /contact audit form.
 - Call `mixpanel.identify()` **after** the application fetch succeeds (after post logic, not on button click).
 
 ---
@@ -91,7 +91,15 @@ These are the Mixpanel events currently tracked in this project. **All new Mixpa
 |---|---|---|---|
 | `consent_granted` | User clicks Accept on cookie banner | `consent_type`, `platform` | [`components/CookieBanner.tsx`](file:///Users/klm/Velociti.club/components/CookieBanner.tsx) |
 | `calendly_link_clicked` | User clicks any Calendly booking link | `url`, `text`, `location` | [`components/CookieBanner.tsx`](file:///Users/klm/Velociti.club/components/CookieBanner.tsx) |
-| `club_application_submitted` | User submits the Velociti application | `org_type`, `platform` | [`components/ClubApplicationForm.tsx`](file:///Users/klm/Velociti.club/components/ClubApplicationForm.tsx) |
+| `cta_clicked` | User clicks any link carrying `data-track` (buttons, nav CTA, CTA bands) | `cta_text`, `destination`, `location` | [`components/CookieBanner.tsx`](file:///Users/klm/Velociti.club/components/CookieBanner.tsx) (delegated listener) |
+| `video_played` | User opens the Home film lightbox with sound | `video_name`, `location`, `is_lightbox` | [`components/home/ScrollVideo.tsx`](file:///Users/klm/Velociti.club/components/home/ScrollVideo.tsx) |
+| `lead_submitted` | Workflow-audit form accepted by the lead endpoint (after `identify`) | `industry`, `company_size`, `country`, `automation_interests`, `is_free_email` | [`components/site/ContactForm.tsx`](file:///Users/klm/Velociti.club/components/site/ContactForm.tsx) |
+| `meeting_booked` | Calendly embed posts `calendly.event_scheduled` | `meeting_type`, `location` | [`components/site/CalendlyEmbed.tsx`](file:///Users/klm/Velociti.club/components/site/CalendlyEmbed.tsx) |
+| `form_submitted` | Trust Center document request, vulnerability report or careers open application accepted | `form_type`, `location` | [`components/site/SimpleForm.tsx`](file:///Users/klm/Velociti.club/components/site/SimpleForm.tsx) |
+
+`club_application_submitted` was retired with the old `/curious` page (the club application form no longer exists).
+
+Google Analytics 4 is loaded only after cookie consent and receives the same events via `gtag` from `lib/analytics.ts`.
 
 ---
 

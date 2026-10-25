@@ -1,7 +1,7 @@
 "use client";
 
 import { useId, useState } from "react";
-import { z } from "zod";
+import * as z from "zod/mini";
 import { FormEndpointMissingError, postForm } from "@/lib/forms";
 import { track } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
@@ -39,8 +39,8 @@ export function SimpleForm({
   const schema = z.object(
     Object.fromEntries(
       fields.map((f) => {
-        const base = f.type === "email" ? z.email("Enter a valid email") : z.string().trim().min(1, `Enter ${f.label.toLowerCase()}`);
-        return [f.name, f.optional ? z.string().optional() : base];
+        const base = f.type === "email" ? z.email("Enter a valid email") : z.string().check(z.trim(), z.minLength(1, `Enter ${f.label.toLowerCase()}`));
+        return [f.name, f.optional ? z.optional(z.string()) : base];
       }),
     ),
   );

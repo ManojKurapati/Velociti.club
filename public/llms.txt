@@ -1,51 +1,29 @@
 # Velociti
 
-Velociti deploys secure, high-performance, enterprise-grade AI systems and autonomous agents that integrate directly into existing workflows and databases to automate core business operations.
+> Velociti is an AI-native enterprise engineering company headquartered in Dubai. Forward deployed engineers embed inside client teams to deploy secure AI agents across sales, support and operations, on the systems and data those teams already run. Canonical site: https://thinkvelociti.com (formerly velociti.club).
 
-## Core Offerings & Services
+## Solutions
+- [Operations Automation](https://thinkvelociti.com/solutions#operations): agents that reconcile ledgers, build reports and move work across ERPs, with human approval whenever a number matters. Up to 95% less manual ledger and reporting work.
+- [Customer Support](https://thinkvelociti.com/solutions#support): voice, chat, email and WhatsApp agents that resolve L1 and L2 issues in any language and act in your systems.
+- [Sales Automation](https://thinkvelociti.com/solutions#sales): autonomous SDRs for outbound research, inbound qualification and CRM hygiene.
+- [Enterprise Knowledge](https://thinkvelociti.com/solutions#knowledge): a permission-aware RAG layer across Slack, Notion, Jira, SharePoint and PDFs, with citations on every answer.
 
-### 1. AI Operations Automation
-- **Description**: Autonomously reasoning agents that synchronize with ERPs, perform auto-reconciliation, audit financial records, compile compliance data, and execute workflow pipelines.
-- **Key Metrics**: Eliminates 95% of manual reporting work; 24/7 continuous daemons.
-- **Integrations**: Custom back-ends, ERP data, SQL Databases, Slack alert reporting.
+## Delivery
+- [Forward Deployed Engineers](https://thinkvelociti.com/engineers): a pod of a Forward Deployed Engineer and an AI Strategist. Engagements move from Velociti-led to client-owned; typically 8–14 weeks from kickoff to production.
+- Deployment options: managed cloud, single-tenant, the client's VPC (AWS, Azure, GCP), or on-prem / airgapped with zero internet egress.
 
-### 2. AI Customer Support Systems
-- **Description**: Low-latency multilingual voice-native and text-based support agents handling L1/L2 customer queries and proactive ticketing follow-ups.
-- **Key Metrics**: Latency under 1.4 seconds (voice); 99.2% resolution rates.
-- **Integrations**: Zendesk, Salesforce, internal knowledge bases, custom telephony.
+## Industries
+Healthcare, Finance, Oil & Gas, Automotive, Pharma, Hospitality, Education: https://thinkvelociti.com/industries
 
-### 3. AI Sales Automation
-- **Description**: Autonomous SDR (Sales Development Representative) systems executing hyper-personalized outbound outreach sequences, lead qualification, and CRM updates.
-- **Key Metrics**: Hyper-personalized lead qualification; direct booking of qualified sales meetings.
-- **Integrations**: HubSpot, Salesforce, Outreach.
+## Results (published case studies)
+- Healthcare: 99.2% claim pre-verification accuracy, 35% faster processing — https://thinkvelociti.com/customers/clinical-claim-pre-verification
+- Finance: +42% auto-loan underwriting throughput, −31% review time, 100% audit log coverage — https://thinkvelociti.com/customers/auto-loan-underwriting
+- Oil & Gas: −18% unplanned downtime, −15% maintenance OPEX, 94% alert accuracy — https://thinkvelociti.com/customers/predictive-valve-telemetry
+- Automotive: −24% QA cycle time, −12% defects — https://thinkvelociti.com/customers/assembly-line-anomaly-detection
 
-### 4. Enterprise Knowledge AI (RAG)
-- **Description**: Secure Retrieval-Augmented Generation (RAG) pipelines bridging company data silos into unified vector search systems.
-- **Key Metrics**: Zero-hallucination compliance checking; millisecond-level document queries.
-- **Integrations**: Slack, Notion, Jira, Amazon S3, PDF docs, custom vector databases.
+## Trust
+Human-in-the-loop approvals, immutable audit logs, PII redaction, prompt-injection defence, AES-256 at rest and TLS 1.3 in transit. Client data never trains public models. Compliance status: https://thinkvelociti.com/trust
 
----
-
-## Technical Specifications & Infrastructure
-
-- **Deployment Model**: Fully managed cloud or on-premise private deployment (Virtual Private Cloud / VPC).
-- **Security & Compliance**: End-to-end encryption, strict RAG security boundaries, GDPR/HIPAA-ready systems.
-- **Latency**: Voice interaction latency of 1.2–1.4 seconds.
-- **Implementation Speed**: 4 to 11 weeks average deployment to production, compared to 12-18 months legacy dev times.
-
----
-
-## Primary Navigation & Routes
-- **Home**: [https://velociti.club/](https://velociti.club/) — Core system overview and solutions.
-- **Enterprise**: [https://velociti.club/enterprise](https://velociti.club/enterprise) — Enterprise pillars, ROI calculator, and security parameters.
-- **Knowledge Lab**: [https://velociti.club/knowledge](https://velociti.club/knowledge) — Deployment playbooks, telemetry research, and comparison metrics.
-- **Case Studies**: [https://velociti.club/case-studies](https://velociti.club/case-studies) — Quantitative results across Fintech, Healthcare, and Logistics.
-- **About**: [https://velociti.club/about](https://velociti.club/about) — Syndicate details and executive leadership.
-- **Blog**: [https://velociti.club/blog](https://velociti.club/blog) — Insights on the autonomous transition and agentic loops.
-- **The Club**: [https://velociti.club/curious](https://velociti.club/curious) — Private network portal for startup and enterprise leaders.
-
----
-
-## Leadership
-- **Manoj Kurapati**, Founder & CEO: Focused on rewiring corporate infrastructure to run on agentic logic. Background in applied AI research (Center for Cloud Computing and Big Data), technology leadership at early childhood startups, and Generative AI leadership for oil and gas and energy companies.
-- **Lavine Hemlani**, Board Member & Investor: Founder & CEO of Zenith and founder of Xccelerate, bringing capital markets expertise and a global founder network.
+## Contact
+- Book a free 30-minute AI workflow audit: https://thinkvelociti.com/contact
+- hello@thinkvelociti.com · press@thinkvelociti.com · security@thinkvelociti.com

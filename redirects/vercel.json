@@ -1,0 +1,54 @@
+{
+  "redirects": [
+    {
+      "source": "/case-studies",
+      "destination": "https://thinkvelociti.com/customers",
+      "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "https://thinkvelociti.com/insights",
+      "permanent": true
+    },
+    {
+      "source": "/enterprise",
+      "destination": "https://thinkvelociti.com/solutions",
+      "permanent": true
+    },
+    {
+      "source": "/ai-fy",
+      "destination": "https://thinkvelociti.com/solutions",
+      "permanent": true
+    },
+    {
+      "source": "/knowledge",
+      "destination": "https://thinkvelociti.com/insights",
+      "permanent": true
+    },
+    {
+      "source": "/the-club",
+      "destination": "https://thinkvelociti.com/about",
+      "permanent": true
+    },
+    {
+      "source": "/curious",
+      "destination": "https://thinkvelociti.com/contact",
+      "permanent": true
+    },
+    {
+      "source": "/startups",
+      "destination": "https://thinkvelociti.com/contact",
+      "permanent": true
+    },
+    {
+      "source": "/about",
+      "destination": "https://thinkvelociti.com/about",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "destination": "https://thinkvelociti.com/:path*",
+      "permanent": true
+    }
+  ]
+}

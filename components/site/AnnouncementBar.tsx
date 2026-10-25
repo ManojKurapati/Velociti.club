@@ -2,8 +2,7 @@
 
 import Link from "next/link";
 import { announcement } from "@/content/site";
-
-export const ANNOUNCE_KEY = "vc_announce_dismissed";
+import { ANNOUNCE_KEY } from "@/lib/storage-keys";
 
 export function AnnouncementBar() {
   const dismiss = () => {
@@ -14,7 +13,7 @@ export function AnnouncementBar() {
   };
 
   return (
-    <div data-announcement className="night relative bg-night text-[14px] text-night-body">
+    <aside data-announcement aria-label="Announcement" className="night relative bg-night text-[14px] text-night-body">
       <div className="container-site flex min-h-11 items-center justify-center gap-3 py-2 pr-12 text-center">
         <span className="t-mono rounded-full border border-night-line px-2 py-0.5 text-cobalt-on-night">{announcement.label}</span>
         <p className="leading-snug">
@@ -34,6 +33,6 @@ export function AnnouncementBar() {
           <path d="M4 4l8 8M12 4l-8 8" strokeLinecap="round" />
         </svg>
       </button>
-    </div>
+    </aside>
   );
 }
