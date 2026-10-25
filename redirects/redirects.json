@@ -1,0 +1,25 @@
+{
+  "$comment": "Single source of truth for the velociti.club -> thinkvelociti.com move. Path redirects are 301s served by the redirect host for velociti.club (see redirects/README.md). Anchor redirects are applied in the browser because URL fragments never reach a server.",
+  "from": "https://velociti.club",
+  "to": "https://thinkvelociti.com",
+  "status": 301,
+  "paths": {
+    "/case-studies": "/customers",
+    "/blog": "/insights",
+    "/enterprise": "/solutions",
+    "/ai-fy": "/solutions",
+    "/knowledge": "/insights",
+    "/the-club": "/about",
+    "/curious": "/contact",
+    "/startups": "/contact",
+    "/about": "/about"
+  },
+  "anchors": {
+    "#solutions": "/solutions",
+    "#case-studies": "/customers",
+    "#security": "/trust",
+    "#industries": "/industries",
+    "#forward-deployed-engineers": "/engineers",
+    "#contact": "/contact"
+  }
+}
