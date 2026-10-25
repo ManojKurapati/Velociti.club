@@ -5,7 +5,7 @@ import { Section, SectionHeader } from "@/components/site/Section";
 import { DeploymentTable } from "@/components/site/DeploymentTable";
 import { CTABand } from "@/components/site/CTABand";
 import { Button } from "@/components/site/Button";
-import { copy } from "@/components/site/Copy";
+import { copy, hasCopy } from "@/components/site/Copy";
 import { ServerRackArt } from "@/components/art/SceneArt";
 import { PhotoOr } from "@/components/art/IndustryImage";
 
@@ -38,7 +38,7 @@ export default function EngineersPage() {
 
       <Section tone="white" labelledBy="pod-title">
         <SectionHeader eyebrow={pod.eyebrow} title={pod.title} id="pod-title" className="mb-12" />
-        <div className="grid gap-4 lg:grid-cols-[1fr_1fr_0.9fr]">
+        <div className={hasCopy(pod.photoPlaceholder) ? "grid gap-4 lg:grid-cols-[1fr_1fr_0.9fr]" : "grid gap-4 lg:grid-cols-2"}>
           {pod.roles.map((r) => (
             <article key={r.name} className="card flex flex-col p-8 lg:p-10">
               <p className="t-mono text-cobalt">{r.name}</p>
@@ -46,15 +46,17 @@ export default function EngineersPage() {
               <p className="mt-5 text-[17px] leading-relaxed">{r.body}</p>
             </article>
           ))}
-          <div className="flex min-h-[260px] items-center justify-center rounded-[20px] border border-dashed border-line bg-paper p-8 text-center">
-            <p className="text-[15px]">{copy(pod.photoPlaceholder)}</p>
-          </div>
+          {hasCopy(pod.photoPlaceholder) && (
+            <div className="flex min-h-[260px] items-center justify-center rounded-[20px] border border-dashed border-line bg-paper p-8 text-center">
+              <p className="text-[15px]">{copy(pod.photoPlaceholder)}</p>
+            </div>
+          )}
         </div>
       </Section>
 
       <Section tone="night" labelledBy="engagement-title">
         <SectionHeader eyebrow={engagement.eyebrow} title={engagement.title} id="engagement-title" />
-        <p className="mt-4 text-[14px]">{copy(engagement.note)}</p>
+        {hasCopy(engagement.note) && <p className="mt-4 text-[14px]">{copy(engagement.note)}</p>}
         <ol className="mt-12 grid gap-4 lg:grid-cols-3">
           {engagement.steps.map((s) => (
             <li key={s.n} className="card-night flex flex-col p-8">

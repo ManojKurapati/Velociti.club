@@ -3,7 +3,7 @@
 export type RunLogLine = { t: string; level: "info" | "act" | "wait" | "ok"; text: string };
 
 export type Solution = {
-  id: "operations" | "support" | "sales" | "knowledge";
+  id: "finance" | "sales" | "marketing" | "operations" | "support" | "knowledge";
   name: string;
   headline: string;
   lead: string;
@@ -15,12 +15,12 @@ export type Solution = {
 export const solutionsPage = {
   meta: {
     title: "Solutions",
-    description: "Four production-grade agent systems — operations, support, sales and knowledge — engineered on the ERPs, CRMs, databases and documents you already run.",
+    description: "Production-grade AI agents for finance, sales, marketing, operations, support and knowledge, engineered on the ERPs, CRMs, databases and documents you already run.",
   },
   hero: {
     eyebrow: "Solutions",
     title: "Deploy agents where the work happens.",
-    lead: "Four production-grade agent systems, engineered on top of the ERPs, CRMs, databases and documents you already run. Every one ships with approvals, audit logs and evals.",
+    lead: "Production-grade agent systems for finance, sales, marketing, operations, support and knowledge, engineered on top of the ERPs, CRMs, databases and documents you already run. Every one ships with approvals, audit logs and evals.",
   },
   illustrativeLabel: "Illustrative",
   foundations: {
@@ -41,14 +41,14 @@ export const solutionsPage = {
 
 export const solutions: Solution[] = [
   {
-    id: "operations",
-    name: "Operations Automation",
+    id: "finance",
+    name: "Finance",
     headline: "Close the books without the spreadsheet marathon.",
-    lead: "Agents reconcile ledgers, build reports and move work across your ERP — and stop for a human whenever a number matters.",
+    lead: "Agents reconcile ledgers, prepare the close and draft management reporting inside your ERP — and stop for a controller whenever a number matters.",
     useCases: [
-      { title: "Ledger & reconciliation", body: "Transactions matched across systems daily, with every break explained and routed to its owner." },
-      { title: "Reporting on autopilot", body: "Management packs and KPI reports assembled from source data before anyone asks." },
-      { title: "Process orchestration", body: "Approvals, hand-offs and follow-ups moved through your ERP without the email chain." },
+      { title: "Reconciliation & close", body: "Transactions matched across systems daily, with every break explained and routed to its owner." },
+      { title: "Payables & receivables", body: "Invoices read, matched to POs and coded; overdue accounts chased with the right context." },
+      { title: "FP&A reporting", body: "Management packs, variance commentary and forecasts assembled from source data before anyone asks." },
     ],
     proof: { value: "Up to 95%", label: "less manual ledger & reporting work" },
     panel: {
@@ -61,6 +61,78 @@ export const solutions: Solution[] = [
         { t: "06:00:45", level: "wait", text: "3 breaks over threshold → approval requested (Finance Controller)" },
         { t: "06:12:10", level: "ok", text: "Approved · journals posted · audit log #A-20931" },
         { t: "06:12:30", level: "ok", text: "Management pack generated and sent" },
+      ],
+    },
+  },
+  {
+    id: "sales",
+    name: "Sales",
+    headline: "Autonomous SDRs that fill the calendar, not the inbox.",
+    lead: "Research, personalise, qualify and book — with your reps stepping in only for the conversations that close.",
+    useCases: [
+      { title: "Outbound research & outreach", body: "Accounts researched, contacts found and messages written for each buyer." },
+      { title: "Inbound qualification", body: "Every inbound lead answered in minutes, qualified and booked with the right rep." },
+      { title: "CRM hygiene", body: "Activities logged, fields filled and duplicates merged without rep admin." },
+    ],
+    proof: { value: "2–3×", label: "more qualified meetings per rep" },
+    panel: {
+      title: "inbound-lead.run",
+      agent: "sdr-agent · CRM",
+      lines: [
+        { t: "10:02:11", level: "info", text: "New inbound form · company size 1,000–10,000" },
+        { t: "10:02:14", level: "act", text: "Enriched account · matched ICP tier A" },
+        { t: "10:02:20", level: "act", text: "Replied with tailored follow-up · 2 questions" },
+        { t: "10:09:52", level: "info", text: "Lead answered · budget and timeline confirmed" },
+        { t: "10:09:55", level: "ok", text: "Meeting booked with account executive · Thu 14:00" },
+        { t: "10:09:56", level: "ok", text: "CRM updated · opportunity created" },
+      ],
+    },
+  },
+  {
+    id: "marketing",
+    name: "Marketing",
+    headline: "Campaigns that research, write and report on themselves.",
+    lead: "Agents turn your brand guidelines, CRM and performance data into on-brand content, segmented campaigns and weekly reporting — with a marketer approving everything that goes out.",
+    useCases: [
+      { title: "On-brand content at volume", body: "Briefs, landing pages, emails and social posts drafted in your voice and checked against your guidelines." },
+      { title: "Segmentation & personalisation", body: "Audiences built from CRM and product data, with messaging tailored to each segment." },
+      { title: "Performance reporting", body: "Channel data pulled together every week with plain-language commentary on what to change." },
+    ],
+    proof: { value: "3×", label: "more campaign variants shipped per week" },
+    panel: {
+      title: "weekly-campaign.run",
+      agent: "marketing-agent · CRM + CMS",
+      lines: [
+        { t: "08:00:04", level: "info", text: "Pulled last week's performance from ads, email and web analytics" },
+        { t: "08:00:31", level: "act", text: "Built 4 segments from CRM · largest: mid-market finance teams" },
+        { t: "08:01:12", level: "act", text: "Drafted 12 email and landing-page variants in brand voice" },
+        { t: "08:01:15", level: "wait", text: "Variants ready → approval requested (Marketing Lead)" },
+        { t: "09:20:44", level: "ok", text: "Approved with 2 edits · scheduled in marketing automation" },
+        { t: "09:20:46", level: "ok", text: "Weekly performance summary sent to #marketing" },
+      ],
+    },
+  },
+  {
+    id: "operations",
+    name: "Operations",
+    headline: "Run the workflows that keep the business moving.",
+    lead: "Agents orchestrate approvals, hand-offs and exceptions across your ERP, ticketing and documents — so your teams make the judgement calls instead of chasing them.",
+    useCases: [
+      { title: "Process orchestration", body: "Procurement, onboarding and change requests moved step by step through the right systems and people." },
+      { title: "Exception handling", body: "Stuck orders, missing documents and SLA breaches spotted early and routed with the context to fix them." },
+      { title: "Operational reporting", body: "Daily status, backlog and throughput reports built automatically from live system data." },
+    ],
+    proof: { value: "40%", label: "faster cycle times on orchestrated processes" },
+    panel: {
+      title: "purchase-request.run",
+      agent: "ops-agent · ERP + ticketing",
+      lines: [
+        { t: "11:02:10", level: "info", text: "New purchase request PR-7731 · 3 line items · AED 48,200" },
+        { t: "11:02:12", level: "act", text: "Checked budget in ERP · cost centre within limit" },
+        { t: "11:02:14", level: "act", text: "Matched preferred supplier · contract terms attached" },
+        { t: "11:02:15", level: "wait", text: "Above AED 25,000 threshold → approval requested (Ops Director)" },
+        { t: "11:40:02", level: "ok", text: "Approved · PO raised and sent to supplier" },
+        { t: "11:40:03", level: "ok", text: "Requester notified · delivery tracking scheduled" },
       ],
     },
   },
@@ -85,30 +157,6 @@ export const solutions: Solution[] = [
         { t: "21:14:09", level: "wait", text: "Goodwill credit above policy limit → approval requested" },
         { t: "21:16:40", level: "ok", text: "Approved by on-call lead · credit applied" },
         { t: "21:16:41", level: "ok", text: "Ticket closed · follow-up scheduled in 48h" },
-      ],
-    },
-  },
-  {
-    id: "sales",
-    name: "Sales Automation",
-    headline: "Autonomous SDRs that fill the calendar, not the inbox.",
-    lead: "Research, personalise, qualify and book — with your reps stepping in only for the conversations that close.",
-    useCases: [
-      { title: "Outbound research & outreach", body: "Accounts researched, contacts found and messages written for each buyer." },
-      { title: "Inbound qualification", body: "Every inbound lead answered in minutes, qualified and booked with the right rep." },
-      { title: "CRM hygiene", body: "Activities logged, fields filled and duplicates merged without rep admin." },
-    ],
-    proof: { value: "2–3×", label: "more qualified meetings per rep" },
-    panel: {
-      title: "inbound-lead.run",
-      agent: "sdr-agent · CRM",
-      lines: [
-        { t: "10:02:11", level: "info", text: "New inbound form · company size 1,000–10,000" },
-        { t: "10:02:14", level: "act", text: "Enriched account · matched ICP tier A" },
-        { t: "10:02:20", level: "act", text: "Replied with tailored follow-up · 2 questions" },
-        { t: "10:09:52", level: "info", text: "Lead answered · budget and timeline confirmed" },
-        { t: "10:09:55", level: "ok", text: "Meeting booked with account executive · Thu 14:00" },
-        { t: "10:09:56", level: "ok", text: "CRM updated · opportunity created" },
       ],
     },
   },

@@ -1,12 +1,14 @@
 # Velociti
 
-> Velociti is an AI-native enterprise engineering company headquartered in Dubai. Forward deployed engineers embed inside client teams to deploy secure AI agents across sales, support and operations, on the systems and data those teams already run. Canonical site: https://thinkvelociti.com (formerly velociti.club).
+> Velociti is an AI-native enterprise engineering company headquartered in Dubai. Forward-deployed engineers map how a business really runs, prototype AI agents in weeks and harden them into production systems across finance, sales, marketing and operations. Canonical site: https://thinkvelociti.com (formerly velociti.club).
 
 ## Solutions
-- [Operations Automation](https://thinkvelociti.com/solutions#operations): agents that reconcile ledgers, build reports and move work across ERPs, with human approval whenever a number matters. Up to 95% less manual ledger and reporting work.
-- [Customer Support](https://thinkvelociti.com/solutions#support): voice, chat, email and WhatsApp agents that resolve L1 and L2 issues in any language and act in your systems.
-- [Sales Automation](https://thinkvelociti.com/solutions#sales): autonomous SDRs for outbound research, inbound qualification and CRM hygiene.
-- [Enterprise Knowledge](https://thinkvelociti.com/solutions#knowledge): a permission-aware RAG layer across Slack, Notion, Jira, SharePoint and PDFs, with citations on every answer.
+- [Finance](https://thinkvelociti.com/solutions#finance): reconciliation and close, payables and receivables, FP&A reporting, with a controller approving whenever a number matters.
+- [Sales](https://thinkvelociti.com/solutions#sales): autonomous SDRs for outbound research, inbound qualification and CRM hygiene.
+- [Marketing](https://thinkvelociti.com/solutions#marketing): on-brand content, segmentation and weekly performance reporting, approved by a marketer.
+- [Operations](https://thinkvelociti.com/solutions#operations): approvals, hand-offs and exceptions orchestrated across ERP, ticketing and documents.
+- [Customer Support](https://thinkvelociti.com/solutions#support): voice, chat, email and WhatsApp agents that resolve L1 and L2 issues in any language.
+- [Enterprise Knowledge](https://thinkvelociti.com/solutions#knowledge): a permission-aware RAG layer with citations on every answer.
 
 ## Delivery
 - [Forward Deployed Engineers](https://thinkvelociti.com/engineers): a pod of a Forward Deployed Engineer and an AI Strategist. Engagements move from Velociti-led to client-owned; typically 8–14 weeks from kickoff to production.

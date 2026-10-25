@@ -3,7 +3,7 @@ import { pageMetadata } from "@/lib/seo";
 import { Section, SectionHeader } from "@/components/site/Section";
 import { StatBand } from "@/components/site/StatBand";
 import { CTABand } from "@/components/site/CTABand";
-import { copy } from "@/components/site/Copy";
+import { copy, hasCopy } from "@/components/site/Copy";
 import { SceneArt } from "@/components/art/SceneArt";
 import { PhotoOr } from "@/components/art/IndustryImage";
 
@@ -41,9 +41,11 @@ export default function AboutPage() {
         <ul className="grid gap-4 md:grid-cols-2">
           {leadership.people.map((p) => (
             <li key={p.name} className="card overflow-hidden">
-              <div className="flex aspect-[4/3] items-center justify-center border-b border-dashed border-line bg-paper p-6 text-center">
-                <p className="text-[14px]">{copy(p.photo)}</p>
-              </div>
+              {hasCopy(p.photo) && (
+                <div className="flex aspect-[4/3] items-center justify-center border-b border-dashed border-line bg-paper p-6 text-center">
+                  <p className="text-[14px]">{copy(p.photo)}</p>
+                </div>
+              )}
               <div className="p-7 lg:p-8">
                 <h3 className="text-[24px] font-semibold tracking-[-0.02em]">{p.name}</h3>
                 <p className="t-mono mt-2 text-cobalt">{p.role}</p>
@@ -52,7 +54,7 @@ export default function AboutPage() {
             </li>
           ))}
         </ul>
-        <p className="mt-6 text-[15px]">{copy(leadership.more)}</p>
+        {hasCopy(leadership.more) && <p className="mt-6 text-[15px]">{copy(leadership.more)}</p>}
       </Section>
 
       <Section tone="night" labelledBy="values-title">

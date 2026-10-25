@@ -51,7 +51,7 @@ export const caseStudies: CaseStudy[] = [
     weeks: 14,
     client: "Regional Healthcare Network",
     systems: ["Epic", "SharePoint", "AWS S3", "Private cloud"],
-    solution: "Operations Automation",
+    solution: "Operations",
     headline: { value: "99.2%", label: "Claim pre-verification accuracy" },
     stats: [
       { value: "99.2%", label: "Pre-verification accuracy" },
@@ -60,7 +60,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     summary: "Clinical claim reasoning agents that pre-verify claims inside Epic, with a clinician approving every exception.",
     challenge: [
-      "[client-approved copy] — the claims backlog, manual verification steps and denial rate before Velociti.",
+      "[client-approved copy: the claims backlog, manual verification steps and denial rate before Velociti]",
     ],
     built: [
       "Claim reasoning agents that read the encounter, payer rules and supporting documents, then pre-verify each claim before submission.",
@@ -87,7 +87,7 @@ export const caseStudies: CaseStudy[] = [
     weeks: 8,
     client: "[Client name or descriptor]",
     systems: ["Salesforce", "Equifax API", "Internal SQL", "SharePoint"],
-    solution: "Operations Automation",
+    solution: "Finance",
     headline: { value: "+42%", label: "Underwriting throughput" },
     stats: [
       { value: "+42%", label: "Underwriting throughput" },
@@ -115,7 +115,7 @@ export const caseStudies: CaseStudy[] = [
     weeks: 12,
     client: "[Client name or descriptor]",
     systems: ["SAP PM", "Honeywell Forge", "Azure Blob", "TimescaleDB"],
-    solution: "Operations Automation",
+    solution: "Operations",
     headline: { value: "−18%", label: "Unplanned downtime" },
     stats: [
       { value: "−18%", label: "Unplanned downtime" },
@@ -143,7 +143,7 @@ export const caseStudies: CaseStudy[] = [
     weeks: 10,
     client: "[Client name or descriptor]",
     systems: ["Siemens PLC", "Kafka", "AWS IoT Core", "PostgreSQL"],
-    solution: "Operations Automation",
+    solution: "Operations",
     headline: { value: "−24%", label: "QA cycle time" },
     stats: [
       { value: "−24%", label: "QA cycle time" },

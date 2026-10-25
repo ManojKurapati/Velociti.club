@@ -5,12 +5,14 @@ import { PageHero } from "@/components/site/PageHero";
 import { Section } from "@/components/site/Section";
 import { CTABand } from "@/components/site/CTABand";
 import { Button } from "@/components/site/Button";
-import { copy } from "@/components/site/Copy";
+import { copy, hasCopy } from "@/components/site/Copy";
 
 export const metadata = pageMetadata({ ...pressPage.meta, path: "/press" });
 
 export default function PressPage() {
-  const { hero, coverage, releases, mediaKit, boilerplate50, boilerplate100 } = pressPage;
+  const { hero, mediaKit, boilerplate50, boilerplate100 } = pressPage;
+  const coverage = pressPage.coverage.filter((c) => hasCopy(c.headline));
+  const releases = pressPage.releases.filter((r) => hasCopy(r.title));
   return (
     <>
       <PageHero eyebrow={hero.eyebrow} title={hero.title} lead={hero.lead}>
@@ -22,6 +24,7 @@ export default function PressPage() {
         </p>
       </PageHero>
 
+      {coverage.length > 0 && (
       <Section className="pt-0 lg:pt-0" labelledBy="coverage-title">
         <h2 id="coverage-title" className="t-mono mb-4 text-cobalt">Coverage</h2>
         <div className="card overflow-x-auto" role="region" aria-label="Press coverage" tabIndex={0}>
@@ -48,23 +51,26 @@ export default function PressPage() {
           </table>
         </div>
       </Section>
+      )}
 
+      {releases.length > 0 && (
       <Section tone="white" labelledBy="releases-title">
         <h2 id="releases-title" className="t-h2 mb-10">Press releases</h2>
         <ul className="divide-y divide-line border-y border-line">
           {releases.map((r, i) => (
             <li key={i} className="grid gap-2 py-6 md:grid-cols-[160px_1fr] md:gap-8">
-              <span className="t-mono pt-1 text-body">{copy(r.date)}</span>
+              <span className="t-mono pt-1 text-body">{hasCopy(r.date) ? copy(r.date) : ""}</span>
               <div>
                 <h3 className="text-[22px] font-semibold tracking-[-0.02em]">
                   <a href={r.href} className="hover:text-cobalt">{copy(r.title)}</a>
                 </h3>
-                <p className="mt-2 text-[16px]">{copy(r.summary)}</p>
+                {hasCopy(r.summary) && <p className="mt-2 text-[16px]">{copy(r.summary)}</p>}
               </div>
             </li>
           ))}
         </ul>
       </Section>
+      )}
 
       <Section labelledBy="kit-title">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
@@ -72,7 +78,7 @@ export default function PressPage() {
             <h2 id="kit-title" className="t-h2">{mediaKit.title}</h2>
             <p className="t-lead mt-6">{mediaKit.body}</p>
             <ul className="mt-6 space-y-2 text-[16px]">
-              {mediaKit.contents.map((c) => (
+              {mediaKit.contents.filter(hasCopy).map((c) => (
                 <li key={c} className="flex items-center gap-3">
                   <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-cobalt" />
                   {copy(c)}

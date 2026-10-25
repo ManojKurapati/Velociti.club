@@ -21,7 +21,7 @@ export const pressPage = {
     title: "Media kit",
     body: "Logo (SVG and PNG), founder photos and 50- and 100-word boilerplate in one download.",
     href: "/press/velociti-media-kit.zip",
-    contents: ["Logo — SVG, PNG", "Founder photos [from photo shoot]", "Boilerplate — 50 and 100 words"],
+    contents: ["Logo — SVG, PNG", "[Founder photos — from photo shoot]", "Boilerplate — 50 and 100 words"],
   },
   boilerplate50:
     "Velociti is an AI-native enterprise engineering company headquartered in Dubai. Its forward deployed engineers embed inside client teams to deploy secure AI agents across sales, support and operations, on the systems and data those organisations already run, from managed cloud to fully airgapped environments.",

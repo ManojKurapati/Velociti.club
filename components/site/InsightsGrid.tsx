@@ -23,6 +23,9 @@ export function InsightsGrid({ posts, categories }: { posts: PostMeta[]; categor
 
 export function InsightsView({ posts, categories, active, onSelect }: { posts: PostMeta[]; categories: readonly string[]; active: string; onSelect?: (c: string) => void }) {
   const shown = active === "All" ? posts : posts.filter((p) => p.category === active);
+  if (posts.length === 0) {
+    return <p className="card p-8 text-[17px]">Our first field notes from production are on the way. Subscribe via RSS to get them as they publish.</p>;
+  }
   return (
     <div>
       <div role="group" aria-label="Filter by category" className="-mx-6 overflow-x-auto px-6 [scrollbar-width:none]">

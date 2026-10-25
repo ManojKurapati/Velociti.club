@@ -61,7 +61,7 @@ export default function Home() {
 
       <Section labelledBy="build-title">
         <SectionHeader eyebrow={home.build.eyebrow} title={home.build.title} id="build-title" className="mb-12" />
-        <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {home.build.cards.map((c, i) => (
             <li key={c.href}>
               <Link href={c.href} className="card group flex h-full min-h-[200px] flex-col p-7 lg:min-h-[240px] transition-colors hover:border-ink/40">
@@ -114,6 +114,7 @@ export default function Home() {
         <SafeguardGrid cells={home.security.cells} />
       </Section>
 
+      {posts.length > 0 && (
       <Section labelledBy="insights-title">
         <div className="mb-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <SectionHeader eyebrow={home.insights.eyebrow} title={home.insights.title} id="insights-title" />
@@ -129,6 +130,7 @@ export default function Home() {
           ))}
         </ul>
       </Section>
+      )}
 
       <CTABand />
     </>

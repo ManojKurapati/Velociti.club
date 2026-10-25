@@ -23,12 +23,16 @@ function read(file: string) {
   return { meta, content };
 }
 
-/** All posts, newest first. Drafts are included so stubs are visible; they carry a Draft label. */
-export function getAllPosts(): PostMeta[] {
+/**
+ * Posts, newest first. Drafts are only listed while placeholders are shown
+ * (NEXT_PUBLIC_SHOW_PLACEHOLDERS=true); pass includeDrafts to build their pages anyway.
+ */
+export function getAllPosts({ includeDrafts = process.env.NEXT_PUBLIC_SHOW_PLACEHOLDERS === "true" } = {}): PostMeta[] {
   return fs
     .readdirSync(DIR)
     .filter((f) => f.endsWith(".mdx"))
     .map((f) => read(f).meta)
+    .filter((p) => includeDrafts || !p.draft)
     .sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 

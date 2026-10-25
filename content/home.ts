@@ -4,13 +4,13 @@ export const home = {
   meta: {
     title: "Velociti — AI-native enterprise engineering",
     description:
-      "We embed engineers inside your team to deploy secure AI agents across sales, support and operations — on the systems and data you already run.",
+      "Our forward-deployed engineers map how your business really runs, prototype AI agents in weeks, and harden them into production systems across finance, sales, marketing and operations.",
   },
   hero: {
     eyebrow: "AI-native enterprise engineering",
     lines: ["Think Big.", "Think Different.", "Think Velociti."],
     subhead:
-      "We embed engineers inside your team to deploy secure AI agents across sales, support and operations — on the systems and data you already run.",
+      "Our forward-deployed engineers map how your business really runs, prototype AI agents in weeks, and harden them into production systems across finance, sales, marketing and operations.",
     primary: { label: "Book an AI workflow audit", href: "/contact" },
     secondary: { label: "Explore solutions", href: "/solutions" },
     chips: ["HIPAA-ready architectures", "Human-in-the-loop approvals", "Airgapped deployments"],
@@ -48,7 +48,7 @@ export const home = {
     title: "From IT-dependent to AI-native.",
     body: "We don't bolt a chatbot onto your stack. We engineer one governed layer between the systems you run today and the agents that will run your work tomorrow.",
     layers: [
-      { name: "Agents", items: ["Ops", "Support", "Sales", "Knowledge"], accent: true },
+      { name: "Agents", items: ["Finance", "Sales", "Marketing", "Operations"], accent: true },
       { name: "Guardrails & approvals", items: ["Human-in-the-loop", "Evals"] },
       { name: "Knowledge & context", items: ["RAG", "Permissions"] },
       { name: "Engineered data", items: ["Pipelines", "Governance"] },
@@ -58,12 +58,14 @@ export const home = {
   },
   build: {
     eyebrow: "What we build",
-    title: "Four agent systems. One governed foundation.",
+    title: "Agents for every critical function. One governed foundation.",
     cards: [
-      { title: "Operations Automation", proof: "Up to 95% less manual reporting", href: "/solutions#operations" },
+      { title: "Finance", proof: "Close · Reconciliation · FP&A", href: "/solutions#finance" },
+      { title: "Sales", proof: "Outbound · Inbound · CRM hygiene", href: "/solutions#sales" },
+      { title: "Marketing", proof: "Content · Campaigns · Reporting", href: "/solutions#marketing" },
+      { title: "Operations", proof: "Approvals · Hand-offs · Exceptions", href: "/solutions#operations" },
       { title: "Customer Support", proof: "Voice · Chat · WhatsApp", href: "/solutions#support" },
-      { title: "Sales Automation", proof: "Outbound · Inbound", href: "/solutions#sales" },
-      { title: "Enterprise Knowledge", proof: "RAG copilots", href: "/solutions#knowledge" },
+      { title: "Enterprise Knowledge", proof: "Permission-aware RAG copilots", href: "/solutions#knowledge" },
     ],
   },
   twoUp: [

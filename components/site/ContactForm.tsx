@@ -9,6 +9,7 @@ import { FormEndpointMissingError, isFreeEmail, postForm } from "@/lib/forms";
 import { identify, track } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 import { Field, Honeypot, inputCls } from "./Field";
+import { SHOW_PLACEHOLDERS } from "./Copy";
 import { CalendlyEmbed } from "./CalendlyEmbed";
 
 // zod/mini keeps the validator small; the contact route is prefetched from every page.
@@ -110,7 +111,7 @@ export function ContactForm() {
       setSubmitError(
         err instanceof FormEndpointMissingError ? (
           <>
-            The form isn&apos;t connected yet <mark className="ph">[Set NEXT_PUBLIC_LEAD_ENDPOINT]</mark>. Email{" "}
+            We couldn&apos;t send the form{SHOW_PLACEHOLDERS && <> <mark className="ph">[Set NEXT_PUBLIC_LEAD_ENDPOINT]</mark></>}. Email{" "}
             <a className="link" href={`mailto:${site.email}`}>{site.email}</a> or{" "}
             <a className="link" href={site.calendlyUrl}>book directly on Calendly</a>.
           </>

@@ -9,7 +9,7 @@ export const site = {
   domain: "thinkvelociti.com",
   url: "https://thinkvelociti.com",
   description:
-    "Velociti embeds forward deployed engineers inside enterprise teams to deploy secure AI agents across sales, support and operations, on the systems and data they already run.",
+    "Velociti is an AI-native enterprise engineering company. Forward-deployed engineers map how a business really runs, prototype AI agents in weeks and harden them into production systems across finance, sales, marketing and operations.",
   calendlyUrl: "https://calendly.com/manojkurapati96/30min",
   email: "info@velociti.club",
   whatsapp: { display: "+971 58 546 9969", href: "https://wa.me/971585469969" },
@@ -53,9 +53,11 @@ export const footer = {
     {
       title: "Platform",
       links: [
-        { label: "Operations Automation", href: "/solutions#operations" },
+        { label: "Finance", href: "/solutions#finance" },
+        { label: "Sales", href: "/solutions#sales" },
+        { label: "Marketing", href: "/solutions#marketing" },
+        { label: "Operations", href: "/solutions#operations" },
         { label: "Customer Support", href: "/solutions#support" },
-        { label: "Sales Automation", href: "/solutions#sales" },
         { label: "Enterprise Knowledge", href: "/solutions#knowledge" },
         { label: "Forward Deployed Engineers", href: "/engineers" },
         { label: "Airgapped deployments", href: "/engineers#airgapped" },

@@ -5,7 +5,7 @@ import { PageHero } from "@/components/site/PageHero";
 import { Section, SectionHeader } from "@/components/site/Section";
 import { SimpleForm } from "@/components/site/SimpleForm";
 import { CTABand } from "@/components/site/CTABand";
-import { copy } from "@/components/site/Copy";
+import { copy, hasCopy } from "@/components/site/Copy";
 import { Arrow } from "@/components/site/Button";
 
 export const metadata = pageMetadata({ ...careersPage.meta, path: "/careers" });
@@ -42,13 +42,14 @@ export default function CareersPage() {
             </li>
           ))}
         </ul>
-        <p className="mt-4 text-[13px]">{copy(rolesNote)}</p>
+        {hasCopy(rolesNote) && <p className="mt-4 text-[13px]">{copy(rolesNote)}</p>}
       </Section>
 
+      {benefits.items.some((b) => hasCopy(b.title)) && (
       <Section tone="white" labelledBy="benefits-title">
         <SectionHeader eyebrow={benefits.eyebrow} title={benefits.title} id="benefits-title" className="mb-12" />
         <ul className="grid gap-px overflow-hidden rounded-[20px] border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
-          {benefits.items.map((b, i) => (
+          {benefits.items.filter((b) => hasCopy(b.title)).map((b, i) => (
             <li key={i} className="bg-surface p-7">
               <h3 className="text-[19px] font-semibold">{copy(b.title)}</h3>
               <p className="mt-2 text-[15px]">{copy(b.body)}</p>
@@ -56,6 +57,7 @@ export default function CareersPage() {
           ))}
         </ul>
       </Section>
+      )}
 
       <Section id="apply" labelledBy="open-title">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">

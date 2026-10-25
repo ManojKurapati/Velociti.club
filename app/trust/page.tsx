@@ -7,7 +7,7 @@ import { SafeguardGrid } from "@/components/site/SafeguardGrid";
 import { ComplianceGrid } from "@/components/site/ComplianceGrid";
 import { SimpleForm } from "@/components/site/SimpleForm";
 import { CTABand } from "@/components/site/CTABand";
-import { copy } from "@/components/site/Copy";
+import { hasCopy } from "@/components/site/Copy";
 import { SceneArt } from "@/components/art/SceneArt";
 import { PhotoOr } from "@/components/art/IndustryImage";
 
@@ -78,17 +78,13 @@ export default function TrustPage() {
             <p className="eyebrow">{documents.eyebrow}</p>
             <h2 id="documents-title" className="t-h2 mt-5">{documents.title}</h2>
             <p className="t-lead mt-6">{documents.body}</p>
-            <p className="mt-8 text-[16px]">
-              {portalIsPlaceholder ? (
-                <>
-                  {documents.portal.label}: {copy(documents.portal.href)}
-                </>
-              ) : (
+            {!portalIsPlaceholder && hasCopy(documents.portal.href) && (
+              <p className="mt-8 text-[16px]">
                 <a href={documents.portal.href} className="link">
                   {documents.portal.label}
                 </a>
-              )}
-            </p>
+              </p>
+            )}
           </div>
           <SimpleForm
             formType="security_documents_request"

@@ -8,7 +8,7 @@ import { Section } from "@/components/site/Section";
 import { StatBand, toStat } from "@/components/site/StatBand";
 import { CaseCard } from "@/components/site/CaseCard";
 import { CTABand } from "@/components/site/CTABand";
-import { copy } from "@/components/site/Copy";
+import { copy, hasCopy } from "@/components/site/Copy";
 import { IndustryImage } from "@/components/art/IndustryImage";
 import { getIndustry } from "@/content/industries";
 
@@ -33,7 +33,7 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
 
   const meta = [
     { k: "Industry", v: <Link href={`/industries/${c.industrySlug}`} className="link">{c.industry}</Link> },
-    { k: "Client", v: copy(c.client) },
+    ...(hasCopy(c.client) ? [{ k: "Client", v: copy(c.client) }] : []),
     { k: "Timeline", v: `${c.weeks} weeks to production` },
     { k: "Systems connected", v: c.systems.join(", ") },
     { k: "Solution", v: c.solution },
@@ -73,12 +73,14 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
           </aside>
 
           <div className="max-w-[720px] space-y-16">
-            <section aria-labelledby="challenge">
-              <h2 id="challenge" className="text-[32px] font-semibold tracking-[-0.03em]">The challenge</h2>
-              {c.challenge.map((p, i) => (
-                <p key={i} className="mt-5 text-[18px] leading-relaxed">{copy(p)}</p>
-              ))}
-            </section>
+            {c.challenge.some(hasCopy) && (
+              <section aria-labelledby="challenge">
+                <h2 id="challenge" className="text-[32px] font-semibold tracking-[-0.03em]">The challenge</h2>
+                {c.challenge.filter(hasCopy).map((p, i) => (
+                  <p key={i} className="mt-5 text-[18px] leading-relaxed">{copy(p)}</p>
+                ))}
+              </section>
+            )}
 
             <section aria-labelledby="built">
               <h2 id="built" className="text-[32px] font-semibold tracking-[-0.03em]">What we built</h2>
@@ -102,7 +104,7 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
                       {String(i + 1).padStart(2, "0")} · {copy(t.weeks)}
                     </p>
                     <h3 className="mt-2 text-[20px] font-semibold">{t.phase}</h3>
-                    <p className="mt-1 text-[16px]">{copy(t.detail)}</p>
+                    {hasCopy(t.detail) && <p className="mt-1 text-[16px]">{copy(t.detail)}</p>}
                   </li>
                 ))}
               </ol>
@@ -113,7 +115,7 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
                 <blockquote className="text-[26px] font-medium leading-[1.3] tracking-[-0.02em] text-ink lg:text-[32px]">“{copy(c.quote.text)}”</blockquote>
                 <figcaption className="mt-6 text-[15px]">
                   <span className="font-semibold text-ink">{c.quote.name}</span> · {c.quote.role}
-                  {c.quote.approval && <span className="mt-2 block text-[13px]">{copy(c.quote.approval)}</span>}
+                  {hasCopy(c.quote.approval) && <span className="mt-2 block text-[13px]">{copy(c.quote.approval)}</span>}
                 </figcaption>
               </figure>
             )}

@@ -1,6 +1,7 @@
-import { copy } from "./Copy";
+import { copy, hasCopy } from "./Copy";
 
 export function QuoteBand({ quote }: { quote: { text: string; name: string; role: string; approval?: string } }) {
+  if (!hasCopy(quote.text)) return null;
   return (
     <section className="night section-y bg-night text-night-body" aria-label="Customer quote">
       <figure className="container-site max-w-[1000px]">
@@ -11,7 +12,7 @@ export function QuoteBand({ quote }: { quote: { text: string; name: string; role
         <figcaption className="mt-10 flex flex-col gap-1">
           <span className="font-semibold text-white">{copy(quote.name)}</span>
           <span className="text-[15px]">{copy(quote.role)}</span>
-          {quote.approval && <span className="mt-3 text-[13px]">{copy(quote.approval)}</span>}
+          {hasCopy(quote.approval) && <span className="mt-3 text-[13px]">{copy(quote.approval)}</span>}
         </figcaption>
       </figure>
     </section>

@@ -25,7 +25,7 @@ export function ogPages(): { path: string; title: string; eyebrow?: string }[] {
     { path: "/contact", title: "Find out where AI pays off first.", eyebrow: "AI workflow audit" },
     ...industries.map((i) => ({ path: `/industries/${i.slug}`, title: i.hero.title, eyebrow: i.name })),
     ...caseStudies.map((c) => ({ path: `/customers/${c.slug}`, title: c.title, eyebrow: `Case study · ${c.industry}` })),
-    ...getAllPosts().map((p) => ({ path: `/insights/${p.slug}`, title: p.title, eyebrow: p.category })),
+    ...getAllPosts({ includeDrafts: true }).map((p) => ({ path: `/insights/${p.slug}`, title: p.title, eyebrow: p.category })),
     ...Object.entries(legalPages).map(([k, p]) => ({ path: `/legal/${k}`, title: p.title, eyebrow: "Legal" })),
   ];
 }

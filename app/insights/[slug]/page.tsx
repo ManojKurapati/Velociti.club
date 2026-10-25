@@ -8,23 +8,24 @@ import { JsonLd } from "@/components/site/JsonLd";
 import { PostCard } from "@/components/site/PostCard";
 import { Section } from "@/components/site/Section";
 import { CTABand } from "@/components/site/CTABand";
-import { copy } from "@/components/site/Copy";
+import { copy, SHOW_PLACEHOLDERS } from "@/components/site/Copy";
 import { SceneArt } from "@/components/art/SceneArt";
 
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return getAllPosts().map((p) => ({ slug: p.slug }));
+  return getAllPosts({ includeDrafts: true }).map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const post = getPost((await params).slug);
   if (!post) return {};
-  return pageMetadata({ title: post.meta.title, description: post.meta.excerpt, path: `/insights/${post.meta.slug}`, type: "article" });
+  const meta = pageMetadata({ title: post.meta.title, description: post.meta.excerpt, path: `/insights/${post.meta.slug}`, type: "article" });
+  return post.meta.draft ? { ...meta, robots: { index: false, follow: true } } : meta;
 }
 
 const mdxComponents = {
-  Placeholder: ({ children }: { children: string }) => <p><mark className="ph">[{children}]</mark></p>,
+  Placeholder: ({ children }: { children: string }) => (SHOW_PLACEHOLDERS ? <p><mark className="ph">[{children}]</mark></p> : null),
   p: ({ children }: { children: React.ReactNode }) => <p>{Children.map(children, (c) => (typeof c === "string" ? copy(c) : c))}</p>,
 };
 
@@ -45,7 +46,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
             <p className="t-mono mt-10 flex flex-wrap gap-x-3">
               <span className="text-cobalt">{meta.category}</span>
               <time dateTime={meta.date} className="text-body">{formatDate(meta.date)}</time>
-              {meta.draft && <mark className="ph">[Draft]</mark>}
+              {meta.draft && SHOW_PLACEHOLDERS && <mark className="ph">[Draft]</mark>}
             </p>
             <h1 className="mt-5 text-[clamp(36px,5vw,64px)] font-semibold leading-[1.04] tracking-[-0.04em]">{meta.title}</h1>
             <p className="t-lead mt-6">{meta.excerpt}</p>

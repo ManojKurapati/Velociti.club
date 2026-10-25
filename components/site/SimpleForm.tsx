@@ -6,6 +6,7 @@ import { FormEndpointMissingError, postForm } from "@/lib/forms";
 import { track } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 import { Field, Honeypot, inputCls } from "./Field";
+import { SHOW_PLACEHOLDERS } from "./Copy";
 
 type FieldDef = { name: string; label: string; type?: "text" | "email" | "textarea" | "select"; options?: string[]; optional?: boolean; autoComplete?: string };
 
@@ -69,6 +70,19 @@ export function SimpleForm({
     }
   };
 
+  // Without a configured endpoint, point people to email instead of a form that cannot send.
+  if (!endpoint) {
+    return (
+      <div className={cn("card p-7 text-[16px] leading-relaxed", className)}>
+        Email{" "}
+        <a className="link" href={`mailto:${fallbackEmail}`}>
+          {fallbackEmail}
+        </a>{" "}
+        and we&apos;ll reply within two business days.
+      </div>
+    );
+  }
+
   if (status === "done") {
     return (
       <p role="status" className={cn("rounded-[16px] border border-line bg-paper p-6 text-[16px] text-ink", className)}>
@@ -124,7 +138,7 @@ export function SimpleForm({
           <p className="rounded-[12px] border border-[#F2C6C2] bg-[#FDF2F1] p-4 text-[14px] text-ink">
             {status === "missing" ? (
               <>
-                This form isn&apos;t connected yet <mark className="ph">[Set NEXT_PUBLIC_TRUST_FORM_ENDPOINT]</mark>.{" "}
+                Online submissions aren&apos;t available yet{SHOW_PLACEHOLDERS && <> <mark className="ph">[Set NEXT_PUBLIC_TRUST_FORM_ENDPOINT]</mark></>}.{" "}
               </>
             ) : (
               "Something went wrong. "
