@@ -13,7 +13,7 @@ export const home = {
       "Our forward-deployed engineers map how your business really runs, prototype AI agents in weeks, and harden them into production systems across finance, sales, marketing and operations.",
     primary: { label: "Book an AI workflow audit", href: "/contact" },
     secondary: { label: "Explore solutions", href: "/solutions" },
-    chips: ["HIPAA-ready architectures", "Human-in-the-loop approvals", "Airgapped deployments"],
+    chips: ["Compliance-ready architecture", "Human-in-the-loop approvals", "Airgapped deployments"],
   },
   video: {
     eyebrow: "See Velociti at work",
@@ -102,7 +102,7 @@ export const home = {
       { title: "Audit logs & observability", body: "Every prompt, tool call and approval is logged and traceable." },
       { title: "Human-in-the-loop", body: "Agents stop for a person whenever a decision matters." },
       { title: "Hallucination mitigation", body: "Grounded answers, citations and evals before anything ships." },
-      { title: "Compliance readiness", body: "Architectures aligned with HIPAA, GDPR and UAE PDPL requirements." },
+      { title: "Compliance readiness", body: "Architectures built to align with GDPR, UAE PDPL and SOC 2, plus sector rules such as HIPAA and banking regulations." },
       { title: "Private & airgapped", body: "Run in your VPC or fully offline inside your perimeter." },
     ],
     cta: { label: "Visit the Trust Center", href: "/trust" },
