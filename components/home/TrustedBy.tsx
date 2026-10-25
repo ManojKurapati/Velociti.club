@@ -1,5 +1,4 @@
 import { home } from "@/content/home";
-import { copy } from "@/components/site/Copy";
 
 /** Text wordmarks until approved logo SVGs are supplied. */
 export function TrustedBy() {
@@ -22,7 +21,6 @@ export function TrustedBy() {
             </li>
           ))}
         </ul>
-        <p className="mt-6 text-center text-[13px]">{copy(trustedBy.note)}</p>
       </div>
     </section>
   );

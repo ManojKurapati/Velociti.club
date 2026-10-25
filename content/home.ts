@@ -31,7 +31,6 @@ export const home = {
       { name: "JCS Info Solutions", approved: true },
       { name: "Bezvada Biomed", approved: true },
     ],
-    note: "[Confirm each client has approved logo use]",
   },
   stats: [
     { value: 99.2, decimals: 1, suffix: "%", label: "Claim pre-verification accuracy" },

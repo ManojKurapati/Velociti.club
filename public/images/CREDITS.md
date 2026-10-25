@@ -5,7 +5,7 @@ All photos are from Unsplash under the Unsplash Licence (free commercial use, no
 Download each at full size via the photo page's **Download** button, save to the path below, then run `npm run grade-images`.
 Until a graded photo exists, the site shows the brand line illustration for that slot. If only one of an industry's two photos exists, it is used for both slots.
 
-**Received so far:** healthcare-hero, healthcare-alt, finance-alt, automotive-alt, trust-servers. Still needed: the rest of the table, including oil-gas-hero, oil-gas-alt, automotive-hero and about-dubai (sent inline in chat, not as files).
+**Received so far:** healthcare-hero, healthcare-alt, finance-alt, automotive-alt, oil-gas-alt, pharma-hero, education-alt, trust-servers, about-dubai. Still needed: finance-hero, oil-gas-hero, automotive-hero, pharma-alt, hospitality-hero, hospitality-alt, education-hero.
 
 | File | Unsplash page | Photographer |
 |---|---|---|

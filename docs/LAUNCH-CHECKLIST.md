@@ -74,7 +74,6 @@ Everything still needed before and after launch: placeholders, open questions an
 | File | Placeholder(s) |
 |---|---|
 | `content/site.ts` | `[Dubai office address]` |
-| `content/home.ts` | `[Confirm each client has approved logo use]` |
 | `content/solutions.ts` | `[metric]` ×3 (Support, Sales, Knowledge proof points) |
 | `content/engineers.ts` | `[Confirm the timelines]`, `[Engineers photo — from a real Velociti photo shoot]` |
 | `content/industries/healthcare.ts` | `[Confirm written approval to publish name and quote]` (Sarah Jenkins) |
