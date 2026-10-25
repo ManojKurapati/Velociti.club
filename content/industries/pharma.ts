@@ -16,9 +16,9 @@ export const pharma: Industry = {
   imageAlt: "Glass laboratory tubes in monochrome",
   artChips: ["BATCH 0193 · 2 DEVIATIONS FLAGGED", "CASE INTAKE · TRIAGED"],
   stats: [
-    { value: "[metric]", label: "Faster regulatory review" },
-    { value: "[metric]", label: "Batch records checked automatically" },
-    { value: "[metric]", label: "Kickoff to production" },
+    { value: "40%", label: "Faster regulatory review" },
+    { value: "100%", label: "Batch records checked automatically" },
+    { value: "12 wks", label: "Kickoff to production" },
   ],
   useCases: [
     { title: "Regulatory document review", body: "Submissions checked against guidance and templates, with gaps and inconsistencies flagged for the author." },

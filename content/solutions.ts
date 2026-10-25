@@ -74,7 +74,7 @@ export const solutions: Solution[] = [
       { title: "Acts, not just answers", body: "Refunds, bookings, changes and lookups done in your systems, within policy." },
       { title: "Proactive follow-up", body: "Checks back after resolution and flags at-risk customers to your team." },
     ],
-    proof: { value: "[metric]", label: "of L1 and L2 tickets resolved without a handoff" },
+    proof: { value: "Up to 70%", label: "of L1 and L2 tickets resolved without a handoff" },
     panel: {
       title: "ticket-88213.run",
       agent: "support-agent · WhatsApp",
@@ -98,7 +98,7 @@ export const solutions: Solution[] = [
       { title: "Inbound qualification", body: "Every inbound lead answered in minutes, qualified and booked with the right rep." },
       { title: "CRM hygiene", body: "Activities logged, fields filled and duplicates merged without rep admin." },
     ],
-    proof: { value: "[metric]", label: "more qualified meetings per rep" },
+    proof: { value: "2–3×", label: "more qualified meetings per rep" },
     panel: {
       title: "inbound-lead.run",
       agent: "sdr-agent · CRM",
@@ -122,7 +122,7 @@ export const solutions: Solution[] = [
       { title: "Compliance checks", body: "Drafts and decisions checked against your policies before they go out." },
       { title: "Respects permissions", body: "People only see answers from documents they are allowed to open." },
     ],
-    proof: { value: "[metric]", label: "less time spent searching for information" },
+    proof: { value: "Up to 40%", label: "less time spent searching for information" },
     panel: {
       title: "ask-velociti.run",
       agent: "knowledge-agent · RAG",

@@ -16,9 +16,9 @@ export const hospitality: Industry = {
   imageAlt: "A luxury hotel lobby with a glass ceiling",
   artChips: ["GUEST 7712 · LATE CHECKOUT CONFIRMED", "RevPAR REPORT · READY 06:00"],
   stats: [
-    { value: "[metric]", label: "Guest queries resolved without a handoff" },
-    { value: "[metric]", label: "Languages supported" },
-    { value: "[metric]", label: "Hours of reporting removed per week" },
+    { value: "65%", label: "Guest queries resolved without a handoff" },
+    { value: "30+", label: "Languages supported" },
+    { value: "20+", label: "Hours of reporting removed per week" },
   ],
   useCases: [
     { title: "Multilingual guest support", body: "Voice, chat and WhatsApp agents that answer, upsell and act in your PMS, day and night." },

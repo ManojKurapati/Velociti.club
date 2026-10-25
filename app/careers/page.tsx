@@ -24,7 +24,7 @@ export default function CareersPage() {
           {roles.map((r) => (
             <li key={r.title}>
               <a
-                href={`mailto:${site.emails.careers}?subject=${encodeURIComponent(`Application: ${r.title}`)}`}
+                href={`mailto:${site.email}?subject=${encodeURIComponent(`Application: ${r.title}`)}`}
                 className="group grid gap-3 py-7 md:grid-cols-[1.1fr_1.4fr_auto] md:items-center md:gap-10"
                 data-track={`Apply: ${r.title}`}
               >
@@ -64,15 +64,15 @@ export default function CareersPage() {
             <p className="t-lead mt-6">{open.body}</p>
             <p className="mt-8 text-[16px]">
               Or email{" "}
-              <a className="link" href={`mailto:${site.emails.careers}`}>
-                {site.emails.careers}
+              <a className="link" href={`mailto:${site.email}`}>
+                {site.email}
               </a>
             </p>
           </div>
           <SimpleForm
             formType="open_application"
             endpoint={process.env.NEXT_PUBLIC_LEAD_ENDPOINT}
-            fallbackEmail={site.emails.careers}
+            fallbackEmail={site.email}
             submitLabel={open.button}
             successMessage="Thanks — we read every application and will reply if there's a fit."
             fields={[

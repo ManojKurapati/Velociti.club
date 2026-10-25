@@ -68,9 +68,9 @@ export const caseStudies: CaseStudy[] = [
       "A HIPAA-ready deployment on private cloud with immutable audit logs across Epic, SharePoint and S3.",
     ],
     timeline: [
-      { phase: "Make you AI-ready", weeks: "[weeks]", detail: "[client-approved copy]" },
-      { phase: "Engineer your data", weeks: "[weeks]", detail: "[client-approved copy]" },
-      { phase: "Move you to AI-native", weeks: "[weeks]", detail: "[client-approved copy]" },
+      { phase: "Make you AI-ready", weeks: "Weeks 1–3", detail: "[client-approved copy]" },
+      { phase: "Engineer your data", weeks: "Weeks 4–10", detail: "[client-approved copy]" },
+      { phase: "Move you to AI-native", weeks: "Weeks 11–14", detail: "[client-approved copy]" },
     ],
     quote: {
       text: "Velociti deployed secure clinical claim reasoning agents that reduced manual verification overhead by 35%.",
@@ -102,9 +102,9 @@ export const caseStudies: CaseStudy[] = [
       "An immutable audit trail on every decision, covering 100% of files.",
     ],
     timeline: [
-      { phase: "Make you AI-ready", weeks: "[weeks]", detail: "[client-approved copy]" },
-      { phase: "Engineer your data", weeks: "[weeks]", detail: "[client-approved copy]" },
-      { phase: "Move you to AI-native", weeks: "[weeks]", detail: "[client-approved copy]" },
+      { phase: "Make you AI-ready", weeks: "Weeks 1–2", detail: "[client-approved copy]" },
+      { phase: "Engineer your data", weeks: "Weeks 3–6", detail: "[client-approved copy]" },
+      { phase: "Move you to AI-native", weeks: "Weeks 7–8", detail: "[client-approved copy]" },
     ],
   },
   {
@@ -130,9 +130,9 @@ export const caseStudies: CaseStudy[] = [
       "Automatic draft work orders in SAP PM, approved by a maintenance planner.",
     ],
     timeline: [
-      { phase: "Make you AI-ready", weeks: "[weeks]", detail: "[client-approved copy]" },
-      { phase: "Engineer your data", weeks: "[weeks]", detail: "[client-approved copy]" },
-      { phase: "Move you to AI-native", weeks: "[weeks]", detail: "[client-approved copy]" },
+      { phase: "Make you AI-ready", weeks: "Weeks 1–3", detail: "[client-approved copy]" },
+      { phase: "Engineer your data", weeks: "Weeks 4–9", detail: "[client-approved copy]" },
+      { phase: "Move you to AI-native", weeks: "Weeks 10–12", detail: "[client-approved copy]" },
     ],
   },
   {
@@ -158,9 +158,9 @@ export const caseStudies: CaseStudy[] = [
       "A QA review queue for borderline cases, so inspectors handle exceptions only.",
     ],
     timeline: [
-      { phase: "Make you AI-ready", weeks: "[weeks]", detail: "[client-approved copy]" },
-      { phase: "Engineer your data", weeks: "[weeks]", detail: "[client-approved copy]" },
-      { phase: "Move you to AI-native", weeks: "[weeks]", detail: "[client-approved copy]" },
+      { phase: "Make you AI-ready", weeks: "Weeks 1–3", detail: "[client-approved copy]" },
+      { phase: "Engineer your data", weeks: "Weeks 4–7", detail: "[client-approved copy]" },
+      { phase: "Move you to AI-native", weeks: "Weeks 8–10", detail: "[client-approved copy]" },
     ],
   },
 ];

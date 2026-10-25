@@ -8,11 +8,8 @@ export const metadata = pageMetadata({ ...contactPage.meta, path: "/contact" });
 
 export default function ContactPage() {
   const contacts = [
-    { label: "General", value: site.emails.hello, href: `mailto:${site.emails.hello}` },
-    { label: "Press", value: site.emails.press, href: `mailto:${site.emails.press}` },
-    { label: "Security", value: site.emails.security, href: `mailto:${site.emails.security}` },
+    { label: "Email", value: site.email, href: `mailto:${site.email}` },
     { label: "WhatsApp", value: site.whatsapp.display, href: site.whatsapp.href },
-    { label: "Office", value: site.address },
   ];
   return (
     <section className="pb-[72px] pt-14 lg:pb-[120px] lg:pt-20">

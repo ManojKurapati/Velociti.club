@@ -93,7 +93,7 @@ export default function TrustPage() {
           <SimpleForm
             formType="security_documents_request"
             endpoint={ENDPOINT}
-            fallbackEmail={site.emails.security}
+            fallbackEmail={site.email}
             submitLabel="Request documents"
             successMessage="Thanks — we'll be in touch within two business days with an NDA and the documents you asked for."
             fields={[
@@ -115,15 +115,15 @@ export default function TrustPage() {
             <p className="t-lead mt-6">{report.body}</p>
             <p className="mt-8 text-[16px]">
               Prefer email?{" "}
-              <a href={`mailto:${site.emails.security}`} className="link">
-                {site.emails.security}
+              <a href={`mailto:${site.email}`} className="link">
+                {site.email}
               </a>
             </p>
           </div>
           <SimpleForm
             formType="vulnerability_report"
             endpoint={ENDPOINT}
-            fallbackEmail={site.emails.security}
+            fallbackEmail={site.email}
             submitLabel="Submit report"
             successMessage="Thank you. We've received your report and will acknowledge it shortly."
             fields={[

@@ -16,9 +16,9 @@ export const education: Industry = {
   imageAlt: "A long sunlit library hallway",
   artChips: ["APPLICANT 3308 · DOCUMENTS COMPLETE", "POLICY ANSWER · 3 SOURCES CITED"],
   stats: [
-    { value: "[metric]", label: "Applicant queries answered instantly" },
-    { value: "[metric]", label: "Admin hours returned per term" },
-    { value: "[metric]", label: "Kickoff to production" },
+    { value: "80%", label: "Applicant queries answered instantly" },
+    { value: "500+", label: "Admin hours returned per term" },
+    { value: "10 wks", label: "Kickoff to production" },
   ],
   useCases: [
     { title: "Admissions support", body: "Applicants get accurate answers on requirements, deadlines and status in their own language." },

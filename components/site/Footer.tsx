@@ -45,7 +45,7 @@ export function Footer() {
         <div className="mt-16 flex flex-col gap-3 border-t border-line py-6 text-[14px] sm:flex-row sm:items-center sm:justify-between">
           <p>{footer.copyright}</p>
           <div className="flex flex-wrap items-center gap-x-5 gap-y-1">
-            <a href={`mailto:${site.emails.hello}`} className="hover:text-ink">{site.emails.hello}</a>
+            <a href={`mailto:${site.email}`} className="hover:text-ink">{site.email}</a>
             <CookieSettingsButton />
           </div>
         </div>

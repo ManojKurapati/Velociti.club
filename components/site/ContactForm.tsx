@@ -111,18 +111,30 @@ export function ContactForm() {
         err instanceof FormEndpointMissingError ? (
           <>
             The form isn&apos;t connected yet <mark className="ph">[Set NEXT_PUBLIC_LEAD_ENDPOINT]</mark>. Email{" "}
-            <a className="link" href={`mailto:${site.emails.hello}`}>{site.emails.hello}</a> or{" "}
+            <a className="link" href={`mailto:${site.email}`}>{site.email}</a> or{" "}
             <a className="link" href={site.calendlyUrl}>book directly on Calendly</a>.
           </>
         ) : (
           <>
             Something went wrong sending your details. Please try again, or email{" "}
-            <a className="link" href={`mailto:${site.emails.hello}`}>{site.emails.hello}</a>.
+            <a className="link" href={`mailto:${site.email}`}>{site.email}</a>.
           </>
         ),
       );
     }
   };
+
+  // No lead endpoint configured yet: go straight to booking so the audit CTA always lands on Calendly.
+  if (!ENDPOINT) {
+    return (
+      <div>
+        <p className="t-mono text-cobalt">Book your audit</p>
+        <h2 className="mt-3 text-[28px] font-semibold tracking-[-0.02em]">{contactPage.step2.title}</h2>
+        <p className="mt-2 text-[16px]">{contactPage.direct}</p>
+        <CalendlyEmbed className="mt-6" />
+      </div>
+    );
+  }
 
   if (status === "done") {
     return (

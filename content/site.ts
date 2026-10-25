@@ -11,14 +11,8 @@ export const site = {
   description:
     "Velociti embeds forward deployed engineers inside enterprise teams to deploy secure AI agents across sales, support and operations, on the systems and data they already run.",
   calendlyUrl: "https://calendly.com/manojkurapati96/30min",
-  emails: {
-    hello: "hello@thinkvelociti.com",
-    press: "press@thinkvelociti.com",
-    security: "security@thinkvelociti.com",
-    careers: "careers@thinkvelociti.com",
-  },
+  email: "info@velociti.club",
   whatsapp: { display: "+971 58 546 9969", href: "https://wa.me/971585469969" },
-  address: "[Dubai office address]",
   social: [
     { label: "LinkedIn", href: "https://www.linkedin.com/company/velociti-club" },
     { label: "Instagram", href: "https://www.instagram.com/velociti.club" },

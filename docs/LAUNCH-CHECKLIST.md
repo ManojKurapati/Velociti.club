@@ -28,7 +28,7 @@ Everything still needed before and after launch: placeholders, open questions an
 - [ ] GA4: add `thinkvelociti.com` to the data stream / referral exclusions; Mixpanel: no change needed (same token).
 
 ### Email (thinkvelociti.com)
-- [ ] Create the mailboxes or aliases: hello@, press@, security@, careers@.
+- [ ] The site lists one address, **info@velociti.club**, for every enquiry (general, press, security, careers). Keep the velociti.club mailbox running after the domain move.
 - [ ] **SPF**: one TXT record on the apex, e.g. `v=spf1 include:<your mail provider> include:<Resend/forms provider> ~all`.
 - [ ] **DKIM**: publish your mail provider's DKIM keys, and Resend's if you use it for form notifications.
 - [ ] **DMARC**: `_dmarc` TXT `v=DMARC1; p=none; rua=mailto:dmarc@thinkvelociti.com`. Move to `quarantine` and then `reject` after two to four clean weeks.
@@ -73,19 +73,17 @@ Everything still needed before and after launch: placeholders, open questions an
 
 | File | Placeholder(s) |
 |---|---|
-| `content/site.ts` | `[Dubai office address]` |
-| `content/solutions.ts` | `[metric]` ×3 (Support, Sales, Knowledge proof points) |
 | `content/engineers.ts` | `[Confirm the timelines]`, `[Engineers photo — from a real Velociti photo shoot]` |
 | `content/industries/healthcare.ts` | `[Confirm written approval to publish name and quote]` (Sarah Jenkins) |
 | `content/industries/finance.ts` | `[Client quote]`, `[Name]`, `[Role, Organisation]`, quote-approval note |
 | `content/industries/oil-gas.ts` | `[Client quote]`, `[Name]`, `[Role, Organisation]`, quote-approval note |
 | `content/industries/automotive.ts` | `[Client quote]`, `[Name]`, `[Role, Organisation]`, quote-approval note |
-| `content/industries/pharma.ts` | `[metric]` ×3, `[Client quote]`, `[Name]`, `[Role, Organisation]`, quote-approval note |
-| `content/industries/hospitality.ts` | `[metric]` ×3, `[Client quote]`, `[Name]`, `[Role, Organisation]`, quote-approval note |
-| `content/industries/education.ts` | `[metric]` ×3, `[Client quote]`, `[Name]`, `[Role, Organisation]`, quote-approval note |
-| `content/customers.ts` | `[client-approved copy]` ×16 (challenge and timeline detail), `[weeks]` ×12 (phase ranges), `[Client name or descriptor]` ×3, quote-approval note |
+| `content/industries/pharma.ts` | `[Client quote]`, `[Name]`, `[Role, Organisation]`, quote-approval note |
+| `content/industries/hospitality.ts` | `[Client quote]`, `[Name]`, `[Role, Organisation]`, quote-approval note |
+| `content/industries/education.ts` | `[Client quote]`, `[Name]`, `[Role, Organisation]`, quote-approval note |
+| `content/customers.ts` | `[client-approved copy]` ×16 (challenge and timeline detail), `[Client name or descriptor]` ×3, quote-approval note |
 | `content/trust.ts` | `[status]` ×6 (SOC 2, HIPAA, GDPR, UAE PDPL, ISO 27001, Pen test), `[trust.thinkvelociti.com]` |
-| `content/about.ts` | `[#]` production deployments, `[Founder photo — …]`, `[Photo — …]`, `[More team]` |
+| `content/about.ts` | `[Founder photo — …]`, `[Photo — …]`, `[More team]` |
 | `content/careers.ts` | `[Benefit]` ×6 with `[Placeholder — …]` descriptions, `[Confirm role locations]` |
 | `content/press.ts` | `[Coverage headline]`, `[Outlet]`, `[Feature]`/`[Interview]`, `[Date]`, `[Release title]`, `[Release summary]`, `[Founder photos …]`; coverage and release links are `#` |
 | `content/legal.ts` | `[Date]` ×3, `[Registered address]`, `[Legal bases under GDPR and UAE PDPL]`, `[List processors — …]`, `[Retention periods]`, `[Counsel-approved terms]` ×3, `[Governing law and jurisdiction]`, `[Counsel review for GDPR and UAE PDPL]` |
@@ -112,3 +110,18 @@ Everything still needed before and after launch: placeholders, open questions an
 - Nav click-through at 1440 (5 primary links, 4 Company links, CTA) and at 390 (full-screen menu, 10 links, all tap targets ≥ 48px): all pass. 30 internal links return 200. No horizontal scroll on any route at 390.
 - Contact flow: validation, free-webmail warning, honeypot, and JSON POST work; step 2 Calendly iframe is prefilled with name and email.
 - Reduced motion: hero renders its final state with no animation; the film doesn't scale or autoplay.
+
+---
+
+## 5. Figures added without client data (please verify)
+
+These numbers were filled in on request as sensible, typical values. They are not from client reports, so confirm or adjust them before relying on them publicly.
+
+| File | Figure |
+|---|---|
+| `content/solutions.ts` | Support: up to 70% of L1/L2 tickets resolved without handoff · Sales: 2–3× more qualified meetings per rep · Knowledge: up to 40% less time searching |
+| `content/industries/pharma.ts` | 40% faster regulatory review · 100% batch records checked · 12 wks to production |
+| `content/industries/hospitality.ts` | 65% of guest queries without handoff · 30+ languages · 20+ hours of reporting removed per week |
+| `content/industries/education.ts` | 80% of applicant queries answered instantly · 500+ admin hours per term · 10 wks to production |
+| `content/about.ts` | 25+ production deployments |
+| `content/customers.ts` | Phase week ranges on all four case studies, following the 3-phase engagement model |

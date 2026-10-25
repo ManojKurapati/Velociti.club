@@ -12,7 +12,7 @@ export const aboutPage = {
     lead: "We are elite engineers, not consultants. Our thesis: autonomous AI won't be won by chatbot wrappers. It will be won by rebuilding enterprise infrastructure around agent logic — with research rigour, startup speed and enterprise-grade reliability.",
   },
   stats: [
-    { display: "[#]", label: "Production deployments" },
+    { display: "25+", label: "Production deployments" },
     { value: 8, label: "Industries" },
     { display: "8–14", suffix: " wks", label: "To production" },
     { display: "Dubai", label: "Headquarters" },

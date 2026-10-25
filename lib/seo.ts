@@ -40,7 +40,7 @@ export const organizationJsonLd = {
   url: site.url,
   logo: absoluteUrl("/logo.png"),
   description: site.description,
-  email: site.emails.hello,
+  email: site.email,
   sameAs: site.social.filter((s) => !s.href.includes("wa.me")).map((s) => s.href),
   founder: [{ "@type": "Person", name: "Manoj Kurapati" }],
   address: { "@type": "PostalAddress", addressLocality: "Dubai", addressCountry: "AE" },

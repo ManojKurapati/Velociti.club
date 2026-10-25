@@ -16,6 +16,8 @@ export const contactPage = {
   companySizes: ["1–100", "100–1,000", "1,000–10,000", "10,000+"],
   industries: ["Healthcare", "Finance", "Oil & Gas", "Automotive", "Pharma", "Hospitality", "Education", "Other"],
   interests: ["Operations", "Customer support", "Sales", "Knowledge & search", "Something else"],
+  /** Shown when no lead endpoint is configured and /contact opens straight on Calendly. */
+  direct: "Choose a 30-minute slot below. You'll answer a few quick questions about your operations when you book.",
   step2: {
     title: "Pick a time with an engineer.",
     body: "Thanks — we have your details. Choose a 30-minute slot below.",

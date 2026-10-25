@@ -16,8 +16,8 @@ export default function PressPage() {
       <PageHero eyebrow={hero.eyebrow} title={hero.title} lead={hero.lead}>
         <p className="mt-6 text-[16px]">
           Media enquiries:{" "}
-          <a className="link" href={`mailto:${site.emails.press}`}>
-            {site.emails.press}
+          <a className="link" href={`mailto:${site.email}`}>
+            {site.email}
           </a>
         </p>
       </PageHero>

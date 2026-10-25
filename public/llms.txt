@@ -26,4 +26,4 @@ Human-in-the-loop approvals, immutable audit logs, PII redaction, prompt-injecti
 
 ## Contact
 - Book a free 30-minute AI workflow audit: https://thinkvelociti.com/contact
-- hello@thinkvelociti.com · press@thinkvelociti.com · security@thinkvelociti.com
+- Email: info@velociti.club · WhatsApp: +971 58 546 9969

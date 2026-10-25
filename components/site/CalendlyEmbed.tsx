@@ -3,7 +3,6 @@
 import { useEffect } from "react";
 import { site } from "@/content/site";
 import { track } from "@/lib/analytics";
-import { cn } from "@/lib/utils";
 
 /**
  * Calendly inline embed as a plain iframe (no third-party widget script).
@@ -34,8 +33,16 @@ export function CalendlyEmbed({ name, email, className }: { name?: string; email
   }, []);
 
   return (
-    <div className={cn("overflow-hidden rounded-[20px] border border-line bg-surface", className)}>
-      <iframe src={src} title="Book a 30-minute workflow audit with a Velociti engineer" className="h-[720px] w-full" loading="lazy" />
+    <div className={className}>
+      <div className="overflow-hidden rounded-[20px] border border-line bg-surface">
+        <iframe src={src} title="Book a 30-minute workflow audit with a Velociti engineer" className="h-[720px] w-full" />
+      </div>
+      <p className="mt-3 text-[14px]">
+        Calendar not loading?{" "}
+        <a href={site.calendlyUrl} target="_blank" rel="noopener noreferrer" className="link">
+          Open Calendly in a new tab
+        </a>
+      </p>
     </div>
   );
 }
