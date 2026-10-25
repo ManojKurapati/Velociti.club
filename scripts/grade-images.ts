@@ -1,6 +1,7 @@
 /**
  * Grades every source photo so the site reads as one set, then exports
- * AVIF + WebP at 2400w, 1600w and 800w next to the original.
+ * AVIF + WebP at 2400w, 1600w and 800w (no upscaling; smaller sources also
+ * get a rendition at their own width) next to the original.
  *
  *   1. Desaturate to ~70%
  *   2. Cool the white balance slightly
@@ -48,9 +49,13 @@ async function grade(file: string) {
     );
   const buf = await graded.toBuffer();
   const meta = await sharp(buf).metadata();
-  for (const w of WIDTHS) {
-    const width = Math.min(w, meta.width ?? w);
-    const img = sharp(buf).resize({ width, withoutEnlargement: true });
+  // Only emit renditions the source can fill, so srcset widths stay truthful;
+  // a source narrower than 2400 px also gets one rendition at its own width.
+  const srcW = meta.width ?? 0;
+  const widths = WIDTHS.filter((w) => w <= srcW);
+  if (srcW < WIDTHS[0] && !widths.includes(srcW)) widths.unshift(srcW);
+  for (const w of widths) {
+    const img = sharp(buf).resize({ width: w, withoutEnlargement: true });
     await img.clone().avif({ quality: 52, effort: 6 }).toFile(`${base}-${w}.avif`);
     await img.clone().webp({ quality: 74 }).toFile(`${base}-${w}.webp`);
   }

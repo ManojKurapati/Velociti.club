@@ -64,5 +64,5 @@ export const trustPage = {
     title: "Submit a report",
     body: "Found a vulnerability or a safety issue with one of our agents? Tell us. We acknowledge every report and keep you updated until it is resolved.",
   },
-  image: { name: "servers", alt: "Server racks inside a closed perimeter" },
+  image: { name: "servers", alt: "Server racks in a dark data centre" },
 };

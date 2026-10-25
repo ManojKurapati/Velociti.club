@@ -9,6 +9,7 @@ import { SimpleForm } from "@/components/site/SimpleForm";
 import { CTABand } from "@/components/site/CTABand";
 import { copy } from "@/components/site/Copy";
 import { SceneArt } from "@/components/art/SceneArt";
+import { PhotoOr } from "@/components/art/IndustryImage";
 
 export const metadata = pageMetadata({ ...trustPage.meta, path: "/trust" });
 
@@ -37,7 +38,14 @@ export default function TrustPage() {
 
       <div className="container-site">
         <div className="relative aspect-[21/9] h-auto max-h-[460px] min-h-[200px] w-full overflow-hidden rounded-[24px] bg-[#0F1520] max-sm:aspect-auto max-sm:h-[220px]">
-          <SceneArt name={image.name} className="absolute inset-0 h-full w-full" label={image.alt} />
+          <PhotoOr
+            base="/images/trust-servers"
+            alt={image.alt}
+            className="absolute inset-0"
+            sizes="(min-width:1248px) 1200px, 100vw"
+            priority
+            fallback={<SceneArt name={image.name} className="absolute inset-0 h-full w-full" label={image.alt} />}
+          />
         </div>
       </div>
 

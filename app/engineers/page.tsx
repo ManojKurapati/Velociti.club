@@ -7,6 +7,7 @@ import { CTABand } from "@/components/site/CTABand";
 import { Button } from "@/components/site/Button";
 import { copy } from "@/components/site/Copy";
 import { ServerRackArt } from "@/components/art/SceneArt";
+import { PhotoOr } from "@/components/art/IndustryImage";
 
 export const metadata = pageMetadata({ ...engineersPage.meta, path: "/engineers" });
 
@@ -98,7 +99,14 @@ export default function EngineersPage() {
             </Button>
           </div>
           <div className="relative min-h-[280px] border-t border-night-line lg:border-l lg:border-t-0">
-            <ServerRackArt className="absolute inset-0 h-full w-full" />
+            <PhotoOr
+              base="/images/trust-servers"
+              alt="Server racks inside a private data centre"
+              className="absolute inset-0"
+              sizes="(min-width:1024px) 600px, 100vw"
+              night
+              fallback={<ServerRackArt className="absolute inset-0 h-full w-full" />}
+            />
           </div>
         </div>
       </Section>

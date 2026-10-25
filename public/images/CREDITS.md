@@ -3,7 +3,9 @@
 All photos are from Unsplash under the Unsplash Licence (free commercial use, no attribution required). We keep credits anyway.
 
 Download each at full size via the photo page's **Download** button, save to the path below, then run `npm run grade-images`.
-Until a graded photo exists, the site shows the brand line illustration for that slot.
+Until a graded photo exists, the site shows the brand line illustration for that slot. If only one of an industry's two photos exists, it is used for both slots.
+
+**Received so far:** healthcare-hero, healthcare-alt, finance-alt, automotive-alt, trust-servers. Still needed: the rest of the table, including oil-gas-hero, oil-gas-alt, automotive-hero and about-dubai (sent inline in chat, not as files).
 
 | File | Unsplash page | Photographer |
 |---|---|---|
@@ -21,7 +23,7 @@ Until a graded photo exists, the site shows the brand line illustration for that
 | industries/hospitality-alt.jpg | https://unsplash.com/photos/modern-hotel-lobby-with-leather-chairs-and-reception-desk-Is2xP3QGb74 | [photographer name + profile URL] |
 | industries/education-hero.jpg | https://unsplash.com/photos/a-long-sunlit-library-hallway-rueome7iktQ | [photographer name + profile URL] |
 | industries/education-alt.jpg | https://unsplash.com/photos/empty-university-lecture-hall-desks-F8t2VGnI47I | [photographer name + profile URL] |
-| trust-servers.jpg | [search Unsplash "server racks", pick a "Free" result] | [photographer name + profile URL] |
+| trust-servers.jpg | [Unsplash page URL for the server-rack photo supplied] | [photographer name + profile URL] |
 | about-dubai.jpg | https://unsplash.com/photos/aerial-photography-of-buildings-at-night-COTHcQYL-MI | [photographer name + profile URL] |
 | texture-concrete.jpg (optional) | https://unsplash.com/photos/sunlight-casts-a-diagonal-shadow-on-a-concrete-wall-Xmh2Ang3-y4 | [photographer name + profile URL] |
 

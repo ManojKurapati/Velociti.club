@@ -5,6 +5,7 @@ import { StatBand } from "@/components/site/StatBand";
 import { CTABand } from "@/components/site/CTABand";
 import { copy } from "@/components/site/Copy";
 import { SceneArt } from "@/components/art/SceneArt";
+import { PhotoOr } from "@/components/art/IndustryImage";
 
 export const metadata = pageMetadata({ ...aboutPage.meta, path: "/about" });
 
@@ -25,7 +26,13 @@ export default function AboutPage() {
       <div className="container-site">
         <StatBand stats={stats} />
         <div className="relative mt-6 aspect-[21/9] w-full overflow-hidden rounded-[24px] bg-[#0F1520] max-sm:aspect-auto max-sm:h-[220px]">
-          <SceneArt name={image.name} className="absolute inset-0 h-full w-full" label={image.alt} />
+          <PhotoOr
+            base="/images/about-dubai"
+            alt={image.alt}
+            className="absolute inset-0"
+            sizes="(min-width:1248px) 1200px, 100vw"
+            fallback={<SceneArt name={image.name} className="absolute inset-0 h-full w-full" label={image.alt} />}
+          />
         </div>
       </div>
 
