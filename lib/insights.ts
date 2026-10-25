@@ -1,20 +1,9 @@
 import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
+import { type InsightCategory, type PostMeta } from "./insights-shared";
 
-export const insightCategories = ["Product", "In production", "Customer stories", "Perspectives", "News"] as const;
-export type InsightCategory = (typeof insightCategories)[number];
-
-export type PostMeta = {
-  slug: string;
-  title: string;
-  excerpt: string;
-  category: InsightCategory;
-  date: string;
-  author: string;
-  art: string;
-  draft: boolean;
-};
+export * from "./insights-shared";
 
 const DIR = path.join(process.cwd(), "content/insights");
 
@@ -47,8 +36,4 @@ export function getPost(slug: string) {
   const file = `${slug}.mdx`;
   if (!fs.existsSync(path.join(DIR, file))) return null;
   return read(file);
-}
-
-export function formatDate(date: string) {
-  return new Date(date + "T00:00:00Z").toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" });
 }

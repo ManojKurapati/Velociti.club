@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { SceneArt } from "@/components/art/SceneArt";
-import { formatDate, type PostMeta } from "@/lib/insights";
+import { formatDate, type PostMeta } from "@/lib/insights-shared";
 
 export function PostCard({ post }: { post: PostMeta }) {
   return (
