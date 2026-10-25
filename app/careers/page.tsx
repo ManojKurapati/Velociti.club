@@ -11,7 +11,7 @@ import { Arrow } from "@/components/site/Button";
 export const metadata = pageMetadata({ ...careersPage.meta, path: "/careers" });
 
 export default function CareersPage() {
-  const { hero, roles, rolesNote, benefits, open } = careersPage;
+  const { hero, roles, rolesNote, benefits, aiGuidelines: ai, open } = careersPage;
   return (
     <>
       <PageHero eyebrow={hero.eyebrow} title={hero.title} lead={hero.lead} />
@@ -59,7 +59,66 @@ export default function CareersPage() {
       </Section>
       )}
 
-      <Section id="apply" labelledBy="open-title">
+      <Section id="ai-guidelines" labelledBy="ai-title">
+        <div className="max-w-[820px]">
+          <p className="eyebrow">{ai.eyebrow}</p>
+          <h2 id="ai-title" className="t-h2 mt-5">
+            {ai.title}
+          </h2>
+          <p className="t-lead mt-6">{ai.intro}</p>
+        </div>
+
+        <div className="mt-12 grid gap-4 lg:grid-cols-[1.4fr_1fr]">
+          <div className="card p-7 lg:p-9">
+            <h3 className="t-h3">{ai.acceptable.title}</h3>
+            <ul className="mt-6 space-y-3.5">
+              {ai.acceptable.items.map((it) => (
+                <li key={it} className="flex gap-3 text-[16px] leading-relaxed">
+                  <svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16" className="mt-1 shrink-0 text-cobalt" fill="none" stroke="currentColor" strokeWidth="1.8">
+                    <path d="M3 8.5 6.5 12 13 4.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  <span>{it}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="night card-night bg-night p-7 text-night-body lg:p-9">
+            <h3 className="t-h3 text-white">{ai.notAcceptable.title}</h3>
+            <ul className="mt-6 space-y-3.5">
+              {ai.notAcceptable.items.map((it) => (
+                <li key={it} className="flex gap-3 text-[16px] leading-relaxed">
+                  <svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16" className="mt-1 shrink-0 text-[#FF8A80]" fill="none" stroke="currentColor" strokeWidth="1.8">
+                    <path d="M4 4l8 8M12 4l-8 8" strokeLinecap="round" />
+                  </svg>
+                  <span>{it}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <h3 className="t-h3 mt-16">{ai.expectations.title}</h3>
+        <ol className="mt-6 grid gap-4 md:grid-cols-3">
+          {ai.expectations.stages.map((st, i) => (
+            <li key={st.title} className="card p-7">
+              <p className="t-mono text-cobalt">
+                {String(i + 1).padStart(2, "0")} · {st.title}
+              </p>
+              <ul className="mt-5 space-y-3">
+                {st.items.map((it) => (
+                  <li key={it} className="text-[15px] leading-relaxed">
+                    {it}
+                  </li>
+                ))}
+              </ul>
+            </li>
+          ))}
+        </ol>
+
+        <p className="mt-10 max-w-[820px] border-l-2 border-cobalt pl-5 text-[18px] font-medium leading-relaxed text-ink">{ai.closing}</p>
+      </Section>
+
+      <Section id="apply" tone="white" labelledBy="open-title">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
           <div>
             <h2 id="open-title" className="t-h2">{open.title}</h2>
