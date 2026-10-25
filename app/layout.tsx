@@ -1,146 +1,67 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import { SmoothScroll } from "@/components/SmoothScroll";
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
-import { BackToTop } from "@/components/BackToTop";
-import { ThemeProvider } from "@/components/ThemeProvider";
-import { AnimatedBackground } from "@/components/AnimatedBackground";
-import { ExitIntentPopup } from "@/components/ExitIntentPopup";
-import { AskVelocitiWidget } from "@/components/AskVelocitiWidget";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
+import { AnnouncementBar, ANNOUNCE_KEY } from "@/components/site/AnnouncementBar";
+import { Nav } from "@/components/site/Nav";
+import { Footer } from "@/components/site/Footer";
+import { JsonLd } from "@/components/site/JsonLd";
+import { RevealObserver } from "@/components/site/RevealObserver";
 import { CookieBanner } from "@/components/CookieBanner";
-import Script from "next/script";
+import { announcement, site } from "@/content/site";
+import { organizationJsonLd } from "@/lib/seo";
 import "./globals.css";
 
-const geistSans = Geist({
-  subsets: ["latin"],
-  variable: "--font-geist-sans",
-  display: "swap"
-});
-
-const geistMono = Geist_Mono({
-  subsets: ["latin"],
-  variable: "--font-geist-mono",
-  display: "swap"
-});
-
 export const viewport: Viewport = {
-  themeColor: "#000000",
+  themeColor: "#F6F5F1",
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://velociti.club"),
-  title: "Velociti — Enterprise AI Systems That Automate Operations",
-  description: "We deploy secure AI agents across sales, support, operations, and workflows using your existing systems and data.",
-  keywords: [
-    "enterprise AI systems",
-    "autonomous AI agents",
-    "workflow automation",
-    "AI voice agents",
-    "RAG systems",
-    "retrieval augmented generation",
-    "AI operations automation",
-    "AI sales automation",
-    "SDR automation",
-    "on-premise AI deployment",
-    "secure AI agents"
-  ],
-  alternates: {
-    canonical: "https://velociti.club",
+  metadataBase: new URL(site.url),
+  title: {
+    default: "Velociti — AI-native enterprise engineering",
+    template: "%s · Velociti",
   },
-  openGraph: {
-    title: "Velociti — Enterprise AI Systems",
-    description: "Secure AI agents for sales, support, operations, and workflows.",
-    url: "https://velociti.club",
-    siteName: "Velociti",
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Velociti — Enterprise AI Systems That Automate Operations" }],
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Velociti — Enterprise AI Systems",
-    description: "Secure AI agents for sales, support, operations, and workflows.",
-    images: ["/og-image.jpg"],
-  },
-  robots: {
-    index: true,
-    follow: true,
-  }
+  description: site.description,
+  applicationName: site.name,
+  alternates: { canonical: "/" },
+  openGraph: { siteName: site.name, type: "website", locale: "en_US", url: "/" },
+  twitter: { card: "summary_large_image" },
+  robots: { index: true, follow: true },
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Velociti",
-  "url": "https://velociti.club",
-  "logo": "https://velociti.club/logo.png",
-  "image": "https://velociti.club/og-image.jpg",
-  "description": "Enterprise AI systems company deploying secure autonomous AI agents across sales, support, operations, and workflows using existing systems and data.",
-  "sameAs": [
-    "https://www.instagram.com/velociti.club/",
-    "https://www.linkedin.com/company/velociti-club/"
-  ],
-  "knowsAbout": [
-    "Artificial Intelligence",
-    "Autonomous Agents",
-    "Enterprise Software",
-    "Workflow Automation",
-    "Retrieval-Augmented Generation",
-    "Customer Support Automation",
-    "AI SDR"
-  ],
-  "founder": [
-    {
-      "@type": "Person",
-      "name": "Manoj Kurapati"
-    }
-  ]
-};
+// Runs before first paint: restores announcement dismissal, arms scroll
+// reveals and starts the one-time hero animation (skipped for reduced motion).
+const bootScript = `(function(){var d=document.documentElement;try{if(localStorage.getItem(${JSON.stringify(
+  ANNOUNCE_KEY,
+)})===${JSON.stringify(announcement.id)})d.setAttribute('data-announce-dismissed','')}catch(e){}
+d.classList.add('js-reveal');setTimeout(function(){if(!d.hasAttribute('data-reveal-ready'))d.classList.remove('js-reveal')},4000);
+if(location.pathname==='/'&&!matchMedia('(prefers-reduced-motion: reduce)').matches){d.classList.add('hero-animate');setTimeout(function(){d.classList.remove('hero-animate')},4200)}})();`;
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`} suppressHydrationWarning>
       <head>
-        <Script
-          id="organization-jsonld"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-        {/* Google Analytics */}
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID || 'G-Y26VSBBVLT'}`}
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${process.env.NEXT_PUBLIC_GA_ID || "G-Y26VSBBVLT"}');
-          `}
-        </Script>
+        <script dangerouslySetInnerHTML={{ __html: bootScript }} />
+        <link rel="alternate" type="application/rss+xml" title="Velociti Insights" href="/insights/rss.xml" />
+        <JsonLd data={organizationJsonLd} />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased bg-background text-foreground selection:bg-white selection:text-black overflow-x-hidden`}>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-          <AnimatedBackground />
-          <SmoothScroll>
-            <Navbar />
-            {children}
-            <Footer />
-            <BackToTop />
-          </SmoothScroll>
-          <ExitIntentPopup />
-          <AskVelocitiWidget />
-          <CookieBanner />
-        </ThemeProvider>
+      <body className="min-h-screen overflow-x-clip">
+        <a
+          href="#main"
+          className="sr-only z-[100] rounded-full bg-ink px-5 py-3 text-white focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
+        >
+          Skip to content
+        </a>
+        <AnnouncementBar />
+        <Nav />
+        <main id="main" tabIndex={-1} className="outline-none">
+          {children}
+        </main>
+        <Footer />
+        <CookieBanner />
+        <RevealObserver />
       </body>
     </html>
   );

@@ -1,8 +1,9 @@
 import Mixpanel from "mixpanel";
 
-const MIXPANEL_TOKEN = process.env.NEXT_PUBLIC_MIXPANEL_TOKEN || "dd9626abae8f1a7c91052bf7f765f5b8";
+const MIXPANEL_TOKEN = process.env.NEXT_PUBLIC_MIXPANEL_TOKEN ?? "";
 
-// Initialize Mixpanel for server-side logging/tracking
+// Initialize Mixpanel for server-side logging/tracking.
+// The site is a static export, so this only runs in build scripts or a future server runtime.
 export const mixpanelServer = Mixpanel.init(MIXPANEL_TOKEN);
 
 /**
@@ -14,7 +15,7 @@ export const mixpanelServer = Mixpanel.init(MIXPANEL_TOKEN);
 export const trackServerEvent = (
   distinctId: string,
   eventName: string,
-  properties?: Record<string, any>
+  properties?: Record<string, unknown>
 ) => {
   try {
     mixpanelServer.track(eventName, {
@@ -34,7 +35,7 @@ export const trackServerEvent = (
  */
 export const setServerUserProfile = (
   distinctId: string,
-  properties: Record<string, any>
+  properties: Record<string, unknown>
 ) => {
   try {
     mixpanelServer.people.set(distinctId, properties);
