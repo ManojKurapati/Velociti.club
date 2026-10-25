@@ -33,7 +33,6 @@ export function GradedPicture({
     <picture>
       <source type="image/avif" srcSet={srcset("avif")} sizes={sizes} />
       <source type="image/webp" srcSet={srcset("webp")} sizes={sizes} />
-      {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={`${base}-1600.webp`}
         alt={alt}
