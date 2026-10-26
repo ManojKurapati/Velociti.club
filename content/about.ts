@@ -25,7 +25,8 @@ export const aboutPage = {
       {
         name: "Manoj Kurapati",
         role: "Founder & CEO",
-        bio: "Applied AI research, technology leadership at early-stage startups, and generative AI leadership for oil, gas and energy companies.",
+        bio: "Manoj has spent his career developing and deploying AI and machine-learning products — taking them from research to systems that run in production. He has led technology teams at early-stage startups and led generative AI programmes for oil, gas and energy companies. His research background in cloud computing and big data is the foundation for how Velociti engineers enterprise AI that is reliable at scale.",
+        highlights: ["AI/ML product development & deployment", "Technology leadership", "Cloud computing research", "Big data systems", "Generative AI for energy"],
         photo: "[Founder photo — from a real Velociti photo shoot]",
       },
       {

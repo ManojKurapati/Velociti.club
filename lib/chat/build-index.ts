@@ -157,7 +157,7 @@ export function buildChatIndex(): ChatEntry[] {
     id: "about",
     title: "About Velociti",
     url: "/about",
-    keywords: ["about", "founder", "founders", "ceo", "leadership", "team", "board", "manoj", "lavine", "history", "values"],
+    keywords: ["about", "founder", "founders", "ceo", "leadership", "team", "board", "manoj", "lavine", "history", "values", "experience", "background", "cloud", "data"],
     answer: `${a.hero.lead} Leadership: ${a.leadership.people.map((p) => `${p.name}, ${p.role}`).join("; ")}. Values: ${a.values.items.map((v) => v.title).join(" ")}`,
     text: [...a.leadership.people.map((p) => p.bio), ...a.values.items.map((v) => v.body)].join(" "),
   });

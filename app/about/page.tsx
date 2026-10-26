@@ -50,6 +50,15 @@ export default function AboutPage() {
                 <h3 className="text-[24px] font-semibold tracking-[-0.02em]">{p.name}</h3>
                 <p className="t-mono mt-2 text-cobalt">{p.role}</p>
                 <p className="mt-5 text-[16px] leading-relaxed">{p.bio}</p>
+                {"highlights" in p && p.highlights && (
+                  <ul className="mt-6 flex flex-wrap gap-2" aria-label={`${p.name}'s expertise`}>
+                    {p.highlights.map((h) => (
+                      <li key={h} className="rounded-full border border-line px-3 py-1.5 text-[13px] leading-none text-ink">
+                        {h}
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
             </li>
           ))}
